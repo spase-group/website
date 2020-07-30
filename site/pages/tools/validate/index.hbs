@@ -1,0 +1,90 @@
+---
+title: SPASE Validate
+---
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Validate</h1>
+<div class='gradient_line_half'></div>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+<h1>SPASE metadata validator</h1>
+<p>
+	Enter the URL or local path to the SPASE description, then click "Validate".<br>
+	You can also select the version of the data model to use and whether to check external references like
+	Resource IDs and URLs.<br>
+<form method="post" enctype="multipart/form-data">
+	<table class="clear" width="0">
+		<tr><td>URL:&nbsp;<input type=text name=url size=80 value="<%= validate.getUrlForm() %>"></td></tr>
+			<tr><td align="center">-or-</td></tr>
+		<tr><td>File:&nbsp;<input type=file name=url size=70 value="<%= validate.getFileForm() %>"></td></tr>
+		<tr><td align="center"><input type=submit name=submit value="Validate"></td></tr>
+		<tr><td>&nbsp;&nbsp;&nbsp;<table class="clear"><tr><td valign=top nowrap>SPASE Data Model Version:</td><td>
+		{{#with baseModelVersions}}
+			{{#each release}}
+				<input type=radio name=version value="{{this.version}}">&nbsp;{{this.version}}
+			{{/each}}
+		{{/with}}
+		</td></tr></table>
+		</td><tr>
+		<tr><td>Check References:&nbsp;<input type=checkbox name=checkid value="yes">Resource ID <input type=checkbox name=checkurl value="yes">URL</td></tr>
+			<tr><td align="center"><a href=index.html>Start over...</a></td></tr>
+		</table>
+</form>
+</p>
+<p>
+Validation out goes here.
+</p>
+<p>
+	<dl>
+	<dt>Try some examples:</dt>
+	<dd><a href="index.html?url=https://spase-group.org/tools/validate/examples/WindWavesTNR.xml&version=1.0.1&submit=Validate">WindWavesTNR.xml</a> (version 1.0.1 compliant)<dd>
+	<dd><a href="index.html?url=https://spase-group.org/tools/validate/examples/WindWavesTNR-2.xml&version=1.1.0&submit=Validate">WindWavesTNR.xml</a> (version 1.1.0 compliant)<dd>
+	<dd><a href="index.html?url=https://spase-group.org/tools/validate/examples/bad-WindWavesTNR.xml&version=1.0.1&submit=Validate">bad-WindWavesTNR.xml</a> (will produce an error)<dd>
+	<dd><a href="index.html?url=https://spase-group.org/tools/validate/examples/CL_SP_PEA_SPASE_V1_0_1.xml&version=1.0.1&submit=Validate">CL_SP_PEA_SPASE_V1_0_1.xml</a> (version 1.0.1 compliant)<dd>
+	<dd><a href="index.html?url=https://spase-group.org/tools/validate/examples/bad-CL_SP_PEA_SPASE_V1_0_1.xml&version=1.0.1&submit=Validate">bad-CL_SP_PEA_SPASE_V1_0_1.xml</a> (will produce an error)<dd>
+	</dl>
+</p>
+<p>
+	This validation service uses XML schema and Java to perform the validation. 
+   It is part of the <a href="../resource/index.html">SPASE Resource Tools</a> collection. 
+</p>
+<p>
+	You can download XML schema definitions from: 
+	<div class="indent">
+		<a href="{{assets}}/data/model/schema/index.html">https://spase-group.org/data/model/schema/index.html</a>
+	</div>
+</p>
+
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>
+Related Items
+</h2>
+<ul class='side_nav'>
+	<li><a href="../../services/naming-authority.html">List of Naming Authorities</a></li>
+	<li><a href="../stylesheet/index.html">XML Stylesheets</a></li>
+	<li><a href="../resource/index.html">Resource Tools</a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+<div class='clear'></div>
+</div>

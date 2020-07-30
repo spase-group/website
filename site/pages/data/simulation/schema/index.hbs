@@ -1,0 +1,95 @@
+---
+title: SPASE Simulation Extensions XML Schema
+---
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Simulation Extensions XML Schema</h1>
+<div class='gradient_line_half'></div>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+<p>The SPASE ontology can be expressed in many forms. One of those forms is as an XML Schema.
+	An XML Schema expresses the constraints on the structure and content of an XML document.
+	Typically an XML Schema is stored in a file with an ".xsd" extension. 
+</p>
+<p>
+	When constructing an XML document the schema is referenced from the enclosing tag. 
+	For a SPASE document the enclosing tag has the form:
+<pre>
+&lt;Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xmlns="http://www.spase-group.org/data/schema" 
+     xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-sim-1.0.0.xsd"&gt;
+</pre>
+The "schemaLocation" maps the target namespace (in this case "http://www.spase-group.org/data/schema") to a schema document.
+There exists an XML Schema document for each version of the SPASE data model.
+</p>
+
+{{#with simulationExtVersions }}
+	<p><b>Current Release</b> is
+	<a target="_blank" href="../spase-sim-{{current.version}}/index.html">{{current.version}}</a> 
+	(<a target="_blank" href="../spase-sim-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="../spase-sim-{{current.version}}.pdf">PDF</a>),
+	released: {{current.released}},
+	<a href="../history.html">History of changes</a>
+	</p>
+
+	{{#if draft}}
+		<p><b>Draft version:</b><br>There is a draft version of the data model which
+			includes definitions under consideration for the next production release.
+		</p>
+		<p>The <a target="_blank" href="../spase-sim-{{draft.version}}-draft/index.html">current draft</a> 
+		(<a target="_blank" href="../spase-sim-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="../spase-sim-{{draft.version}}-draft.pdf">PDF</a>),
+		version is {{draft.version}}, generated on: {{draft.released}}
+		</p>
+	{{else}}
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+	{{/if}}
+
+	<p>
+	   <b>Release Versions:</b><br>
+		<table>
+			<tr>
+				<th bgcolor=#CCCCCC>Version</th><th class="pad-left" bgcolor=#CCCCCC>Documentation</th><th bgcolor=#CCCCC>"schemaLocation" Hint</th>
+			</tr>
+
+			{{#each release}}
+				<tr>
+				   <td><a target="_blank" href="../spase-sim-{{this.version}}/index.html">{{this.version}}</a></td>
+				   <td class="pad-left" nowrap>
+					 <a target="_blank" href="../spase-sim-{{this.version}}/index.html">HTML</a> 
+					 <a target="_blank" href="../spase-sim-{{this.version}}.pdf">PDF</a>
+				   </td>
+				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/schema/spase-sim-{{this.version}}.xsd">https://spase-group.org/data/schema/spase-sim-{{this.version}}.xsd</a></a></td>
+				</tr>
+			{{/each}}
+		</table>
+	</p>
+	
+{{/with}}
+
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="../index.html">Simulation Extensions Documentation</a></li>
+	<li><a href="../../model/index.html">Base Model Documentation</a></li>
+	<li><a href="../../model/schema/index.html">Base Model XML Schema</a></li>
+</ul>
+</div>
+</aside>
+</div>
+
+<div class='clear'></div>
+</div>

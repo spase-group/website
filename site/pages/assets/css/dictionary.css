@@ -1,0 +1,37 @@
+
+div.definition {
+}
+
+input[type="radio"]{
+  margin-right: 8px;
+}
+
+table.definition {
+  border:1px;
+  width:100%;
+  background-color: transparent;
+  border-bottom: 1px solid #534c47;
+}
+
+table.definition table {
+  background-color: transparent;
+}
+
+table.definition td.term {
+   width: 50%;
+   background-color: #534c47;
+   border-bottom: 1px solid #534c47;
+   color: #ffffff;
+   font-weight: bold;
+   text-align: left;
+}
+
+table.definition td.type {
+   width: 50%;
+   text-align: right;
+   border-bottom: 1px solid #534c47;
+}
+
+table.definition td.nowrap {
+	white-space: nowrap;
+}

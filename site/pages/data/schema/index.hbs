@@ -1,0 +1,163 @@
+---
+title: SPASE XML Schema
+---
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>XML Schema</h1>
+<div class='gradient_line_half'></div>
+<nav class='secondary_nav_desktop clearfix'>
+<ul>
+	<li><a class='' href='#base' target='_self'>Base Model</a></li>
+	<li><a class='' href='#simulation' target='_self'>Simulation Extensions</a></li>
+</ul>
+</nav>
+
+<nav class='secondary_nav_mobile full_container'>
+<select id='dropkick_nav' onchange='main._changePage(this.value);'>
+	<option value='{{assets}}/data/model/index.html'>Base Model</option>
+	<option value='{{assets}}/data/simulation/index.html'>Simulation Extensions</option>
+</select>
+</nav>
+
+<nav class='mobile_sidenav'>
+<select class='dropkick_sidenav' onchange='main._changePage(this.value);'>
+	<option value=''>More</option>
+	<option value='{{assets}}/data/model/index.html'>Base Model</option>
+	<option value='{{assets}}/data/simulation/index.html'>Simulation Extensions</option>
+</select>
+</nav>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+<p>The SPASE ontology can be expressed in many forms. One of those forms is as an XML Schema.
+	An XML Schema expresses the constraints on the structure and content of an XML document.
+	Typically an XML Schema is stored in a file with an ".xsd" extension. 
+</p>
+<p>
+	When constructing an XML document the schema is referenced from the enclosing tag. 
+	For a SPASE document the enclosing tag has the form:
+<pre>
+&lt;Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xmlns="http://www.spase-group.org/data/schema" 
+     xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-2.3.1.xsd"&gt;
+</pre>
+The "schemaLocation" maps the target namespace (in this case "http://www.spase-group.org/data/schema") to a schema document.
+There exists an XML Schema document for each version of the SPASE data model.
+</p>
+
+<h2 id="base" class='page_title'>Base Model</h2>
+<div class='gradient_line_half'></div>
+{{#with baseModelVersions }}
+	<p><b>Current Release</b> is
+	<a target="_blank" href="../model/spase-{{current.version}}/index.html">{{current.version}}</a> 
+	(<a target="_blank" href="../model/spase-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="../model/spase-{{current.version}}.pdf">PDF</a>),
+	released: {{current.released}},
+	<a href="../model/history.html">History of changes</a>
+	</p>
+
+	{{#if draft}}
+		<p><b>Draft version:</b><br>There is a draft version of the data model which
+			includes definitions under consideration for the next production release.
+		</p>
+		<p>The <a target="_blank" href="../model/spase-{{draft.version}}-draft/index.html">current draft</a> 
+		(<a target="_blank" href="../model/spase-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="../model/spase-{{draft.version}}-draft.pdf">PDF</a>),
+		version is {{draft.version}}, generated on: {{draft.released}}
+		</p>
+	{{else}}
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+	{{/if}}
+
+	<p>
+	   <b>Release Versions:</b><br>
+		<table>
+			<tr>
+				<th bgcolor=#CCCCCC>Version</th><th class="pad-left" bgcolor=#CCCCCC>Documentation</th><th bgcolor=#CCCCC>"schemaLocation" Hint</th>
+			</tr>
+
+			{{#each release}}
+				<tr>
+				   <td><a target="_blank" href="../model/spase-{{this.version}}/index.html">{{this.version}}</a></td>
+				   <td class="pad-left" nowrap>
+					 <a target="_blank" href="../model/spase-{{this.version}}/index.html">HTML</a> 
+					 <a target="_blank" href="../model/spase-{{this.version}}.pdf">PDF</a>
+				   </td>
+				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/schema/spase-{{this.version}}.xsd">https://spase-group.org/data/schema/spase-{{this.version}}.xsd</a></a></td>
+				</tr>
+			{{/each}}
+		</table>
+	</p>
+	
+{{/with}}
+
+<h2 id="simulation" class='page_title'>Simulation Extensions</h2>
+<div class='gradient_line_half'></div>
+{{#with simulationExtVersions }}
+	<p><b>Current Release</b> is
+	<a target="_blank" href="../model/spase-{{current.version}}/index.html">{{current.version}}</a> 
+	(<a target="_blank" href="../model/spase-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="../model/spase-{{current.version}}.pdf">PDF</a>),
+	released: {{current.released}},
+	<a href="../simulation/history.html">History of changes</a>
+	</p>
+
+	{{#if draft}}
+		<p><b>Draft version:</b><br>There is a draft version of the data model which
+			includes definitions under consideration for the next production release.
+		</p>
+		<p>The <a target="_blank" href="../model/spase-{{draft.version}}-draft/index.html">current draft</a> 
+		(<a target="_blank" href="../model/spase-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="../model/spase-{{draft.version}}-draft.pdf">PDF</a>),
+		version is {{draft.version}}, generated on: {{draft.released}}
+		</p>
+	{{else}}
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+	{{/if}}
+
+	<p>
+	   <b>Release Versions:</b><br>
+		<table>
+			<tr>
+				<th bgcolor=#CCCCCC>Version</th><th class="pad-left" bgcolor=#CCCCCC>Documentation</th><th bgcolor=#CCCCC>"schemaLocation" Hint</th>
+			</tr>
+
+			{{#each release}}
+				<tr>
+				   <td><a target="_blank" href="../model/spase-{{this.version}}/index.html">{{this.version}}</a></td>
+				   <td class="pad-left" nowrap>
+					 <a target="_blank" href="../model/spase-{{this.version}}/index.html">HTML</a> 
+					 <a target="_blank" href="../model/spase-{{this.version}}.pdf">PDF</a>
+				   </td>
+				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/schema/spase-{{this.version}}.xsd">https://spase-group.org/data/schema/spase-{{this.version}}.xsd</a></a></td>
+				</tr>
+			{{/each}}
+		</table>
+	</p>
+	
+{{/with}}
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>
+Related Items
+</h2>
+<ul class='side_nav'>
+	<li><a href="../index.html">Base Model XML Documentation</a></li>
+	<li><a href="../simulation/index.html">Simulation Extensions Documentation</a></li>
+	<li><a href="../simulation/schema/index.html">Simulation Extensions Schema</a></li>
+</ul>
+</div>
+</aside>
+</div>
+
+<div class='clear'></div>
+</div>

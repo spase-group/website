@@ -1,0 +1,50 @@
+---
+title: SPASE Simulation Extensions History
+---
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Simulation Extensions  History</h1>
+<div class='gradient_line_half'></div>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+<h1>Dictionary History for Base Model</h1>
+
+
+{{#each (sort simulationExtHistory 'Updated' true)}}
+	{{#if (isMatch Description 'Released.') }}
+		{{#unless @first}}
+		</table>
+		{{/unless}}
+		<h4>Version: <b><a href="search.html?version={{Version}}">{{Version}}</a></b></h4>
+		<table class="history">
+			<tr>
+			<th width=100px>Updated</th>
+			<th>Description</th>
+			<th>Notes</th>
+			</tr>
+		{{/if}}
+		<tr {{{color Description}}} >
+			<td nowrap>{{Updated}}</td>
+			<td><ul>{{{makeList Description}}}</ul></td>
+			<td>{{Note}}</td>
+		</tr>
+{{/each}}
+	</table>
+
+</div>
+
+</section>
+</article>
+</section>
+
+</div>
+
+<div class='clear'></div>
+</div>

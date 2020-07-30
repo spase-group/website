@@ -1,0 +1,119 @@
+---
+title: SPASE Base XML Parser
+---
+
+<div id="sidebar">
+	<h3>Contents</h3>
+   <ul id="toc" class="toc">
+     <li class=""><a href="#documentation">Documentation</a></li>
+     <li class=""><a href="#application">Application</a></li>
+     <li class=""><a href="#example">Example XML</a></li>
+   </ul>
+</div>
+
+<div id="content">
+<h1>SPASE XML Parser</h1>
+   <p>
+	The SPASE XML parser is a collection of Java classes which can parse XML descriptions and
+	load the information into a directly accessible form.  The SPASE data model is organized into 
+	multiple groupings (resource) of information. In this implementation each grouping has 
+	a corresponding Java class. An envelope class called "Description" can load, parse and create
+	a corresponding collection of other classes to represent the XML file. During parsing a syntactical
+	validation is performed (i.e., are tag balanced, etc), recognized tags are processed and unrecognized 
+	tags are ignored. 
+	<p>
+	There is a "classic" and "JAXB" version of the parser. Both version provide similiar functionality. 
+	The "classic" version is generated using a in-house tool.
+	The "JAXB" version is generated using version 2.0 of the 
+	<a href="https://jaxb.dev.java.net/">JAXB</a> compiler. 
+	To use the JAXB version you will also need the jar files included in the JAXB 
+	<a href="https://jaxb.dev.java.net/">reference implementation</a>.
+	The "JAXB" version is preferred. Versions labeled "draft" are not considered stable.
+	
+	<p>
+	<h3 id="documentation">Documentation</h3>
+	<dl>
+      <dt>On-line class descriptions for the parser collection.</dt>
+      <dd>
+      	<br>Classic versions (spase.parser*): <a href="./api110">1.1.0</a>
+ 		                 ;    <a href="./api120">1.2.0</a>
+ 		                 ;    <a href="./api121">1.2.1</a>
+ 		                 ;    <a href="./api122">1.2.2</a>
+ 		                 ;    <a href="./api200">2.0.0</a>
+ 		                 ;    <a href="./api200">2.1.0</a>
+ 		                 ;    <a href="./api200">2.2.0</a>
+ 		                 ;    <a href="./api222">2.2.2</a>
+ 		                 ;    <a href="./api-224">2.2.4</a>
+ 		                 ;    <a href="./api-225">2.2.5</a>
+ 		                 ;    <a href="./api-226">2.2.6</a>
+ 		                 ;    <a href="./api-227">2.2.8</a>
+      	<br>JAXB versions (org.spase.parser*): <a href="./jaxb/api110">1.1.0</a>
+ 		                 ;    <a href="./jaxb/api120">1.2.0</a>
+ 		                 ;    <a href="./jaxb/api121">1.2.1</a>
+ 		                 ;    <a href="./jaxb/api122">1.2.2</a>
+ 		                 ;    <a href="./jaxb/api200">2.0.0</a>
+ 		                 ;    <a href="./jaxb/api210">2.1.0</a>
+ 		                 ;    <a href="./jaxb/api220">2.2.0</a>
+  		                 ;    <a href="./jaxb/api222">2.2.2</a>
+ 		                 ;    <a href="./jaxb/api-224">2.2.4</a>
+ 		                 ;    <a href="./jaxb/api-225">2.2.5</a>
+ 		                 ;    <a href="./jaxb/api-226">2.2.6</a>
+ 		                 ;    <a href="./jaxb/api-227">2.2.8</a>
+		</dd>
+     </dl>
+    
+   <h3 id="application">Application</h3>
+   <dl>
+   	<dt>Jar files:</dt>
+  		<dd>
+  			<br>Classic versions (spase.parser*):  
+   		<a href="./parser110.jar">1.1.0</a>
+   		; <a href="./parser120.jar">1.2.0</a>
+   		; <a href="./parser121.jar">1.2.1</a>
+   		; <a href="./parser122.jar">1.2.2</a>
+   		; <a href="./parser200.jar">2.0.0</a>
+   		; <a href="./parser210.jar">2.1.0</a>
+   		; <a href="./parser220.jar">2.2.0</a>
+   		; <a href="./parser222.jar">2.2.2</a>
+   		; <a href="./parser-224.jar">2.2.4</a>
+   		; <a href="./parser-225.jar">2.2.5</a>
+   		; <a href="./parser-226.jar">2.2.6</a>
+   		; <a href="./parser-227.jar">2.2.8</a>
+   		<br>JAXB versions (org.spase.parser*):
+   		<a href="./spase-jaxb-parser110.jar">1.1.0</a>
+   		; <a href="./spase-jaxb-parser120.jar">1.2.0</a>
+   		; <a href="./spase-jaxb-parser121.jar">1.2.1</a>
+   		; <a href="./spase-jaxb-parser122.jar">1.2.2</a>
+   		; <a href="./spase-jaxb-parser200.jar">2.0.0</a>
+   		; <a href="./spase-jaxb-parser210.jar">2.1.0</a>
+   		; <a href="./spase-jaxb-parser220.jar">2.2.0</a>
+   		; <a href="./spase-jaxb-parser222.jar">2.2.2</a>
+   		; <a href="./spase-jaxb-parser224.jar">2.2.4</a>
+   		; <a href="./spase-jaxb-parser225.jar">2.2.5</a>
+   		; <a href="./spase-jaxb-parser226.jar">2.2.6</a>
+   		; <a href="./spase-jaxb-parser227.jar">2.2.8</a>
+   	</dd>
+   	<dd><br> The jar files contain source, documentation and compiled classes that implement the parser.</dd>
+   	<p>
+   	<dt></dt><dd>After downloading the classic version the command:<br><br> 
+   		<code>java spase.parser{ver}.Description {xmlfil}</code> 
+   		<br><br>will parse and display the contents of {xmlfile} using parser version {ver}. 
+   		For example, possible values for {ver} is "110" for version 1.1.0 and "120" for version 1.2.0.
+   		<p>Note: The class files were compiled using JDK1.5 and the source code uses features found only in JDK1.5 and above.</dd>
+   </dl>
+   
+   <h3 id="example">Example XML (Version 1.1.0 compliant)</h3>
+   <dl>
+   	<dt>For each resource type:
+   	<dd><a href="example/Catalog.xml">Catalog.xml</a></dd>
+   	<dd><a href="example/DisplayData.xml">DisplayData.xml</a></dd>
+   	<dd><a href="example/Instrument.xml">Instrument.xml</a></dd>
+   	<dd><a href="example/NumericalData.xml">NumericalData.xml</a></dd>
+   	<dd><a href="example/Observatory.xml">Observatory.xml</a></dd>
+   	<dd><a href="example/Person.xml">Person.xml</a></dd>
+   	<dd><a href="example/Registry.xml">Registry.xml</a></dd>
+   	<dd><a href="example/Repository.xml">Repository.xml</a></dd>
+   	<dd><a href="example/Service.xml">Service.xml</a></dd>
+   </dl>
+
+</div>

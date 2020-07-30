@@ -1,0 +1,299 @@
+---
+title: SPASE Registry Server
+---
+
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Registry Server</h1>
+<div class='gradient_line_half'></div>
+
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'><div id="sidebar">
+	<h3>Contents</h3>
+   <ul id="toc" class="toc">
+     <li class=""><a href="#installation">Installation</a></li>
+     <li class=""><a href="#configuration">Configuration File</a></li>
+     <li class=""><a href="#documentation">Documentation</a></li>
+     <li class=""><a href="#services">Services</a></li>
+     <li class="sub"><a href="#service-download">Download</a></li>
+     <li class="sub"><a href="#service-explorer">Explorer</a></li>
+     <li class="sub"><a href="#service-render">Render</a></li>
+     <li class="sub"><a href="#service-search">Search</a></li>
+     <li class="sub"><a href="#service-status">Status</a></li>
+   </ul>
+</div>
+
+<div id="content">
+<h1>Introduction</h1>
+   <p>
+	The SPASE Registry Server is a web application written in Java which provides resolver, 
+	search, render and download services for SPASE XML resource descriptions. It can also chain 
+	to other registry servers and aggregate all results, returning all matches in a self-organized network 
+	of registry servers.
+	</p>
+<div class="right"><img src="service-framework.gif" class="figure" /></div>
+	<p>
+The Registry Framework is depicted in the figure to the right.
+The metadata which is accessible from the services is stored in the local file system.
+It can be managed by a revision control system such as "git". There may also be some
+process that synchronizes the local instances of the metadata. This is external and
+independent of the registry services.
+</p>
+<p>
+The registry services access registered metadata to fulfill requests. For example, the "<a href="#service-status">status</a>"
+service reports on the contents of the metadata repository. The "<a href="#service-resolver">resolver</a>"
+locates a resource description that matches a given resource ID.  Other services rely on the "<a href="#service-resolver">resolver</a>"
+service to fulfil requests. These include "<a href="#service-downloader">downloader</a>" which retrieves data described by
+a resource description, "<a href="#service-render">render</a>" which prepares a resource description stored as XML for viewing
+in a web browser, and "<a href="#service-explorer">explorer</a>" which allows tree based navigation of the metadata respository.
+</p>
+<p>
+	The complete list of available services includes:<br>
+	   <div class="indent"><a href="#service-download">Download</a>: Retrieve and package all the source files associated with a resource.</div>
+	   <div class="indent"><a href="#service-explorer">Explorer</a>: A graphical tree based interface to the registries.</div>
+	   <div class="indent"><a href="#service-connect">Connect</a>: A graphical map of connections (associations) between resource descriptions.</div>
+	   <div class="indent"><a href="#service-render">Render</a>: Render a resource using a stylesheet.</div>
+	   <div class="indent"><a href="#service-resolver">Resolver</a>: Retrieve a resource description for a given resource ID 
+	   	or generates a list of resources matching a partial resource ID.</div>
+	   <div class="indent"><a href="#service-search">Search</a>: Scan a registry for resources containing one or more words.</div>
+	   <div class="indent"><a href="#service-status">Status</a>: Retrieve information about a registry.</div>
+	</p>
+	<p>
+		Most services can also be run from the command-line.
+	</p>
+
+ 
+<h2 id="installation">Installation</h2>
+<p>
+The Registry Server is packaged as a Web Application which can be installed on an application
+server such as Tomcat. The steps are:
+<ol>
+	<li>Download <a href="spase-registry-1.2.8.war">spase-registry-1.2.8.war</a></li>
+	<li>Place the "war" file in the web apps folder on your server</li>
+</ol>
+The services will be available at the path "/spase-registry-1.2.8" (or whatever name you give the ".war" file).
+</p>
+
+<h2 id="configuration">Configuration</h2>
+<p>
+The resolver service locates resource descriptions by mapping the "authority" portion 
+of a Resource ID to a location in the local files system, then using the path portion of 
+the resource ID to locate the resource description. The "collator" tool in the 
+<a href="../resource/index.html">Resource Tools</a> can be used to organize a collection of resource 
+descriptions consistent with the requirements for the resolver service.
+</p>
+<p>
+The authorities known to the services are set in the the "authority.conf" file located in the
+WEB-INF/conf folder. Each line in an "authority.conf" maps an
+authority name to a local file system path to the metadata. The format is
+"authority&nbsp;name&nbsp;&lt;Tab&gt;&nbsp;path". A path that begins with a "." is relative to the
+installation of the registry server. Lines beginning with a "#" are considered comments and ignored.
+</p>
+<p>
+	An "authority.conf" looks something like:
+<pre class="code">
+# Authority name path list
+# Maps authority names to local paths
+# Relative paths begin with a dot (.) and
+# are relative to the service instance (root of webapp)
+Example	./metadata/Example
+</pre>
+</p>
+	
+<h2 id="documentation">Documentation</h2>
+	<div>
+      On-line <a href="http://www.spase-group.org/tools/registry/api">class descriptions</a> for the registry server.
+   </div>
+   
+<h2 id="services">Services</h2>
+<p>
+	Individual services in the Registry Services Package.
+</p>
+
+<h3 id="service-resolver">Resolver</h3>
+<p>
+The <b>resolver</b> service is the central service for the Registry Server. 
+All other services, with the exception of <b>search</b> call the <b>resolver</b> service 
+to obtain metadata.
+</p>
+<p>
+A detail description of each service follows:
+</p>
+
+<h3 id="service-download">Download</h3>
+<p>
+Obtains a list of URLs associated with a resource by querying a registry 
+server, then downloads and packages all the source files. The collection 
+of files is packaged into a zip file and written to the output stream. 
+<br>
+
+Example:<br><br>
+<ul>
+<li>Granule Lists:
+	<ul>
+		<li>All granules: download?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S</li>
+		<li>Granules for August 2004: download?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;b=2004-08-01&amp;e=2004-08-31</li>
+	</ul>
+</li>
+</ul>
+</p>
+
+<h3 id="service-explorer">Registry Explorer</h3>
+<table class="clear"><tr><td>
+<p>A graphical tree based interface to the registries. 
+	The application calls the "resolver" service to populate and navigate through the tree.<br>
+	<br>
+</p>
+</td><td>
+<img src="explorer.gif">
+</td>
+</tr></table>
+
+
+<h3 id="service-connect">Connection Map</h3>
+<table class="clear"><tr><td>
+<p>A graphical map of connections (associations) between resource descriptions. <br>
+	Options:<br>
+	<ul>
+		<li>id: The resource ID of the starting node. This can be a partial ID (leading path).</li>
+		<li>x: The number of connecting nodes to display. Default: 1</li>
+	</ul>
+The application calls the "resolver" service to generate and navigate through the map.<br>
+<br>
+</p>
+</td><td>
+<img src="connect.gif">
+</td>
+</tr></table>
+
+<h3 id="service-render">Render</h3>
+<p>
+Render a resource using a stylesheet. 
+<br>
+Example:<br><br>
+<ul>
+<li>Render:
+	<ul>
+		<li>Just resource: render?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S</li>
+		<li>Full (recursive): render?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;f=yes</li>
+   </ul>
+</ul>			
+</p>
+
+<h3 id="service-resolver">Resolver</h3>
+<p>
+Resolver retrieves a resource description for a given resource ID or generates a list 
+of resources at a given partial resource ID location. 
+<br>
+Example:<br><br>
+<ul>
+<li>Help: resolver?h=yes</a></li>
+<li>Tree: resolver?i=spase://Example/NumericalData&amp;t=yes</li>
+
+<li>Resource Description:<br>
+	<ul>
+		<li>Just resource: resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S</li>
+		<li>Full (recursive): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;r=yes</li>
+	</ul>
+</li></ul>
+<ul>
+</p>
+
+<li>Granule:<br>
+	<ul>
+		<li>All: resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;g=yes</li>
+		<li>All (URL): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;u=yes</li>
+		<li>All (size): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;s=yes</li>
+
+		<li>For August 2004: resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;g=yes&amp;b=2004-08-01&amp;e=2004-08-31</li>
+		<li>For August 2004 (URL): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;g=yes&amp;b=2004-08-01&amp;e=2004-08-31&amp;u=yes</li>
+		<li>For August 2004 (size): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;g=yes&amp;b=2004-08-01&amp;e=2004-08-31&amp;s=yes</li>
+
+		<li>For August 2004 (with parent): resolver?id=spase://Example/NumericalData/Geotail/LEP/EDA.PT12S&amp;g=yes&amp;r=yes&amp;b=2004-08-01&amp;e=2004-08-31</li>
+	</ul>
+</li></ul>
+
+
+<h3 id="service-search">Search</h3>
+<p>
+Scan a registry for resources containing one or more words.
+<br>
+Example:<br><br>
+<ul>
+<li>Help: search?h=yes</li>
+<li>Render:
+	<ul>
+		<li>Geotail related: search?words=Geotail</li>
+   </ul>
+</ul>			
+</p>
+
+<h3 id="service-status">Status</h3>
+<p>
+Status retrieves information about a registry. 
+<br>
+Example:<br><br>
+<ul>
+<li>Help: status?h=yes</li>
+<li>Inventory:
+	<ul>
+		<li>Resource Class (1): status?a=Example&amp;i=1</li>
+		<li>Observatory (2): status?a=Example&amp;i=2</li>
+		<li>Instrument (3): status?a=Example&amp;i=3</li>
+	</ul>
+</li>
+<li>Updated:
+	<ul>
+		<li>In last 30 days<br>
+
+			<ul>
+				<li>Summary: status?a=Example&amp;u=yes&amp;b=30+days</li>
+				<li>Details: status?a=Example&amp;u=yes&amp;d=yes&amp;b=30+days</li>
+			</ul>
+
+		</li>
+		<li>Since 2009-01-01<br>
+			<ul>
+				<li>Summary: status?a=Example&amp;u=yes&amp;b=2009-01-01</li>
+				<li>Details: status?a=Example&amp;u=yes&amp;d=yes&amp;b=2009-01-01</li>
+
+			</ul>
+		</li>
+	</ul>
+</li></ul>
+</p>
+<p>
+Command-line Examples:
+<ul>
+<li>Example 1</li>
+</ul>
+</p>
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="../../services/naming-authority.html">List of Naming Authorities</a></li>
+	<li><a href="../stylesheet/index.html">XML Stylesheets</a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+<div class='clear'></div>
+</div>

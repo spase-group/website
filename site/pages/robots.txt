@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /registry
+Disallow: /data/search

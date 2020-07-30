@@ -1,0 +1,121 @@
+---
+title: SPASE Dictionary
+---
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Dictionary</h1>
+<div class='gradient_line_half'></div>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+<p>
+SPASE uses a controlled vocabulary to specify its metadata model. The terms in the SPASE vocabulary are maintained
+in a dictionary. 
+</p>
+
+<h1 id="base" class="page_title">SPASE Base Model</h1>
+<div class='gradient_line_half'></div>
+
+{{#with baseModelVersions }}
+	<p><b>Current Release</b> is
+	<a target="_blank" href="./spase-{{current.version}}.pdf">{{current.version}}</a> 
+	(<a target="_blank" href="{{assets}}/data/model/spase-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="./spase-{{current.version}}.pdf">PDF</a>),
+	released: {{current.released}},
+	<a href="{{assets}}/data/model/history.html">History of changes</a>
+	</p>
+
+	{{#if draft}}
+		<p><b>Draft version:</b><br>There is a draft version of the data model which
+			includes definitions under consideration for the next production release.
+		</p>
+		<p>The <a target="_blank" href="./spase-{{draft.version}}-draft.pdf">current draft</a> 
+		(<a target="_blank" href="{{assets}}/data/model/spase-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="./spase-{{draft.version}}-draft.pdf">PDF</a>),
+		version is {{draft.version}}, generated on: {{draft.released}}
+		</p>
+	{{else}}
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+	{{/if}}
+{{/with}}
+
+<p>Release Versions:</p>
+<table>
+	<tr>
+		<td bgcolor=#CCCCCC>Version</td><td bgcolor=#CCCCC>Link</td>
+	</tr>
+	{{#each (getFileList page.dirname "^spase-[0-9_.]*.pdf$" ) }}
+	<tr>
+		<td><a href="{{basename this}}">{{getFileVersion this "spase-" ".pdf"}}</a></td><td>{{@index}}: https://spase-group.org/docs/dictionary/{{basename this}}</td>
+	</tr>
+	{{/each}}
+</table>
+</p>
+
+<h1 id="simulation" class="page_title">SPASE Simulation Extensions</h1>
+<div class='gradient_line_half'></div>
+
+<p>
+{{#with simulationExtVersions }}
+	<p><b>Current Release</b> is
+	<a target="_blank" href="./spase-sim-{{current.version}}.pdf">{{current.version}}</a> 
+	(<a target="_blank" href="{{assets}}/data/simulation/spase-sim-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="./spase-sim-{{current.version}}.pdf">PDF</a>),
+	released: {{current.released}},
+	<a href="{{assets}}/data/simulation/history.html">History of changes</a>
+	</p>
+
+	{{#if draft}}
+		<p><b>Draft version:</b><br>There is a draft version of the data model which
+			includes definitions under consideration for the next production release.
+		</p>
+		<p>The <a target="_blank" href="./spase-sim-{{draft.version}}-draft.pdf">current draft</a> 
+		(<a target="_blank" href="{{assets}}/data/simulation/spase-sim-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="./spase-sim-{{draft.version}}-draft.pdf">PDF</a>),
+		version is {{draft.version}}, generated on: {{draft.released}}
+		</p>
+	{{else}}
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+	{{/if}}
+{{/with}}
+
+<p>Release Versions:</p>
+<table>
+	<tr>
+		<td bgcolor=#CCCCCC>Version</td><td bgcolor=#CCCCC>Link</td>
+	</tr>
+
+	{{#each (getFileList page.dirname "^spase-sim-[0-9_.]*.pdf$" ) }}
+	<tr>
+		<td><a href="{{basename this}}">{{getFileVersion this "spase-sim-" ".pdf"}}</a></td><td>{{@index}}: https://spase-group.org/docs/dictionary/{{basename this}}</td>
+	</tr>
+	{{/each}}
+
+</table>
+</p>
+   
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>
+Related Items
+</h2>
+<ul class='side_nav'>
+	<li><a href="{{assets}}/data/model">Base Model</a></li>
+	<li><a href="{{assets}}/data/model/schema">Base Model XML Schema</a></li>
+	<li><a href="{{assets}}/data/simulation">Simulation Extensions</a></li>
+	<li><a href="{{assets}}/data/simulation/schema">Simulation XML Schema</a></li>
+</ul>
+</div>
+</aside>
+</div>
+
+<div class='clear'></div>
+</div>

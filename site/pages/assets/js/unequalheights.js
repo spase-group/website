@@ -1,0 +1,1 @@
+!function(t){t.fn.unequalHeights=function(){this.each(function(){t(this).css({"min-height":0})})}}(jQuery);

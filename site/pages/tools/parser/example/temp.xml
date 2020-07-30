@@ -1,0 +1,20 @@
+<Catalog>
+   <ResourceID>spase://catalog/example</ResourceID>
+   <ResourceHeader>
+      <ResourceName>Example Catalog</ResourceName>
+      <AlternateName></AlternateName>
+      <ReleaseDate>2006-09-01T00:00:00</ReleaseDate>
+      <Description>
+			This is an example catalog description. All information is fictitious.
+			</Description>
+      <Acknowledgement></Acknowledgement>
+      <AssociationID></AssociationID>
+   </ResourceHeader>
+   <ProviderResourceName></ProviderResourceName>
+   <ProviderVersion></ProviderVersion>
+   <InstrumentID>spase://instrument/example</InstrumentID>
+   <PhenomenonType>Aurora</PhenomenonType>
+   <Caveats>This is fictious information.</Caveats>
+   <Keyword>Example</Keyword>
+   <InputResourceID>spase://data/example</InputResourceID>
+</Catalog>

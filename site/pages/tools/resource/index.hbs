@@ -1,0 +1,102 @@
+---
+title: SPASE Resource Tools
+---
+
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Resource Tools</h1>
+<div class='gradient_line_half'></div>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'><div id="sidebar">
+	<h3>Contents</h3>
+   <ul id="toc" class="toc">
+     <li class=""><a href="#installation">Intallation</a></li>
+     <li class=""><a href="#requirements">System Requirements</a></li>
+     <li class=""><a href="#tools">Tools</a></li>
+     <li class=""><a href="#documentation">Documentation</a></li>
+   </ul>
+</div>
+
+<div id="content">
+<h1>Introduction</h1>
+   <p>
+    The SPASE (Space Physics Archive Search and Extract) Resource Tools contains a set of 
+    command-line applications which can be used to generate, validate, referentially check, 
+    use and organize resource descriptions written in SPASE XML. 
+   </p>
+The SPASE Resource Tools is written Node.js and should run on any system with a 
+Node installed. 
+</p>
+<h3 id="installation">Installation</h3>
+<p>
+<pre class="code">npm install spase-resource-tools -g</pre>
+</p>
+<p>
+After installation the tools will be available at the command line. Each tool has a "spase-" prefix to distinguish it from any other similar tools.
+</p>
+<p>
+<h3 id="tools">Tools</h3>
+	<dt>
+	<table>
+		<tr><td style="white-space: nowrap">spase-collate</td><td>Separate each SPASE resource description in a file into a separate file stored in a folder tree according to the Resource ID.</td></tr>
+		<tr><td style="white-space: nowrap">spase-refcheck</td><td>Check resource identifiers and URLs for referential integrity.</td></tr>
+		<tr><td style="white-space: nowrap">spase-validate</td><td>Validate a SPASE resource description using a specified version of the data dictionary (XML schema).</td></tr>
+		<tr><td style="white-space: nowrap">spase-tree</td><td>List the file tree. Optionally list only files with a given extension.</td></tr>
+		<tr><td style="white-space: nowrap">spase-update-authority</td><td>Change the control authority in the ResourceID, add a PriorID and update ReleaseDate.</td></tr>
+		<tr><td style="white-space: nowrap">spase-doi-ref</td><td>Extract reference information in CSV format from a SPASE resource description.</td></tr>
+		<tr><td style="white-space: nowrap">spase-doi-request</td><td>Extract information from a SPASE resource description and generate a DataCite formated DOI request that can be submitted through EZID web service API.</td></tr>
+		<tr><td style="white-space: nowrap">spase-list-elem</td><td>List an element value in an XML document.</td></tr>
+		<tr><td style="white-space: nowrap">spase-restamp</td><td>Update the to the current data and time.</td></tr>
+		<tr><td style="white-space: nowrap">spase-pretty</td><td>Make a pretty XML file by formating the XML file with indentation and wrapping.</td></tr>
+	</table>
+	</dt>
+</p>
+<p>
+<h3 id="requirements">System Requirements</h3>
+<ul>
+	<li><a href="https://nodejs.org/">Node</a> 8 or higher</li>
+</ul>
+</p>
+
+For example, to run the validation tool use the command:
+<pre class="code">
+spase-validate {file.xml}
+</pre>
+<p>
+<h3 id="documentation">Documentation</h3>
+The SPASE resource tools are open source. Source code and additional documentation can be found on Github at:
+
+<pre class="code">
+<a href="https://github.com/spase-group/resource-tools-node">https://github.com/spase-group/resource-tools-node</a>
+</pre>
+</p>
+
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="../../services/naming-authority.html">List of Naming Authorities</a></li>
+	<li><a href="../stylesheet/index.html">XML Stylesheets</a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+<div class='clear'></div>
+</div>

@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Automatically created based on the dictionary stored at http://www.spase-group.org -->
+<!-- Extends the schema contained in "http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd" -->
+<!-- Version: 1.0.0 -->
+<!-- Generated: 2015-07-30 08:30:38.461 -->
+<xsd:schema
+	      targetNamespace="http://www.spase-group.org/data/schema"
+	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+	      xmlns:spase="http://www.spase-group.org/data/schema"
+	      elementFormDefault="qualified"
+	      attributeFormDefault="unqualified"
+	      vc:minVersion="1.1"
+	      version="1.0.0"
+>
+
+  
+      <!-- "override" does an implicit "include" of the referenced schema, then redfines the element -->
+      <xsd:override schemaLocation="http://www.spase-group.org/data/schema/spase-2_2_6.xsd">
+         
+      <xsd:complexType name="Spase">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Overrides Spase in the base schema. Space
+               Physics Archive Search and Extract (SPASE).
+               The outermost container or envelope for SPASE
+               metadata. This indicates the start of the
+               SPASE metadata.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Version" type="spase:Version" minOccurs="1" maxOccurs="1" />
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+               <xsd:element name="Catalog" type="spase:Catalog"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="DisplayData" type="spase:DisplayData"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="NumericalData" type="spase:NumericalData"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Document" type="spase:Document"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Granule" type="spase:Granule"  />
+               <xsd:element name="Instrument" type="spase:Instrument"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Observatory" type="spase:Observatory"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Person" type="spase:Person"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Registry" type="spase:Registry"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Repository" type="spase:Repository"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Service" type="spase:Service"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="Annotation" type="spase:Annotation"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="SimulationModel" type="spase:SimulationModel"  />
+               <xsd:element name="SimulationRun" type="spase:SimulationRun"  />
+               <xsd:element name="NumericalOutput" type="spase:NumericalOutput"  />
+               <xsd:element name="DisplayOutput" type="spase:DisplayOutput"  />
+            </xsd:choice>
+         </xsd:sequence>
+            <xsd:attribute name="lang" type="xsd:string" default="en"/>
+      </xsd:complexType>
+      <xsd:complexType name="Granule">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Overrides Granule in base schema. An accessible
+               portion of another resource. A Granule may
+               be composed of one or more physical pieces
+               (files) which are considered inseparable.
+               For example, a data storage format that maintains
+               metadata and binary data in separate, but
+               tightly coupled files. Granules should not
+               be used to group files that have simple relationships
+               or which are associated through a parent resource.
+               For example, each file containing a time interval
+               data for a Numerical Data resource would each
+               be considered a Granule. The ParentID of a
+               Granule resource must be a NumericalData resource.
+               The attributes of a Granule supersede the
+               corresponding attributes in the NumericalData
+               resource.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ReleaseDate" type="spase:ReleaseDate" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ExpirationDate" type="spase:ExpirationDate" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParentID" type="spase:ParentID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PriorID" type="spase:PriorID" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:choice minOccurs="1" maxOccurs="1">
+               <xsd:element name="StartDate" type="spase:StartDate"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="RegionBegin" type="spase:RegionBegin"  />
+            </xsd:choice>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+               <xsd:element name="StopDate" type="spase:StopDate"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="RegionEnd" type="spase:RegionEnd"  />
+            </xsd:choice>
+            <xsd:element name="Source" type="spase:Source" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+            <xsd:attribute name="lang" type="xsd:string" default="en"/>
+      </xsd:complexType>
+      <xsd:complexType name="Particle">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Overrides Particle in base schema. A description
+               of the types of particles observed in the
+               measurement. This includes both direct observations
+               and inferred observations.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Population" type="spase:Population" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ParticleType" type="spase:ParticleType" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParticleQuantity" type="spase:ParticleQuantity" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ChemicalFormula" type="spase:ChemicalFormula" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="AtomicNumber" type="spase:AtomicNumber" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PopulationMassNumber" type="spase:PopulationMassNumber" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PopulationChargeState" type="spase:PopulationChargeState" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="EnergyRange" type="spase:EnergyRange" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="AzimuthalAngleRange" type="spase:AzimuthalAngleRange" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PolarAngleRange" type="spase:PolarAngleRange" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+            <xsd:attribute name="lang" type="xsd:string" default="en"/>
+      </xsd:complexType>
+      </xsd:override>
+   
+   
+      <xsd:complexType name="SimulationModel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Descriptor of a simulation model: type of
+               numerical scheme, versions,...
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Versions" type="spase:Versions" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SimulationType" type="spase:SimulationType" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="CodeLanguage" type="spase:CodeLanguage" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TemporalDependence" type="spase:YN" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SpatialDescription" type="spase:SpatialDescription" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="InputProperties" type="spase:InputProperties" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="OutputParameters" type="spase:OutputParameters" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelURL" type="spase:ModelURL" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="Versions">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A container of one or more sets of version
+               information.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ModelVersion" type="spase:ModelVersion" minOccurs="0" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="ModelVersion">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The version number of the model.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="VersionTag" type="spase:VersionTag" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ReleaseDate" type="spase:ReleaseDate" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="SpatialDescription">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A characterization of the spatial extent over
+               which the measurement was taken.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Dimension" type="spase:Dimension" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="CoordinatesLabel" type="spase:CoordinatesLabel" minOccurs="0" maxOccurs="1" />
+            <xsd:choice minOccurs="1" maxOccurs="1">
+               <xsd:group ref="spase:CutsDescription" />
+               <xsd:group ref="spase:CubesDescription" />
+            </xsd:choice>
+            <xsd:element name="Step" type="spase:Step" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="InputProperties">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Properties 
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Property" type="spase:Property" minOccurs="0" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="Property">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A container of information regarding a property
+               of an input parameter.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Name" type="spase:Name" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PropertyQuantity" type="spase:ParameterQuantity" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PropertyLabel" type="spase:PropertyLabel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PropertyValue" type="spase:PropertyValue" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PropertyTableURL" type="spase:PropertyTableURL" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PropertyModel" type="spase:PropertyModel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelURL" type="spase:ModelURL" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="OutputParameters">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A container of information regarding the output
+               parameters of the simulation run.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Parameter" type="spase:Parameter" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="SimulationRun">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Description of a simulation run, including
+               the code ID, the run spatial and temporal
+               description, and all the relevant inputs.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderResourceName" type="spase:ProviderResourceName" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderProcessingLevel" type="spase:ProviderProcessingLevel" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderVersion" type="spase:ProviderVersion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Model" type="spase:Model" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TemporalDependence" type="spase:YN" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="1" maxOccurs="unbounded" />
+            <xsd:element name="LikelihoodRating" type="spase:ConfidenceRating" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulationTime" type="spase:SimulationTime" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SimulationDomain" type="spase:SimulationDomain" minOccurs="0" maxOccurs="1" />
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+               <xsd:element name="RegionParameter" type="spase:RegionParameter"  />
+               <xsd:element name="InputParameter" type="spase:InputParameter"  />
+               <xsd:element name="InputPopulation" type="spase:InputPopulation"  />
+               <xsd:element name="InputField" type="spase:InputField"  />
+               <xsd:element name="InputProcess" type="spase:InputProcess"  />
+            </xsd:choice>
+            <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="Model">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Attributes of a model.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ModelID" type="spase:ModelID" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="VersionTag" type="spase:VersionTag" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="SimulationTime">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to the simulation time.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Duration" type="spase:Duration" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TimeStart" type="spase:TimeStart" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TimeStop" type="spase:TimeStop" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TimeStep" type="spase:TimeStep" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="DiagnosisTimeStep" type="spase:DiagnosisTimeStep" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="DiagnosisTimeStep">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Time at which a diagnosis is performed and
+               quantity saved.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="TimeStart" type="spase:TimeStart" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Duration" type="spase:Duration" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="SavedQuantity" type="spase:SavedQuantity" minOccurs="0" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="SimulationDomain">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to the simulation spatial
+               domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SpatialDimension" type="spase:SpatialDimension" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="VelocityDimension" type="spase:VelocityDimension" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="FieldDimension" type="spase:FieldDimension" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="CoordinatesLabel" type="spase:CoordinatesLabel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="GridStructure" type="spase:GridStructure" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="GridCellSize" type="spase:GridCellSize" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Symmetry" type="spase:Symmetry" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="BoundaryConditions" type="spase:BoundaryConditions" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="BoundaryConditions">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to the simulation boundaries.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ParticleBoundary" type="spase:ElementBoundary" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="FieldBoundary" type="spase:ElementBoundary" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="ElementBoundary">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to the simulation boundaries.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="FrontWall" type="spase:FrontWall" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="BackWall" type="spase:BackWall" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SideWall" type="spase:SideWall" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Obstacle" type="spase:Obstacle" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="RegionParameter">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Radius of the Region in the simulation.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Radius" type="spase:Radius" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="SubLongitude" type="spase:SubLongitude" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Period" type="spase:Period" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ObjectMass" type="spase:ObjectMass" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="InputTableURL" type="spase:InputTableURL" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Property" type="spase:Property" minOccurs="0" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="InputParameter">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A container of information regarding an input
+               parameter of the simulation run.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Name" type="spase:Name" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="InputTableURL" type="spase:InputTableURL" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParameterQuantity" type="spase:ParameterQuantity" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Property" type="spase:Property" minOccurs="1" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="InputPopulation">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Name" type="spase:Name" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Set" type="spase:Set" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParameterKey" type="spase:ParameterKey" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParticleType" type="spase:ParticleType" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ChemicalFormula" type="spase:ChemicalFormula" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="AtomicNumber" type="spase:AtomicNumber" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="PopulationMassNumber" type="spase:PopulationMassNumber" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PopulationChargeState" type="spase:PopulationChargeState" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PopulationDensity" type="spase:PopulationDensity" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PopulationTemperature" type="spase:PopulationTemperature" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="PopulationFlowSpeed" type="spase:PopulationFlowSpeed" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Distribution" type="spase:Distribution" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ProductionRate" type="spase:ProductionRate" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="TotalProductionRate" type="spase:TotalProductionRate" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="InputTableURL" type="spase:InputTableURL" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="DensityProfile" type="spase:DensityProfile" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelURL" type="spase:ModelURL" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="InputField">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to a field imposed in
+               the simulation
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Name" type="spase:Name" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Set" type="spase:Set" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParameterKey" type="spase:ParameterKey" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="FieldQuantity" type="spase:FieldQuantity" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="InputLabel" type="spase:InputLabel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="FieldValue" type="spase:FieldValue" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="InputTableURL" type="spase:InputTableURL" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="FieldModel" type="spase:FieldModel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelURL" type="spase:ModelURL" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="InputProcess">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Parameters associated to a chemical process
+               happening in the simulation
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="Name" type="spase:Name" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Set" type="spase:Set" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ParameterKey" type="spase:ParameterKey" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Description" type="spase:Description" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="ProcessType" type="spase:ProcessType" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProcessCoefficient" type="spase:ProcessCoefficient" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ProcessCoeffType" type="spase:ProcCoefType" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ProcessModel" type="spase:ProcessModel" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelURL" type="spase:ModelURL" minOccurs="0" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="NumericalOutput">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Data stored as numerical values in a specified
+               format. A Numerical Data resource is a type
+               of &quot;data product&quot; which is a set of data that
+               is uniformly processed and formatted, from
+               one or more instruments, typically spanning
+               the full duration of the observations of the
+               relevant instrument(s). A data product may
+               consist of a collection of granules of successive
+               time spans, but may be a single high-level
+               entity.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderResourceName" type="spase:ProviderResourceName" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderProcessingLevel" type="spase:ProviderProcessingLevel" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderVersion" type="spase:ProviderVersion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedInstrumentID" type="spase:SimulatedInstrumentID" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="MeasurementType" type="spase:MeasurementType" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:choice minOccurs="0" maxOccurs="1">
+               <xsd:element name="TemporalDescription" type="spase:TemporalDescription"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="SpatialDescription" type="spase:SpatialDescription"  />
+            </xsd:choice>
+            <xsd:element name="SpectralRange" type="spase:SpectralRange" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Parameter" type="spase:Parameter" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulationProduct" type="spase:Product" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Property" type="spase:Property" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+      </xsd:complexType>
+   
+      <xsd:complexType name="DisplayOutput">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A graphical representation of data wherein
+               the underlying numeric values are not (readily)
+               accessible for analysis.. Examples are line
+               plots and spectrograms. A Display Data resource
+               is a type of &quot;data product&quot; which is a set
+               of data that is uniformly processed and formatted,
+               from one or more instruments, typically spanning
+               the full duration of the observations of the
+               relevant instrument(s). A data product may
+               consist of a collection of granules of successive
+               time spans, but may be a single high-level
+               entity.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:sequence>
+            <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderResourceName" type="spase:ProviderResourceName" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderProcessingLevel" type="spase:ProviderProcessingLevel" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="ProviderVersion" type="spase:ProviderVersion" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedInstrumentID" type="spase:SimulatedInstrumentID" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="MeasurementType" type="spase:MeasurementType" minOccurs="1" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:choice minOccurs="0" maxOccurs="1">
+               <xsd:element name="TemporalDescription" type="spase:TemporalDescription"  />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+               <xsd:element name="SpatialDescription" type="spase:SpatialDescription"  />
+            </xsd:choice>
+            <xsd:element name="SpectralRange" type="spase:SpectralRange" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="DisplayCadence" type="spase:DisplayCadence" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulatedRegion" type="spase:SimulatedRegion" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="Parameter" type="spase:Parameter" minOccurs="0" maxOccurs="unbounded" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+            <xsd:element name="SimulationProduct" type="spase:Product" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Property" type="spase:Property" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="1" />   <!-- defined in http://www.spase-group.org/data/schema/spase-2_2_5-draft.xsd -->
+         </xsd:sequence>
+      </xsd:complexType>
+      <xsd:group name="CutsDescription">
+         <xsd:sequence>
+            <xsd:element name="PlaneNormalVector" type="spase:PlaneNormalVector" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="PlanePoint" type="spase:PlanePoint" minOccurs="1" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:group>
+      <xsd:group name="CubesDescription">
+         <xsd:sequence>
+            <xsd:element name="RegionBegin" type="spase:RegionBegin" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="RegionEnd" type="spase:RegionEnd" minOccurs="1" maxOccurs="1" />
+         </xsd:sequence>
+      </xsd:group>
+<!-- ================================
+      Dictionary Terms
+     ================================ -->
+      <xsd:simpleType name="BackWall">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Back wall of the simulation domain by which
+               the plasma flow may exit the simulation.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="ChemicalFormula">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Chemical formula representing a population
+               of particle.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="CodeLanguage">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Language in which a numerical code is written.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="CoordinatesLabel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the labels of each dimension
+               of the spatial domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeStringSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="DensityProfile">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Density profile of the particles in a population.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="Dimension">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The nnu8mber of items along one axis.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:integer" />
+      </xsd:simpleType>
+      <xsd:simpleType name="Distribution">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Velocity distribution of the particles in
+               a population.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="Duration">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Duration of the simulation.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:duration" />
+      </xsd:simpleType>
+      <xsd:simpleType name="FieldDimension">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Number of field dimensions in the simulation
+               domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:integer" />
+      </xsd:simpleType>
+      <xsd:simpleType name="FieldModel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Field model imposed in the simulation run.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="FieldValue">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the values of the input parameter.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeStringSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="FrontWall">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Front wall of the simulation domain by which
+               the plasma flow may be injected.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="GridCellSize">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the cell sizes in each dimension.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeFloatSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="GridStructure">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Structure of the simulation grid.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="InputLabel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the labels of each dimension
+               of the input parameter.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeStringSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="InputTableURL">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A URL to a table containing input parameters.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:anyURI" />
+      </xsd:simpleType>
+      <xsd:simpleType name="ModelID">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string defining the ID of the model.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeID" />
+      </xsd:simpleType>
+      <xsd:simpleType name="ModelURL">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               URL pointing toward the description of a model
+               used in the definition of a property or an
+               input.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:anyURI" />
+      </xsd:simpleType>
+      <xsd:complexType name="ObjectMass">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Mass of an object referenced as a simulated
+               region.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="Obstacle">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Obstacle in the simulation domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="Period">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A length or era of time. 
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="PlaneNormalVector">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A list of the component in each dimension
+               of the vector normal to a plane.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeFloatSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="PlanePoint">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A list of the component in each dimension
+               of a point in plane.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeFloatSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="Population">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A concise description of a particle population,
+               for references.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="PopulationChargeState">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Charge of a particle in a population, in units
+               of the charge of a proton. Charge state of
+               a bare proton = 1.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:double" />
+      </xsd:simpleType>
+      <xsd:complexType name="PopulationDensity">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The number of particles per unit volume.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="PopulationFlowSpeed">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The rate at which particles or energy is passing
+               through a unit area in a unit time.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="PopulationMassNumber">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The total number of protons and neutrons (together
+               known as nucleons) in an atomic nucleus.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="PopulationTemperature">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A measure of the kinetic energy of random
+               motion with respect to the average. Temperature
+               is properly defined only for an equilibrium
+               particle distribution (Maxwellian distribution).
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="ProcessCoefficient">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Coefficient associated to a chemical process.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="ProcessModel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Model used to describe a chemical process.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="ProductionRate">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The number of items that can be produced
+               during a given period of time.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="PropertyLabel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the labels of each dimension
+               of the property.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeStringSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="PropertyModel">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Model used to define a property.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="PropertyTableURL">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A URL to a table containing  property values.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:anyURI" />
+      </xsd:simpleType>
+      <xsd:simpleType name="PropertyValue">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A string list of the values of the property.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeStringSequence" />
+      </xsd:simpleType>
+      <xsd:complexType name="Radius">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The length of a line segment from a center
+               point to the perimeter.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="RegionBegin">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The values that define the start point of
+               a region.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeFloatSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="RegionEnd">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The values that define the ending point of
+               a region.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeFloatSequence" />
+      </xsd:simpleType>
+      <xsd:simpleType name="SideWall">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Side walls of the simulation domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:simpleType name="SimulatedInstrumentID">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The identifier of the a simulated instrument
+               description.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="spase:typeID" />
+      </xsd:simpleType>
+      <xsd:simpleType name="SpatialDimension">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Number of spatial dimensions in the simulation
+               domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:integer" />
+      </xsd:simpleType>
+      <xsd:simpleType name="Step">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Spatial step between two elements of the diagnosis.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="SubLongitude">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The longitude on the surface of an object
+               which is directly below another object.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="TimeStart">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Time at which the coverage by the element
+               start.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:time" />
+      </xsd:simpleType>
+      <xsd:simpleType name="TimeStep">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Time Step.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:duration" />
+      </xsd:simpleType>
+      <xsd:simpleType name="TimeStop">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Time at which the coverage by the element
+               stop.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:time" />
+      </xsd:simpleType>
+      <xsd:complexType name="TotalProductionRate">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The total number of items that can be produced
+               during a given period of time.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:simpleContent>
+            <xsd:restriction base="spase:typeValue" />
+      </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="VelocityDimension">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Number of velocity dimensions in the simulation
+               domain.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:integer" />
+      </xsd:simpleType>
+      <xsd:simpleType name="VersionTag">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               The text string for a version indicator.
+            </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+<!-- ================================
+      Lists
+     ================================ -->
+<!-- ==========================
+ParameterQuantity
+
+
+========================== -->
+      <xsd:simpleType name="ParameterQuantity">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:union
+memberTypes="spase:FieldQuantity spase:ParticleQuantity spase:MeasurementType spase:ParticleType spase:DirectionAngle spase:MixedQuantity spase:SpectralRange spase:WaveQuantity spase:WaveType spase:InstrumentType spase:ProcCoefType spase:ProcessType spase:Product spase:SupportQuantity"
+      />
+</xsd:simpleType>
+<!-- ==========================
+ProcCoefType
+
+Whether the simulation results are obtained
+from a stationary solution or are dynamically
+computed.
+========================== -->
+      <xsd:simpleType name="ProcCoefType">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Whether the simulation results are obtained
+               from a stationary solution or are dynamically
+               computed.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="CrossSection">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Cross section of the reaction, when the reaction
+                  implies the collision of two particles.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Frequency">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Other">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Rate">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Reaction rate: reaction production per unit
+                  of time.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+ProcessType
+
+Type of chemical process.
+========================== -->
+      <xsd:simpleType name="ProcessType">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Type of chemical process.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="ChargeExchange">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Chemical process involving a charge transfer
+                  from an ion (which becomes neutral) to a neutral
+                  (which becomes ionized).
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="DissociativeRecombination">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Chemical process by which an ion is neutralized
+                  by capturing an electron, and splits in two
+                  new neutral species.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="ElectronImpact">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Chemical process by which a neutral is ionized
+                  thanks to the energy from the impact of an
+                  electron.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="PhotoIonization">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Chemical process by which a neutral is ionized
+                  thanks to the energy from a photon.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+Product
+
+
+========================== -->
+      <xsd:simpleType name="Product">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="2DCuts">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="3DCubes">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Lines">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="SpatialSeries">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Spectra">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="TimeSeries">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+SavedQuantity
+
+Quantities that are saved during a given diagnosis.
+========================== -->
+      <xsd:simpleType name="SavedQuantity">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Quantities that are saved during a given diagnosis.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:union
+memberTypes="spase:FieldQuantity spase:ParticleQuantity spase:MixedQuantity spase:WaveQuantity spase:Product"
+      />
+</xsd:simpleType>
+<!-- ==========================
+SimulatedRegion
+
+Identifiers for areas of the physical world
+which may be occupied or observed.
+========================== -->
+      <xsd:simpleType name="SimulatedRegion">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Identifiers for areas of the physical world
+               which may be occupied or observed.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:union
+memberTypes="spase:Region spase:SpecificSimulatedRegion"
+      />
+</xsd:simpleType>
+<!-- ==========================
+SimulationType
+
+A characterization of the numerical scheme
+used in the simulation.
+========================== -->
+      <xsd:simpleType name="SimulationType">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A characterization of the numerical scheme
+               used in the simulation.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Hybrid">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  A numerical scheme simulating ions as particles
+                  and electrons as a fluid.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="MHD">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="PIC">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  A numerical scheme simulating ions and electrons
+                  as macroparticles.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Paraboloid">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  A shape generated by the rotation of a parabola
+                  around its axis of symmetry.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Test_Particle">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+SpecificSimulatedRegion
+
+Identifiers for areas of the physical world
+which may be occupied or observed.
+========================== -->
+      <xsd:simpleType name="SpecificSimulatedRegion">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Identifiers for areas of the physical world
+               which may be occupied or observed.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Callisto">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Enceladus">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Europa">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Ganymede">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  The biggest moon of Jupiter planet in our
+                  solar system.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Incident">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Direction-dependent property.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Io">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Planet">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Rhea">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Titan">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Title">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+Symmetry
+
+Symmetry of the simulation domain.
+========================== -->
+      <xsd:simpleType name="Symmetry">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Symmetry of the simulation domain.
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Axial">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Axial symmetry.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Central">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Central Symmetry.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="None">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Plane">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  Symmetry across a plane.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+<!-- ==========================
+YN
+
+Yes or No
+========================== -->
+      <xsd:simpleType name="YN">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Yes or No
+            </xsd:documentation>
+         </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="No">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+         <xsd:enumeration value="Yes">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+                  
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:enumeration>
+      </xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>
