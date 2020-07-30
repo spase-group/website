@@ -1,0 +1,1 @@
+!function(t){t.fn.equalHeights=function(e,i){return tallest=e?e:0,this.each(function(){t(this).outerHeight()>tallest&&(tallest=t(this).outerHeight())}),i&&tallest>i&&(tallest=i),this.each(function(){t(this).css({"min-height":tallest})})}}(jQuery);

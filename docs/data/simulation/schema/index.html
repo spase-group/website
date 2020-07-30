@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--
+  Base template that defines navigation/footers etc. 
+ -->
+<!--[if IE 9]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
+<html>
+<head>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+
+<title>SPASE Simulation Extensions XML Schema</title>
+<meta content='SPASE' property='og:site_name'>
+<meta content='SPASE Group' name='author'>
+<meta content='earth, heliosphere, magnetic fields, SPASE, Space Physics Archive Search and Extract, NASA, National Aeronautics and Space Administration, Caltech' name='keywords'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' name='description'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' property='og:description'>
+<meta content='Home' property='og:title'>
+<meta content='https://spase-group.org/' property='og:url'>
+<meta content='2017-10-12 12:34:56 UTC' property='og:updated_time'>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link rel="shortcut icon" href="../../../assets/images/icon.png" type="image/png">
+
+<link href="../../../assets/css/style.css" media="screen" rel="stylesheet" />
+<link href="../../../assets/css/dictionary.css" media="screen" rel="stylesheet" />
+<script src="../../../assets/js/actions.js"></script>
+</head>
+<body class='magazine_layout mobile_menu' id='home'>
+<div class='container' id='main_container'>
+
+<!-- Banner -->
+<div class='clearfix' id='head_wrapper'>
+<header class='clearfix' id='parent_header'>
+<div id='parent_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='../../../assets/images/logo-nasa@2x.png'>
+</a>
+<div id='product_logos'>
+<a class='logo' href='http://gsfc.nasa.gov' id='gsfc_logo' target='_blank'>Goddard Space Flight Center</a>
+&bull;
+<a class='logo' href='http://spdf.gsfc.nasa.gov' id='spdf_logo' target='_blank'>Space Physics Data Facility</a>
+</div>
+</div>
+</header>
+
+<header id='site_header'>
+<a class='visuallyhidden focusable' href='#site_body'>Skip Navigation</a>
+<a class='menu_button' href='javascript:void(0);'></a>
+<div class='clearfix' id='site_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='../../../assets/images/logo-nasa@2x.png'>
+</a>
+<div class='site_id_container clearfix'>
+<a href='../../../index.html' id='site_title'>
+<!-- = site_title -->
+SPASE
+</a>
+<a href='../../../index.html' id='site_subtitle'>
+<br>
+Space Physics Archive Search and Extract
+</a>
+</div>
+
+<!-- Search box -->
+<!--
+<form action='/search' id='site_search'>
+<input class='searchField' name='q' onblur="this.placeholder = 'Search SPASE'" onfocus="this.placeholder = ''" placeholder='Search SPASE' type='text'>
+<input class='searchSubmit' type='submit' value=''>
+</form>
+-->
+
+</div>
+</header>
+</div>
+
+<!-- Menus -->
+<div id='sticky_nav_spacer'></div>
+<div class='clearfix' id='global_nav_container'>
+<nav id='global_nav'>
+<ul id='nav'>
+
+	<li><a class='dark' href='../../../index.html' target='_self'>Home</a></li>
+
+	<li><a class='dark' href='../../../data/index.html' target='_self'>Data Model</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../../data/model/index.html' target='_self'>Base Model</a></li>
+				<li><a href='../../../data/simulation/index.html' target='_self'>Simulation Extensions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='../../../docs/index.html' target='_self'>Documents</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../../docs/dictionary/index.html' target='_self'>Dictionary</a></li>
+				<li><a href='../../../docs/conventions/index.html' target='_self'>Conventions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='../../../tools/index.html' target='_self'>Tools</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../../tools/validate/index.html' target='_self'>Validator</a></li>
+				<li><a href='../../../tools/editor/index.html' target='_self'>Editor</a></li>
+				<li><a href='../../../tools/idmaker/index.html' target='_self'>Resource ID Maker</a></li>
+				<li><a href='../../../tools/resource/index.html' target='_self'>Resource Tools</a></li>
+				<li><a href='../../../tools/registry/index.html' target='_self'>Registry Server</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='https://school.spase-group.org/index.html' target='_blank'>School</a></li>
+
+	<li><a class='dark' href='../../../services/index.html' target='_self'>Services</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='https://github.io/hpde/' target='_blank'>HPDE Metadata Registry</a></li>
+				<li><a href='https://hpde.io/' target='_blank'>HPDE Landing Pages</a></li>
+				<li><a href='../../../services/naming-authority.html' target='_self'>Naming Authorities</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a href='../../../about.html' target='_self'>About</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../../connect.html' target='_self'>Connect With Us</a></li>
+				<li><a href='../../../news.html' target='_self'>News</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class='gradient_line'></div>
+</nav>
+</div>
+
+<!-- Body -->
+
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Simulation Extensions XML Schema</h1>
+<div class='gradient_line_half'></div>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+<p>The SPASE ontology can be expressed in many forms. One of those forms is as an XML Schema.
+	An XML Schema expresses the constraints on the structure and content of an XML document.
+	Typically an XML Schema is stored in a file with an ".xsd" extension. 
+</p>
+<p>
+	When constructing an XML document the schema is referenced from the enclosing tag. 
+	For a SPASE document the enclosing tag has the form:
+<pre>
+&lt;Spase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xmlns="http://www.spase-group.org/data/schema" 
+     xsi:schemaLocation="http://www.spase-group.org/data/schema http://www.spase-group.org/data/schema/spase-sim-1.0.0.xsd"&gt;
+</pre>
+The "schemaLocation" maps the target namespace (in this case "http://www.spase-group.org/data/schema") to a schema document.
+There exists an XML Schema document for each version of the SPASE data model.
+</p>
+
+	<p><b>Current Release</b> is
+	<a target="_blank" href="../spase-sim-1.0.0/index.html">1.0.0</a> 
+	(<a target="_blank" href="../spase-sim-1.0.0/index.html">HTML</a>, <a target="_blank" href="../spase-sim-1.0.0.pdf">PDF</a>),
+	released: 2014-05-19,
+	<a href="../history.html">History of changes</a>
+	</p>
+
+		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
+
+	<p>
+	   <b>Release Versions:</b><br>
+		<table>
+			<tr>
+				<th bgcolor=#CCCCCC>Version</th><th class="pad-left" bgcolor=#CCCCCC>Documentation</th><th bgcolor=#CCCCC>"schemaLocation" Hint</th>
+			</tr>
+
+				<tr>
+				   <td><a target="_blank" href="../spase-sim-1.0.0/index.html">1.0.0</a></td>
+				   <td class="pad-left" nowrap>
+					 <a target="_blank" href="../spase-sim-1.0.0/index.html">HTML</a> 
+					 <a target="_blank" href="../spase-sim-1.0.0.pdf">PDF</a>
+				   </td>
+				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/schema/spase-sim-1.0.0.xsd">https://spase-group.org/data/schema/spase-sim-1.0.0.xsd</a></a></td>
+				</tr>
+		</table>
+	</p>
+	
+
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="../index.html">Simulation Extensions Documentation</a></li>
+	<li><a href="../../model/index.html">Base Model Documentation</a></li>
+	<li><a href="../../model/schema/index.html">Base Model XML Schema</a></li>
+</ul>
+</div>
+</aside>
+</div>
+
+<div class='clear'></div>
+</div>
+
+
+<!-- Footer -->
+<script src="../../../assets/js/equalheights.js"></script>
+<script src="../../../assets/js/unequalheights.js"></script>
+<script>
+  $(window).bind("load resize", function() {
+    if (viewportSize.getWidth() > 600){
+      $(".expanding_list_box").equalHeights();
+    } else {
+      $(".expanding_list_box").unequalHeights();
+    }
+  })
+</script>
+
+<footer id='site_footer'>
+<section class='upper_footer'>
+<div class='follow clearfix'>
+FOLLOW SPASE:
+<a class="github" target="_blank" href="https://github.com/spase-group"><img alt="Github logo@2x" src="../../../assets/images/github-logo@2x.png" /></a>
+<a class="twitter" target="_blank" href="https://twitter.com/SPASEOutreach"><img alt="Twitter logo@2x" src="../../../assets/images/twitter-logo@2x.png" /></a>
+<a class="youtube" target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw"><img alt="Youtube logo@2x" src="../../../assets/images/youtube-logo@2x.jpg" /></a>
+</div>
+<div class='footer_gradient_line'></div>
+<nav>
+<a href='http://www.jpl.nasa.gov/copyrights.cfm' target='_blank'>Privacy</a>
+<a href='../../../connect.html>Feedback</a>
+</nav>
+<div class='credits'>
+<p>
+Site manager and webmaster: 
+<a href="../../../connect.html">Todd King</a>
+<br>
+</p>
+</div>
+</section>
+
+</footer>
+</body>
+</html>
+

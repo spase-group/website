@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+  Base template that defines navigation/footers etc. 
+ -->
+<!--[if IE 9]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
+<html>
+<head>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+
+<title>SPASE Simulation XML Parser</title>
+<meta content='SPASE' property='og:site_name'>
+<meta content='SPASE Group' name='author'>
+<meta content='earth, heliosphere, magnetic fields, SPASE, Space Physics Archive Search and Extract, NASA, National Aeronautics and Space Administration, Caltech' name='keywords'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' name='description'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' property='og:description'>
+<meta content='Home' property='og:title'>
+<meta content='https://spase-group.org/' property='og:url'>
+<meta content='2017-10-12 12:34:56 UTC' property='og:updated_time'>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link rel="shortcut icon" href="../../assets/images/icon.png" type="image/png">
+
+<link href="../../assets/css/style.css" media="screen" rel="stylesheet" />
+<link href="../../assets/css/dictionary.css" media="screen" rel="stylesheet" />
+<script src="../../assets/js/actions.js"></script>
+</head>
+<body class='magazine_layout mobile_menu' id='home'>
+<div class='container' id='main_container'>
+
+<!-- Banner -->
+<div class='clearfix' id='head_wrapper'>
+<header class='clearfix' id='parent_header'>
+<div id='parent_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='../../assets/images/logo-nasa@2x.png'>
+</a>
+<div id='product_logos'>
+<a class='logo' href='http://gsfc.nasa.gov' id='gsfc_logo' target='_blank'>Goddard Space Flight Center</a>
+&bull;
+<a class='logo' href='http://spdf.gsfc.nasa.gov' id='spdf_logo' target='_blank'>Space Physics Data Facility</a>
+</div>
+</div>
+</header>
+
+<header id='site_header'>
+<a class='visuallyhidden focusable' href='#site_body'>Skip Navigation</a>
+<a class='menu_button' href='javascript:void(0);'></a>
+<div class='clearfix' id='site_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='../../assets/images/logo-nasa@2x.png'>
+</a>
+<div class='site_id_container clearfix'>
+<a href='../../index.html' id='site_title'>
+<!-- = site_title -->
+SPASE
+</a>
+<a href='../../index.html' id='site_subtitle'>
+<br>
+Space Physics Archive Search and Extract
+</a>
+</div>
+
+<!-- Search box -->
+<!--
+<form action='/search' id='site_search'>
+<input class='searchField' name='q' onblur="this.placeholder = 'Search SPASE'" onfocus="this.placeholder = ''" placeholder='Search SPASE' type='text'>
+<input class='searchSubmit' type='submit' value=''>
+</form>
+-->
+
+</div>
+</header>
+</div>
+
+<!-- Menus -->
+<div id='sticky_nav_spacer'></div>
+<div class='clearfix' id='global_nav_container'>
+<nav id='global_nav'>
+<ul id='nav'>
+
+	<li><a class='dark' href='../../index.html' target='_self'>Home</a></li>
+
+	<li><a class='dark' href='../../data/index.html' target='_self'>Data Model</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../data/model/index.html' target='_self'>Base Model</a></li>
+				<li><a href='../../data/simulation/index.html' target='_self'>Simulation Extensions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='../../docs/index.html' target='_self'>Documents</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../docs/dictionary/index.html' target='_self'>Dictionary</a></li>
+				<li><a href='../../docs/conventions/index.html' target='_self'>Conventions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='../../tools/index.html' target='_self'>Tools</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../tools/validate/index.html' target='_self'>Validator</a></li>
+				<li><a href='../../tools/editor/index.html' target='_self'>Editor</a></li>
+				<li><a href='../../tools/idmaker/index.html' target='_self'>Resource ID Maker</a></li>
+				<li><a href='../../tools/resource/index.html' target='_self'>Resource Tools</a></li>
+				<li><a href='../../tools/registry/index.html' target='_self'>Registry Server</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='https://school.spase-group.org/index.html' target='_blank'>School</a></li>
+
+	<li><a class='dark' href='../../services/index.html' target='_self'>Services</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='https://github.io/hpde/' target='_blank'>HPDE Metadata Registry</a></li>
+				<li><a href='https://hpde.io/' target='_blank'>HPDE Landing Pages</a></li>
+				<li><a href='../../services/naming-authority.html' target='_self'>Naming Authorities</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a href='../../about.html' target='_self'>About</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='../../connect.html' target='_self'>Connect With Us</a></li>
+				<li><a href='../../news.html' target='_self'>News</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class='gradient_line'></div>
+</nav>
+</div>
+
+<!-- Body -->
+
+
+<div id="sidebar">
+	<h3>Contents</h3>
+   <ul id="toc" class="toc">
+     <li class=""><a href="#documentation">Documentation</a></li>
+     <li class=""><a href="#application">Application</a></li>
+     <li class=""><a href="#example">Example XML</a></li>
+   </ul>
+</div>
+
+<div id="content">
+<h1>SPASE XML Parser</h1>
+   <p>
+	The SPASE XML parser for simulation resources is a collection of Java classes which can parse XML descriptions and
+	load the information into a directly accessible form.  The SPASE data model simulation extensions are organized into 
+	multiple groupings (resource) of information. In this implementation each grouping has 
+	a corresponding Java class. An envelope class called "Description" can load, parse and create
+	a corresponding collection of other classes to represent the XML file. During parsing a syntactical
+	validation is performed (i.e., are tag balanced, etc), recognized tags are processed and unrecognized 
+	tags are ignored. 
+	<p>
+	There is a "classic" and "JAXB" version of the parser. Both version provide similar functionality. 
+	The "classic" version is generated using a in-house tool.
+	The "JAXB" version is generated using version 2.0 of the 
+	<a href="https://jaxb.dev.java.net/">JAXB</a> compiler. 
+	To use the JAXB version you will also need the jar files included in the JAXB 
+	<a href="https://jaxb.dev.java.net/">reference implementation</a>.
+	The "JAXB" version is preferred. Versions labeled "draft" are not considered stable.
+	
+	<p>
+	<h3 id="documentation">Documentation</h3>
+	<dl>
+      <dt>On-line class descriptions for the parser collection.</dt>
+      <dd>
+      	<br>Classic versions (spase.parser.sim*): <a href="./api100">1.1.0</a>
+      	<br>JAXB versions (org.spase.parser.sim*): <a href="./jaxb/api110">1.1.0</a>
+ 		</dd>
+     </dl>
+    
+   <h3 id="application">Application</h3>
+   <dl>
+   	<dt>Jar files:</dt>
+  		<dd>
+  			<br>Classic versions (spase.parser.sim*):  
+   		<a href="./parser-sim-100.jar">1.0.0</a>
+   		<br>JAXB versions (org.spase.parser.sim*):
+   		<a href="./spase-jaxb-parser-sim-110.jar">1.0.0</a>
+   	</dd>
+   	<dd><br> The jar files contain source, documentation and compiled classes that implement the parser.</dd>
+   	<p>
+   	<dt></dt><dd>After downloading the classic version the command:<br><br> 
+   		<code>java spase.parser.sim{ver}.Description {xmlfil}</code> 
+   		<br><br>will parse and display the contents of {xmlfile} using parser version {ver}. 
+   		For example, possible values for {ver} is "100" for version 1.0.0.
+   		<p>Note: The class files were compiled using JDK1.5 and the source code uses features found only in JDK1.5 and above.</dd>
+   </dl>
+   
+   <h3 id="example">Example XML (Version 1.1.0 compliant)</h3>
+   <dl>
+   	<dt>None</dt>
+    </dl>
+
+</div>
+
+
+<!-- Footer -->
+<script src="../../assets/js/equalheights.js"></script>
+<script src="../../assets/js/unequalheights.js"></script>
+<script>
+  $(window).bind("load resize", function() {
+    if (viewportSize.getWidth() > 600){
+      $(".expanding_list_box").equalHeights();
+    } else {
+      $(".expanding_list_box").unequalHeights();
+    }
+  })
+</script>
+
+<footer id='site_footer'>
+<section class='upper_footer'>
+<div class='follow clearfix'>
+FOLLOW SPASE:
+<a class="github" target="_blank" href="https://github.com/spase-group"><img alt="Github logo@2x" src="../../assets/images/github-logo@2x.png" /></a>
+<a class="twitter" target="_blank" href="https://twitter.com/SPASEOutreach"><img alt="Twitter logo@2x" src="../../assets/images/twitter-logo@2x.png" /></a>
+<a class="youtube" target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw"><img alt="Youtube logo@2x" src="../../assets/images/youtube-logo@2x.jpg" /></a>
+</div>
+<div class='footer_gradient_line'></div>
+<nav>
+<a href='http://www.jpl.nasa.gov/copyrights.cfm' target='_blank'>Privacy</a>
+<a href='../../connect.html>Feedback</a>
+</nav>
+<div class='credits'>
+<p>
+Site manager and webmaster: 
+<a href="../../connect.html">Todd King</a>
+<br>
+</p>
+</div>
+</section>
+
+</footer>
+</body>
+</html>
+

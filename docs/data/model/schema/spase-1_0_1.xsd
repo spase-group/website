@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Automatically created based on the dictionary stored at http://www.spase-group.org -->
+<!-- Version: 1.0.1 -->
+<!-- Generated: 2008-09-30 07:59:18.778 -->
+<xsd:schema
+	      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	      targetNamespace="http://www.spase-group.org/data/schema"
+	      xmlns="http://www.spase-group.org/data/schema"
+	      elementFormDefault="qualified">
+<!-- ================================
+      Dictionary Terms
+     ================================ -->
+      <xsd:element name="Spase" type="xsd:string">
+         <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               
+            </xsd:documentation>
+         </xsd:annotation>
+      </xsd:element>
+<!-- ================================
+      Lists
+     ================================ -->
+<!-- ================================
+      Types
+     ================================ -->
+    <xsd:simpleType name="typeSequence">
+    <xsd:list itemType="xsd:integer"/>
+    </xsd:simpleType>
+</xsd:schema>

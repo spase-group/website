@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+  Base template that defines navigation/footers etc. 
+ -->
+<!--[if IE 9]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
+<html>
+<head>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+
+<title>SPASE Connect With Us</title>
+<meta content='SPASE' property='og:site_name'>
+<meta content='SPASE Group' name='author'>
+<meta content='earth, heliosphere, magnetic fields, SPASE, Space Physics Archive Search and Extract, NASA, National Aeronautics and Space Administration, Caltech' name='keywords'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' name='description'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' property='og:description'>
+<meta content='Home' property='og:title'>
+<meta content='https://spase-group.org/' property='og:url'>
+<meta content='2017-10-12 12:34:56 UTC' property='og:updated_time'>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link rel="shortcut icon" href="./assets/images/icon.png" type="image/png">
+
+<link href="./assets/css/style.css" media="screen" rel="stylesheet" />
+<link href="./assets/css/dictionary.css" media="screen" rel="stylesheet" />
+<script src="./assets/js/actions.js"></script>
+</head>
+<body class='magazine_layout mobile_menu' id='home'>
+<div class='container' id='main_container'>
+
+<!-- Banner -->
+<div class='clearfix' id='head_wrapper'>
+<header class='clearfix' id='parent_header'>
+<div id='parent_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='./assets/images/logo-nasa@2x.png'>
+</a>
+<div id='product_logos'>
+<a class='logo' href='http://gsfc.nasa.gov' id='gsfc_logo' target='_blank'>Goddard Space Flight Center</a>
+&bull;
+<a class='logo' href='http://spdf.gsfc.nasa.gov' id='spdf_logo' target='_blank'>Space Physics Data Facility</a>
+</div>
+</div>
+</header>
+
+<header id='site_header'>
+<a class='visuallyhidden focusable' href='#site_body'>Skip Navigation</a>
+<a class='menu_button' href='javascript:void(0);'></a>
+<div class='clearfix' id='site_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='./assets/images/logo-nasa@2x.png'>
+</a>
+<div class='site_id_container clearfix'>
+<a href='./index.html' id='site_title'>
+<!-- = site_title -->
+SPASE
+</a>
+<a href='./index.html' id='site_subtitle'>
+<br>
+Space Physics Archive Search and Extract
+</a>
+</div>
+
+<!-- Search box -->
+<!--
+<form action='/search' id='site_search'>
+<input class='searchField' name='q' onblur="this.placeholder = 'Search SPASE'" onfocus="this.placeholder = ''" placeholder='Search SPASE' type='text'>
+<input class='searchSubmit' type='submit' value=''>
+</form>
+-->
+
+</div>
+</header>
+</div>
+
+<!-- Menus -->
+<div id='sticky_nav_spacer'></div>
+<div class='clearfix' id='global_nav_container'>
+<nav id='global_nav'>
+<ul id='nav'>
+
+	<li><a class='dark' href='./index.html' target='_self'>Home</a></li>
+
+	<li><a class='dark' href='./data/index.html' target='_self'>Data Model</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./data/model/index.html' target='_self'>Base Model</a></li>
+				<li><a href='./data/simulation/index.html' target='_self'>Simulation Extensions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='./docs/index.html' target='_self'>Documents</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./docs/dictionary/index.html' target='_self'>Dictionary</a></li>
+				<li><a href='./docs/conventions/index.html' target='_self'>Conventions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='./tools/index.html' target='_self'>Tools</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./tools/validate/index.html' target='_self'>Validator</a></li>
+				<li><a href='./tools/editor/index.html' target='_self'>Editor</a></li>
+				<li><a href='./tools/idmaker/index.html' target='_self'>Resource ID Maker</a></li>
+				<li><a href='./tools/resource/index.html' target='_self'>Resource Tools</a></li>
+				<li><a href='./tools/registry/index.html' target='_self'>Registry Server</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='https://school.spase-group.org/index.html' target='_blank'>School</a></li>
+
+	<li><a class='dark' href='./services/index.html' target='_self'>Services</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='https://github.io/hpde/' target='_blank'>HPDE Metadata Registry</a></li>
+				<li><a href='https://hpde.io/' target='_blank'>HPDE Landing Pages</a></li>
+				<li><a href='./services/naming-authority.html' target='_self'>Naming Authorities</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a href='./about.html' target='_self'>About</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./connect.html' target='_self'>Connect With Us</a></li>
+				<li><a href='./news.html' target='_self'>News</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class='gradient_line'></div>
+</nav>
+</div>
+
+<!-- Body -->
+
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>Connect With Us</h1>
+<div class='gradient_line_half'></div>
+  	<p>
+  		The Space Physics Archive Search and Extract (SPASE) consortium is an international community of 
+  		scientists, specialists, information engineers and system designers who are endeavouring to
+  		create a standards and services to enable the open exchange of Heliophysics data.
+  	</p>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+
+   <h3 id="contents">Contents</h3>
+   <ul id="toc" class="toc">
+     <li class=""><a href="#Spase">SPASE Mailing Lists</a></li>
+		<ul>
+        <li><a href="#SPASE-General">General Discussions</a></li>
+        <li><a href="#SMWT">SPASE Metadata Working Team</a></li>
+        <li><a href="#SMWG">SPASE Metadata Working Group</a></li>
+		</ul>
+     <li class=""><a href="#HDMC">HDMC Mailing Lists</a></li>
+		<ul>
+        <li><a href="#HDMC-General">General Discussions</a></li>
+        <li><a href="#HDMC-Analytics">Analytics</a></li>
+        <li><a href="#HDMC-Eventlists">Eventlists</a></li>
+        <li><a href="#HDMC-Dataaccess">Data Access</a></li>
+        <li><a href="#HDMC-Registries">Registries</a></li>
+        <li><a href="#HDMC-Visualization">Visualization</a></li>
+		</ul>
+    </ul>
+
+<h2 id="Spase">SPASE Mailing Lists</h2>
+  	<p>
+  		The primary form of communication for SPASE is through e-mail. To join a SPASE discussion simply subscribe to the appropriate mailing list. SPASE also has regular telecons which are announced through the SPASE general discussion mailing list.
+  	</p>
+
+<div class="indent">
+  <h3 id="SPASE-General">SPASE General Discussions</h3>
+    <p>
+The main SPASE mailing is at:
+<pre>
+    spase@listserv.gsfc.nasa.gov 
+</pre>
+To subscribe send an e-mail to spase@listserv.gsfc.nasa.gov with
+
+<ul>
+    <li>Subject line blank.</li>
+    <li>a message body of:
+<pre>
+      subscribe spase your_email_address
+</pre>
+</li>
+</ul>
+Anyone is welcome to join. This is also where data model changes are first posted. There is a telecon held about twice a month. The times are announced on the "spase" Mailing list. Everyone can join the telecon and participate.
+</p>
+
+<h3 id="SMWT">SPASE Metadata Working Team (SMWT)</h3>
+<p>
+Under the auspices of the NASA HDMC, the SPASE Metadata Working Team (SMWT) has been formed with the primary objective of applying the SPASE metadata model to document and describe all electronically-accessible heliophysics data. 
+<pre>
+    <a class="ext" href="http://www.dolanbrau.com/dev/smwt/">http://www.dolanbrau.com/dev/smwt/</a>
+</pre>
+
+<h3 id="SMWG">SPASE Metadata Working Group (SMWG)</h3>
+<p>
+The SPASE Metadata Working Group (SMWT) discusses implementation issues, mostly focused on the generation of metadata and maintaining a common top level registry. Its maintained at:
+<pre>
+    <a class="ext" href="https://github.com/hpde">https://github.com/hpde</a>
+</pre>
+Discussions can be found at:
+<pre>
+    <a class="ext" href="http://groups.google.com/group/vxo-spase-smwg?hl=en">http://groups.google.com/group/vxo-spase-smwg?hl=en</a>
+</pre>
+email: vxo-spase-smwg@googlegroups.com
+</p>
+</p>
+
+</div>
+
+<h2 id="Spase">HDMC Mailing Lists</h2>
+  	<p>
+  		The Heliophysics Data and Model Consortium (HDMC) is a NASA group designed to coordinate
+  		the activities of NASA funded projects that are part of establishing an integrated Heliphysics Data 
+  		Environment (HPDE).
+  	</p>
+	
+<div class="indent">	
+   <h3 id="HDMC-General">HDMC General Discussions</h3>
+<p>
+Group to provide content of general interest and a common location for information about the NASA Heliophysics Data and Model Consortium
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc?hl=en&lnk=">http://groups.google.com/group/hdmc?hl=en&lnk=</a>
+</pre>
+email: hdmc@googlegroups.com
+      </p>
+   <h3 id="HDMC-Analytics">HDMC Analytics</h3>
+      <p>
+This forum is for the discussion of analytics issues among members of the HDMC (Heliophysics Data Model Consortium).
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc-analytics?hl=en&lnk=">http://groups.google.com/group/hdmc-analytics?hl=en&lnk=</a>
+</pre>
+email: hdmc-analytics@googlegroups.com
+      </p>
+
+   <h3 id="HDMC-Eventlists">HDMC Eventlists</h3>
+      <p>
+Scientists currently manually generate, manage and share lists of observations. The goal of this group is to improve list querying and enable annotating and intersecting lists of events across a full range of Heliophysics data sources, and leverage the services of the VxOs and SPDF.
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc-eventlists?hl=en&lnk=">http://groups.google.com/group/hdmc-eventlists?hl=en&lnk=</a>
+</pre>
+email: hdmc-eventlists@googlegroups.com
+      </p>
+
+      <h3 id="HDMC-Dataaccess">HDMC Data Access</h3>
+      <p>
+A forum for discussing techniques and tools to deal with diverse science data formats in the Heliophysics community. The ultimate aim is to jointly create easy-to-use mechanisms for obtaining diverse, distributed data in a format that is immediately useful for scientific analysis.
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc-dataaccess?hl=en&lnk=">http://groups.google.com/group/hdmc-dataaccess?hl=en&lnk=</a>
+</pre>
+email: hdmc-dataaccess@googlegroups.com
+      </p>
+
+      <h3 id="HDMC-Registries">HDMC Registries</h3>
+      <p>
+This forum is for the discussion of registry issues among members of the HDMC (Heliophysics Data Model Consortium).
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc-registries?hl=en&lnk=">http://groups.google.com/group/hdmc-registries?hl=en&lnk=</a>
+</pre>
+email: hdmc-registries@googlegroups.com
+      </p>
+
+      <h3 id="HDMC-Visualization">HDMC Visualization</h3>
+      <p>
+This is the email list for the HDMC working group on visualization.
+<pre>
+   <a class="ext" href="http://groups.google.com/group/hdmc-visualization?hl=en&lnk=">http://groups.google.com/group/hdmc-visualization?hl=en&lnk=</a>
+</pre>
+email: hdmc-visualization@googlegroups.com
+      </p>
+</div>
+
+</div>
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="./about.html">About Us</a></li>
+	<li><a href="./news.html">News</a></li>
+</ul>
+</div>
+</aside>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Follow Us On</h2>
+<ul class='side_nav'>
+	<li><a target="_blank" href="https://twitter.com/SPASEOutreach">Twitter <i class="fa fa-external-link"></i></a></li>
+	<li><a target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw">Youtube Channel <i class="fa fa-external-link"></i></a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+<div class='clear'></div>
+</div>
+
+<!-- Footer -->
+<script src="./assets/js/equalheights.js"></script>
+<script src="./assets/js/unequalheights.js"></script>
+<script>
+  $(window).bind("load resize", function() {
+    if (viewportSize.getWidth() > 600){
+      $(".expanding_list_box").equalHeights();
+    } else {
+      $(".expanding_list_box").unequalHeights();
+    }
+  })
+</script>
+
+<footer id='site_footer'>
+<section class='upper_footer'>
+<div class='follow clearfix'>
+FOLLOW SPASE:
+<a class="github" target="_blank" href="https://github.com/spase-group"><img alt="Github logo@2x" src="./assets/images/github-logo@2x.png" /></a>
+<a class="twitter" target="_blank" href="https://twitter.com/SPASEOutreach"><img alt="Twitter logo@2x" src="./assets/images/twitter-logo@2x.png" /></a>
+<a class="youtube" target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw"><img alt="Youtube logo@2x" src="./assets/images/youtube-logo@2x.jpg" /></a>
+</div>
+<div class='footer_gradient_line'></div>
+<nav>
+<a href='http://www.jpl.nasa.gov/copyrights.cfm' target='_blank'>Privacy</a>
+<a href='./connect.html>Feedback</a>
+</nav>
+<div class='credits'>
+<p>
+Site manager and webmaster: 
+<a href="./connect.html">Todd King</a>
+<br>
+</p>
+</div>
+</section>
+
+</footer>
+</body>
+</html>
+

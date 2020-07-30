@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Spase xmlns="http://www.spase-group.org/data/schema/spase-1_1_0.xsd"> 
+	<Version>1.1.0</Version> 
+	<NumericalData> 
+		<ResourceID>spase://data/Numercial</ResourceID> 
+		<ResourceHeader> 
+			<ResourceName>Example Numercial Data</ResourceName> 
+			<AlternateName />
+			<ReleaseDate>2006-09-01T00:00:00</ReleaseDate> 
+			<Description>
+			This is an example numercial data description. All information is fictitious.
+			</Description>
+			<Acknowledgement />
+			<Contact>
+				<PersonID>spase://person/Nasa</PersonID>
+				<Role>GeneralContact</Role>
+			</Contact>
+			<InformationURL>
+				<Name>Example Numercial Data</Name>
+				<URL>http://www.spase-group.org/catalog/</URL>
+				<Description>Information about the SPASE numercial data.</Description>
+			</InformationURL>
+			<AssociationID />
+		</ResourceHeader>
+		<AccessInformation>
+			<RepositoryID>spase://respository/example</RepositoryID>
+			<Availability>Online</Availability>
+			<AccessRights>Open</AccessRights>
+			<AccessURL>
+				<Name>Example Numerical Data</Name>
+				<URL>http://www.spase-group.org/data/numerical</URL>
+				<Description>Information about the SPASE numerical data.</Description>
+			</AccessURL>
+			<Format>Text</Format>
+			<Encoding>ASCII</Encoding>
+			<Acknowledgement>SPASE Consortium</Acknowledgement>
+		</AccessInformation>
+		<ProviderResourceName>ExampleMage</ProviderResourceName>
+		<ProviderProcessingLevel>Calibrated</ProviderProcessingLevel>
+		<ProviderVersion>1.0</ProviderVersion>
+		<InstrumentID>spase://instrument/example</InstrumentID>
+		<MeasurementType>MagneticField</MeasurementType>
+		<TemporalDescription>
+			<TimeSpan>
+				<StartDate>1985-03-01T00:00:00</StartDate>
+				<EndDate>1985-03-31T23:59:00</EndDate>
+			</TimeSpan>
+			<Cadence>PT1M</Cadence>
+			<Exposure>PT1S</Exposure>
+		</TemporalDescription>
+		<SpectralRange>Microwave</SpectralRange>
+		<InstrumentRegion>Earth.Magnetosheath</InstrumentRegion>
+		<ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+		<Caveats>This is fictious information.</Caveats>
+		<Keyword>Example</Keyword>
+		<InputResourceID />
+		<PhysicalParameter>
+			<Name>SAMPLE_TIME_UTC</Name>
+			<ParameterKey>SAMPLE_TIME_UTC</ParameterKey>
+			<Description>Sample UTC in the form DD MM YYYY hh mm ss where                      
+          DD   = day of month (01-31)
+          MM   = month of year (01-12)
+          YYYY = Gregorian Year AD
+          hh   = hour of day     (00:23)
+          mm   = minute of hour  (00-59)
+          ss   = second of minute (00-60).
+          </Description>
+			<Caveats />
+			<Cadence>PT1S</Cadence>
+			<Units>Seconds</Units>    
+			<UnitsConversion />
+			<Support>
+			  <Temporal />
+			</Support>
+		</PhysicalParameter>
+		<PhysicalParameter>
+			<Name>MAGNETIC_FIELD_VECTOR</Name>
+			<ParameterKey>MAGNETIC_FIELD_VECTOR</ParameterKey>
+			<Description>Magnetic field vector in GSE Coordinates (Bx, By, Bz).</Description>
+			<Caveats />
+			<Cadence>PT1S</Cadence>
+			<Units>nT</Units>    
+			<UnitsConversion />
+			<CoordinateSystem>
+				<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+				<CoordinateSystemName>GSE</CoordinateSystemName>
+			</CoordinateSystem>	
+			<Dimension>
+				<Size>3</Size>
+				<Description>Three component vector: x, y, z</Description>
+			</Dimension>
+			<Measured>
+				<Field>
+					<FieldQuantity>Magnetic</FieldQuantity>
+				</Field>
+			</Measured>
+		</PhysicalParameter>
+		<PhysicalParameter>
+			<Name>SPACECRAFT_POSITION_VECTOR</Name>
+			<ParameterKey>SPACECRAFT_POSITION_VECTOR</ParameterKey>
+			<Description>ISEE2 spacecraft location in GSE coordinates (X,Y,Z).</Description>
+			<Caveats></Caveats>
+			<Units>EARTH RADII = 6378.16 km</Units>    
+			<UnitsConversion></UnitsConversion>
+			<CoordinateSystem>
+				<CoordinateRepresentation>Cartesian</CoordinateRepresentation>
+				<CoordinateSystemName>GSE</CoordinateSystemName>
+			</CoordinateSystem>	
+			<Dimension>
+				<Size>3</Size>
+				<Description>Three component vector: x, y, z</Description>
+			</Dimension>
+			<Support>
+			   <Positional>
+			      <Orientation>X</Orientation>
+			      <Orientation>Y</Orientation>
+			      <Orientation>Z</Orientation>
+		      </Positional>
+			</Support>
+		</PhysicalParameter>
+	</NumericalData>
+</Spase>

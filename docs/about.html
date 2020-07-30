@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!--
+  Base template that defines navigation/footers etc. 
+ -->
+<!--[if IE 9]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie ie8" lang="en"> <![endif]-->
+<html>
+<head>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+
+<title>SPASE About Us</title>
+<meta content='SPASE' property='og:site_name'>
+<meta content='SPASE Group' name='author'>
+<meta content='earth, heliosphere, magnetic fields, SPASE, Space Physics Archive Search and Extract, NASA, National Aeronautics and Space Administration, Caltech' name='keywords'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' name='description'>
+<meta content='The Space Physics Archive Search and Extract (SPASE) effort is a Heliophysics community-based project with the goal of facilitating data search and retrieval across the Space and Solar Physics data environment with a common metadata language.' property='og:description'>
+<meta content='Home' property='og:title'>
+<meta content='https://spase-group.org/' property='og:url'>
+<meta content='2017-10-12 12:34:56 UTC' property='og:updated_time'>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600' rel='stylesheet prefetch' type='text/css'>
+<link rel="shortcut icon" href="./assets/images/icon.png" type="image/png">
+
+<link href="./assets/css/style.css" media="screen" rel="stylesheet" />
+<link href="./assets/css/dictionary.css" media="screen" rel="stylesheet" />
+<script src="./assets/js/actions.js"></script>
+</head>
+<body class='magazine_layout mobile_menu' id='home'>
+<div class='container' id='main_container'>
+
+<!-- Banner -->
+<div class='clearfix' id='head_wrapper'>
+<header class='clearfix' id='parent_header'>
+<div id='parent_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='./assets/images/logo-nasa@2x.png'>
+</a>
+<div id='product_logos'>
+<a class='logo' href='http://gsfc.nasa.gov' id='gsfc_logo' target='_blank'>Goddard Space Flight Center</a>
+&bull;
+<a class='logo' href='http://spdf.gsfc.nasa.gov' id='spdf_logo' target='_blank'>Space Physics Data Facility</a>
+</div>
+</div>
+</header>
+
+<header id='site_header'>
+<a class='visuallyhidden focusable' href='#site_body'>Skip Navigation</a>
+<a class='menu_button' href='javascript:void(0);'></a>
+<div class='clearfix' id='site_brand'>
+<a class='logo' href='http://www.nasa.gov' id='nasa_logo' target='_blank'>
+<img alt='NASA' src='./assets/images/logo-nasa@2x.png'>
+</a>
+<div class='site_id_container clearfix'>
+<a href='./index.html' id='site_title'>
+<!-- = site_title -->
+SPASE
+</a>
+<a href='./index.html' id='site_subtitle'>
+<br>
+Space Physics Archive Search and Extract
+</a>
+</div>
+
+<!-- Search box -->
+<!--
+<form action='/search' id='site_search'>
+<input class='searchField' name='q' onblur="this.placeholder = 'Search SPASE'" onfocus="this.placeholder = ''" placeholder='Search SPASE' type='text'>
+<input class='searchSubmit' type='submit' value=''>
+</form>
+-->
+
+</div>
+</header>
+</div>
+
+<!-- Menus -->
+<div id='sticky_nav_spacer'></div>
+<div class='clearfix' id='global_nav_container'>
+<nav id='global_nav'>
+<ul id='nav'>
+
+	<li><a class='dark' href='./index.html' target='_self'>Home</a></li>
+
+	<li><a class='dark' href='./data/index.html' target='_self'>Data Model</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./data/model/index.html' target='_self'>Base Model</a></li>
+				<li><a href='./data/simulation/index.html' target='_self'>Simulation Extensions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='./docs/index.html' target='_self'>Documents</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./docs/dictionary/index.html' target='_self'>Dictionary</a></li>
+				<li><a href='./docs/conventions/index.html' target='_self'>Conventions</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='./tools/index.html' target='_self'>Tools</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./tools/validate/index.html' target='_self'>Validator</a></li>
+				<li><a href='./tools/editor/index.html' target='_self'>Editor</a></li>
+				<li><a href='./tools/idmaker/index.html' target='_self'>Resource ID Maker</a></li>
+				<li><a href='./tools/resource/index.html' target='_self'>Resource Tools</a></li>
+				<li><a href='./tools/registry/index.html' target='_self'>Registry Server</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a class='dark' href='https://school.spase-group.org/index.html' target='_blank'>School</a></li>
+
+	<li><a class='dark' href='./services/index.html' target='_self'>Services</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='https://github.io/hpde/' target='_blank'>HPDE Metadata Registry</a></li>
+				<li><a href='https://hpde.io/' target='_blank'>HPDE Landing Pages</a></li>
+				<li><a href='./services/naming-authority.html' target='_self'>Naming Authorities</a></li>
+			</ul>
+		</div>
+	</li>
+
+	<li><a href='./about.html' target='_self'>About</a>
+		<div class='global_subnav_container'>
+			<ul class='subnav'>
+				<li><a href='./connect.html' target='_self'>Connect With Us</a></li>
+				<li><a href='./news.html' target='_self'>News</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</div>
+
+<div class='gradient_line'></div>
+</nav>
+</div>
+
+<!-- Body -->
+
+<div class='clearfix' id='site_body' role='main'>
+<div class='clearfix' id='primary_column'>
+
+<header id='page_header'>
+<h1 class='page_title'>About</h1>
+<div class='gradient_line_half'></div>
+  	<p>
+  		The Space Physics Archive Search and Extract (SPASE) consortium is an international community of 
+  		scientists, specialists, information engineers and system designers who are endeavouring to
+  		create a standards and services to enable the open exchange of Heliophysics data.
+  	</p>
+</header>
+
+<section id='page_body'>
+<article class='page_body_article'>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+<h2>Consortium Participants</h2>
+<p>
+Many people from a wide range of organizations have participated in the SPASE consortium. The origanizations include:
+</p>	
+<ul>
+<li>Augsburg College</li>
+<li>California Institute of Technology (CalTech)</li>
+<li>Centre de Donn&egrave;es de la Physique des Plasmas (CDPP)</li>
+<li>Istituto Nazionale di Astrofisica (INAF)</li>
+<li>Japan Aerospace eXploration Agency (JAXA) - STP/Ehime</li>
+<li>Japan's Inter-university Upper atmosphere Global Observation NETwork (IUGONET)</li>
+<li>Jet Propulsion Laboratory (JPL)</li>
+<li>John Hopkins University/Applied Physics Laboratory (JHU/APL)</li>
+<li>George Mason University</li>
+<li>Goddard Space Flight Center (GSFC)</li>
+<li>National Aeronautics and Space Administration (NASA) HQ</li>
+<li>National Oceanic and Atmospheric Administration (NOAA)</li>
+<li>NOAA's National Geophysics Data Center (NGDC)</li>
+<li>Rutherford Appleton Laboratory (RAL)</li>
+<li>Stanford University</li>
+<li>Southwest Research Institute (SwRI)</li>
+<li>University of California, Los Angeles (UCLA)</li>
+</ul>
+
+<h2>SPASE Inside</h2>
+<p>
+Systems that use SPASE compliant metadata to enable search
+services, data discovery or SPASE registry services can display
+the [SPASE Inside](spase-inside.jsp) logo.
+</p>
+<p>
+Current systems that use SPASE Inside.
+</p>
+<h3>United States: NASA's Heliophysics division</h3>
+
+   <div class="topic">HPDE Repository (<a href="https://github.com/hpde/">https://github.com/hpde/</a>)</div>
+   <div class="indent">
+      Provides comprehensive access to all registered metadata in NASA's 
+      Heliophysics Division.
+   </div>
+
+   <div class="topic">HPDE Landing Page (<a href="https://hpde.io/">https://hpde.io/</a>)></div>
+   <div class="indent">
+      Formatted information about each registered resource in the HPDE repositories.
+   </div> 
+
+   <div class="topic">Heliophysics Data Portal (formerly VSPO) (<a href="http://heliophysicsdata.gsfc.nasa.gov/">http://heliophysicsdata.gsfc.nasa.gov/</a>)</div>
+   <div class="indent">
+      Provides a quick and easy way to find and access a comprehensive set of NASA and other datasets, images, 
+      movies, and associated services
+   </div>
+   </div>
+
+   <h4> Old and Deprecated Systems</h4>
+
+<p>These systems formed the original discipline oriented core of the the nascent heliophysics data environment.
+They are now deprecated and may or may not still be functioning.
+</p>
+
+	<div class="indent">
+   <div class="topic">NASA Repository (<a href="https://github.com/hpde/NASA/">https://github.com/hpde/NASA/</a>)</div>
+   <div class="indent">
+      Provides uniform metadata for NASA's heliopheric data sets
+   </div>
+   
+
+   <div class="topic">Virtual Heliospheric Observatory (<a href="http://vho.nasa.gov/">http://vho.nasa.gov/</a>)</div>
+   <div class="indent">
+      Provides uniform metadata for heliopheric data sets and actively collaborates with the Virtual Energetic Particle Observatory and 
+      the Virtual Waves Observatory to enable access to energetic particle and waves data
+   </div>
+   
+   <div class="topic">Virtual Energetic Particle Observatory (<href="http://vepo.gsfc.nasa.gov/">http://vepo.gsfc.nasa.gov/</a>)</div>
+   <div class="indent">
+      Provides discovery, access, understandability, and usability of energetic particle data products from 
+      selected spacecraft and sub-orbital instruments
+   </div>
+   
+   <div class="topic">Virtual Magnetospheric Observatory at Goddard (VMO/G) (<a href="http://vmo.nasa.gov/">http://vmo.nasa.gov/</a>)</div>
+   <div class="indent">
+      Provides discovery and access to magnetospheric data sets from both spacecraft and ground observatories. 
+   </div>
+   <div class="topic">
+   Virtual Magnetospheric Observatory at UCLA (VMO/U) (<a href="http://vmo.igpp.ucla.edu/">http://vmo.igpp.ucla.edu/</a>)</div>
+   <div class="indent">
+      Provides discovery and access toheliospheric and magnetospheric data sets from both spacecraft and ground observatories. 
+   </div>
+   
+   <div class="topic">Virtual Model Repository (VMR) (<a href="http://vmr.engin.umich.edu/">http://vmr.engin.umich.edu/</a>)</div>
+   <div class="indent">
+      Enables open access to model output used in support of published papers, makes computational model results available to the general community and provides intuitive data-model comparisons and Virtual Radiation Belt Observatory (ViRBO) (http://virbo.org/)
+   </div>
+   
+   <div class="topic">Virtual Wave Observatory</a> (VWO) (<a href="http://vwo.gsfc.nasa.gov/">http://vwo.gsfc.nasa.gov/</a>)</div>
+   <div class="indent">
+      Makes Heliophysics wave data searchable, understandable and usable by the scientific community
+   </div>
+   
+   <div class="topic">Magnetogram Analysis for the Network of Geophysical Observatories (MANGO) (<a href="http://mango.igpp.ucla.edu"></div>http://mango.igpp.ucla.edu</a>)
+   <div class="indent">
+      Provides discovery and access to magnetospheric data from world-wide ground-based observatories.
+   </div>
+
+   </div>
+   
+<h3>Canada</h3>
+   
+   <div class="indent">
+   
+   <div class="topic">AUTUMN Virtual Magnetic Observatory (<a href="http://autumn.athabascau.ca/">http://autumn.athabascau.ca/</a>)</div>
+   <div class="indent">
+      Provides access to data from the Athabasca University Geophysical Observatory (AUGO).
+   </div>
+   
+   <div class="topic">Canadian Space Science Data Portal (CSSDP) (<a href="https://cssdp.ca/">https://cssdp.ca/</a>)</div>
+   <div class="indent">
+      Enable and simplify researcher access to space science analytic tools and data.
+   </div>
+
+   </div>
+   
+<h3>Japan</h3>
+   
+   <div class="indent">
+
+   <div class="topic">IUGONET (<a href="http://www.iugonet.org/en/mdformat.html">http://www.iugonet.org/en/mdformat.html</a>)</div>
+   <div class="indent">
+      Provide a unified metadata database and seamless data environment for ground-based observations of the upper atmosphere. acquired by a global network of radars, magnetometers, optical sensors, helioscopes, etc., and stored individual data bases.
+	</div>
+
+	</div>
+	
+<h3>Europe</h3>
+   <div class="indent">
+
+   <div class="topic">Centre de Donn�e la Physique des Plasmas (CDPP) (<a href="http://www.cdpp.eu/">http://www.cdpp.eu/</a>)<br/>
+   Automated Multi-Dataset Analysis (AMDA) (<a href="http://amda.cdpp.eu/">http://amda.cdpp.eu/</a>)</div>
+   <div class="indent">
+      Provide integrated analysis of multi-point and multi-instrument data 
+      for case studies and statistical studies of plasmas in space physics.
+   </div>
+   
+   <div class="topic">German Research Centre for Geosciences (<a href="http://www.gfz-potsdam.de/portal/gfz/home">http://www.gfz-potsdam.de/portal/gfz/home</a>)<br/>
+   Information System and Data Center for geoscientific data (http://isdc.gfz-potsdam.de/</a>)</div>
+   <div class="indent">
+      An access point for all manner of geoscientific geodata, its corresponding metadata, scientific 
+      documentation and software tools. The majority of the data and information, the portal currently 
+      offers to the public, are global geomonitoring products such as satellite orbit and Earth gravity 
+      field data as well as geomagnetic and atmospheric data for the exploration.
+   </div>
+   <div class="indent">
+      Exploring Semantic web ontologies for use with reasoners and semantic searches.
+   </div>
+
+   <div class="topic">EU Framework 7 Projects</div>
+
+   <div class="topic">near-Earth space data infrastructure for e-Science (ESPAS) (<a href="http://www.espas-fp7.eu/">http://www.espas-fp7.eu/</a>)</div>
+   <div class="indent">
+      An e-Infrastructure to support access to observations, modeling and prediction of the 
+      near-Earth space environment extending from the Earth's atmosphere up to the outer radiation belts.
+   </div>
+
+   <div class="topic">IMPEx (<a href="http://impex-fp7.oeaw.ac.at/">http://impex-fp7.oeaw.ac.at/</a>)</div>
+   <div class="indent">
+       An integrated interactive computational framework where data from 
+          planetary missions will be interconnected with numerical models.
+   </div>
+   
+   </div>
+</div>
+
+<h2> History</h2>
+
+<div class="topic">1998 - ISTP</div>
+<div class="indent">
+	The SPASE effort has its root in the data handling 
+	session of the ISTP workshop held at RAL in 1998, when on 
+	Sept 26 a resolution was passed calling on the "larger 
+	data centers" to "do something" to make data more 
+	accessible. 
+</div>
+
+<div class="topic">2001 - AISRP</div>
+<div class="indent">
+Early in 2001 a breadboard interoperability test bed was 
+implemented between NSSDC and CDPP/CNES, and later that 
+year, in response to an AO from NASA AISRP ROSS (Applied 
+Information Systems Research Program, Research Opportunities 
+in Space Science), a proposal entitled "A Space Physics 
+Archive Search Engine (SPASE)" was submitted jointly by 
+NSSDC, SwRI, RAL and CDPP. 
+</div>
+
+<div class="topic">2002 - Grassroots</div>
+<div class="indent">
+While this proposal was not funded a volunteer effort 
+continued and attracted broader participation. It was 
+recognized that a data model was needed to establish an 
+"interlingua" to share resources across the entire space 
+physics domain. The goals of this effort were defined in 
+late 2002 and the new moniker of Space Physics Archive 
+Search and Extract (SPASE) was adopted.
+</div>
+
+<div class="topic">2003 - Open Community � NASA LWS</div>
+<div class="indent">
+In 2003 the effort was organized as an international 
+consortium with an open invitation for anyone in the 
+community to participate. U.S. participants in SPASE were 
+funded by NASA in July 2005 which helped accelerate the 
+effort. 
+</div>
+
+<div class="topic">2005 - Release 1.0</div>
+<div class="indent">
+In release of the SPASE data model. November 22, 2005. 
+</div>
+
+<div class="topic">2006 - Release 1.1.0</div>
+<div class="indent">
+In response to community feedback, the data model was 
+improved. In that same year NASA solicited proposals to establish 
+thematic virtual observatories for the heliophysics 
+community and SPASE was adopted as the metadata standard to 
+enable interoperability. Released August 31, 2006.
+</div>
+
+<div class="topic">2007 � Release 1.2.0</div>
+<div class="indent">
+Based on feedback from the community and from the selected 
+virtual observatories the data model was further refined and 
+version 1.2.0 was released in May 22, 2007. 
+</div>
+
+<div class="topic">2009 � Release 2.0.0</div>
+<div class="indent">
+After a period of use in NASA's VxOs the model was 
+streamlined and enhanced to support a wider range of 
+resources. Released April 15, 2009.
+</div>
+
+<div class="topic">2010 � Release 2.1.0</div>
+<div class="indent">
+	Additions were made to support a wider range of phenomenom types
+	and particle attributes. Some grammar changes were made, most important
+	was changing "Qualifier" to "Component" which more accurately represented
+	the concept. Released March 18, 2010
+</div>
+
+<div class="topic">2011 � Release 2.2.0</div>
+<div class="indent">
+	Added "Excel" as an allowed format, improved Render Hints, updated definitions,
+	and added support for referencing resources in cloud storage. Additional terms 
+	were included to improved the ability describe solar data. Released January 6, 2011.
+</div>
+
+<div class="topic">2011 � Release 2.2.1</div>
+<div class="indent">
+	Added "core", "halo", "strahl" and "superhalo" to the dictionary and to "Qualifier". 
+	Released August 18, 2011.
+</div>
+
+<div class="topic">2014 � Simulation Extensions 1.0.0</div>
+<div class="indent">
+	Release the IMPEx developed Simulation Extensions. 
+	Released May 19, 2014.
+</div>
+
+<div class="topic">2015 � Release 2.2.3</div>
+<div class="indent">
+	Fully integrated support for extensions.
+	Released May 31, 2015.
+</div>
+
+<div class="topic">2018 � Release 2.3.0</div>
+<div class="indent">
+	Support for DOI and HAPI.
+	Released May 31, 2018.
+</div>
+
+</section>
+</article>
+</section>
+</div>
+
+<div id='secondary_column'>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Related Items</h2>
+<ul class='side_nav'>
+	<li><a href="./connect.html">Connect With Us</a></li>
+	<li><a href="./news.html">News</a></li>
+</ul>
+</div>
+</aside>
+
+<aside class='desktop_sidenav' id='sidenav'>
+<div class='boxed'>
+<h2>Follow Us On</h2>
+<ul class='side_nav'>
+	<li><a target="_blank" href="https://twitter.com/SPASEOutreach">Twitter <i class="fa fa-external-link"></i></a></li>
+	<li><a target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw">Youtube Channel <i class="fa fa-external-link"></i></a></li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+<div class='clear'></div>
+</div>
+
+<!-- Footer -->
+<script src="./assets/js/equalheights.js"></script>
+<script src="./assets/js/unequalheights.js"></script>
+<script>
+  $(window).bind("load resize", function() {
+    if (viewportSize.getWidth() > 600){
+      $(".expanding_list_box").equalHeights();
+    } else {
+      $(".expanding_list_box").unequalHeights();
+    }
+  })
+</script>
+
+<footer id='site_footer'>
+<section class='upper_footer'>
+<div class='follow clearfix'>
+FOLLOW SPASE:
+<a class="github" target="_blank" href="https://github.com/spase-group"><img alt="Github logo@2x" src="./assets/images/github-logo@2x.png" /></a>
+<a class="twitter" target="_blank" href="https://twitter.com/SPASEOutreach"><img alt="Twitter logo@2x" src="./assets/images/twitter-logo@2x.png" /></a>
+<a class="youtube" target="_blank" href="https://www.youtube.com/channel/UCavaXaU18ggJlVegr_M-hdw"><img alt="Youtube logo@2x" src="./assets/images/youtube-logo@2x.jpg" /></a>
+</div>
+<div class='footer_gradient_line'></div>
+<nav>
+<a href='http://www.jpl.nasa.gov/copyrights.cfm' target='_blank'>Privacy</a>
+<a href='./connect.html>Feedback</a>
+</nav>
+<div class='credits'>
+<p>
+Site manager and webmaster: 
+<a href="./connect.html">Todd King</a>
+<br>
+</p>
+</div>
+</section>
+
+</footer>
+</body>
+</html>
+

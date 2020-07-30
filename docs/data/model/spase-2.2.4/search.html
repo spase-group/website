@@ -1,0 +1,8 @@
+<%! String PageTitle="SPASE - Search"; %>
+
+<jsp:useBean id="search" class="org.spase.model.servlet.Search" scope="application" />
+<% String modelContext = request.getParameter("context"); if(modelContext == null) modelContext = "spase-model";
+   search.init(application, request, modelContext);  search.reset(); %>
+<jsp:setProperty name="search" property="*" />
+	
+<%	search.doTask(out); %>

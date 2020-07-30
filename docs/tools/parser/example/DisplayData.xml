@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Spase xmlns="http://www.spase-group.org/data/schema/spase-1_1_0.xsd"> 
+	<Version>1.1.0</Version> 
+	<DisplayData> 
+		<ResourceID>spase://data/display</ResourceID> 
+		<ResourceHeader> 
+			<ResourceName>Example Display Data</ResourceName>
+			<AlternateName /> 
+			<ReleaseDate>2006-09-01T00:00:00</ReleaseDate> 
+			<Description>
+			This is an example display data description. All information is fictitious.
+			</Description>
+			<Acknowledgement />
+			<Contact>
+				<PersonID>spase://person/Nasa</PersonID>
+				<Role>GeneralContact</Role>
+			</Contact>
+			<InformationURL>
+				<Name>Example Display Data</Name>
+				<URL>http://www.spase-group.org/catalog/</URL>
+				<Description>Information about the SPASE display data.</Description>
+			</InformationURL>
+			<AssociationID />
+		</ResourceHeader>
+		<AccessInformation>
+			<RepositoryID>spase://respository/example</RepositoryID>
+			<Availability>Online</Availability>
+			<AccessRights>Open</AccessRights>
+			<AccessURL>
+				<Name>Example Display Data</Name>
+				<URL>http://www.spase-group.org/data/display</URL>
+				<Description>Information about the SPASE display data.</Description>
+			</AccessURL>
+			<Format>JPEG</Format>
+			<Encoding>None</Encoding>
+			<Acknowledgement>SPASE Consortium</Acknowledgement>
+		</AccessInformation>
+		<InstrumentID>spase://instrument/example</InstrumentID>
+		<MeasurementType>IonComposition</MeasurementType>
+		<TemporalDescription>
+			<TimeSpan>
+				<StartDate>2004-07-29T00:00:00</StartDate>
+				<EndDate>2006-07-20T23:59:59</EndDate>
+			</TimeSpan>
+			<Cadence>PT10M</Cadence>
+			<Exposure>PT10S</Exposure>
+		</TemporalDescription>
+		<SpectralRange>Microwave</SpectralRange>
+		<DisplayCadence>PT24H</DisplayCadence>
+		<InstrumentRegion>Earth.Magnetosheath</InstrumentRegion>
+		<ObservedRegion>Earth.Magnetosheath</ObservedRegion>
+		<Caveats>This is fictious information.</Caveats>
+		<Keyword>Example</Keyword>
+		<InputResourceID>spase://data/display</InputResourceID>
+	</DisplayData>
+</Spase>
