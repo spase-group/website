@@ -596,7 +596,7 @@ form.body_search:-ms-input-placeholder {
 }
 form#site_search .searchSubmit,
 form.body_search .searchSubmit {
-    background: url("/assets/images/search-icon-grey@2x.png") no-repeat 8px 9px transparent;
+    background: url("../images/search-icon-grey@2x.png") no-repeat 8px 9px transparent;
     background-size: 16px;
     position: absolute;
     right: 0;
@@ -765,14 +765,14 @@ form#site_search {
 }
 @media screen and (min-width: 769px) {
     #head_wrapper {
-        background: #000 url("/assets/images/primary_header.jpg") center left no-repeat;
+        background: #000 url("../images/primary_header.jpg") center left no-repeat;
         padding: 16px 16px 8px;
         height: 120px
     }
 }
 @media screen and (min-width: 1024px) {
     #head_wrapper {
-        background: #000 url("/assets/images/primary_header.jpg") center top no-repeat;
+        background: #000 url("../images/primary_header.jpg") center top no-repeat;
         padding: 16px 48px 8px;
         height: 220px
     }
@@ -853,7 +853,7 @@ form#site_search {
     display: inline-block;
     width: 17px;
     height: 17px;
-    background-image: url("/assets/images/follow-sprite@2x.png");
+    background-image: url("../images/follow-sprite@2x.png");
     background-size: 71px 35px;
     position: relative;
     top: 5px;
@@ -909,7 +909,7 @@ form#site_search {
     z-index: 100;
     top: 6px;
     right: 3px;
-    background: url("/assets/images/menu_icon.png") center center no-repeat
+    background: url("../images/menu_icon.png") center center no-repeat
 }
 @media screen and (min-width: 480px) {
     #site_header a.menu_button {
@@ -1549,16 +1549,16 @@ div.scrollingHotSpotLeft {
     min-width: 75px;
     width: 10%;
     height: 100%;
-    background-image: url(/assets/vendor/smoothdivscroll/big_transparent.gif);
+    background-image: url("../vendor/smoothdivscroll/big_transparent.gif");
     background-repeat: repeat;
     background-position: center center;
     position: absolute;
     z-index: 200;
     left: 0;
-    cursor: url(/assets/vendor/smoothdivscroll/cursors/cursor_arrow_left.png), url(/assets/vendor/smoothdivscroll/cursors/cursor_arrow_left.cur), w-resize
+    cursor: url("../vendor/smoothdivscroll/cursors/cursor_arrow_left.png"), url("../vendor/smoothdivscroll/cursors/cursor_arrow_left.cur"), w-resize
 }
 div.scrollingHotSpotLeftVisible {
-    background-image: url(/assets/vendor/smoothdivscroll/arrow_left.gif);
+    background-image: url("../vendor/smoothdivscroll/arrow_left.gif");
     background-color: #fff;
     background-repeat: no-repeat;
     opacity: 0.35;
@@ -1570,16 +1570,16 @@ div.scrollingHotSpotRight {
     min-width: 75px;
     width: 10%;
     height: 100%;
-    background-image: url(/assets/vendor/smoothdivscroll/big_transparent.gif);
+    background-image: url("../vendor/smoothdivscroll/big_transparent.gif");
     background-repeat: repeat;
     background-position: center center;
     position: absolute;
     z-index: 200;
     right: 0;
-    cursor: url(/assets/vendor/smoothdivscroll/cursors/cursor_arrow_right.png), url(/assets/vendor/smoothdivscroll/cursors/cursor_arrow_right.cur), e-resize
+    cursor: url("../vendor/smoothdivscroll/cursors/cursor_arrow_right.png"), url("../vendor/smoothdivscroll/cursors/cursor_arrow_right.cur"), e-resize
 }
 div.scrollingHotSpotRightVisible {
-    background-image: url(/assets/vendor/smoothdivscroll/arrow_right.gif);
+    background-image: url("../vendor/smoothdivscroll/arrow_right.gif");
     background-color: #fff;
     background-repeat: no-repeat;
     opacity: 0.35;
@@ -1869,12 +1869,12 @@ section.article_body .magazine_layout #mission .pullquote_attribution {
     padding-top: 20px;
     max-width: 1400px;
     height: 100%;
-    background: #000 url("/assets/images/images_video_bg_mobile.jpg") no-repeat
+    background: #000 url("../images/images_video_bg_mobile.jpg") no-repeat
 }
 @media screen and (min-width: 600px) {
     .magazine_layout #images_and_video section {
         padding-top: 50px;
-        background: #000 url("/assets/images/images_video_bg.jpg") no-repeat center
+        background: #000 url("../images/images_video_bg.jpg") no-repeat center
     }
 }
 .magazine_layout #images_and_video article {
@@ -2373,7 +2373,7 @@ section.article_body .carousel_item .description.pullquote_attribution {
         margin: 6px 8px 0;
         width: 10px;
         height: 15px;
-        background-image: url("/assets/images/arrows-carousel@2x.png");
+        background-image: url("../images/arrows-carousel@2x.png");
         background-size: 20px 30px;
         text-indent: -999px
     }
@@ -3921,13 +3921,13 @@ section.article_body .ie8 #secondary_column .pullquote_attribution aside.solid_b
     margin: -8px 0 -7px 0
 }
 .ie8 #parent_share .nav_item {
-    background-image: url("/assets/images/follow-sprite.png")
+    background-image: url("../images/follow-sprite.png")
 }
 .ie8 .magazine_layout #primary_column #ask form.ask_form .ask_question_submit {
-    background: url("/assets/images/question-blue.png") no-repeat 16px 12px transparent
+    background: url("../images/question-blue.png") no-repeat 16px 12px transparent
 }
 .ie8 #secondary_column #ask form.ask_form .ask_question_submit {
-    background: url("/assets/images/question-gray.png") no-repeat center center transparent
+    background: url("../images/question-gray.png") no-repeat center center transparent
 }
 .ie8 .magazine_layout #images_and_video article {
     background: transparent;
@@ -3936,20 +3936,20 @@ section.article_body .ie8 #secondary_column .pullquote_attribution aside.solid_b
     zoom: 1
 }
 .ie8 form#site_search .searchSubmit {
-    background: url("/assets/images/search-icon.png") no-repeat 8px 8px transparent
+    background: url("../images/search-icon.png") no-repeat 8px 8px transparent
 }
 .ie8 form.body_search .searchSubmit {
-    background: url("/assets/images/search-icon-grey.png") no-repeat 8px 8px transparent
+    background: url("../images/search-icon-grey.png") no-repeat 8px 8px transparent
 }
 .ie8 form#faq_search .searchSubmit {
-    background: url("/assets/images/question-blue.png") no-repeat 16px 13px transparent !important
+    background: url("../images/question-blue.png") no-repeat 16px 13px transparent !important
 }
 .ie8 .view_master_nav {
-    background-image: url("/assets/images/arrows-viewmaster.png")
+    background-image: url("../images/arrows-viewmaster.png")
 }
 .ie8 .carousel_container footer .carousel_nav .slick-next,
 .ie8 .carousel_container footer .carousel_nav .slick-prev {
-    background-image: url("/assets/images/arrows-carousel.png")
+    background-image: url("../images/arrows-carousel.png")
 }
 .ie8 .carousel_container footer .carousel_nav .slick-dots li button:before {
     color: gray
@@ -3966,7 +3966,7 @@ section.article_body .ie8 #secondary_column .pullquote_attribution aside.solid_b
 .ie8 #global_nav .gradient_line,
 .ie8 .share header .gradient_line,
 .ie8 .follow .gradient_line {
-    background: url("/assets/images/gradient_line.png") no-repeat top transparent;
+    background: url("../images/gradient_line.png") no-repeat top transparent;
     height: 1px;
     background-size: 80% 1px
 }
@@ -4006,7 +4006,7 @@ section.article_body .ie8 #secondary_column .pullquote_attribution aside.solid_b
     width: 100%
 }
 .mobile_video .img .play {
-    background: url("/assets/images/btn-play.png") center center no-repeat;
+    background: url("../images/btn-play.png") center center no-repeat;
     background-size: 40px 40px;
     position: absolute;
     display: block;
@@ -4222,7 +4222,7 @@ section.ask section {
     user-select: none
 }
 #main_container form#faq_search .searchSubmit {
-    background: url("/assets/images/question-blue@2x.png") no-repeat 16px 12px transparent;
+    background: url("../images/question-blue@2x.png") no-repeat 16px 12px transparent;
     background-size: 16px 22px;
     height: 48px;
     width: 51px;

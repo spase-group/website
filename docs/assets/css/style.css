@@ -1,3 +1,4 @@
+/*** uncss> filename: assets/css/style.css ***/
 /*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 
 article,
@@ -281,14 +282,14 @@ hr {
 }
 @media screen and (min-width: 769px) {
     #head_wrapper {
-        background: #000 url("/assets/images/primary_header.jpg") center left no-repeat;
+        background: #000 url("../images/primary_header.jpg") center left no-repeat;
         padding: 16px 16px 8px;
         height: 120px
     }
 }
 @media screen and (min-width: 1024px) {
     #head_wrapper {
-        background: #000 url("/assets/images/primary_header.jpg") center top no-repeat;
+        background: #000 url("../images/primary_header.jpg") center top no-repeat;
         padding: 16px 48px 8px;
         height: 220px
     }
@@ -346,7 +347,7 @@ hr {
     z-index: 100;
     top: 6px;
     right: 3px;
-    background: url("/assets/images/menu_icon.png") center center no-repeat
+    background: url("../images/menu_icon.png") center center no-repeat
 }
 @media screen and (min-width: 480px) {
     #site_header a.menu_button {
