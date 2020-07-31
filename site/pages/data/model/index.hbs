@@ -14,7 +14,7 @@ title: SPASE Base Model
 <div class='wysiwyg_content'>
 
 <p>The SPASE metadata model can be expressed in many forms. One of those forms is as an XML Schema.
-	An XML Schema is a machine readable form (see <a href="./schema/index.html">schema</a>). Here you can find
+	An XML Schema is a machine readable form (see <a href="../schema/index.html">schema</a>). Here you can find
 	human readable documentation which includes standard model diagrams.
 </p>
 
@@ -22,7 +22,9 @@ title: SPASE Base Model
 	<p><b>Search Dictionary: </b><a target="_blank" href="search.html">{{current.version}}</a></p> 
 	<p><b>Current Release</b> is
 	<a target="_blank" href="./spase-{{current.version}}/index.html">{{current.version}}</a> 
-	(<a target="_blank" href="./spase-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="./spase-{{current.version}}.pdf">PDF</a>),
+	(<a target="_blank" href="./spase-{{current.version}}/index.html">HTML</a>
+	<a target="_blank" href="./spase-{{current.version}}.pdf">PDF</a>
+	<a target="_blank" href="../schema/spase-{{current.version}}.xsd">XSD</a>),
 	released: {{current.released}},
 	<a href="history.html">History of changes</a>
 	</p>
@@ -32,7 +34,9 @@ title: SPASE Base Model
 			includes definitions under consideration for the next production release.
 		</p>
 		<p>The <a target="_blank" href="./spase-{{draft.version}}-draft/index.html">current draft</a> 
-		(<a target="_blank" href="./spase-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="./spase-{{draft.version}}-draft.pdf">PDF</a>),
+		(<a target="_blank" href="./spase-{{draft.version}}-draft/index.html">HTML</a>
+		<a target="_blank" href="./spase-{{draft.version}}-draft.pdf">PDF</a>
+		<a target="_blank" href="../schema/spase-{{draft.version}}-draft.xsd">XSD</a>),
 		version is {{draft.version}}, generated on: {{draft.released}}
 		</p>
 	{{else}}
@@ -53,7 +57,7 @@ title: SPASE Base Model
 				   <td class="pad-left" nowrap>
 					 <a target="_blank" href="./spase-{{this.version}}/index.html">HTML</a> 
 					 <a target="_blank" href="./spase-{{this.version}}.pdf">PDF</a>
-					 <a target="_blank" href="./schema/spase-{{this.version}}.xsd">XSD</a>
+					 <a target="_blank" href="../schema/spase-{{this.version}}.xsd">XSD</a>
 				   </td>
 				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/model/spase-{{this.version}}/index.html">https://spase-group.org/data/model/spase-{{this.version}}/index.html</a></a></td>
 				</tr>
@@ -76,10 +80,9 @@ title: SPASE Base Model
 Related Items
 </h2>
 <ul class='side_nav'>
-	<li><a href="search.html">Search Base Model Dictionary</a></li>
-	<li><a href="schema/index.html">Base Model XML Schema</a></li>
+	<li><a href="../schema/index.html#base">Base Model XML Schema</a></li>
 	<li><a href="../simulation/index.html">Simulation Extensions Documentation</a></li>
-	<li><a href="../simulation/schema/index.html">Simulation Extensions Schema</a></li>
+	<li><a href="../schema/index.html#simulation">Simulation Extensions Schema</a></li>
 </ul>
 </div>
 </aside>

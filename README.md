@@ -73,8 +73,7 @@ Generate the documentation for the release Information Model using the appropria
 
 1. Place the model HTML pages in 'site/pages/data/model' (or 'simulation' for Simulation Extensions)
 2. Place the model PDF pages in 'site/pages/data/model' (or 'simulation' for Simulation Extensions)
-3. Place the XML schema in 'site/pages/data/schema'
-4. Place the dictionary document in 'site/docs/dictionary'
+3. Place the XML schema in and 'site/pages/data/schema' (this is the standard location for all schema)
 5. Update the baseModelHistory.json file to document revisions.
 6. Update the baseModelVersions.json file.
 7. Regenerate the website with ```grunt -v```

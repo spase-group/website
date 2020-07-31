@@ -334,7 +334,7 @@ hr {
     #head_wrapper {
         background: #000 url("../images/primary_header.jpg") center top no-repeat;
         padding: 16px 48px 8px;
-        height: 220px;
+        height: 160px;
     }
 }
 #head_wrapper a:hover {
@@ -342,7 +342,7 @@ hr {
 }
 #parent_header {
     display: none;
-    height: 75px;
+    height: 40px;
     max-width: 1026px;
 }
 @media screen and (min-width: 1024px) {
@@ -353,6 +353,12 @@ hr {
         margin-right: auto;
         margin-bottom: 10px;
     }
+}
+#parent_header .logo {
+	text-shadow: -1px 1px 0px #333,
+				  1px 1px 0px #333,
+				  1px -1px 0 #333,
+				  -1px -1px 0 #333;		
 }
 #parent_header #nasa_logo {
     float: left;
@@ -483,6 +489,10 @@ hr {
     font-weight: bold;
     line-height: 30px;
     padding-right: 10px;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;	
 }
 @media screen and (min-width: 480px) {
     #site_brand #site_title {
@@ -513,6 +523,10 @@ hr {
     vertical-align: middle;
     padding-top: 2px;
     white-space: nowrap;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;	
 }
 @media screen and (min-width: 480px) {
     #site_brand #site_subtitle {
@@ -1133,6 +1147,17 @@ ul.list_view .list_content {
     overflow: hidden;
     margin-bottom: 12px;
 } 
+
+table.history, table.history th, table.history td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	vertical-align: top;
+}
+
+tr.released {
+  background-color: #22EE22;
+}
+
 .topic {
     font-weight: bold;
 }

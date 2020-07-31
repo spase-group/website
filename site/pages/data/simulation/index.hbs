@@ -14,14 +14,16 @@ title: SPASE Simulation Extensions
 <div class='wysiwyg_content'>
 
 <p>The SPASE metadata model can be expressed in many forms. One of those forms is as an XML Schema.
-	An XML Schema is a machine readable form (see <a href="./schema/index.html">schema</a>). Here you can find
+	An XML Schema is a machine readable form (see <a href="../schema/index.html">schema</a>). Here you can find
 	human readable documentation which includes standard model diagrams.
 </p>
 
 {{#with simulationExtVersions }}
 	<p><b>Current Release</b> is
 	<a target="_blank" href="./spase-sim-{{current.version}}/index.html">{{current.version}}</a> 
-	(<a target="_blank" href="./spase-sim-{{current.version}}/index.html">HTML</a>, <a target="_blank" href="./spase-sim-{{current.version}}.pdf">PDF</a>),
+	(<a target="_blank" href="./spase-sim-{{current.version}}/index.html">HTML</a> 
+	<a target="_blank" href="./spase-sim-{{current.version}}.pdf">PDF</a>
+	<a target="_blank" href="../schema/spase-sim-{{current.version}}.xsd">XSD</a>),
 	released: {{current.released}},
 	<a href="history.html">History of changes</a>
 	</p>
@@ -31,7 +33,9 @@ title: SPASE Simulation Extensions
 			includes definitions under consideration for the next production release.
 		</p>
 		<p>The <a target="_blank" href="./spase-sim-{{draft.version}}-draft/index.html">current draft</a> 
-		(<a target="_blank" href="./spase-sim-{{draft.version}}-draft/index.html">HTML</a>, <a target="_blank" href="./spase--sim-{{draft.version}}-draft.pdf">PDF</a>),
+		(<a target="_blank" href="./spase-sim-{{draft.version}}-draft/index.html">HTML</a>
+		<a target="_blank" href="./spase-sim-{{draft.version}}-draft.pdf">PDF</a>
+		<a target="_blank" href="../schema/spase-sim-{{draft.version}}-draft.xsd">XSD</a>),
 		version is {{draft.version}}, generated on: {{draft.released}}
 		</p>
 	{{else}}
@@ -52,7 +56,7 @@ title: SPASE Simulation Extensions
 				   <td class="pad-left" nowrap>
 					 <a target="_blank" href="./spase-sim-{{this.version}}/index.html">HTML</a> 
 					 <a target="_blank" href="./spase-sim-{{this.version}}.pdf">PDF</a>
-					 <a target="_blank" href="./schema/spase-sim-{{this.version}}.xsd">XSD</a>
+					 <a target="_blank" href="../schema/spase-sim-{{this.version}}.xsd">XSD</a>
 				   </td>
 				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/simulation/spase-sim-{{this.version}}/index.html">https://spase-group.org/data/simulation/spase-sim-{{this.version}}/index.html</a></a></td>
 				</tr>
@@ -75,9 +79,9 @@ title: SPASE Simulation Extensions
 Related Items
 </h2>
 <ul class='side_nav'>
-	<li><a href="./schema/index.html">Simulation Extensions Schema</a></li>
+	<li><a href="../schema/index.html#simulation">Simulation Extensions XML Schema</a></li>
 	<li><a href="../model/index.html">Base Model Documentation</a></li>
-	<li><a href="../model/schema/index.html">Base Model XML Schema</a></li>
+	<li><a href="../schema/index.html#base">Base Model XML Schema</a></li>
 </ul>
 </div>
 </aside>
