@@ -50,7 +50,7 @@ title: SPASE Base Model
 				<th bgcolor=#CCCCCC>Version</th><th bgcolor=#CCCCC>Released</th><th class="pad-left" bgcolor=#CCCCC>Format</th><th bgcolor=#CCCCC>URL</th>
 			</tr>
 
-			{{#each release}}
+			{{#each (sort release 'version' true) }}
 				<tr>
 				   <td><a target="_blank" href="./spase-{{this.version}}/index.html">{{this.version}}</a></td>
 				   <td nowrap>{{this.released}}</td>

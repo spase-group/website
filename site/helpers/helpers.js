@@ -22,9 +22,13 @@ module.exports.sort = function (array, field, reverse)  {
 	if(reverse) factor = -1;
 
 	return array.sort(function(a, b) {
-		if (a[field] < b[field]) return -1 * factor;
-		if (a[field] > b[field]) return 1 * factor;
-		return 0;
+		if(typeof a[field] === "string") {
+			return (a[field].localeCompare(b[field]) * factor);
+		} else {
+			if (a[field] < b[field]) return -1 * factor;
+			if (a[field] > b[field]) return 1 * factor;
+			return 0;
+		}
 	});
 };
 
