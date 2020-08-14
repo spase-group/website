@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+	<title>SPASE Model Specification Search</title>
+	<link href="css/general.css" rel="stylesheet">
+	<script src="js/handlebars.min-v4.7.6.js"></script>
+	<script src="js/autocomplete.js"></script>
+	<script src="config.js"></script>
+</head>
+
+<body>
+    <div id="banner"><h1 id="banner_text">SPASE Model Specification Search</h1></div>
+    <div class="wrapper">
+	<div id="primary-column">
+	<section>
+
+	<h1>SPASE Model Specification Search</h1>
+	<h2 id="modelName">Base Model</h2>
+	<!--Make sure the form has the autocomplete function switched off:-->
+	<form autocomplete="off" action="javascript:void(0);" onsubmit="refreshTerms()">
+		<table class="plain">
+			<tr>
+				<td nowrap><label for="termSearch">Search for:</label></td>
+				<td>			
+					<div class="autocomplete" style="min-width:50%;">
+						<input id="termSearch" type="text" name="term" placeholder="Enter Dictionary Term">
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" nowrap>Version:</td>
+				<td id="versions">
+					&nbsp;<span style="white-space:nowrap; display:inline-block"><input type="radio" name="version" value="2.3.1" checked>2.3.1</span>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<br>
+   <div id="info">
+		<a target=_blank href=card.html?view=entry>How to read an entry</a>
+   </div>
+   <div id="entry"><div>No entry found.</div></div>
+   
+   <!-- Configure search feature -->
+   <script src="js/modelsearch.js"></script>
+   </section>
+   </div>
+		<div id="secondary-column" class="scrollable">
+			<h2>Tree</h2>
+			<div>(0) Optional, (1) Required, (+) Required many, (*) Optional many</div>
+			<div id="treeView"></div>
+		</div>
+   </div>
+</body>
+
+<footer>
+</footer>

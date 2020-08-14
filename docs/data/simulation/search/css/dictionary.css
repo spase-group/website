@@ -1,0 +1,16 @@
+table.definition {
+	width: 75%;
+}
+table.definition td.term {
+    width: 50%;
+    background-color: #534c47;
+    border-bottom: 1px solid #534c47;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+}
+table.definition td.type {
+    width: 50%;
+    text-align: right;
+    border-bottom: 1px solid #534c47;
+}

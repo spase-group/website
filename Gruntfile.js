@@ -40,6 +40,7 @@ module.exports = function(grunt) {
 			dest: "docs",
 			layout: "site/layout/default.hbs",
 			config: "site/config",
+			search: "site/search",
 			title: "SPASE",
 		},
 		
@@ -74,6 +75,42 @@ module.exports = function(grunt) {
 					  cwd: '<%= site.pages %>', // set 'Current Working Directory'
 					  src: ['**/*', '!**/*.hbs', '!docs/**'], // Source files
 					  dest: '<%= site.dest %>/', // Destination folder
+				   }
+				]
+			},			
+			search: {
+			   files: [
+				   {
+					  expand: true,
+					  cwd: '<%= site.search %>', // set 'Current Working Directory'
+					  src: ['**/*', ], // Source files
+					  dest: '<%= site.dest %>/data/model/search', // Destination folder
+				   },
+				   {
+					  expand: true,
+					  cwd: '<%= site.search %>', // set 'Current Working Directory'
+					  src: ['**/*', ], // Source files
+					  dest: '<%= site.dest %>/data/simulation/search', // Destination folder
+				   },
+				]
+			},
+			config: {
+			   files: [
+				   {
+					  src: '<%= site.config %>/baseModelVersions.json', // Source files
+					  dest: '<%= site.dest %>/data/model/search/modelVersions.json', // Destination folder
+				   },
+				   {
+					  src: '<%= site.config %>/baseSearchConfig.js', // Source files
+					  dest: '<%= site.dest %>/data/model/search/config.js', // Destination folder
+				   },
+				   {
+					  src: '<%= site.config %>/simulationExtVersions.json', // Source files
+					  dest: '<%= site.dest %>/data/simulation/search/modelVersions.json', // Destination folder
+				   },
+				   {
+					  src: '<%= site.config %>/simSearchConfig.js', // Source files
+					  dest: '<%= site.dest %>/data/simulation/search/config.js', // Destination folder
 				   }
 				]
 			},			

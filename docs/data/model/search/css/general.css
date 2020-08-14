@@ -1,0 +1,274 @@
+/**
+ **/
+ 
+/* 
+ * tag 
+ */
+html {
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: sans-serif;
+}
+body {
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+    color: #42a0f2;
+}
+a:focus {
+    outline: thin dotted;
+}
+a:active {
+    outline: 0;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1, h2, h3, h4 {
+	color: #d94821;
+}
+h1 {
+    font-size: 2em;
+	margin-top: 0.5em;
+}
+h2 {
+    font-size: 1.5em;
+	margin-top: 0px;
+}
+h3 {
+    font-size: 1.17em;
+}
+h4 {
+    font-size: 1em;
+}
+nav ul {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+	padding-bottom: 0.2em;
+}
+footer {
+	clear: both;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+    color: #BBBBBB;
+	background: #FFFFFF;
+	width: 100%;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+ }
+
+/*
+ * id 
+ */
+#banner {
+    background: #444444;
+    color: #FFFFFF;
+    padding: .2em;
+	text-align: center;
+}
+#banner h1 {
+    color: #FFFFFF;
+}
+#primary-column {
+    width: 100%;
+    margin-left: 20px;
+	margin-bottom: 3em;
+}
+@media screen and (min-width: 769px) {
+    #primary-column {
+        float: left;
+        width: 65%;
+    }
+}
+
+#secondary-column {
+    width: 100%;
+	margin-right: 20px;
+	margin-bottom: 3em;
+}
+@media screen and (min-width: 769px) {
+    #secondary-column {
+        width: 31%;
+        float: right;
+        clear: none;
+        padding-top: 16px;
+        margin-bottom: 22px;
+    }
+}
+#secondary-column aside {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 42px;
+    width: 100%;
+}
+#info {
+	margin-bottom: 1em;
+}
+/*
+ * class
+ */
+.wrapper {
+	margin: 10px;
+	margin-bottom: 4em;
+}
+.active {
+    background-color: #2184be !important;
+    color: white;
+}
+.disabled {
+    opacity: 0.3;
+}
+.indent {
+	padding-left: 2em;
+}
+.full-width {
+	width: 100%;
+}
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+.margin-right-1em {
+	margin-right: 1em;
+}
+.right-justify {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.boxed {
+    padding: 12px 15px 13px;
+	border: 1px solid #cfd7e1;
+}
+.nav li {	
+}
+.entry-container {
+	margin-bottom: 1.5em;	
+}
+.entry {
+	width: 100%;
+	border-spacing: 0px;
+}
+.term {
+	background: #534c47;
+	color: white;
+	padding: 3px 3px 1px 3px;
+	width: 50%;
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid #534c47;
+}
+.type {
+	width: 50%;
+	text-align: right;
+	border-bottom: 1px solid #534c47;
+}
+.scrollable {
+	overflow: auto;
+	max-height: 87vh;
+}
+
+/* Collapsible Tree */
+/* Remove default bullets */
+ul, #tree {
+  list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+/*
+.tree {
+  margin: 0;
+  padding: 0;
+}
+*/
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.open {
+  display: block;
+}
+
+/* Autocomplete */
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
