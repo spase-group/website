@@ -489,6 +489,7 @@ hr {
     font-weight: bold;
     line-height: 30px;
     padding-right: 10px;
+	padding-left: 60px;
 	text-shadow: -1px 1px 2px #000,
 				  1px 1px 2px #000,
 				  1px -1px 0 #000,
@@ -542,6 +543,11 @@ hr {
         line-height: 24px;
         vertical-align: bottom;
     }
+}
+@media screen and (max-width: 1024px) {
+    #site_brand #site_subtitle {
+		visibility: hidden;
+	}
 }
 
 #site_footer {
@@ -1006,7 +1012,7 @@ section {
 }
 @media screen and (min-width: 769px) {
     .magazine_layout section.wide_feature {
-        width: 90%;
+//        width: 90%;
     }
 }
 
