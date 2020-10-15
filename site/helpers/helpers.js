@@ -27,7 +27,6 @@ module.exports.isBreak = function ()  {
 // set the value of the break variable
 module.exports.setBreak = function (state)  {  
 	breakVar = state;
-	return true;
 };
 
 // Sort an array of objects based on the value of a field.
