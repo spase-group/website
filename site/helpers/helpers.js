@@ -3,6 +3,9 @@
 const path = require('path');
 const fs = require('fs');
 
+// Variable used by isBreak()
+var breakVar = true;
+
 // Determine class for released versions
 // Use "triple-stash" like this {{{expression}}} if you don't want to escape a value.
 module.exports.color = function (str)  {  
@@ -13,6 +16,18 @@ module.exports.color = function (str)  {
 // Check if two values match
 module.exports.isMatch = function (str1, str2)  {  
 	return (str1 == str2);
+};
+
+// Get the value of the break variables, if true switch to false.
+module.exports.isBreak = function ()  {  
+	if(breakVar) { breakVar = false; return true;}
+	return false;
+};
+
+// set the value of the break variable
+module.exports.setBreak = function (state)  {  
+	breakVar = state;
+	return true;
 };
 
 // Sort an array of objects based on the value of a field.
