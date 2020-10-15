@@ -17,12 +17,12 @@ title: SPASE Base Model History
 <h1>Dictionary History for Base Model</h1>
 
 
-{{#each (sort baseModelHistory 'Updated' true)}}
-	{{#if (isMatch Description 'Released.') }}
+{{#each (sort baseModelHistory 'updated' true)}}
+	{{#if (isMatch description 'Released.') }}
 		{{#unless @first}}
 		</table>
 		{{/unless}}
-		<h4>Version: <b><a href="search.html?version={{Version}}">{{Version}}</a></b></h4>
+		<h4>Version: <b><a href="search.html?version={{Version}}">{{version}}</a></b></h4>
 		<table class="history">
 			<tr>
 			<th width=100px>Updated</th>
@@ -31,9 +31,9 @@ title: SPASE Base Model History
 			</tr>
 		{{/if}}
 		<tr {{{color Description}}} >
-			<td nowrap>{{Updated}}</td>
-			<td><ul>{{{makeList Description}}}</ul></td>
-			<td>{{Note}}</td>
+			<td nowrap>{{updated}}</td>
+			<td><ul>{{{makeList description}}}</ul></td>
+			<td>{{note}}</td>
 		</tr>
 {{/each}}
 	</table>
