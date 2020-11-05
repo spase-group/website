@@ -213,9 +213,7 @@ h3 {
 img {
     max-width: 100%;
 }
-img {
-    width: 100%;
-}
+
 p {
     line-height: 1.4em;
     margin-bottom: 17px;
@@ -1164,6 +1162,10 @@ tr.released {
   background-color: #22EE22;
 }
 
+.top_tight {
+	margin-top: -20px;
+}
+
 .topic {
     font-weight: bold;
 }
@@ -1172,6 +1174,9 @@ tr.released {
 }
 .right {
     float: right;
+}
+.center {
+    text-align: center;
 }
 .pad-left {
 	padding-left: 6px;
