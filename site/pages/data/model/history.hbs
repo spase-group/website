@@ -25,6 +25,7 @@ title: SPASE Base Model History
 		<th>Description</th>
 		<th>Notes</th>
 		</tr>
+		{{setBreak false}}
 	{{/if}}
 		<tr {{{color description}}} >
 			<td nowrap>{{updated}}</td>
@@ -37,6 +38,7 @@ title: SPASE Base Model History
 		{{/if}}
 {{/each}}
 {{#if (isBreak) }}
+{{else}}
 	</table>
 {{/if}}
 

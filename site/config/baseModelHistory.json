@@ -2396,7 +2396,7 @@
 	 "version": "2.3.2",
 	 "updated": "2020-09-10",
 	 "changedBy": "T.King",
-	 "description": "Add Housekeeping, Telemetry, RotationMatrix, EncodedParameter, AutoSpectrum, Coherence, ImaginaryPart, RealPart, PowerSpectralDensity, ChargeFlux, DynamicPressure, EnergyPerCharge, ParticleRigidity, MassPerCharge, LShell, MissionPrincipalInvestigator, ProgramManager, ProgramScientist, VolumeEmissionRate, SPICE, MissionManager to dictionary and to appropriate enumerations as suggested by L. Bargatze; Add PDS4 and PDS3 to dictionary and to FOrmat enumeration as suggest by A. Masson.",
+	 "description": "Add Housekeeping, Telemetry, RotationMatrix, EncodedParameter, AutoSpectrum, Coherence, ImaginaryPart, RealPart, PowerSpectralDensity, ChargeFlux, DynamicPressure, EnergyPerCharge, ParticleRigidity, MassPerCharge, LShell, MissionPrincipalInvestigator, ProgramManager, ProgramScientist, VolumeEmissionRate, SPICE, MissionManager to dictionary and to appropriate enumerations as suggested by L. Bargatze; Add PDS4 and PDS3 to dictionary and to Format enumeration as suggest by A. Masson.",
 	 "note": "Decided during the telecon on 2020-08-06."
   },
   {
@@ -2422,5 +2422,13 @@
 	 "changedBy": "T.King",
 	 "description": "Released.",
 	 "note": "Decided during the telecon on 2020-10-15."
+  },
+  {
+	 "id": "304",
+	 "version": "2.4.0",
+	 "updated": "2020-11-12",
+	 "changedBy": "T.King",
+	 "description": "Add Software resource and related elements to the information model. Released.",
+	 "note": "Discussed during prior telecons."
   }
 ]
