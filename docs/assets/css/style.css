@@ -1162,6 +1162,9 @@ tr.released {
   background-color: #22EE22;
 }
 
+.top_space {
+	margin-top: 1em;
+}
 .top_tight {
 	margin-top: -20px;
 }
