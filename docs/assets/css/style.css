@@ -1162,6 +1162,9 @@ tr.released {
   background-color: #22EE22;
 }
 
+.big_text {
+    font-size: 1.17em;	
+}
 .top_space {
 	margin-top: 1em;
 }
