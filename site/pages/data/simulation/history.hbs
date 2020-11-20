@@ -17,26 +17,31 @@ title: SPASE Simulation Extensions History
 <h1>Dictionary History for Base Model</h1>
 
 
-{{#each (sort simulationExtHistory 'Updated' true)}}
-	{{#if (isMatch Description 'Released.') }}
-		{{#unless @first}}
-		</table>
-		{{/unless}}
-		<h4>Version: <b><a href="search.html?version={{Version}}">{{Version}}</a></b></h4>
-		<table class="history">
-			<tr>
-			<th width=100px>Updated</th>
-			<th>Description</th>
-			<th>Notes</th>
-			</tr>
-		{{/if}}
-		<tr {{{color Description}}} >
-			<td nowrap>{{Updated}}</td>
-			<td><ul>{{{makeList Description}}}</ul></td>
-			<td>{{Note}}</td>
+{{#each (sort simulationExtHistory 'updated' false)}}
+	{{#if (isBreak) }}
+	<h4>Version: <b><a href="search/index.html?version={{version}}">{{version}}</a></b></h4>
+	<table class="history">
+		<tr>
+		<th width=100px>Updated</th>
+		<th>Description</th>
+		<th>Notes</th>
 		</tr>
+		{{setBreak false}}
+	{{/if}}
+		<tr {{{color description}}} >
+			<td nowrap>{{updated}}</td>
+			<td><ul>{{{makeList description}}}</ul></td>
+			<td>{{note}}</td>
+		</tr>
+		{{#if (isMatch description 'Released.') }}
+			</table>
+			{{setBreak true}}
+		{{/if}}
 {{/each}}
+{{#if (isBreak) }}
+{{else}}
 	</table>
+{{/if}}
 
 </div>
 
