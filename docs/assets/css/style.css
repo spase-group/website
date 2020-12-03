@@ -1162,8 +1162,11 @@ tr.released {
   background-color: #22EE22;
 }
 
+h1.list_title {
+	font-size: 1.4em;
+}
 .big_text {
-    font-size: 1.17em;	
+    font-size: 1.1em;	
 }
 .top_space {
 	margin-top: 1em;
