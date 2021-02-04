@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2020-11-12",
+   "released": "2021-01-21",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "https://spase-group.org/data/schema",
@@ -2436,7 +2436,7 @@
          "version": "2.4.0",
          "updated": "2020-11-12",
          "changedBy": "T.King",
-         "description": "Add Software resource and related elements to the information model. Released.",
+         "description": "Add Software resource and related elements to the information model.",
          "note": "Discussed during prior telecons."
       }
    ],
@@ -3549,12 +3549,12 @@
          "attributes": "",
          "definition": "Information which may be important in the avoidance of the misuse of the resource, for instance instrument maladies, corruption or contamination.\r",
          "usedBy": [
+            "Property",
             "Catalog",
             "DisplayData",
             "Instrument",
             "NumericalData",
-            "Parameter",
-            "Property"
+            "Parameter"
          ],
          "allowedValues": []
       },
@@ -4275,10 +4275,10 @@
          "attributes": "",
          "definition": "A narrative explanation with detail appropriate for the item it describes. For example a description of data resource should include discussions of the main quantities in the resource, possible uses and search terms. A description should also include whether any corrections (i.e, geometry, inertial) have been applied to the resource.\r",
          "usedBy": [
+            "Property",
             "AccessURL",
             "InformationURL",
             "Parameter",
-            "Property",
             "ResourceHeader",
             "Structure"
          ],
@@ -4638,8 +4638,31 @@
          "allowedValues": [
             "Magnetosheath",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Moon",
             "NearSurface",
+            "NearSurface.Atmosphere",
+            "NearSurface.AuroralRegion",
+            "NearSurface.EquatorialRegion",
+            "NearSurface.Ionosphere",
+            "NearSurface.Ionosphere.DRegion",
+            "NearSurface.Ionosphere.ERegion",
+            "NearSurface.Ionosphere.FRegion",
+            "NearSurface.Ionosphere.Topside",
+            "NearSurface.Mesosphere",
+            "NearSurface.MidLatitudeRegion",
+            "NearSurface.Plasmasphere",
+            "NearSurface.PolarCap",
+            "NearSurface.SouthAtlanticAnomalyRegion",
+            "NearSurface.Stratosphere",
+            "NearSurface.SubAuroralRegion",
+            "NearSurface.Thermosphere",
+            "NearSurface.Troposphere",
             "Surface"
          ]
       },
@@ -5457,6 +5480,12 @@
             "FITS",
             "GIF",
             "Hardcopy",
+            "Hardcopy.Film",
+            "Hardcopy.Microfiche",
+            "Hardcopy.Microfilm",
+            "Hardcopy.Photograph",
+            "Hardcopy.PhotographicPlate",
+            "Hardcopy.Print",
             "HDF",
             "HDF4",
             "HDF5",
@@ -5478,6 +5507,8 @@
             "Postscript",
             "QuickTime",
             "Text",
+            "Text.ASCII",
+            "Text.Unicode",
             "TIFF",
             "UDF",
             "VOTable",
@@ -6984,7 +7015,13 @@
             "Europa",
             "Ganymede",
             "Io",
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "K": {
@@ -7493,6 +7530,12 @@
          "allowedValues": [
             "Deimos",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Phobos"
          ]
       },
@@ -7669,7 +7712,9 @@
             "Spectrum",
             "SPICE",
             "ThermalPlasma",
-            "Waves"
+            "Waves",
+            "Waves.Active",
+            "Waves.Passive"
          ]
       },
       "Median": {
@@ -7709,7 +7754,13 @@
          "definition": "The first planet from the sun in our solar system.\r",
          "usedBy": [],
          "allowedValues": [
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "Mesosphere": {
@@ -8059,11 +8110,11 @@
          "attributes": "",
          "definition": "A language unit by which a person or thing is known.\r",
          "usedBy": [
+            "Property",
             "AccessURL",
             "Element",
             "InformationURL",
-            "Parameter",
-            "Property"
+            "Parameter"
          ],
          "allowedValues": []
       },
@@ -8106,6 +8157,10 @@
             "AuroralRegion",
             "EquatorialRegion",
             "Ionosphere",
+            "Ionosphere.DRegion",
+            "Ionosphere.ERegion",
+            "Ionosphere.FRegion",
+            "Ionosphere.Topside",
             "Mesosphere",
             "MidLatitudeRegion",
             "Plasmasphere",
@@ -8129,6 +8184,12 @@
          "usedBy": [],
          "allowedValues": [
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Proteus",
             "Triton"
          ]
@@ -8405,17 +8466,125 @@
             "Asteroid",
             "Comet",
             "Earth",
+            "Earth.Magnetosheath",
+            "Earth.Magnetosphere",
+            "Earth.Magnetosphere.Magnetotail",
+            "Earth.Magnetosphere.Main",
+            "Earth.Magnetosphere.Plasmasphere",
+            "Earth.Magnetosphere.Polar",
+            "Earth.Magnetosphere.RadiationBelt",
+            "Earth.Magnetosphere.RingCurrent",
+            "Earth.Moon",
+            "Earth.NearSurface",
+            "Earth.NearSurface.Atmosphere",
+            "Earth.NearSurface.AuroralRegion",
+            "Earth.NearSurface.EquatorialRegion",
+            "Earth.NearSurface.Ionosphere",
+            "Earth.NearSurface.Ionosphere.DRegion",
+            "Earth.NearSurface.Ionosphere.ERegion",
+            "Earth.NearSurface.Ionosphere.FRegion",
+            "Earth.NearSurface.Ionosphere.Topside",
+            "Earth.NearSurface.Mesosphere",
+            "Earth.NearSurface.MidLatitudeRegion",
+            "Earth.NearSurface.Plasmasphere",
+            "Earth.NearSurface.PolarCap",
+            "Earth.NearSurface.SouthAtlanticAnomalyRegion",
+            "Earth.NearSurface.Stratosphere",
+            "Earth.NearSurface.SubAuroralRegion",
+            "Earth.NearSurface.Thermosphere",
+            "Earth.NearSurface.Troposphere",
+            "Earth.Surface",
             "Heliosphere",
+            "Heliosphere.Heliosheath",
+            "Heliosphere.Inner",
+            "Heliosphere.NearEarth",
+            "Heliosphere.Outer",
+            "Heliosphere.Remote1AU",
             "Interstellar",
             "Jupiter",
+            "Jupiter.Callisto",
+            "Jupiter.Europa",
+            "Jupiter.Ganymede",
+            "Jupiter.Io",
+            "Jupiter.Magnetosphere",
+            "Jupiter.Magnetosphere.Magnetotail",
+            "Jupiter.Magnetosphere.Main",
+            "Jupiter.Magnetosphere.Plasmasphere",
+            "Jupiter.Magnetosphere.Polar",
+            "Jupiter.Magnetosphere.RadiationBelt",
+            "Jupiter.Magnetosphere.RingCurrent",
             "Mars",
+            "Mars.Deimos",
+            "Mars.Magnetosphere",
+            "Mars.Magnetosphere.Magnetotail",
+            "Mars.Magnetosphere.Main",
+            "Mars.Magnetosphere.Plasmasphere",
+            "Mars.Magnetosphere.Polar",
+            "Mars.Magnetosphere.RadiationBelt",
+            "Mars.Magnetosphere.RingCurrent",
+            "Mars.Phobos",
             "Mercury",
+            "Mercury.Magnetosphere",
+            "Mercury.Magnetosphere.Magnetotail",
+            "Mercury.Magnetosphere.Main",
+            "Mercury.Magnetosphere.Plasmasphere",
+            "Mercury.Magnetosphere.Polar",
+            "Mercury.Magnetosphere.RadiationBelt",
+            "Mercury.Magnetosphere.RingCurrent",
             "Neptune",
+            "Neptune.Magnetosphere",
+            "Neptune.Magnetosphere.Magnetotail",
+            "Neptune.Magnetosphere.Main",
+            "Neptune.Magnetosphere.Plasmasphere",
+            "Neptune.Magnetosphere.Polar",
+            "Neptune.Magnetosphere.RadiationBelt",
+            "Neptune.Magnetosphere.RingCurrent",
+            "Neptune.Proteus",
+            "Neptune.Triton",
             "Pluto",
             "Saturn",
+            "Saturn.Dione",
+            "Saturn.Enceladus",
+            "Saturn.Iapetus",
+            "Saturn.Magnetosphere",
+            "Saturn.Magnetosphere.Magnetotail",
+            "Saturn.Magnetosphere.Main",
+            "Saturn.Magnetosphere.Plasmasphere",
+            "Saturn.Magnetosphere.Polar",
+            "Saturn.Magnetosphere.RadiationBelt",
+            "Saturn.Magnetosphere.RingCurrent",
+            "Saturn.Mimas",
+            "Saturn.Rhea",
+            "Saturn.Tethys",
+            "Saturn.Titan",
             "Sun",
+            "Sun.Chromosphere",
+            "Sun.Corona",
+            "Sun.Interior",
+            "Sun.Photosphere",
+            "Sun.TransitionRegion",
             "Uranus",
-            "Venus"
+            "Uranus.Ariel",
+            "Uranus.Magnetosphere",
+            "Uranus.Magnetosphere.Magnetotail",
+            "Uranus.Magnetosphere.Main",
+            "Uranus.Magnetosphere.Plasmasphere",
+            "Uranus.Magnetosphere.Polar",
+            "Uranus.Magnetosphere.RadiationBelt",
+            "Uranus.Magnetosphere.RingCurrent",
+            "Uranus.Miranda",
+            "Uranus.Oberon",
+            "Uranus.Puck",
+            "Uranus.Titania",
+            "Uranus.Umbriel",
+            "Venus",
+            "Venus.Magnetosphere",
+            "Venus.Magnetosphere.Magnetotail",
+            "Venus.Magnetosphere.Main",
+            "Venus.Magnetosphere.Plasmasphere",
+            "Venus.Magnetosphere.Polar",
+            "Venus.Magnetosphere.RadiationBelt",
+            "Venus.Magnetosphere.RingCurrent"
          ]
       },
       "ObservedBy": {
@@ -8448,17 +8617,125 @@
             "Asteroid",
             "Comet",
             "Earth",
+            "Earth.Magnetosheath",
+            "Earth.Magnetosphere",
+            "Earth.Magnetosphere.Magnetotail",
+            "Earth.Magnetosphere.Main",
+            "Earth.Magnetosphere.Plasmasphere",
+            "Earth.Magnetosphere.Polar",
+            "Earth.Magnetosphere.RadiationBelt",
+            "Earth.Magnetosphere.RingCurrent",
+            "Earth.Moon",
+            "Earth.NearSurface",
+            "Earth.NearSurface.Atmosphere",
+            "Earth.NearSurface.AuroralRegion",
+            "Earth.NearSurface.EquatorialRegion",
+            "Earth.NearSurface.Ionosphere",
+            "Earth.NearSurface.Ionosphere.DRegion",
+            "Earth.NearSurface.Ionosphere.ERegion",
+            "Earth.NearSurface.Ionosphere.FRegion",
+            "Earth.NearSurface.Ionosphere.Topside",
+            "Earth.NearSurface.Mesosphere",
+            "Earth.NearSurface.MidLatitudeRegion",
+            "Earth.NearSurface.Plasmasphere",
+            "Earth.NearSurface.PolarCap",
+            "Earth.NearSurface.SouthAtlanticAnomalyRegion",
+            "Earth.NearSurface.Stratosphere",
+            "Earth.NearSurface.SubAuroralRegion",
+            "Earth.NearSurface.Thermosphere",
+            "Earth.NearSurface.Troposphere",
+            "Earth.Surface",
             "Heliosphere",
+            "Heliosphere.Heliosheath",
+            "Heliosphere.Inner",
+            "Heliosphere.NearEarth",
+            "Heliosphere.Outer",
+            "Heliosphere.Remote1AU",
             "Interstellar",
             "Jupiter",
+            "Jupiter.Callisto",
+            "Jupiter.Europa",
+            "Jupiter.Ganymede",
+            "Jupiter.Io",
+            "Jupiter.Magnetosphere",
+            "Jupiter.Magnetosphere.Magnetotail",
+            "Jupiter.Magnetosphere.Main",
+            "Jupiter.Magnetosphere.Plasmasphere",
+            "Jupiter.Magnetosphere.Polar",
+            "Jupiter.Magnetosphere.RadiationBelt",
+            "Jupiter.Magnetosphere.RingCurrent",
             "Mars",
+            "Mars.Deimos",
+            "Mars.Magnetosphere",
+            "Mars.Magnetosphere.Magnetotail",
+            "Mars.Magnetosphere.Main",
+            "Mars.Magnetosphere.Plasmasphere",
+            "Mars.Magnetosphere.Polar",
+            "Mars.Magnetosphere.RadiationBelt",
+            "Mars.Magnetosphere.RingCurrent",
+            "Mars.Phobos",
             "Mercury",
+            "Mercury.Magnetosphere",
+            "Mercury.Magnetosphere.Magnetotail",
+            "Mercury.Magnetosphere.Main",
+            "Mercury.Magnetosphere.Plasmasphere",
+            "Mercury.Magnetosphere.Polar",
+            "Mercury.Magnetosphere.RadiationBelt",
+            "Mercury.Magnetosphere.RingCurrent",
             "Neptune",
+            "Neptune.Magnetosphere",
+            "Neptune.Magnetosphere.Magnetotail",
+            "Neptune.Magnetosphere.Main",
+            "Neptune.Magnetosphere.Plasmasphere",
+            "Neptune.Magnetosphere.Polar",
+            "Neptune.Magnetosphere.RadiationBelt",
+            "Neptune.Magnetosphere.RingCurrent",
+            "Neptune.Proteus",
+            "Neptune.Triton",
             "Pluto",
             "Saturn",
+            "Saturn.Dione",
+            "Saturn.Enceladus",
+            "Saturn.Iapetus",
+            "Saturn.Magnetosphere",
+            "Saturn.Magnetosphere.Magnetotail",
+            "Saturn.Magnetosphere.Main",
+            "Saturn.Magnetosphere.Plasmasphere",
+            "Saturn.Magnetosphere.Polar",
+            "Saturn.Magnetosphere.RadiationBelt",
+            "Saturn.Magnetosphere.RingCurrent",
+            "Saturn.Mimas",
+            "Saturn.Rhea",
+            "Saturn.Tethys",
+            "Saturn.Titan",
             "Sun",
+            "Sun.Chromosphere",
+            "Sun.Corona",
+            "Sun.Interior",
+            "Sun.Photosphere",
+            "Sun.TransitionRegion",
             "Uranus",
-            "Venus"
+            "Uranus.Ariel",
+            "Uranus.Magnetosphere",
+            "Uranus.Magnetosphere.Magnetotail",
+            "Uranus.Magnetosphere.Main",
+            "Uranus.Magnetosphere.Plasmasphere",
+            "Uranus.Magnetosphere.Polar",
+            "Uranus.Magnetosphere.RadiationBelt",
+            "Uranus.Magnetosphere.RingCurrent",
+            "Uranus.Miranda",
+            "Uranus.Oberon",
+            "Uranus.Puck",
+            "Uranus.Titania",
+            "Uranus.Umbriel",
+            "Venus",
+            "Venus.Magnetosphere",
+            "Venus.Magnetosphere.Magnetotail",
+            "Venus.Magnetosphere.Main",
+            "Venus.Magnetosphere.Plasmasphere",
+            "Venus.Magnetosphere.Polar",
+            "Venus.Magnetosphere.RadiationBelt",
+            "Venus.Magnetosphere.RingCurrent"
          ]
       },
       "Offline": {
@@ -8789,6 +9066,9 @@
          ],
          "allowedValues": [
             "AdiabaticInvariant",
+            "AdiabaticInvariant.MagneticMoment",
+            "AdiabaticInvariant.BounceMotion",
+            "AdiabaticInvariant.DriftMotion",
             "ArrivalDirection",
             "AtomicNumberDetected",
             "AverageChargeState",
@@ -9956,6 +10236,9 @@
             "Coherence",
             "Column",
             "Component",
+            "Component.I",
+            "Component.J",
+            "Component.K",
             "Confidence",
             "Core",
             "CrossSpectrum",
@@ -9964,7 +10247,13 @@
             "Direction",
             "Directional",
             "DirectionAngle",
+            "DirectionAngle.AzimuthAngle",
+            "DirectionAngle.ElevationAngle",
+            "DirectionAngle.PolarAngle",
             "DirectionCosine",
+            "DirectionCosine.I",
+            "DirectionCosine.J",
+            "DirectionCosine.K",
             "EncodedParameter",
             "FieldAligned",
             "Fit",
@@ -9972,6 +10261,9 @@
             "Halo",
             "ImaginaryPart",
             "Integral",
+            "Integral.Area",
+            "Integral.Bandwidth",
+            "Integral.SolidAngle",
             "Linear",
             "LineOfSight",
             "Magnitude",
@@ -9987,6 +10279,9 @@
             "PhaseAngle",
             "PowerSpectralDensity",
             "Projection",
+            "Projection.IJ",
+            "Projection.IK",
+            "Projection.JK",
             "Pseudo",
             "Ratio",
             "RealPart",
@@ -10594,6 +10889,12 @@
             "Enceladus",
             "Iapetus",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Mimas",
             "Rhea",
             "Tethys",
@@ -10833,7 +11134,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A application which can be installed, built or readily used.\r",
+         "definition": "An application which can be installed, built or readily used.\r",
          "usedBy": [
             "Spase"
          ],
@@ -11051,6 +11352,7 @@
             "DisplayData",
             "NumericalData",
             "Document",
+            "Software",
             "Granule",
             "Instrument",
             "Observatory",
@@ -11058,7 +11360,6 @@
             "Registry",
             "Repository",
             "Service",
-            "Software",
             "Annotation"
          ],
          "allowedValues": []
@@ -12099,6 +12400,7 @@
          "attributes": "",
          "definition": "A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see <http://www.bipm.fr/> ) when appropriate or use tokens like \"\"Re\"\" to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units can be found at: <http://www.bipm.fr/en/si/si_brochure/chapter2/2-1/#symbols> and those for common derived units can be found at: <http://www.bipm.fr/en/si/derived_units/2-2-2.html>\r",
          "usedBy": [
+            "Property",
             "AzimuthalAngleRange",
             "DataExtent",
             "Element",
@@ -12108,7 +12410,6 @@
             "Parameter",
             "PitchAngleRange",
             "PolarAngleRange",
-            "Property",
             "WavelengthRange"
          ],
          "allowedValues": []
@@ -12177,6 +12478,12 @@
          "allowedValues": [
             "Ariel",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Miranda",
             "Oberon",
             "Puck",
@@ -12222,9 +12529,9 @@
          "attributes": "",
          "definition": "The largest legitimate value.\r",
          "usedBy": [
+            "Property",
             "Element",
-            "Parameter",
-            "Property"
+            "Parameter"
          ],
          "allowedValues": []
       },
@@ -12238,9 +12545,9 @@
          "attributes": "",
          "definition": "The smallest legitimate value.\r",
          "usedBy": [
+            "Property",
             "Element",
-            "Parameter",
-            "Property"
+            "Parameter"
          ],
          "allowedValues": []
       },
@@ -12317,7 +12624,13 @@
          "definition": "The second planet from the sun in our solar system.\r",
          "usedBy": [],
          "allowedValues": [
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "Version": {
@@ -12658,6 +12971,14 @@
          "type": "Closed",
          "reference": "",
          "definition": "Identifiers for an classification of an annotation."
+      },
+      "ApplicationInterface": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "name": "ApplicationInterface",
+         "type": "Closed",
+         "reference": "",
+         "definition": "Identifiers for the type of interface for the application."
       },
       "AssociationType": {
          "version": "2.3.3",
@@ -13121,6 +13442,26 @@
             "item": "Feature"
          }
       },
+      "ApplicationInterface": {
+         "CLI": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ApplicationInterface",
+            "item": "CLI"
+         },
+         "GUI": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ApplicationInterface",
+            "item": "GUI"
+         },
+         "API": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ApplicationInterface",
+            "item": "API"
+         }
+      },
       "AssociationType": {
          "ChildEventOf": {
             "version": "2.4.0",
@@ -13157,26 +13498,6 @@
             "since": "1.3.3",
             "list": "AssociationType",
             "item": "RevisionOf"
-         }
-      },
-      "ApplicationInterface": {
-         "CLI": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "ApplicationInterface",
-            "item": "CLI"
-         },
-         "GUI": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "ApplicationInterface",
-            "item": "GUI"
-         },
-         "API": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "ApplicationInterface",
-            "item": "API"
          }
       },
       "Availability": {
@@ -16551,6 +16872,130 @@
       }
    },
    "ontology": {
+      "Platform": {
+         "OperatingSystem": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "OperatingSystem",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Installer": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Installer",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Cores": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Cores",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Storage": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Storage",
+            "reference": 4,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Memory": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Memory",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
+      "Property": {
+         "Name": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "Name",
+            "reference": 1,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Description": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "Description",
+            "reference": 2,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Caveats": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "Caveats",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Type": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "Type",
+            "reference": 4,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Units": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "Units",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMin": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "ValidMin",
+            "reference": 6,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMax": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Property",
+            "element": "ValidMax",
+            "reference": 7,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
       "AccessInformation": {
          "RepositoryID": {
             "version": "2.4.0",
@@ -18825,58 +19270,6 @@
             "type": "\r"
          }
       },
-      "Platform": {
-         "OperatingSystem": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "OperatingSystem",
-            "reference": 1,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Installer": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Installer",
-            "reference": 2,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Cores": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Cores",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Storage": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Storage",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Memory": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Memory",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         }
-      },
       "PolarAngleRange": {
          "Low": {
             "version": "2.4.0",
@@ -18915,78 +19308,6 @@
             "element": "Bin",
             "reference": 4,
             "occurrence": "*",
-            "group": "",
-            "type": "\r"
-         }
-      },
-      "Property": {
-         "Name": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Name",
-            "reference": 1,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Description": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Description",
-            "reference": 2,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Caveats": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Caveats",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Type": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Type",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Units": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Units",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMin": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMin",
-            "reference": 6,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMax": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMax",
-            "reference": 7,
-            "occurrence": "0",
             "group": "",
             "type": "\r"
          }
@@ -19602,12 +19923,22 @@
             "group": "ResourceEntity",
             "type": "\r"
          },
+         "Software": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Spase",
+            "element": "Software",
+            "reference": 6,
+            "occurrence": "+",
+            "group": "ResourceEntity",
+            "type": "\r"
+         },
          "Granule": {
             "version": "2.4.0",
             "since": "1.1.0",
             "object": "Spase",
             "element": "Granule",
-            "reference": 6,
+            "reference": 7,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19617,7 +19948,7 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Instrument",
-            "reference": 7,
+            "reference": 8,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19627,7 +19958,7 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Observatory",
-            "reference": 8,
+            "reference": 9,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19637,7 +19968,7 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Person",
-            "reference": 9,
+            "reference": 10,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19647,7 +19978,7 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Registry",
-            "reference": 10,
+            "reference": 11,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19657,7 +19988,7 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Repository",
-            "reference": 11,
+            "reference": 12,
             "occurrence": "+",
             "group": "ResourceEntity",
             "type": "\r"
@@ -19667,16 +19998,6 @@
             "since": "1.1.0",
             "object": "Spase",
             "element": "Service",
-            "reference": 12,
-            "occurrence": "+",
-            "group": "ResourceEntity",
-            "type": "\r"
-         },
-         "Software": {
-            "version": "2.4.0",
-            "since": "1.1.0",
-            "object": "Spase",
-            "element": "Software",
             "reference": 13,
             "occurrence": "+",
             "group": "ResourceEntity",

@@ -5,6 +5,7 @@
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "https://spase-group.org/data/schema",
+   "extend": "",
    "history": [
       {
          "id": "1",
@@ -12,7 +13,7 @@
          "updated": "2005-06-23",
          "changedBy": "T.King",
          "description": "Removed duplicate entries.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "2",
@@ -20,7 +21,7 @@
          "updated": "2005-06-23",
          "changedBy": "T.King",
          "description": "Added Chris Harvey's definitions for Electron Drift.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "3",
@@ -28,7 +29,7 @@
          "updated": "2005-06-23",
          "changedBy": "T.King",
          "description": "Particle Correlator and Spacecraft Potential Control.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "4",
@@ -36,7 +37,7 @@
          "updated": "2005-06-23",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "5",
@@ -44,7 +45,7 @@
          "updated": "2005-07-07",
          "changedBy": "T.King",
          "description": "Corrected \"Numerical Data\" entry under Product",
-         "node": ""
+         "note": ""
       },
       {
          "id": "6",
@@ -52,7 +53,7 @@
          "updated": "2005-07-07",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "7",
@@ -60,7 +61,7 @@
          "updated": "2005-08-03",
          "changedBy": "T.King",
          "description": "Added definitions supplied by J. Thieman, C. Harvey and T.King; Significant revision of document as suggested by Joe Hourcle",
-         "node": ""
+         "note": ""
       },
       {
          "id": "8",
@@ -68,7 +69,7 @@
          "updated": "2005-08-08",
          "changedBy": "T.King",
          "description": "Restructured the taxonomy of elements to match the one suggested by A. Roberts.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "9",
@@ -76,7 +77,7 @@
          "updated": "2005-08-08",
          "changedBy": "T.King",
          "description": "Added definitions for new elements introduced in the new taxonomy.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "10",
@@ -84,7 +85,7 @@
          "updated": "2005-08-08",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "11",
@@ -92,7 +93,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Clarified some definitions and corrected typographical errors based on comments from J. Thieman and J. Hourcle.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "12",
@@ -100,7 +101,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Changed data types of \"Integer\" to \"Count\" and \"Double\" to \"Numeric\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "13",
@@ -108,7 +109,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Added document elements to product resources.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "14",
@@ -116,7 +117,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Added catalog, display data to top list.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "15",
@@ -124,7 +125,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Included region descriptions from J. King with additions suggested by K. Reardon.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "16",
@@ -132,7 +133,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Add parameters loosely based on a model proposed by A.Roberts.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "17",
@@ -140,7 +141,7 @@
          "updated": "2005-08-26",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "18",
@@ -148,7 +149,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Corrected the inclusion of Atmosphere-Ionosphere regions into the Magnetosphere.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "19",
@@ -156,7 +157,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Changed Surface to Ground.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "20",
@@ -164,7 +165,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Removed Body and references to it.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "21",
@@ -172,7 +173,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Added Spherical and Cartesian under Position.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "22",
@@ -180,7 +181,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Remove Ratio (Numerator and Denominator).",
-         "node": ""
+         "note": ""
       },
       {
          "id": "23",
@@ -188,7 +189,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Change Upper Latitude to High Latitude, Lower to Low.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "24",
@@ -196,7 +197,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Introduced \"Photon Context\" and \"Particle Context\" as replacements for \"Independent Variable\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "25",
@@ -204,7 +205,7 @@
          "updated": "2005-09-07",
          "changedBy": "T.King",
          "description": "Removed \"Provider\" and \"Manufacture\" resources and replaced with ID pointers.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "26",
@@ -212,7 +213,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Under Parameter add Description, Tensor Order.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "27",
@@ -220,7 +221,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Change Photon Context and Particle Context to Independent Variable.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "28",
@@ -228,7 +229,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Move Wavelength and Wave Number under Photon Independent Variable.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "29",
@@ -236,7 +237,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Drop Speed from Particle Independent Variable.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "30",
@@ -244,7 +245,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Move Polar Angle under Particle Independent Variable.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "31",
@@ -252,7 +253,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Add Analysis Method under Field/Electric and Field/Magnetic.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "32",
@@ -260,7 +261,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Add Wave Form, Spectra etc. under Analysis Method.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "33",
@@ -268,7 +269,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Add Near 1AU under Heliosphere; Add Body under Atmosphere-Ionosphere, Magnetosphere and Ground.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "34",
@@ -276,7 +277,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Add all planets + Moon under Body.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "35",
@@ -284,7 +285,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Update definition of Magnetotail, etc. to be generic, add Earth examples.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "36",
@@ -292,7 +293,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Change \"Acceptable abbreviation\" to \"Conventional abbreviation\" since abbreviations are not supported in the model.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "37",
@@ -300,7 +301,7 @@
          "updated": "2005-09-08",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "38",
@@ -308,7 +309,7 @@
          "updated": "2005-11-03",
          "changedBy": "T.King",
          "description": "General clean-up and alignment with the schema agreed upon at the APL meeting (Nov 2-4, 2005)",
-         "node": ""
+         "note": ""
       },
       {
          "id": "39",
@@ -316,7 +317,7 @@
          "updated": "2005-11-03",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "40",
@@ -324,7 +325,7 @@
          "updated": "2005-11-18",
          "changedBy": "T.King, A. Roberts",
          "description": "Incorporate comments from consortium members on the \"final\" draft before the release of version 1.0",
-         "node": ""
+         "note": ""
       },
       {
          "id": "41",
@@ -332,7 +333,7 @@
          "updated": "2005-11-18",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "42",
@@ -340,7 +341,7 @@
          "updated": "2005-11-22",
          "changedBy": "T.King, and others",
          "description": "Incorporate comments from consortium members on the \"final\" draft before the release of version 1.0.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "43",
@@ -348,7 +349,7 @@
          "updated": "2005-11-22",
          "changedBy": "T.King",
          "description": "Added Phenomenon Type list and defined terms in the list.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "44",
@@ -356,7 +357,7 @@
          "updated": "2005-11-22",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "45",
@@ -364,7 +365,7 @@
          "updated": "2006-01-03",
          "changedBy": "T.King",
          "description": "Changes in value type for elements: Exposure, InputResourceID, RepositoryName, Size.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "46",
@@ -372,7 +373,7 @@
          "updated": "2006-01-03",
          "changedBy": "T.King",
          "description": "Added elements: Pressure.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "47",
@@ -380,7 +381,7 @@
          "updated": "2006-01-03",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "48",
@@ -388,7 +389,7 @@
          "updated": "2006-03-07",
          "changedBy": "T.King",
          "description": "Added \"Project Scientist\" to dictionary and \"Role\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "49",
@@ -396,7 +397,7 @@
          "updated": "2006-03-07",
          "changedBy": "T.King",
          "description": "Added \"Caveats\" under \"Instrument\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "50",
@@ -404,7 +405,7 @@
          "updated": "2006-03-07",
          "changedBy": "T.King",
          "description": "Added \"Repository\" resource class.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "51",
@@ -412,7 +413,7 @@
          "updated": "2006-03-07",
          "changedBy": "T.King",
          "description": "Added \"Registry\" resource class.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "52",
@@ -420,7 +421,7 @@
          "updated": "2006-03-07",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "53",
@@ -428,7 +429,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Added \"Earth\" as a enumeration with \"Magnetosphere\" as a member.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "54",
@@ -436,7 +437,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Changed \"Observed Region\" and \"Instrument Region\" to enumerations.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "55",
@@ -444,7 +445,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Changed definition of \"Item\" to indicate it is a value of an enumeration.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "56",
@@ -452,7 +453,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Move \"Access Rights\" under \"Access Information\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "57",
@@ -460,7 +461,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Made \"Acknowledgement\" options.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "58",
@@ -468,7 +469,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Change \"HF Radar\" to \"Radar\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "59",
@@ -476,7 +477,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Added \"NCAR\" as a \"Format\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "60",
@@ -484,7 +485,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Dropped N, Z, Q from dictionary.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "61",
@@ -492,7 +493,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Moved Mass and Size under \"Particle Physical Quantity\" and changed to type item.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "62",
@@ -500,7 +501,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Added \"Near Earth\" under \"Heliosphere\" and added \"Outside Bowshock\" and \"Orbital\" under \"Near Earth\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "63",
@@ -508,7 +509,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Changed \"Spectral Range Name\" to \"Spectral Range\" for consistency.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "64",
@@ -516,7 +517,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Correct links to \"Stoke's Parameters\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "65",
@@ -524,7 +525,7 @@
          "updated": "2006-04-27",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "66",
@@ -532,7 +533,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Removed \"Orbital\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "67",
@@ -540,7 +541,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Modified definition of \"Near Earth\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "68",
@@ -548,7 +549,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Changed \"Instrument type\" to allow multiple occurrences.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "69",
@@ -556,7 +557,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Made data type of \"Mixed\" text.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "70",
@@ -564,7 +565,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added \"Service\" resource class.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "71",
@@ -572,7 +573,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Updated description of \"Resource ID\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "72",
@@ -580,7 +581,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added MAT_4, MAT_6, MAT_7 and VOTable as a Format.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "73",
@@ -588,7 +589,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added J2000 as a coordinate system.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "74",
@@ -596,7 +597,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added Base64 as an Encoding.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "75",
@@ -604,7 +605,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added Parent ID, Energy Range, Frequency Range, Azimuthal Angle Range, Polar Angle Range, Atomic Number Range, Integral, Differential, Low and High.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "76",
@@ -612,7 +613,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Remove Coordinate System from Particle Physical Parameter.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "77",
@@ -620,7 +621,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Updated Pressure definition.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "78",
@@ -628,7 +629,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Add ObservatoryID under Instrument.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "79",
@@ -636,7 +637,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Remove Observatory ID from Numerical Data and Display Data.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "80",
@@ -644,7 +645,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Changed definition of Investigation Name.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "81",
@@ -652,7 +653,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Remove Access Right from Display Data.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "82",
@@ -660,7 +661,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Change Repository Name to Repository ID under Access Information.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "83",
@@ -668,7 +669,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added Granule.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "84",
@@ -676,7 +677,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added Parameter Key under Physical Parameter.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "85",
@@ -684,7 +685,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Add Release Date to Resource Header, Person, and Granule.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "86",
@@ -692,7 +693,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Changed \"alias\" to \"alternate name\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "87",
@@ -700,7 +701,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Removed \"Instrument Name\" and \"Observatory Name\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "88",
@@ -708,7 +709,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Added ChargeState to Particle Quantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "89",
@@ -716,7 +717,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Add Field Component container.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "90",
@@ -724,7 +725,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Add Statistics to Phenomenon Type.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "91",
@@ -732,7 +733,7 @@
          "updated": "2006-08-31",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "92",
@@ -740,7 +741,7 @@
          "updated": "",
          "changedBy": "T.King",
          "description": "Changed InstrumentID and Bin to multiple occurrence.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "93",
@@ -748,7 +749,7 @@
          "updated": "",
          "changedBy": "T.King",
          "description": "Removed enumeration of Component.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "94",
@@ -756,7 +757,7 @@
          "updated": "",
          "changedBy": "T.King",
          "description": "Modified definition of Units.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "95",
@@ -764,7 +765,7 @@
          "updated": "",
          "changedBy": "T.King",
          "description": "Changed AccessURL to type container.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "96",
@@ -772,7 +773,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Aurora and Substorm under Phenomenon Type.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "97",
@@ -780,7 +781,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Checksum, Hash Value, Hash Function, MD5 and SHA1, SHA256.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "98",
@@ -788,7 +789,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Note as a term and added Note under Timespan.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "99",
@@ -796,7 +797,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added all planets, Comet and Asteroid as regions.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "100",
@@ -804,7 +805,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Data Extent, Bytes and Per to describe the size of a resource.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "101",
@@ -812,7 +813,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Data Extent to Access URL and Granule.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "102",
@@ -820,7 +821,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added the ValidMin, ValidMax and FillValue to Physical Parameter.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "103",
@@ -828,7 +829,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Uncertainty and Standard Deviation to qualifiers.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "104",
@@ -836,7 +837,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Expiration Date to Resource Header and Granule.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "105",
@@ -844,7 +845,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Longitude and Latitude to Orientation.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "106",
@@ -852,7 +853,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Updated Phi and Theta definitions.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "107",
@@ -860,7 +861,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Ephemeris as an Instrument Type.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "108",
@@ -868,7 +869,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Sequence as a element type and changes Size to a Sequence.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "109",
@@ -876,7 +877,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Defined PriorID and added PriorID to ResourceHeader and Granule.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "110",
@@ -884,7 +885,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Changed InstrumentID in DisplayData and NumericalData to one or more occurrences.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "111",
@@ -892,7 +893,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Metadata Contact to Role.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "112",
@@ -900,7 +901,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Modified definitions of H, Flux, Integral and Differential.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "113",
@@ -908,7 +909,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Cardinality of Access Information changed from 1 to + (1 or more).",
-         "node": ""
+         "note": ""
       },
       {
          "id": "114",
@@ -916,7 +917,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Deputy-PI to Roles;Changed cardinality of Caveats under Instrument to optional.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "115",
@@ -924,7 +925,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Element with members of Name, Index, ParameterKey and Component.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "116",
@@ -932,7 +933,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Element under Dimension.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "117",
@@ -940,7 +941,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Removed Orientation.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "118",
@@ -948,7 +949,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Made Component and enumeration with the values from Orientation.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "119",
@@ -956,7 +957,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added InstrumentStatus to MeasurementType.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "120",
@@ -964,7 +965,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Converted Support to an enumeration with Other, Positional and Temporal as members.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "121",
@@ -972,7 +973,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added ProcessingLevel, Removed Theta and Phi.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "122",
@@ -980,7 +981,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Postscript as a Format.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "123",
@@ -988,7 +989,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added \"Extension\" as a container.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "124",
@@ -996,7 +997,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Made \"URL\" in \"Granule\" multi-valued.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "125",
@@ -1004,7 +1005,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Changed name of \"Date\" data type to \"DateTime\" and \"Time\" data type to \"Duration\" to be consistent with conventional terminology.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "126",
@@ -1012,7 +1013,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Under \"Physical Parameter\" made \"Parameter Key\" optional and \"Name\" required.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "127",
@@ -1020,7 +1021,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Removed \"Dynamic Spectra\" from \"Measurement Type\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "128",
@@ -1028,7 +1029,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added \"Spectrum\" to \"Measurement Type\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "129",
@@ -1036,7 +1037,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Removed D, H, T, N, Latitude, Longitude from the dictionary.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "130",
@@ -1044,7 +1045,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added \"Theta\" and \"Phi\" to \"Component\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "131",
@@ -1052,7 +1053,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added Location container under Observatory and added the elements Latitude, Longitude, Elevation, ObservatoryGroup.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "132",
@@ -1060,7 +1061,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added ITM regions under Near Surface.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "133",
@@ -1068,7 +1069,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Remove Instrument Region from NumericalData.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "134",
@@ -1076,7 +1077,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Added WGS84 as a Coordinate System Name.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "135",
@@ -1084,7 +1085,7 @@
          "updated": "2007-05-22",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "136",
@@ -1092,7 +1093,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added SpacecraftOrbitPlane to CoordinateSystemName.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "137",
@@ -1100,7 +1101,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Parallel and PhaseAngle to FieldQualifier.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "138",
@@ -1108,7 +1109,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Current, GyroFrequency, Energy, PlasmaFrequency to the appropriate ParticleQuantity, FieldQuantity, or PhotonQuantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "139",
@@ -1116,7 +1117,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Characteristic to ParticleQualifier.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "140",
@@ -1124,7 +1125,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Add EnergyRange and WavelengthRange to PhotonQuantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "141",
@@ -1132,7 +1133,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added White-light, H-alpha, He-10830, Ca-K, Na-D, Extreme Ultraviolet, Ni-6768, K-7699 to dictionary and to SpectralRange.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "142",
@@ -1140,7 +1141,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Time Of Flight Interferometer, Photometer, Radiometer, Coronograph, ProportionalCounter, ScintillationDetector, Photopolarimeter, Geiger-MuellerTube, NeutralParticleDetector, Sounder, NeutralAtomImager, RetardingPotentialAnalyser, MultispectralImager, ImagingSpectrometer, Riometer, Unspecified to Instrument Type.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "143",
@@ -1148,7 +1149,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Archive Specialist to Role.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "144",
@@ -1156,7 +1157,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Flow Speed, Number Flux to Particle Quantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "145",
@@ -1164,7 +1165,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Energy Flux to Particle Quantity and Photon Quantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "146",
@@ -1172,7 +1173,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Anisotropy to Particle Qualifier.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "147",
@@ -1180,7 +1181,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Added Carrington and HCI to Coordinate System.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "148",
@@ -1188,7 +1189,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Updated definitions of Vector and Size.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "149",
@@ -1196,7 +1197,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Removed Flux and Intensity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "150",
@@ -1204,7 +1205,7 @@
          "updated": "2008-03-20",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "151",
@@ -1212,7 +1213,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Change \"Plasmafrequency\" to \"Plasma Frequency\".",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "152",
@@ -1220,7 +1221,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Change \"Plasmafrequency\" to \"Plasma Frequency\".",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "153",
@@ -1228,7 +1229,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Change \"Retarding Potential Analyser\" to \"Retarding Potential Analyzer\"",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "154",
@@ -1236,7 +1237,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Change \"Time-of-flight\" to \"Time of flight\".",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "155",
@@ -1244,7 +1245,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Change \"Observatory Group\" to \"Observatory Name\".",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "156",
@@ -1252,7 +1253,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Removed \"Offline\" from \"Medium\".",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "157",
@@ -1260,7 +1261,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Remove \"Field Component\" from lists.",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "158",
@@ -1268,7 +1269,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Remove \"Near Earth\" as a list.",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "159",
@@ -1276,7 +1277,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Added \"Ionosphere\" as a list.",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "160",
@@ -1284,7 +1285,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Azimuthal Angle,Dayside,Electric Field Instrument,Frequency,High Latitude,Low Latitude,Nightside,Polar Angle,Provider ID,Provider Release Date,RTF,SGI,Soft X-rays,Spatial Range,TeX,Wavelength,Wavenumber,XDR",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "161",
@@ -1292,7 +1293,7 @@
          "updated": "2008-07-31",
          "changedBy": "L.Bargatze",
          "description": "Added Repository ID and Stop Date",
-         "node": "Permitted during 2008 June 26 telecon."
+         "note": "Permitted during 2008 June 26 telecon."
       },
       {
          "id": "162",
@@ -1300,7 +1301,7 @@
          "updated": "2008-08-14",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "163",
@@ -1308,7 +1309,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Add WavelengthRange to dictionary; Add BandName to Bin.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "164",
@@ -1316,7 +1317,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Added SupportQuantity to Support.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "165",
@@ -1324,7 +1325,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Moved Extension into each resource class.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "166",
@@ -1332,7 +1333,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Add SpectralRange to EnergyRange, FrequencyRange and WavelengthRange.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "167",
@@ -1340,7 +1341,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Added Units, UnitsConversion, ValidMin, ValidMax, FillValue to Element",
-         "node": ""
+         "note": ""
       },
       {
          "id": "168",
@@ -1348,7 +1349,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Added Fax Number to Person.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "169",
@@ -1356,7 +1357,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Added Contributor and Publisher to dictionary and Role.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "170",
@@ -1364,7 +1365,7 @@
          "updated": "2007",
          "changedBy": "T.King",
          "description": "Added Language to dictionary.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "171",
@@ -1372,7 +1373,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Introduced Document resource.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "172",
@@ -1380,7 +1381,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Added Document Type enumeration and Paper as an item.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "173",
@@ -1388,7 +1389,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Added Number Flux to Particle Quantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "174",
@@ -1396,7 +1397,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Moved CrossSpectrum from FieldQuantity to FieldQualifier.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "175",
@@ -1404,7 +1405,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Added Electromagnetic to FieldQuantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "176",
@@ -1412,7 +1413,7 @@
          "updated": "2008",
          "changedBy": "T.King",
          "description": "Added PhysicalParameter to Catalog and DisplayData.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "177",
@@ -1420,7 +1421,7 @@
          "updated": "2008-04-24",
          "changedBy": "T.King",
          "description": "Removed \"Structure Type\" from dictionary and Structure.",
-         "node": "Decided during telecon on 2008-04-24."
+         "note": "Decided during telecon on 2008-04-24."
       },
       {
          "id": "178",
@@ -1428,7 +1429,7 @@
          "updated": "2008-04-24",
          "changedBy": "T.King",
          "description": "Removed \"Observatory Group\" from dictionary and Observatory.",
-         "node": "Decided during telecon on 2008-04-24."
+         "note": "Decided during telecon on 2008-04-24."
       },
       {
          "id": "179",
@@ -1436,7 +1437,7 @@
          "updated": "2008-04-25",
          "changedBy": "T.King",
          "description": "Removed \"Provider Release Date\" from dictionary.",
-         "node": "Decided during telecon on 2008-04-24."
+         "note": "Decided during telecon on 2008-04-24."
       },
       {
          "id": "180",
@@ -1444,7 +1445,7 @@
          "updated": "2008-05-20",
          "changedBy": "T.King",
          "description": "Added \"Magnetic Cloud\" to dictionary and \"Phenomenon Type\"",
-         "node": "Decided by e-mail on 2008-05-20."
+         "note": "Decided by e-mail on 2008-05-20."
       },
       {
          "id": "181",
@@ -1452,7 +1453,7 @@
          "updated": "2008-05-20",
          "changedBy": "T.King",
          "description": "Changed cardinality of \"Phenomenon Type\" to + in Catalog.",
-         "node": "Decided by e-mail on 2008-05-20."
+         "note": "Decided by e-mail on 2008-05-20."
       },
       {
          "id": "182",
@@ -1460,7 +1461,7 @@
          "updated": "2008-04-24",
          "changedBy": "T.King",
          "description": "Restored \"Observatory Group\" and made it multiple occurrence.",
-         "node": "Decided during telecon on 2008-05-08."
+         "note": "Decided during telecon on 2008-05-08."
       },
       {
          "id": "183",
@@ -1468,7 +1469,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Added \"TAR\" to the dictionary and to \"Encoding Type\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "184",
@@ -1476,7 +1477,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Made \"Encoding Type\" multiple occurrence (*) in \"Access Information\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "185",
@@ -1484,7 +1485,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Changed \"End Date\" to \"Stop Date\" and \"Relative End Date\" to \"Relative Stop Date\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "186",
@@ -1492,7 +1493,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Added \"Active Region\" to dictionary and \"Phenomenon Type\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "187",
@@ -1500,7 +1501,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Added \"Coronal Hole\" to dictionary and \"Phenomenon Type\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "188",
@@ -1508,7 +1509,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Added \"Radio Burst\" to dictionary and \"Phenomenon Type\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "189",
@@ -1516,7 +1517,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Added \"EIT Waves\" to dictionary and \"Phenomenon Type\".",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "190",
@@ -1524,7 +1525,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Fixed spelling of \"Plasma Frequency\" in the \"Photon Qualifier\" list.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "191",
@@ -1532,7 +1533,7 @@
          "updated": "2008-05-22",
          "changedBy": "T.King",
          "description": "Removed \"Array\" from the Field, Photon and Particle qualifier lists.",
-         "node": "Decided during telecon on 2008-05-22."
+         "note": "Decided during telecon on 2008-05-22."
       },
       {
          "id": "192",
@@ -1540,7 +1541,7 @@
          "updated": "2008-11-22",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Estimated actual release date."
+         "note": "Estimated actual release date."
       },
       {
          "id": "193",
@@ -1548,7 +1549,7 @@
          "updated": "2008-07-21",
          "changedBy": "T.King",
          "description": "Updated description of duration type.",
-         "node": "Editorial correction"
+         "note": "Editorial correction"
       },
       {
          "id": "194",
@@ -1556,7 +1557,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Set\" to \"Physical Parameter\"",
-         "node": "Decided during the telecon on 2008-06-26"
+         "note": "Decided during the telecon on 2008-06-26"
       },
       {
          "id": "195",
@@ -1564,7 +1565,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Source\" dictionary and to \"Granule\", Removed URL, Checksum and Data Extent from Granule (now in Source)",
-         "node": "Decided during the telecon on 2008-06-26"
+         "note": "Decided during the telecon on 2008-06-26"
       },
       {
          "id": "196",
@@ -1572,7 +1573,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Source Type\" as a list with possible values of Data, Layout, Ancillary, Browse and Thumbnail.",
-         "node": "Decided during the telecon on 2008-06-26"
+         "note": "Decided during the telecon on 2008-06-26"
       },
       {
          "id": "197",
@@ -1580,7 +1581,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Qualifier\" as a unified list of all qualifiers. Removed \"Field Qualifier\", \"Photon Qualifier\" and \"Particle Qualifier\" from the dictionary. Replaced each with \"Qualifier\" in the ontology. Added \"Qualifier\" to \"Support\"",
-         "node": "Decided during the telecon on 2008-07-231"
+         "note": "Decided during the telecon on 2008-07-231"
       },
       {
          "id": "198",
@@ -1588,7 +1589,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Trace\" to the dictionary and to the \"Qualifier\" list.",
-         "node": "Decided during the telecon on 2008-07-31"
+         "note": "Decided during the telecon on 2008-07-31"
       },
       {
          "id": "199",
@@ -1596,7 +1597,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Ion Drift\" and \"Dust Detector\" to the dictionary and to the \"Instrument Type\" list.",
-         "node": "Decided during the telecon on 2008-07-31"
+         "note": "Decided during the telecon on 2008-07-31"
       },
       {
          "id": "200",
@@ -1604,7 +1605,7 @@
          "updated": "2008-07-31",
          "changedBy": "T.King",
          "description": "Added \"Platform\" to the dictionary and to the \"Instrument Type\" list, remove \"Ephemeris\" from the \"Instrument Type\" list.",
-         "node": "Decided during the telecon on 2008-07-31"
+         "note": "Decided during the telecon on 2008-07-31"
       },
       {
          "id": "201",
@@ -1612,7 +1613,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Added \"Rendering Hints\" with elements Format, AxisLabel, DisplayType, ScaleMin, ScaleMax, ScaleType and related enumerated values.",
-         "node": "Decided during the telecon on 2008-08-21"
+         "note": "Decided during the telecon on 2008-08-21"
       },
       {
          "id": "202",
@@ -1620,7 +1621,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Added \"Symmetric\" to the dictionary and to Qualifier.",
-         "node": "Decided during the telecon on 2008-08-21"
+         "note": "Decided during the telecon on 2008-08-21"
       },
       {
          "id": "203",
@@ -1628,7 +1629,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Changed \"Physical Parameter\" to \"Parameter\".",
-         "node": "Decided during the telecon on 2008-09-04"
+         "note": "Decided during the telecon on 2008-09-04"
       },
       {
          "id": "204",
@@ -1636,7 +1637,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Removed \"Measured\" and shifted containers under \"Measured\" up one level.",
-         "node": "Decided during the telecon on 2008-09-04"
+         "note": "Decided during the telecon on 2008-09-04"
       },
       {
          "id": "205",
@@ -1644,7 +1645,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Added \"Velocity\" to \"Support Quantity\".",
-         "node": "Decided during the telecon on 2008-09-04"
+         "note": "Decided during the telecon on 2008-09-04"
       },
       {
          "id": "206",
@@ -1652,7 +1653,7 @@
          "updated": "2008-09-04",
          "changedBy": "T.King",
          "description": "Added \"Count Rate\" to the dictionary and to \"Particle Quantity\".",
-         "node": "Decided during the telecon on 2008-09-04"
+         "note": "Decided during the telecon on 2008-09-04"
       },
       {
          "id": "207",
@@ -1660,7 +1661,7 @@
          "updated": "2008-10-07",
          "changedBy": "T.King",
          "description": "Removed \"Charged Particle Flux\" from Measurement Type and the dictionary.",
-         "node": "Decided during the telecon on 2008-09-18"
+         "note": "Decided during the telecon on 2008-09-18"
       },
       {
          "id": "208",
@@ -1668,7 +1669,7 @@
          "updated": "2008-10-07",
          "changedBy": "T.King",
          "description": "Added \"Interstellar\" to dictionary and Region.",
-         "node": "Decided during the telecon on 2008-09-18"
+         "note": "Decided during the telecon on 2008-09-18"
       },
       {
          "id": "209",
@@ -1676,7 +1677,7 @@
          "updated": "2008-10-15",
          "changedBy": "T.King",
          "description": "Changed \"Format\" under \"Rendering Hints\" to \"Value Format\" to eliminate name conflict with \"Format\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "210",
@@ -1684,7 +1685,7 @@
          "updated": "2008-10-16",
          "changedBy": "T.King",
          "description": "Added the \"Association\" container and \"Association Type\" enumeration to the dictionary. Modified the ontology to replace \"Association Type\" with the new \"Association\" container.",
-         "node": "Decided during the telecon on 2008-10-16"
+         "note": "Decided during the telecon on 2008-10-16"
       },
       {
          "id": "211",
@@ -1692,7 +1693,7 @@
          "updated": "2009-01-14",
          "changedBy": "T.King",
          "description": "Added \"Wave\", \"Passive\" and \"Active\" to the dictionary. Added \"Wave\" as an enumeration. Remove \"Radio and Plasma Waves\" and \"Radio Soundings\" from the \"Measurement Type\" enumeration and added \"Wave\" to the enumeration.",
-         "node": "Decided during the telecon on 2009-01-08"
+         "note": "Decided during the telecon on 2009-01-08"
       },
       {
          "id": "212",
@@ -1700,7 +1701,7 @@
          "updated": "2009-01-14",
          "changedBy": "T.King",
          "description": "Added \"Linear Scale\" and \"Log Scale\" to the dictionary. Removed \"Log\" from the dictionary. Modified the definition of \"Linear\" to remove reference scaled related usage. Updated the \"Scale\" enumeration with the name changes.",
-         "node": "Decided during the telecon on 2009-01-08"
+         "note": "Decided during the telecon on 2009-01-08"
       },
       {
          "id": "213",
@@ -1708,7 +1709,7 @@
          "updated": "2009-01-14",
          "changedBy": "T.King",
          "description": "Added \"Language\" under \"Information URL\".",
-         "node": "Editorial addition"
+         "note": "Editorial addition"
       },
       {
          "id": "214",
@@ -1716,7 +1717,7 @@
          "updated": "2009-01-14",
          "changedBy": "T.King",
          "description": "Changed the definition of \"Text\" and converted \"Text\" to an enumeration with possible encoding types.",
-         "node": "Decided during the telecon on 2009-01-08 and subsequent e-mails"
+         "note": "Decided during the telecon on 2009-01-08 and subsequent e-mails"
       },
       {
          "id": "215",
@@ -1724,7 +1725,7 @@
          "updated": "2009-01-14",
          "changedBy": "T.King",
          "description": "Modified \"Component\" to consist of \"I\", \"J\", \"K\". Added \"Direction Angle\", and \"Projection\" to \"Qualifier\". Removed \"R\", \"Theta\", \"Phi\", \"X\", \"Y\", and \"Z\". Added \"Direction Angle\" as an enumeration with values of \"Azimuth Angle\", \"Polar Angle\" and \"Elevation Angle\". Added \"Projection\" as an enumeration with value of \"IJ\", \"IK\", and \"JK\".",
-         "node": "Decided during the telecon on 2009-01-08"
+         "note": "Decided during the telecon on 2009-01-08"
       },
       {
          "id": "216",
@@ -1732,7 +1733,7 @@
          "updated": "2009-01-22",
          "changedBy": "T.King",
          "description": "Modified definition of \"Mixed\"",
-         "node": "Decided during the telecon on 2009-01-22"
+         "note": "Decided during the telecon on 2009-01-22"
       },
       {
          "id": "217",
@@ -1740,7 +1741,7 @@
          "updated": "2009-01-22",
          "changedBy": "T.King",
          "description": "Changed occurrence of \"Particle\" to one or more.",
-         "node": "Decided during the telecon on 2009-01-22"
+         "note": "Decided during the telecon on 2009-01-22"
       },
       {
          "id": "218",
@@ -1748,7 +1749,7 @@
          "updated": "2009-01-23",
          "changedBy": "T.King",
          "description": "Added \"Ion Chamber\" to dictionary and \"Instrument Type\" list.",
-         "node": "Decided during the telecon on 2009-01-22"
+         "note": "Decided during the telecon on 2009-01-22"
       },
       {
          "id": "219",
@@ -1756,7 +1757,7 @@
          "updated": "2009-02-05",
          "changedBy": "T.King",
          "description": "Added (restored) \"Intensity\" to dictionary and \"Photon Quantity\" list.",
-         "node": "Decided during the telecon on 2009-02-05"
+         "note": "Decided during the telecon on 2009-02-05"
       },
       {
          "id": "220",
@@ -1764,7 +1765,7 @@
          "updated": "2009-02-05",
          "changedBy": "T.King",
          "description": "Changed \"Line-of-sight\" to \"Line Of Sight\".",
-         "node": "Decided during the telecon on 2009-02-05"
+         "note": "Decided during the telecon on 2009-02-05"
       },
       {
          "id": "221",
@@ -1772,7 +1773,7 @@
          "updated": "2009-02-05",
          "changedBy": "T.King",
          "description": "Added \"Psuedo\" and \"Column\" to the dictionary and to \"Qualifier\" list.",
-         "node": "Decided during the telecon on 2009-02-05"
+         "note": "Decided during the telecon on 2009-02-05"
       },
       {
          "id": "222",
@@ -1780,7 +1781,7 @@
          "updated": "2009-02-26",
          "changedBy": "T.King",
          "description": "Added \"Annotation\" resource and \"Annotation Type\" and \"Confidence Rating\" enumerations. The terms \"Anomaly\", \"Event\", \"Feature\", \"Probable\", \"Good\", \"High\" were added to support the new enumerations.",
-         "node": "Decided during the telecon on 2009-02-05"
+         "note": "Decided during the telecon on 2009-02-05"
       },
       {
          "id": "223",
@@ -1788,7 +1789,7 @@
          "updated": "2009-02-27",
          "changedBy": "T.King",
          "description": "Change \"Wave\" to \"Waves\".",
-         "node": "Editorial Change"
+         "note": "Editorial Change"
       },
       {
          "id": "224",
@@ -1796,7 +1797,7 @@
          "updated": "2009-03-25",
          "changedBy": "T.King",
          "description": "Updated definitions for \"Numeric\" and \"Text\" data types.",
-         "node": "Editorial Change."
+         "note": "Editorial Change."
       },
       {
          "id": "225",
@@ -1804,7 +1805,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Changed \"Mixed\" to a container with \"Qualifier\" and \"Mixed Quantity\" as attributes. Added \"Mixed Quantity\" enumeration with allowed values of \"Alfven Mach Number\", \"Other\", \"Plasma Beta\", \"Thermal Pressure\", \"Alfven Velocity\", \"Magnetosonic Mach Number\", \"Plasma Beta\", and \"Plasma Frequency-To-Gyrofrequency Ratio\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "226",
@@ -1812,7 +1813,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Added \"Access URL\" to \"Repository\" and \"Registry\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "227",
@@ -1820,7 +1821,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Added \"Image URL\" to \"Annotation\" and dictionary",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "228",
@@ -1828,7 +1829,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Various editorial updates to definitions, spelling and typos",
-         "node": "Editorial change permitted during the telecon on 2009-03-26"
+         "note": "Editorial change permitted during the telecon on 2009-03-26"
       },
       {
          "id": "229",
@@ -1836,7 +1837,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Added \"Plasmagram\", \"Spectrogram\" and \"Wave Form\" to the dictionary and to the \"Display Type\" list.",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "230",
@@ -1844,7 +1845,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Changed the name of \"Photon\" to \"Waves\" and \"PhotonQuantity\" to \"WaveQuantity\". Added \"Wave Type\" with values of \"Electromagnetic\", \"Electrostatic\", \"Photon\", \"Plasma Waves\", \"Hydrodynamic\", and \"MHD\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "231",
@@ -1852,7 +1853,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Updated definitions of \"Emissivity\", \"Equivalent Width\", \"Gyrofrequency\", \"Intensity\", \"Line Depth\", \"Plasma Frequency\", \"Poynting Flux\". Added \"Wave Type\" with values of \"Electromagnetic\", \"Electrostatic\", \"Photon\", \"Plasma Waves\", \"Hydrodynamic\", and \"MHD\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "232",
@@ -1860,7 +1861,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Added \"Absorption\", \"AC-Electric Field\", \"AC-Magnetic Field\", \"Doppler Frequency\", \"Frequency\", \"Propagation Time\", and \"Wavelength\" to dictionary and \"Wave Quantity\". Added \"Wave Type\" with values of \"Electromagnetic\", \"Electrostatic\", \"Photon\", \"Plasma Waves\", \"Hydrodynamic\", and \"MHD\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "233",
@@ -1868,7 +1869,7 @@
          "updated": "2009-03-26",
          "changedBy": "T.King",
          "description": "Added \"Far Ultraviolet\", \"HE-304\", \"LBH Band\" and \"Soft X-Rays\" to dictionary and \"Spectral Range\".",
-         "node": "Decided during the telecon on 2009-03-26"
+         "note": "Decided during the telecon on 2009-03-26"
       },
       {
          "id": "234",
@@ -1876,7 +1877,7 @@
          "updated": "2009-04-06",
          "changedBy": "T.King",
          "description": "Removed \"Spectral Range\" from under \"Energy Range\".",
-         "node": "Decided by e-mail 2009-04-06"
+         "note": "Decided by e-mail 2009-04-06"
       },
       {
          "id": "235",
@@ -1884,7 +1885,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Atom\" and \"Neutron\" to \"Particle Type\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "236",
@@ -1892,7 +1893,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Array\" and \"Total\" to \"Qualifier\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "237",
@@ -1900,7 +1901,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Particle Type\" to \"Mixed\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "238",
@@ -1908,7 +1909,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Unlikely\" and \"Weak\" to the dictionary and modified \"Confidence Rating\" to have values \"Unlikely\", \"Weak\", \"Probable\", and \"Strong\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "239",
@@ -1916,7 +1917,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Classification Method\" as a enumeration with allowed values of \"Automatic\", \"Inspection\", and \"Inferred\". Added \"Classification Method\" to \"Annotation\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "240",
@@ -1924,7 +1925,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Observation Extent\" with attributes of \"Observed Region\", \"Start Location\", \"Stop Location\" and \"Note\".  Added \"Observation Extent\" to \"Annotation\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "241",
@@ -1932,7 +1933,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Child Event Of\" and \"Observed By\" to \"Association Type\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "242",
@@ -1940,7 +1941,7 @@
          "updated": "2009-04-09",
          "changedBy": "T.King",
          "description": "Added \"Area\", \"Bandwidth\" and \"Solid Angle\" to \"Integral\", added \"Field-Aligned\", \"Group\", \"Perturbation\", \"Phase\" and \"Spectral\" to \"Qualifier\".",
-         "node": "Decided during the telecon on 2009-04-09"
+         "note": "Decided during the telecon on 2009-04-09"
       },
       {
          "id": "243",
@@ -1948,7 +1949,7 @@
          "updated": "2009-04-15",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "244",
@@ -1956,7 +1957,7 @@
          "updated": "2009-07-12",
          "changedBy": "T.King",
          "description": "Changed \"Rendering Hints\" to 0-to-many occurrence.",
-         "node": "Decided during the telecon on 2009-07-02"
+         "note": "Decided during the telecon on 2009-07-02"
       },
       {
          "id": "245",
@@ -1964,7 +1965,7 @@
          "updated": "2009-07-12",
          "changedBy": "T.King",
          "description": "Under \"Element\" replaced \"Component\" with \"Qualifier\" and allow multiple occurrences.",
-         "node": "Decided during the telecon on 2009-07-02"
+         "note": "Decided during the telecon on 2009-07-02"
       },
       {
          "id": "246",
@@ -1972,7 +1973,7 @@
          "updated": "2009-07-12",
          "changedBy": "T.King",
          "description": "Update the description of \"Index\" data type to explain wild cards.",
-         "node": "Circulated in e-mail after the telecon on 2009-07-02"
+         "note": "Circulated in e-mail after the telecon on 2009-07-02"
       },
       {
          "id": "247",
@@ -1980,7 +1981,7 @@
          "updated": "2009-07-12",
          "changedBy": "T.King",
          "description": "Added \"Sound Speed\" to dictionary and to \"Particle Quantity\".",
-         "node": "Decided in e-mail in June 2009"
+         "note": "Decided in e-mail in June 2009"
       },
       {
          "id": "248",
@@ -1988,7 +1989,7 @@
          "updated": "2009-07-12",
          "changedBy": "T.King",
          "description": "Updates to the definition \"Access URL\", \"Data Extent\", \"Polar\" and \"Sonic Mach Number\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "249",
@@ -1996,7 +1997,7 @@
          "updated": "2009-09-24",
          "changedBy": "T.King",
          "description": "Added \"Atomic Number Detected\", \"Mass Number\" and \"Charge State\" to dictionary and to \"Particle Quantity\" enumeration. Also added \"Direction Angle\" to \"Particle Quantity\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "250",
@@ -2004,7 +2005,7 @@
          "updated": "2009-10-08",
          "changedBy": "T.King",
          "description": "Added \"Arrival Direction\" to dictionary and to \"Particle Quantity\" enumeration. Added \"Instrument Mode\" to dictionary and \"Support Quantity\". Updated definitions of \"Charge State\" and \"Atomic Number Detected\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "251",
@@ -2012,7 +2013,7 @@
          "updated": "2009-11-05",
          "changedBy": "T.King",
          "description": "Added \"Stream Interaction Region\" to dictionary and to \"Phenomenon Type\" enumeration. Updated definition of \"Coronal Mass Ejection\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "252",
@@ -2020,7 +2021,7 @@
          "updated": "2009-11-18",
          "changedBy": "T.King",
          "description": "Modified definitions for \"Observatory\" and \"Instrument\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "253",
@@ -2028,7 +2029,7 @@
          "updated": "2010-02-04",
          "changedBy": "T.King",
          "description": "Added \"Former-PI\" to dictionary and to \"Role\" enumeration; Added \"Note\" to \"Person\".",
-         "node": "Decided during the telecon on 2010-02-04"
+         "note": "Decided during the telecon on 2010-02-04"
       },
       {
          "id": "254",
@@ -2036,7 +2037,7 @@
          "updated": "2010-03-19",
          "changedBy": "T.King",
          "description": "Updated definitions for \"Number Flux\", \"Energy Flux\", \"Differential\", and \"Integral\"; Added \"Dust\" to \"Measurement Type\" enumeration; ",
-         "node": "Decided durinng the telecon on 2010-03-18"
+         "note": "Decided durinng the telecon on 2010-03-18"
       },
       {
          "id": "255",
@@ -2044,7 +2045,7 @@
          "updated": "2010-03-19",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided durinng the telecon on 2010-03-18"
+         "note": "Decided durinng the telecon on 2010-03-18"
       },
       {
          "id": "256",
@@ -2052,7 +2053,7 @@
          "updated": "2010-04-15",
          "changedBy": "T.King",
          "description": "Added \"Hardcopy\" as an enumeration to dictionary and to \"Format\"; Added \"Film\", \"Photographic Plate\", \"Photograph\", \"Microfiche\", \"Microfilm\", \"Print\" to dictionary and to \"Hardcopy\" enumeration; Changed \"Observatory Group\" to \"Observatory Group ID\"; Updated definition of \"Observatory\" to make it more suitable for creation of conceptual Observatories.; Added \"Operating Span\" to dictionary with elements \"Start Date\", \"Stop Date\" and \"Note\"; Added \"Operating Span\" to \"Instrument\" and \"Observatory\".;",
-         "node": "Decided durinng the telecon on 2010-04-15"
+         "note": "Decided durinng the telecon on 2010-04-15"
       },
       {
          "id": "257",
@@ -2060,7 +2061,7 @@
          "updated": "2010-05-21",
          "changedBy": "T.King",
          "description": "Added \"Heliosheath\" to dictionary and to \"Heliosphere\" enumeration;",
-         "node": "Decided during the telecon on 2010-05-13"
+         "note": "Decided during the telecon on 2010-05-13"
       },
       {
          "id": "258",
@@ -2068,7 +2069,7 @@
          "updated": "2010-06-25",
          "changedBy": "T.King",
          "description": "Added \"Fluence\" to dictionary and \"Particle Quantity\"; Updated definitions for \"Number Flux\", \"Coordinate System\" and \"Counts\"; Added \"HCC\" (Heliocentric Cartesian), \"HCR\" (Heliocentric Radial), HPC (Helioprojective Cartesian) and \"HPR\" (Helioprojective Radial) to dictionary and \"Coordinate System Name\"",
-         "node": "Decided durinng the telecon on 2010-06-10"
+         "note": "Decided durinng the telecon on 2010-06-10"
       },
       {
          "id": "259",
@@ -2076,7 +2077,7 @@
          "updated": "2010-08-17",
          "changedBy": "T.King",
          "description": "Added \"S3_BUCKET\" to dictionary and \"Encoding\"; Add \"Directional\" to dictionary and to \"Qualifier\"; updated definition for \"Energy Flux\" and \"Differential\" ",
-         "node": "Decided durinng the telecon on 2010-07-08."
+         "note": "Decided durinng the telecon on 2010-07-08."
       },
       {
          "id": "260",
@@ -2084,7 +2085,7 @@
          "updated": "2010-08-20",
          "changedBy": "T.King",
          "description": "Updated definitions of \"Outer\", \"Inner\", \"Heliosheath\" and \"Remote 1AU\" ",
-         "node": "Decided during the telecon on 2010-07-08 and refined through subsequent e-mail."
+         "note": "Decided during the telecon on 2010-07-08 and refined through subsequent e-mail."
       },
       {
          "id": "261",
@@ -2092,7 +2093,7 @@
          "updated": "2010-09-15",
          "changedBy": "T.King",
          "description": "Added \"Excel\" to dictionary and to \"Format\" list; Added \"Rendering Axis\", and \"Index\" to dictionary and under \"Rendering Hints\"; Add \"Vertical\", \"Horizontal\", and \"Color Bar\" to dictionary and to the \"Rendering Hints\" enumeration; Changed cardinality of \"Investigation Name\" from 1 to +; Add \"Median, \" Maximum\" and \"Minimum\" to dictionary and to \"Qualifer\" list.;",
-         "node": "Decided durinng the telecon on 2010-08-26."
+         "note": "Decided durinng the telecon on 2010-08-26."
       },
       {
          "id": "262",
@@ -2100,7 +2101,7 @@
          "updated": "2010-09-17",
          "changedBy": "T.King",
          "description": "Added \"SSE_L\" to dictionary and to \"Coordinate System Name\" list;",
-         "node": "Decided during the telecon on 2010-09-16."
+         "note": "Decided during the telecon on 2010-09-16."
       },
       {
          "id": "263",
@@ -2108,7 +2109,7 @@
          "updated": "2011-01-06",
          "changedBy": "T.King",
          "description": "Updated definition for \"irradence\".",
-         "node": ""
+         "note": ""
       },
       {
          "id": "264",
@@ -2116,7 +2117,7 @@
          "updated": "2011-01-06",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "265",
@@ -2124,7 +2125,7 @@
          "updated": "2011-05-12",
          "changedBy": "T.King",
          "description": "Strike \"product\" from the definition of \"Numerical Data\".;",
-         "node": "Per e-mail from Joe King 4/21/2011"
+         "note": "Per e-mail from Joe King 4/21/2011"
       },
       {
          "id": "266",
@@ -2132,7 +2133,7 @@
          "updated": "2011-06-16",
          "changedBy": "T.King",
          "description": "Added \"core\", \"halo\", \"strahl\" and \"superhalo\" to the dictionary and to \"Qualifier\";",
-         "node": "As supplied by Aaron Roberts 4/21/2011, modified by Todd King; Decided during the telecon on 2011-06-12."
+         "note": "As supplied by Aaron Roberts 4/21/2011, modified by Todd King; Decided during the telecon on 2011-06-12."
       },
       {
          "id": "267",
@@ -2140,7 +2141,7 @@
          "updated": "2011-08-18",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "268",
@@ -2148,7 +2149,7 @@
          "updated": "2011-09-26",
          "changedBy": "T.King",
          "description": "Add \"Rendering Hints\" under \"Element\"; Set occurrence for \"Coordinate Representation\" and \"Coordinate System Name\" under \"Coordinate Sytem\" to required (1); Set \"Size\" under \"Structure\" to required (1); Set \"Association ID\" and \"Association Type\" under \"Association\" to required (1).",
-         "node": "Decided during the telecon on 2011-09-15."
+         "note": "Decided during the telecon on 2011-09-15."
       },
       {
          "id": "269",
@@ -2156,7 +2157,7 @@
          "updated": "2011-10-27",
          "changedBy": "T.King",
          "description": "Update definition of \"Document\"; Add \"MIME Type\" to dictionary and \"Document\" structure; Add \"Presentation\", \"Poster\", \"White Paper\", \"Technical Note\", \"Specification\" and \"Report\" to dictionary and to \"Document Type\" enumeration; Remove \"Paper\" from dictionary.",
-         "node": "Decided during the telecon on 2011-10-27."
+         "note": "Decided during the telecon on 2011-10-27."
       },
       {
          "id": "270",
@@ -2164,7 +2165,7 @@
          "updated": "2012-02-02",
          "changedBy": "T.King",
          "description": "Add \"Sector Boundary Crossing\" to the dictionary and the \"Phenomenon Type\" list.; Add \"Product Key\" to the dictionary and under \"Access Information\";",
-         "node": "Decided during the telecon on 2012-02-02"
+         "note": "Decided during the telecon on 2012-02-02"
       },
       {
          "id": "271",
@@ -2172,7 +2173,7 @@
          "updated": "2012-02-27",
          "changedBy": "T.King",
          "description": "Add \"Albedo\" to the dictionary and to \"Wave Quantity\" list.; Add \"Partical Radius\" to the dictionary and to the \"Particle Quantity\" list;",
-         "node": "Decided during the HDMC face-to-face on 2012-02-21"
+         "note": "Decided during the HDMC face-to-face on 2012-02-21"
       },
       {
          "id": "272",
@@ -2180,7 +2181,7 @@
          "updated": "2012-02-27",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "273",
@@ -2188,7 +2189,7 @@
          "updated": "2012-03-15",
          "changedBy": "T.King",
          "description": "Modified definition of \"Numerical Data\" as suggested by R. Weigel and D.A. Roberts; Modified definition of \"Potential\" as suggested by F. Mozer, D.A. Roberts and S. Fung; Add \"Magnetograph\" to dictionary and \"Instrument Type\" as suggested by J. King",
-         "node": "Decided during the telecon on 2012-03-15"
+         "note": "Decided during the telecon on 2012-03-15"
       },
       {
          "id": "274",
@@ -2196,7 +2197,7 @@
          "updated": "2012-05-10",
          "changedBy": "T.King",
          "description": "Modified definitions of \"GEI\", \"Azimuth Angle\", \"Elevation Angle\" and \"Polar Angle\" as suggested by J.Merka; Add definition for \"ENP and add to \"Coordinate System Name\" enumeration as suggested by J. Merka; Add definitions of \"Photomultiplier Tube\" and \"Solid State Detector\" to dictionary and \"Intrument Type\" as suggested by B. Weigel.",
-         "node": "Decided during the telecon on 2012-05-10"
+         "note": "Decided during the telecon on 2012-05-10"
       },
       {
          "id": "275",
@@ -2204,7 +2205,7 @@
          "updated": "2012-05-24",
          "changedBy": "T.King",
          "description": "Add definition of \"Moon\" and add to \"Earth\" enumeration as suggested by T. Narock.",
-         "node": "Decided during the telecon on 2012-05-24"
+         "note": "Decided during the telecon on 2012-05-24"
       },
       {
          "id": "276",
@@ -2212,7 +2213,7 @@
          "updated": "2014-05-22",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2014-05-22."
+         "note": "Decided during the telecon on 2014-05-22."
       },
       {
          "id": "277",
@@ -2220,7 +2221,7 @@
          "updated": "2015-05-28",
          "changedBy": "T.King",
          "description": "Add coordinate systems MSO, VSO, KSO, KSM, JSO, JSM to dictionary and CoordinateSystemName, Add SolarUVFlux and IMFClockAngle to dictionary and MixedQuantity.",
-         "node": ""
+         "note": ""
       },
       {
          "id": "278",
@@ -2228,7 +2229,7 @@
          "updated": "2015-05-31",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Coordinated with SPASE Simulation Extension release"
+         "note": "Coordinated with SPASE Simulation Extension release"
       },
       {
          "id": "279",
@@ -2236,7 +2237,7 @@
          "updated": "2015-06-12",
          "changedBy": "T.King",
          "description": "Add moons and magnetosphere to planets. Only the larger moons which are typically encountered or simulated were added.",
-         "node": "Decided at telecon on 2015-05-11"
+         "note": "Decided at telecon on 2015-05-11"
       },
       {
          "id": "280",
@@ -2244,7 +2245,7 @@
          "updated": "2015-06-12",
          "changedBy": "T.King",
          "description": "Add coordinate systems to enumeration.",
-         "node": "Decided at telecon on 2015-05-11"
+         "note": "Decided at telecon on 2015-05-11"
       },
       {
          "id": "281",
@@ -2252,7 +2253,7 @@
          "updated": "2015-09-09",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2015-09-09."
+         "note": "Decided during the telecon on 2015-09-09."
       },
       {
          "id": "282",
@@ -2260,7 +2261,7 @@
          "updated": "2016-07-21",
          "changedBy": "T.King",
          "description": "Change occurrence of Particle->ParticalType from + to * and Wave->WaveType from 1 to 0.",
-         "node": "Decided during the telecon on 2016-05-05."
+         "note": "Decided during the telecon on 2016-05-05."
       },
       {
          "id": "283",
@@ -2268,7 +2269,7 @@
          "updated": "2016-07-21",
          "changedBy": "T.King",
          "description": "Add JSON and CSV to the dictionary and to Format enumeration.",
-         "node": "Decided during the telecon on 2016-07-21."
+         "note": "Decided during the telecon on 2016-07-21."
       },
       {
          "id": "284",
@@ -2276,7 +2277,7 @@
          "updated": "2016-07-21",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2016-09-08."
+         "note": "Decided during the telecon on 2016-09-08."
       },
       {
          "id": "285",
@@ -2284,7 +2285,7 @@
          "updated": "2017-02-09",
          "changedBy": "T.King",
          "description": "Add CadenceMin, CadenceMax, ExposureMin, ExposureMax, PartiallyRestricted, Confidence, ProviderName, MassRange, PitchAngleRange; Change occurrence of Observatory/OperatingSpan from 1 to +.",
-         "node": "Decided during the telecon on 2017-02-09."
+         "note": "Decided during the telecon on 2017-02-09."
       },
       {
          "id": "286",
@@ -2292,7 +2293,7 @@
          "updated": "2017-09-07",
          "changedBy": "T.King",
          "description": "Add HGRTN, HERTN to dictionary and to CoordinateSystemName. Add Entropy to dictionary and ParticleQuantity. ",
-         "node": "Decided during the telecon on 2017-09-14."
+         "note": "Decided during the telecon on 2017-09-14."
       },
       {
          "id": "287",
@@ -2300,7 +2301,7 @@
          "updated": "2017-11-14",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2017-11-14."
+         "note": "Decided during the telecon on 2017-11-14."
       },
       {
          "id": "288",
@@ -2308,7 +2309,7 @@
          "updated": "2018-02-08",
          "changedBy": "T.King",
          "description": "Add DOI to dictionary and to ResourceHeader.",
-         "node": "Decided during the telecon on 2018-02-08."
+         "note": "Decided during the telecon on 2018-02-08."
       },
       {
          "id": "289",
@@ -2316,7 +2317,7 @@
          "updated": "2018-05-04",
          "changedBy": "T.King",
          "description": "Add PublicationInfo, PublicationDate, Authors, Funding, Agency, Project, Award, ORCIdentifier to dictionary and to the model.",
-         "node": "Decided (mostly) during the telecon on 2018-03-19."
+         "note": "Decided (mostly) during the telecon on 2018-03-19."
       },
       {
          "id": "290",
@@ -2324,7 +2325,7 @@
          "updated": "2018-05-08",
          "changedBy": "T.King",
          "description": "Add File, HAPI, Listing, Search, Template, Overview, WebService to dictionary and as values for Style enumeration.; Add Style to dictionary and AccessURL",
-         "node": "Decided (partially) during the telecon on 2018-03-19."
+         "note": "Decided (partially) during the telecon on 2018-03-19."
       },
       {
          "id": "291",
@@ -2332,7 +2333,7 @@
          "updated": "2018-05-31",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2018-05-31."
+         "note": "Decided during the telecon on 2018-05-31."
       },
       {
          "id": "292",
@@ -2340,7 +2341,7 @@
          "updated": "2018-06-18",
          "changedBy": "T.King",
          "description": "Add Eccentric Dipole (ECD) to dictionary and CoordinateSystem list. ",
-         "node": "Decided by email on 2018-05-18."
+         "note": "Decided by email on 2018-05-18."
       },
       {
          "id": "293",
@@ -2348,7 +2349,7 @@
          "updated": "2018-11-01",
          "changedBy": "T.King",
          "description": "Add Positron to dictionary and ParticleType list. ",
-         "node": "Decided at telecon on 2018-11-01."
+         "note": "Decided at telecon on 2018-11-01."
       },
       {
          "id": "294",
@@ -2356,7 +2357,7 @@
          "updated": "2019-02-25",
          "changedBy": "T.King",
          "description": "Add Developer, HostContact and User to dictionary and Role list. ",
-         "node": "Decided by email 2019-02-20."
+         "note": "Decided by email 2019-02-20."
       },
       {
          "id": "295",
@@ -2364,7 +2365,7 @@
          "updated": "2019-06-13",
          "changedBy": "T.King",
          "description": "Add StartDate, StopDate and Note to Contact.  ",
-         "node": "Decided (partially) during telecon on 2019-05-30."
+         "note": "Decided (partially) during telecon on 2019-05-30."
       },
       {
          "id": "296",
@@ -2372,7 +2373,7 @@
          "updated": "2019-06-13",
          "changedBy": "T.King",
          "description": "Add RevisionHistory, RevisionEvent to dictionary and add RevisionHistory to ResourceHeader; Add IonGauge to dictionary and to InstrumentType.",
-         "node": "Decided during telecon on 2019-06-13."
+         "note": "Decided during telecon on 2019-06-13."
       },
       {
          "id": "297",
@@ -2380,7 +2381,7 @@
          "updated": "2019-09-27",
          "changedBy": "T.King",
          "description": "Add DirectionCosine, GeometricFactor, AdiabaticInvariant, MagneticMoment, BounceMotion, DriftMotion, DataQuality, Orientation, SpinPeriod, SpinPhase, SpinRate, LowerHybridFrequency and UpperHybridFrequency to dictionary.; Create DirectionCosine enumeration with I,J,K as members; Create AdiabaticInvariant enumeration with MagneticMoment, BounceMotion and DriftMotion as members.; Add DirectionCosine to Qualifier list.;Add GeometericFactor, AdiabaticInvariant to ParticleQuantities; Add DataQuality, Orientation, SpinPeriod, SpinPhase and SpinRate to SupportQuantity.; Add LowerHybridFrequency and UpperHybridFrequency to WaveQuantity.",
-         "node": "Suggested by L. Bargatze. Decided during telecon on 2019-09-20."
+         "note": "Suggested by L. Bargatze. Decided during telecon on 2019-09-20."
       },
       {
          "id": "298",
@@ -2388,7 +2389,7 @@
          "updated": "2019-10-31",
          "changedBy": "T.King",
          "description": "Add CoPI, MidLatitudeRegion, SubAuroralRegion, ProjectEngineer, and ProjectManager to dictionary; Add CoPI, ProjectEngineer, ProjectManager to Role enumeration; Add Plasmasphere, RingCurrent, and MidLatitudeRegion to Magnetosphere enumeration.; Add MidLatitudeRegion, and ProjectManager to NearSurface enumeration.; Fix typo with Role values with dashes.   ",
-         "node": "Decided during telecon on 2019-10-31."
+         "note": "Decided during telecon on 2019-10-31."
       },
       {
          "id": "299",
@@ -2396,7 +2397,7 @@
          "updated": "2019-11-14",
          "changedBy": "T.King",
          "description": "Released.",
-         "node": "Decided during the telecon on 2019-11-14."
+         "note": "Decided during the telecon on 2019-11-14."
       }
    ],
    "type": {
@@ -4081,6 +4082,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Deimos": {
+         "version": "2.3.1",
+         "since": "2.2.5",
+         "term": "Deimos",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "The smaller and outermost of the two natural satellites of Mars.",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "DeputyPI": {
          "version": "2.3.1",
          "since": "1.2.0",
@@ -4453,8 +4466,31 @@
          "allowedValues": [
             "Magnetosheath",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Moon",
             "NearSurface",
+            "NearSurface.Atmosphere",
+            "NearSurface.AuroralRegion",
+            "NearSurface.EquatorialRegion",
+            "NearSurface.Ionosphere",
+            "NearSurface.Ionosphere.DRegion",
+            "NearSurface.Ionosphere.ERegion",
+            "NearSurface.Ionosphere.FRegion",
+            "NearSurface.Ionosphere.Topside",
+            "NearSurface.Mesosphere",
+            "NearSurface.MidLatitudeRegion",
+            "NearSurface.Plasmasphere",
+            "NearSurface.PolarCap",
+            "NearSurface.SouthAtlanticAnomalyRegion",
+            "NearSurface.Stratosphere",
+            "NearSurface.SubAuroralRegion",
+            "NearSurface.Thermosphere",
+            "NearSurface.Troposphere",
             "Surface"
          ]
       },
@@ -5236,6 +5272,12 @@
             "FITS",
             "GIF",
             "Hardcopy",
+            "Hardcopy.Film",
+            "Hardcopy.Microfiche",
+            "Hardcopy.Microfilm",
+            "Hardcopy.Photograph",
+            "Hardcopy.PhotographicPlate",
+            "Hardcopy.Print",
             "HDF",
             "HDF4",
             "HDF5",
@@ -5255,6 +5297,8 @@
             "Postscript",
             "QuickTime",
             "Text",
+            "Text.ASCII",
+            "Text.Unicode",
             "TIFF",
             "UDF",
             "VOTable",
@@ -6326,7 +6370,7 @@
             "FaradayCup",
             "FluxFeedback",
             "FourierTransformSpectrograph",
-            "Geiger-MuellerTube",
+            "GeigerMuellerTube",
             "Imager",
             "ImagingSpectrometer",
             "Interferometer",
@@ -6657,7 +6701,13 @@
             "Europa",
             "Ganymede",
             "Io",
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "K7699": {
@@ -7154,6 +7204,12 @@
          "allowedValues": [
             "Deimos",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Phobos"
          ]
       },
@@ -7317,7 +7373,9 @@
             "Radiance",
             "Spectrum",
             "ThermalPlasma",
-            "Waves"
+            "Waves",
+            "Waves.Active",
+            "Waves.Passive"
          ]
       },
       "Median": {
@@ -7343,7 +7401,13 @@
          "definition": "The first planet from the sun in our solar system.",
          "usedBy": [],
          "allowedValues": [
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "Mesosphere": {
@@ -7739,6 +7803,10 @@
             "AuroralRegion",
             "EquatorialRegion",
             "Ionosphere",
+            "Ionosphere.DRegion",
+            "Ionosphere.ERegion",
+            "Ionosphere.FRegion",
+            "Ionosphere.Topside",
             "Mesosphere",
             "MidLatitudeRegion",
             "Plasmasphere",
@@ -7762,6 +7830,12 @@
          "usedBy": [],
          "allowedValues": [
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Proteus",
             "Triton"
          ]
@@ -8038,17 +8112,125 @@
             "Asteroid",
             "Comet",
             "Earth",
+            "Earth.Magnetosheath",
+            "Earth.Magnetosphere",
+            "Earth.Magnetosphere.Magnetotail",
+            "Earth.Magnetosphere.Main",
+            "Earth.Magnetosphere.Plasmasphere",
+            "Earth.Magnetosphere.Polar",
+            "Earth.Magnetosphere.RadiationBelt",
+            "Earth.Magnetosphere.RingCurrent",
+            "Earth.Moon",
+            "Earth.NearSurface",
+            "Earth.NearSurface.Atmosphere",
+            "Earth.NearSurface.AuroralRegion",
+            "Earth.NearSurface.EquatorialRegion",
+            "Earth.NearSurface.Ionosphere",
+            "Earth.NearSurface.Ionosphere.DRegion",
+            "Earth.NearSurface.Ionosphere.ERegion",
+            "Earth.NearSurface.Ionosphere.FRegion",
+            "Earth.NearSurface.Ionosphere.Topside",
+            "Earth.NearSurface.Mesosphere",
+            "Earth.NearSurface.MidLatitudeRegion",
+            "Earth.NearSurface.Plasmasphere",
+            "Earth.NearSurface.PolarCap",
+            "Earth.NearSurface.SouthAtlanticAnomalyRegion",
+            "Earth.NearSurface.Stratosphere",
+            "Earth.NearSurface.SubAuroralRegion",
+            "Earth.NearSurface.Thermosphere",
+            "Earth.NearSurface.Troposphere",
+            "Earth.Surface",
             "Heliosphere",
+            "Heliosphere.Heliosheath",
+            "Heliosphere.Inner",
+            "Heliosphere.NearEarth",
+            "Heliosphere.Outer",
+            "Heliosphere.Remote1AU",
             "Interstellar",
             "Jupiter",
+            "Jupiter.Callisto",
+            "Jupiter.Europa",
+            "Jupiter.Ganymede",
+            "Jupiter.Io",
+            "Jupiter.Magnetosphere",
+            "Jupiter.Magnetosphere.Magnetotail",
+            "Jupiter.Magnetosphere.Main",
+            "Jupiter.Magnetosphere.Plasmasphere",
+            "Jupiter.Magnetosphere.Polar",
+            "Jupiter.Magnetosphere.RadiationBelt",
+            "Jupiter.Magnetosphere.RingCurrent",
             "Mars",
+            "Mars.Deimos",
+            "Mars.Magnetosphere",
+            "Mars.Magnetosphere.Magnetotail",
+            "Mars.Magnetosphere.Main",
+            "Mars.Magnetosphere.Plasmasphere",
+            "Mars.Magnetosphere.Polar",
+            "Mars.Magnetosphere.RadiationBelt",
+            "Mars.Magnetosphere.RingCurrent",
+            "Mars.Phobos",
             "Mercury",
+            "Mercury.Magnetosphere",
+            "Mercury.Magnetosphere.Magnetotail",
+            "Mercury.Magnetosphere.Main",
+            "Mercury.Magnetosphere.Plasmasphere",
+            "Mercury.Magnetosphere.Polar",
+            "Mercury.Magnetosphere.RadiationBelt",
+            "Mercury.Magnetosphere.RingCurrent",
             "Neptune",
+            "Neptune.Magnetosphere",
+            "Neptune.Magnetosphere.Magnetotail",
+            "Neptune.Magnetosphere.Main",
+            "Neptune.Magnetosphere.Plasmasphere",
+            "Neptune.Magnetosphere.Polar",
+            "Neptune.Magnetosphere.RadiationBelt",
+            "Neptune.Magnetosphere.RingCurrent",
+            "Neptune.Proteus",
+            "Neptune.Triton",
             "Pluto",
             "Saturn",
+            "Saturn.Dione",
+            "Saturn.Enceladus",
+            "Saturn.Iapetus",
+            "Saturn.Magnetosphere",
+            "Saturn.Magnetosphere.Magnetotail",
+            "Saturn.Magnetosphere.Main",
+            "Saturn.Magnetosphere.Plasmasphere",
+            "Saturn.Magnetosphere.Polar",
+            "Saturn.Magnetosphere.RadiationBelt",
+            "Saturn.Magnetosphere.RingCurrent",
+            "Saturn.Mimas",
+            "Saturn.Rhea",
+            "Saturn.Tethys",
+            "Saturn.Titan",
             "Sun",
+            "Sun.Chromosphere",
+            "Sun.Corona",
+            "Sun.Interior",
+            "Sun.Photosphere",
+            "Sun.TransitionRegion",
             "Uranus",
-            "Venus"
+            "Uranus.Ariel",
+            "Uranus.Magnetosphere",
+            "Uranus.Magnetosphere.Magnetotail",
+            "Uranus.Magnetosphere.Main",
+            "Uranus.Magnetosphere.Plasmasphere",
+            "Uranus.Magnetosphere.Polar",
+            "Uranus.Magnetosphere.RadiationBelt",
+            "Uranus.Magnetosphere.RingCurrent",
+            "Uranus.Miranda",
+            "Uranus.Oberon",
+            "Uranus.Puck",
+            "Uranus.Titania",
+            "Uranus.Umbriel",
+            "Venus",
+            "Venus.Magnetosphere",
+            "Venus.Magnetosphere.Magnetotail",
+            "Venus.Magnetosphere.Main",
+            "Venus.Magnetosphere.Plasmasphere",
+            "Venus.Magnetosphere.Polar",
+            "Venus.Magnetosphere.RadiationBelt",
+            "Venus.Magnetosphere.RingCurrent"
          ]
       },
       "ObservedBy": {
@@ -8081,17 +8263,125 @@
             "Asteroid",
             "Comet",
             "Earth",
+            "Earth.Magnetosheath",
+            "Earth.Magnetosphere",
+            "Earth.Magnetosphere.Magnetotail",
+            "Earth.Magnetosphere.Main",
+            "Earth.Magnetosphere.Plasmasphere",
+            "Earth.Magnetosphere.Polar",
+            "Earth.Magnetosphere.RadiationBelt",
+            "Earth.Magnetosphere.RingCurrent",
+            "Earth.Moon",
+            "Earth.NearSurface",
+            "Earth.NearSurface.Atmosphere",
+            "Earth.NearSurface.AuroralRegion",
+            "Earth.NearSurface.EquatorialRegion",
+            "Earth.NearSurface.Ionosphere",
+            "Earth.NearSurface.Ionosphere.DRegion",
+            "Earth.NearSurface.Ionosphere.ERegion",
+            "Earth.NearSurface.Ionosphere.FRegion",
+            "Earth.NearSurface.Ionosphere.Topside",
+            "Earth.NearSurface.Mesosphere",
+            "Earth.NearSurface.MidLatitudeRegion",
+            "Earth.NearSurface.Plasmasphere",
+            "Earth.NearSurface.PolarCap",
+            "Earth.NearSurface.SouthAtlanticAnomalyRegion",
+            "Earth.NearSurface.Stratosphere",
+            "Earth.NearSurface.SubAuroralRegion",
+            "Earth.NearSurface.Thermosphere",
+            "Earth.NearSurface.Troposphere",
+            "Earth.Surface",
             "Heliosphere",
+            "Heliosphere.Heliosheath",
+            "Heliosphere.Inner",
+            "Heliosphere.NearEarth",
+            "Heliosphere.Outer",
+            "Heliosphere.Remote1AU",
             "Interstellar",
             "Jupiter",
+            "Jupiter.Callisto",
+            "Jupiter.Europa",
+            "Jupiter.Ganymede",
+            "Jupiter.Io",
+            "Jupiter.Magnetosphere",
+            "Jupiter.Magnetosphere.Magnetotail",
+            "Jupiter.Magnetosphere.Main",
+            "Jupiter.Magnetosphere.Plasmasphere",
+            "Jupiter.Magnetosphere.Polar",
+            "Jupiter.Magnetosphere.RadiationBelt",
+            "Jupiter.Magnetosphere.RingCurrent",
             "Mars",
+            "Mars.Deimos",
+            "Mars.Magnetosphere",
+            "Mars.Magnetosphere.Magnetotail",
+            "Mars.Magnetosphere.Main",
+            "Mars.Magnetosphere.Plasmasphere",
+            "Mars.Magnetosphere.Polar",
+            "Mars.Magnetosphere.RadiationBelt",
+            "Mars.Magnetosphere.RingCurrent",
+            "Mars.Phobos",
             "Mercury",
+            "Mercury.Magnetosphere",
+            "Mercury.Magnetosphere.Magnetotail",
+            "Mercury.Magnetosphere.Main",
+            "Mercury.Magnetosphere.Plasmasphere",
+            "Mercury.Magnetosphere.Polar",
+            "Mercury.Magnetosphere.RadiationBelt",
+            "Mercury.Magnetosphere.RingCurrent",
             "Neptune",
+            "Neptune.Magnetosphere",
+            "Neptune.Magnetosphere.Magnetotail",
+            "Neptune.Magnetosphere.Main",
+            "Neptune.Magnetosphere.Plasmasphere",
+            "Neptune.Magnetosphere.Polar",
+            "Neptune.Magnetosphere.RadiationBelt",
+            "Neptune.Magnetosphere.RingCurrent",
+            "Neptune.Proteus",
+            "Neptune.Triton",
             "Pluto",
             "Saturn",
+            "Saturn.Dione",
+            "Saturn.Enceladus",
+            "Saturn.Iapetus",
+            "Saturn.Magnetosphere",
+            "Saturn.Magnetosphere.Magnetotail",
+            "Saturn.Magnetosphere.Main",
+            "Saturn.Magnetosphere.Plasmasphere",
+            "Saturn.Magnetosphere.Polar",
+            "Saturn.Magnetosphere.RadiationBelt",
+            "Saturn.Magnetosphere.RingCurrent",
+            "Saturn.Mimas",
+            "Saturn.Rhea",
+            "Saturn.Tethys",
+            "Saturn.Titan",
             "Sun",
+            "Sun.Chromosphere",
+            "Sun.Corona",
+            "Sun.Interior",
+            "Sun.Photosphere",
+            "Sun.TransitionRegion",
             "Uranus",
-            "Venus"
+            "Uranus.Ariel",
+            "Uranus.Magnetosphere",
+            "Uranus.Magnetosphere.Magnetotail",
+            "Uranus.Magnetosphere.Main",
+            "Uranus.Magnetosphere.Plasmasphere",
+            "Uranus.Magnetosphere.Polar",
+            "Uranus.Magnetosphere.RadiationBelt",
+            "Uranus.Magnetosphere.RingCurrent",
+            "Uranus.Miranda",
+            "Uranus.Oberon",
+            "Uranus.Puck",
+            "Uranus.Titania",
+            "Uranus.Umbriel",
+            "Venus",
+            "Venus.Magnetosphere",
+            "Venus.Magnetosphere.Magnetotail",
+            "Venus.Magnetosphere.Main",
+            "Venus.Magnetosphere.Plasmasphere",
+            "Venus.Magnetosphere.Polar",
+            "Venus.Magnetosphere.RadiationBelt",
+            "Venus.Magnetosphere.RingCurrent"
          ]
       },
       "Offline": {
@@ -8394,6 +8684,9 @@
          ],
          "allowedValues": [
             "AdiabaticInvariant",
+            "AdiabaticInvariant.MagneticMoment",
+            "AdiabaticInvariant.BounceMotion",
+            "AdiabaticInvariant.DriftMotion",
             "ArrivalDirection",
             "AtomicNumberDetected",
             "AverageChargeState",
@@ -8416,7 +8709,7 @@
             "NumberDensity",
             "NumberFlux",
             "ParticleRadius",
-            "Phase-SpaceDensity",
+            "PhaseSpaceDensity",
             "PlasmaFrequency",
             "Pressure",
             "SonicMachNumber",
@@ -9458,6 +9751,9 @@
             "Circular",
             "Column",
             "Component",
+            "Component.I",
+            "Component.J",
+            "Component.K",
             "Confidence",
             "Core",
             "CrossSpectrum",
@@ -9466,12 +9762,21 @@
             "Direction",
             "Directional",
             "DirectionAngle",
+            "DirectionAngle.AzimuthAngle",
+            "DirectionAngle.ElevationAngle",
+            "DirectionAngle.PolarAngle",
             "DirectionCosine",
-            "Field-Aligned",
+            "DirectionCosine.I",
+            "DirectionCosine.J",
+            "DirectionCosine.K",
+            "FieldAligned",
             "Fit",
             "Group",
             "Halo",
             "Integral",
+            "Integral.Area",
+            "Integral.Bandwidth",
+            "Integral.SolidAngle",
             "Linear",
             "LineOfSight",
             "Magnitude",
@@ -9486,6 +9791,9 @@
             "Phase",
             "PhaseAngle",
             "Projection",
+            "Projection.IJ",
+            "Projection.IK",
+            "Projection.JK",
             "Pseudo",
             "Ratio",
             "Scalar",
@@ -10049,6 +10357,12 @@
             "Enceladus",
             "Iapetus",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Mimas",
             "Rhea",
             "Tethys",
@@ -10753,10 +11067,10 @@
          ],
          "allowedValues": []
       },
-      "Stoke's Parameters": {
+      "StokesParameters": {
          "version": "2.3.1",
          "since": "1.0.0",
-         "term": "Stoke's Parameters",
+         "term": "StokesParameters",
          "type": "Item",
          "list": "",
          "element": "",
@@ -11564,6 +11878,12 @@
          "allowedValues": [
             "Ariel",
             "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent",
             "Miranda",
             "Oberon",
             "Puck",
@@ -11702,7 +12022,13 @@
          "definition": "The second planet from the sun in our solar system.",
          "usedBy": [],
          "allowedValues": [
-            "Magnetosphere"
+            "Magnetosphere",
+            "Magnetosphere.Magnetotail",
+            "Magnetosphere.Main",
+            "Magnetosphere.Plasmasphere",
+            "Magnetosphere.Polar",
+            "Magnetosphere.RadiationBelt",
+            "Magnetosphere.RingCurrent"
          ]
       },
       "Version": {
@@ -13537,11 +13863,11 @@
             "list": "InstrumentType",
             "item": "FourierTransformSpectrograph"
          },
-         "Geiger-MuellerTube": {
+         "GeigerMuellerTube": {
             "version": "2.3.1",
             "since": "1.2.1",
             "list": "InstrumentType",
-            "item": "Geiger-MuellerTube"
+            "item": "GeigerMuellerTube"
          },
          "Imager": {
             "version": "2.3.1",
@@ -14339,11 +14665,11 @@
             "list": "ParticleQuantity",
             "item": "ParticleRadius"
          },
-         "Phase-SpaceDensity": {
+         "PhaseSpaceDensity": {
             "version": "2.3.1",
             "since": "1.1.0",
             "list": "ParticleQuantity",
-            "item": "Phase-SpaceDensity"
+            "item": "PhaseSpaceDensity"
          },
          "PlasmaFrequency": {
             "version": "2.3.1",
@@ -14697,11 +15023,11 @@
             "list": "Qualifier",
             "item": "DirectionCosine"
          },
-         "Field-Aligned": {
+         "FieldAligned": {
             "version": "2.3.1",
             "since": "1.1.0",
             "list": "Qualifier",
-            "item": "Field-Aligned"
+            "item": "FieldAligned"
          },
          "Fit": {
             "version": "2.3.1",

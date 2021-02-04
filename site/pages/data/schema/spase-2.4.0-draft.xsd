@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2020-11-12 -->
+<!-- Generated: 2021-01-21 -->
 <xsd:schema
 	      targetNamespace="https://spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -30,6 +30,7 @@
             <xsd:element name="DisplayData" type="spase:DisplayData" />
             <xsd:element name="NumericalData" type="spase:NumericalData" />
             <xsd:element name="Document" type="spase:Document" />
+            <xsd:element name="Software" type="spase:Software" />
             <xsd:element name="Granule" type="spase:Granule" />
             <xsd:element name="Instrument" type="spase:Instrument" />
             <xsd:element name="Observatory" type="spase:Observatory" />
@@ -37,7 +38,6 @@
             <xsd:element name="Registry" type="spase:Registry" />
             <xsd:element name="Repository" type="spase:Repository" />
             <xsd:element name="Service" type="spase:Service" />
-            <xsd:element name="Software" type="spase:Software" />
             <xsd:element name="Annotation" type="spase:Annotation" />
          </xsd:choice>
       </xsd:sequence>
@@ -583,6 +583,38 @@
          <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
+   <xsd:complexType name="Software">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         An application which can be installed, built or readily used.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Version" type="spase:Version" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ApplicationInterface" type="spase:ApplicationInterface" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="CodeLanguage" type="spase:CodeLanguage" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Prerequisites" type="spase:Prerequisites" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Platform" type="spase:Platform" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="InputProperty" type="spase:InputProperty" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="OutputProperty" type="spase:OutputProperty" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Platform">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A compulsory or necessary condition.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="OperatingSystem" type="spase:OperatingSystem" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Installer" type="spase:Installer" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Cores" type="spase:Cores" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Storage" type="spase:Storage" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Memory" type="spase:Memory" minOccurs="0" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
    <xsd:complexType name="Granule">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -743,38 +775,6 @@
          <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="Software">
-      <xsd:annotation>
-         <xsd:documentation xml:lang="en">
-         A application which can be installed, built or readily used.
-         </xsd:documentation>
-      </xsd:annotation>
-      <xsd:sequence>
-         <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="Version" type="spase:Version" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="ApplicationInterface" type="spase:ApplicationInterface" minOccurs="0" maxOccurs="unbounded" />
-         <xsd:element name="CodeLanguage" type="spase:CodeLanguage" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="Prerequisites" type="spase:Prerequisites" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Platform" type="spase:Platform" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="InputProperty" type="spase:InputProperty" minOccurs="0" maxOccurs="unbounded" />
-         <xsd:element name="OutputProperty" type="spase:OutputProperty" minOccurs="0" maxOccurs="unbounded" />
-      </xsd:sequence>
-   </xsd:complexType>
-   <xsd:complexType name="Platform">
-      <xsd:annotation>
-         <xsd:documentation xml:lang="en">
-         A compulsory or necessary condition.
-         </xsd:documentation>
-      </xsd:annotation>
-      <xsd:sequence>
-         <xsd:element name="OperatingSystem" type="spase:OperatingSystem" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="Installer" type="spase:Installer" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="Cores" type="spase:Cores" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="Storage" type="spase:Storage" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="Memory" type="spase:Memory" minOccurs="0" maxOccurs="1" />
-      </xsd:sequence>
-   </xsd:complexType>
    <xsd:complexType name="Annotation">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -836,6 +836,7 @@
          <xsd:element name="DisplayData" type="spase:DisplayData" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="NumericalData" type="spase:NumericalData" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Document" type="spase:Document" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Software" type="spase:Software" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Granule" type="spase:Granule" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Instrument" type="spase:Instrument" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Observatory" type="spase:Observatory" minOccurs="1" maxOccurs="unbounded" />
@@ -843,7 +844,6 @@
          <xsd:element name="Registry" type="spase:Registry" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Repository" type="spase:Repository" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Service" type="spase:Service" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Software" type="spase:Software" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Annotation" type="spase:Annotation" minOccurs="1" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:group>
@@ -1684,6 +1684,41 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A prominent or distinctive characteristic that occurs at a location or persists over a period of time.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+      </xsd:restriction>
+   </xsd:simpleType>
+<!-- ==========================
+     List: ApplicationInterface
+
+     Identifiers for the type of interface for the application.
+     ========================== -->
+   <xsd:simpleType name="ApplicationInterface">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Identifiers for the type of interface for the application.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CLI">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A command-line interface (CLI) is a form of interface where input to an application is provided as lines of text typically within a shell. 
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GUI">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A graphical user interface (GUI) is a form of user interface that allows users to interact with an application through graphical icons, forms  and other elements with both a keyboard and a pointing device. 
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="API">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  An application programming interface (API) is a form of interface that allows applications to access the features or data of an operating system, application, or other service. An API may have a required protocol or set of principles. Some examples of protocols are SOAP, XML-RPC and JSON-RPC. An example of an API with a set of principles is REST.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
