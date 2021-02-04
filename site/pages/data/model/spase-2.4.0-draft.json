@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-01-21",
+   "released": "2021-02-04",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "https://spase-group.org/data/schema",
@@ -3549,11 +3549,12 @@
          "attributes": "",
          "definition": "Information which may be important in the avoidance of the misuse of the resource, for instance instrument maladies, corruption or contamination.\r",
          "usedBy": [
-            "Property",
             "Catalog",
             "DisplayData",
+            "InputProperty",
             "Instrument",
             "NumericalData",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -4275,9 +4276,10 @@
          "attributes": "",
          "definition": "A narrative explanation with detail appropriate for the item it describes. For example a description of data resource should include discussions of the main quantities in the resource, possible uses and search terms. A description should also include whether any corrections (i.e, geometry, inertial) have been applied to the resource.\r",
          "usedBy": [
-            "Property",
             "AccessURL",
             "InformationURL",
+            "InputProperty",
+            "OutputProperty",
             "Parameter",
             "ResourceHeader",
             "Structure"
@@ -6523,6 +6525,14 @@
          "usedBy": [
             "Software"
          ],
+         "subElements": [
+            "Name",
+            "Description",
+            "Caveats",
+            "Units",
+            "ValidMin",
+            "ValidMax"
+         ],
          "allowedValues": []
       },
       "InputResourceID": {
@@ -8110,10 +8120,11 @@
          "attributes": "",
          "definition": "A language unit by which a person or thing is known.\r",
          "usedBy": [
-            "Property",
             "AccessURL",
             "Element",
             "InformationURL",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -8895,6 +8906,14 @@
          "definition": "A container of attributes regarding an output property of an application.\r",
          "usedBy": [
             "Software"
+         ],
+         "subElements": [
+            "Name",
+            "Description",
+            "Caveats",
+            "Units",
+            "ValidMin",
+            "ValidMax"
          ],
          "allowedValues": []
       },
@@ -9895,7 +9914,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The key (identifier) of the resource within a Repository. This is a local identifier which can be used to retrieve or locate the resource.\r",
+         "definition": "A string of characters used to uniquely identify a particular product within a Repository. The style or format of the identifier is determined by the Repository. The kinds of resources which can be acessed include, but are not limited to, numerical data, display data, documents and event lists. The method to access the product is determined by the attributes of an access service.\r",
          "usedBy": [
             "AccessURL"
          ],
@@ -10012,6 +10031,18 @@
          "element": "",
          "attributes": "",
          "definition": "Time difference between transmission and reception of a wave in an active wave experiment.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
+      "Property": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Property",
+         "type": "Container",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A container of attributes regarding the property of an application.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -11141,13 +11172,27 @@
          "subElements": [
             "ResourceID",
             "ResourceHeader",
-            "Version",
+            "SoftwareVersion",
             "ApplicationInterface",
             "CodeLanguage",
             "Prerequisites",
             "Platform",
             "InputProperty",
             "OutputProperty"
+         ],
+         "allowedValues": []
+      },
+      "SoftwareVersion": {
+         "version": "2.4.0",
+         "since": "1.0.0",
+         "term": "SoftwareVersion",
+         "type": "Text",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Describes the edition of the software release. The formation rule for the version may vary between software packages. It is intended to aid in queries to the software provider regarding the software.\r",
+         "usedBy": [
+            "Software"
          ],
          "allowedValues": []
       },
@@ -12400,13 +12445,14 @@
          "attributes": "",
          "definition": "A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see <http://www.bipm.fr/> ) when appropriate or use tokens like \"\"Re\"\" to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units can be found at: <http://www.bipm.fr/en/si/si_brochure/chapter2/2-1/#symbols> and those for common derived units can be found at: <http://www.bipm.fr/en/si/derived_units/2-2-2.html>\r",
          "usedBy": [
-            "Property",
             "AzimuthalAngleRange",
             "DataExtent",
             "Element",
             "EnergyRange",
             "FrequencyRange",
+            "InputProperty",
             "MassRange",
+            "OutputProperty",
             "Parameter",
             "PitchAngleRange",
             "PolarAngleRange",
@@ -12529,8 +12575,9 @@
          "attributes": "",
          "definition": "The largest legitimate value.\r",
          "usedBy": [
-            "Property",
             "Element",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -12545,8 +12592,9 @@
          "attributes": "",
          "definition": "The smallest legitimate value.\r",
          "usedBy": [
-            "Property",
             "Element",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -12643,7 +12691,6 @@
          "attributes": "",
          "definition": "Indicates the release identifier. When used to indicate the release of the SPASE data model, it is a in the form Major.Minor.Fix where Major: A significant change in the architecture of the model or rewrite of the implementation. This includes major changes in design or implementation language. This number starts at 0 (zero). Minor: An addition of terms or features that require changes in documentation/external API. This number starts at 0 (zero). Fix: Any change that doesn't require documentation/external API changes. This number starts at 0 (zero).\r",
          "usedBy": [
-            "Software",
             "Spase"
          ],
          "allowedValues": []
@@ -16872,130 +16919,6 @@
       }
    },
    "ontology": {
-      "Platform": {
-         "OperatingSystem": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "OperatingSystem",
-            "reference": 1,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Installer": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Installer",
-            "reference": 2,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Cores": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Cores",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Storage": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Storage",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Memory": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Memory",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         }
-      },
-      "Property": {
-         "Name": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Name",
-            "reference": 1,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Description": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Description",
-            "reference": 2,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Caveats": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Caveats",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Type": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Type",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Units": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Units",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMin": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMin",
-            "reference": 6,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMax": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMax",
-            "reference": 7,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         }
-      },
       "AccessInformation": {
          "RepositoryID": {
             "version": "2.4.0",
@@ -18266,6 +18189,68 @@
             "type": "\r"
          }
       },
+      "InputProperty": {
+         "Name": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Name",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Description": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Description",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Caveats": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Caveats",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Units": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Units",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMin": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "ValidMin",
+            "reference": 6,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMax": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "ValidMax",
+            "reference": 7,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
       "Instrument": {
          "ResourceID": {
             "version": "2.4.0",
@@ -18802,6 +18787,68 @@
             "type": "\r"
          }
       },
+      "OutputProperty": {
+         "Name": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Name",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Description": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Description",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Caveats": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Caveats",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Units": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Units",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMin": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "ValidMin",
+            "reference": 6,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMax": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "ValidMax",
+            "reference": 7,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
       "Parameter": {
          "Name": {
             "version": "2.4.0",
@@ -19266,6 +19313,58 @@
             "element": "Bin",
             "reference": 4,
             "occurrence": "*",
+            "group": "",
+            "type": "\r"
+         }
+      },
+      "Platform": {
+         "OperatingSystem": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "OperatingSystem",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Installer": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Installer",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Cores": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Cores",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Storage": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Storage",
+            "reference": 4,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Memory": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Memory",
+            "reference": 5,
+            "occurrence": "0",
             "group": "",
             "type": "\r"
          }
@@ -19749,11 +19848,11 @@
             "group": "",
             "type": "\r"
          },
-         "Version": {
+         "SoftwareVersion": {
             "version": "2.4.0",
             "since": "2.4.0",
             "object": "Software",
-            "element": "Version",
+            "element": "SoftwareVersion",
             "reference": 3,
             "occurrence": "0",
             "group": "",
