@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.2.8 -->
-<!-- Generated: 2021-01-21 -->
+<!-- Generated: 2021-02-18 -->
 <xsd:schema
 	      targetNamespace="https://spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -2077,28 +2077,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -2119,105 +2119,105 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Atmosphere">
+               <xsd:enumeration value="NearSurface.Atmosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The neutral gases surrounding a body that extends from the surface and is bound to the body by virtue of the gravitational attraction.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.AuroralRegion">
+               <xsd:enumeration value="NearSurface.AuroralRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region in the atmospheric where electrically-charged particles bombarding the upper atmosphere of a planet in the presence of a magnetic field produce an optical phenomenon.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.EquatorialRegion">
+               <xsd:enumeration value="NearSurface.EquatorialRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A region centered on the equator and limited in latitude by approximately 23 degrees north and south of the equator.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Ionosphere">
+               <xsd:enumeration value="NearSurface.Ionosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The charged or ionized gases surrounding a body that are nominally bound to the body by virtue of the gravitational attraction.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="NearSurfaceNearSurface.IonosphereNearSurfaceNearSurface.Ionosphere.DRegion">
+                  <xsd:enumeration value="NearSurface.Ionosphere.DRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The layer of the ionosphere that exists approximately 50 to 95 km above the surface of the Earth. One of several layers in the ionosphere.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NearSurfaceNearSurface.IonosphereNearSurfaceNearSurface.Ionosphere.ERegion">
+                  <xsd:enumeration value="NearSurface.Ionosphere.ERegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         A layer of ionised gas occurring at 90-150km above the ground. One of several layers in the ionosphere. Also called the The Kennelly-Heaviside layer.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NearSurfaceNearSurface.IonosphereNearSurfaceNearSurface.Ionosphere.FRegion">
+                  <xsd:enumeration value="NearSurface.Ionosphere.FRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         A layer that contains ionized gases at a height of around 150-800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers. One of several layers in the ionosphere. Also known as the Appleton layer.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NearSurfaceNearSurface.IonosphereNearSurfaceNearSurface.Ionosphere.Topside">
+                  <xsd:enumeration value="NearSurface.Ionosphere.Topside">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region at the upper most areas of the ionosphere.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Mesosphere">
+               <xsd:enumeration value="NearSurface.Mesosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The layer of the atmosphere that extends from the Stratosphere to a range of 80 km to 85 km, temperature decreasing with height.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Plasmasphere">
+               <xsd:enumeration value="NearSurface.Plasmasphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A region of the magnetosphere consisting of low energy (cool) plasma. It is located above the ionosphere. The outer boundary of the plasmasphere is known as the plasmapause, which is defined by an order of magnitude drop in plasma density.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.PolarCap">
+               <xsd:enumeration value="NearSurface.PolarCap">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The areas of the globe surrounding the poles and consisting of the region north of 60 degrees north latitude an the region south of 60 degrees south latitude.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.SouthAtlanticAnomalyRegion">
+               <xsd:enumeration value="NearSurface.SouthAtlanticAnomalyRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region where the Earth&#39;s inner van Allen radiation belt makes its closest approach to the planet&#39;s surface. The result is that, for a given altitude, the radiation intensity is higher over this region than elsewhere.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Stratosphere">
+               <xsd:enumeration value="NearSurface.Stratosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The layer of the atmosphere that extends from the troposphere to about 30 km, temperature increases with height. The stratosphere contains the ozone layer.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Thermosphere">
+               <xsd:enumeration value="NearSurface.Thermosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The layer of the atmosphere that extends from the Mesosphere to 640+ km, temperature increasing with height.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NearSurfaceNearSurface.Troposphere">
+               <xsd:enumeration value="NearSurface.Troposphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The lowest layer of the atmosphere which begins at the surface and extends to between 7 km (4.4 mi) at the poles and 17 km (10.6 mi) at the equator, with some variation due to weather factors.
@@ -2497,42 +2497,42 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.Film">
+               <xsd:enumeration value="Hardcopy.Film">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      An image recording medium on which usually a negative analog image is registered. A positive image can be recovered or reproduced from film, which is usually made of flexible materials for ease of storage and transportation.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.Microfiche">
+               <xsd:enumeration value="Hardcopy.Microfiche">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A sheet of microfilm on which many pages of material have been photographed; a magnification system is used to read the material.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.Microfilm">
+               <xsd:enumeration value="Hardcopy.Microfilm">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Film rolls on which materials are photographed at greatly reduced size; a magnification system is used to read the material.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.Photograph">
+               <xsd:enumeration value="Hardcopy.Photograph">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      An image (positive or negative) registered on a piece of photo-sensitive paper
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.PhotographicPlate">
+               <xsd:enumeration value="Hardcopy.PhotographicPlate">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A rigid (typically glass) medium that functions like film. Its rigidity is for guarding against image distortion due to medium deformation (caused by heat and humidity). Photographic plates are often used for astronomical photography.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HardcopyHardcopy.Print">
+               <xsd:enumeration value="Hardcopy.Print">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A sheet of any written or printed material which may include notes or graphics. Multiple printed pages may be bound into a manuscript or book.
@@ -2651,14 +2651,14 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="TextText.ASCII">
+               <xsd:enumeration value="Text.ASCII">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A sequence of characters that adheres to American Standard Code for Information Interchange (ASCII) which is an 7-bit character-coding scheme.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="TextText.Unicode">
+               <xsd:enumeration value="Text.Unicode">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Text in multi-byte Unicode format.
@@ -3309,28 +3309,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -3407,28 +3407,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -3589,14 +3589,14 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="WavesWaves.Active">
+               <xsd:enumeration value="Waves.Active">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Exerting an influence or producing a change or effect. An active measurement is one which produces a transmission or excitation as a part of the measurement cycle.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="WavesWaves.Passive">
+               <xsd:enumeration value="Waves.Passive">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Movement or effect produced by outside influence. A passive measurement is one which does not produce a transmission or excitation as a part of the measurement cycle.
@@ -3624,28 +3624,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -3785,28 +3785,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="IonosphereIonosphere.DRegion">
+               <xsd:enumeration value="Ionosphere.DRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The layer of the ionosphere that exists approximately 50 to 95 km above the surface of the Earth. One of several layers in the ionosphere.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="IonosphereIonosphere.ERegion">
+               <xsd:enumeration value="Ionosphere.ERegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A layer of ionised gas occurring at 90-150km above the ground. One of several layers in the ionosphere. Also called the The Kennelly-Heaviside layer.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="IonosphereIonosphere.FRegion">
+               <xsd:enumeration value="Ionosphere.FRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A layer that contains ionized gases at a height of around 150-800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers. One of several layers in the ionosphere. Also known as the Appleton layer.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="IonosphereIonosphere.Topside">
+               <xsd:enumeration value="Ionosphere.Topside">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region at the upper most areas of the ionosphere.
@@ -3883,28 +3883,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -4485,21 +4485,21 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="ComponentComponent.I">
+               <xsd:enumeration value="Component.I">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Projection of a vector along the first named axis of a coordinate system. Typically the X axis, but could be the R axis for an RTN coordinate system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="ComponentComponent.J">
+               <xsd:enumeration value="Component.J">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Projection of a vector along the second named axis of a coordinate system. Typically the Y axis, but could be the T axis for an RTN coordinate system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="ComponentComponent.K">
+               <xsd:enumeration value="Component.K">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Projection of a vector along the third named axis of a coordinate system. Typically the Z axis, but could be the N axis for an RTN coordinate system.
@@ -4548,21 +4548,21 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="DirectionAngleDirectionAngle.AzimuthAngle">
+               <xsd:enumeration value="DirectionAngle.AzimuthAngle">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The angle between the projection into the i-j plane of a position or measured vector and the i-axis of the coordinate system. Mathematically defined as arctan(j/i). This term could be also applied to angles measured in different planes, for example the IMF clock angle defined as arctan(
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="DirectionAngleDirectionAngle.ElevationAngle">
+               <xsd:enumeration value="DirectionAngle.ElevationAngle">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The angle between the position or measured vector and the i-j plane of the coordinate system. Mathematically defined as arctan(k/SQRT(i^2+j^2)).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="DirectionAngleDirectionAngle.PolarAngle">
+               <xsd:enumeration value="DirectionAngle.PolarAngle">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The angle between the position or measured vector and the k-axis of the coordinate system. Mathematically defined as arctan([SQRT(i^2+j^2)]/k). This term could be also applied to angles between the vector and other components, for example the IMF cone angle defined as arccos(Bx/Bt).
@@ -4611,21 +4611,21 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="IntegralIntegral.Area">
+               <xsd:enumeration value="Integral.Area">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Integration over the extent of a planar region, or of the surface of a solid.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="IntegralIntegral.Bandwidth">
+               <xsd:enumeration value="Integral.Bandwidth">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Integration over the width a frequency band.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="IntegralIntegral.SolidAngle">
+               <xsd:enumeration value="Integral.SolidAngle">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      Integration over the angle in three-dimensional space that an object subtends at a point.
@@ -4730,21 +4730,21 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="ProjectionProjection.IJ">
+               <xsd:enumeration value="Projection.IJ">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A measure of the length of a position or measured vector projected into the i-j (typically X-Y) plane of the coordinate system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="ProjectionProjection.IK">
+               <xsd:enumeration value="Projection.IK">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A measure of the length of a position or measured vector projected into the i-k (typically X-Z) plane of the coordinate system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="ProjectionProjection.JK">
+               <xsd:enumeration value="Projection.JK">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A measure of the length of a position or measured vector projected into the j-k (typically Y-Z) plane of the coordinate system.
@@ -4891,168 +4891,168 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="EarthEarth.Magnetosheath">
+               <xsd:enumeration value="Earth.Magnetosheath">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region between the bow shock and the magnetopause, characterized by very turbulent plasma.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="EarthEarth.Magnetosphere">
+               <xsd:enumeration value="Earth.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.MagnetosphereEarthEarth.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Earth.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.MagnetosphereEarthEarth.Magnetosphere.Main">
+                  <xsd:enumeration value="Earth.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.MagnetosphereEarthEarth.Magnetosphere.Polar">
+                  <xsd:enumeration value="Earth.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.MagnetosphereEarthEarth.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Earth.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="EarthEarth.Moon">
+               <xsd:enumeration value="Earth.Moon">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The only natural satellite of the Earth.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="EarthEarth.NearSurface">
+               <xsd:enumeration value="Earth.NearSurface">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The gaseous and possibly ionized environment of a body extending from the surface to some specified altitude. For the Earth, this altitude is 2000 km.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Atmosphere">
+                  <xsd:enumeration value="Earth.NearSurface.Atmosphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The neutral gases surrounding a body that extends from the surface and is bound to the body by virtue of the gravitational attraction.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.AuroralRegion">
+                  <xsd:enumeration value="Earth.NearSurface.AuroralRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region in the atmospheric where electrically-charged particles bombarding the upper atmosphere of a planet in the presence of a magnetic field produce an optical phenomenon.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.EquatorialRegion">
+                  <xsd:enumeration value="Earth.NearSurface.EquatorialRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         A region centered on the equator and limited in latitude by approximately 23 degrees north and south of the equator.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Ionosphere">
+                  <xsd:enumeration value="Earth.NearSurface.Ionosphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The charged or ionized gases surrounding a body that are nominally bound to the body by virtue of the gravitational attraction.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                     <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.IonosphereEarthEarth.NearSurfaceEarthEarth.NearSurface.Ionosphere.DRegion">
+                     <xsd:enumeration value="Earth.NearSurface.Ionosphere.DRegion">
                         <xsd:annotation>
                            <xsd:documentation xml:lang="en">
                            The layer of the ionosphere that exists approximately 50 to 95 km above the surface of the Earth. One of several layers in the ionosphere.
                            </xsd:documentation>
                         </xsd:annotation>
                      </xsd:enumeration>
-                     <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.IonosphereEarthEarth.NearSurfaceEarthEarth.NearSurface.Ionosphere.ERegion">
+                     <xsd:enumeration value="Earth.NearSurface.Ionosphere.ERegion">
                         <xsd:annotation>
                            <xsd:documentation xml:lang="en">
                            A layer of ionised gas occurring at 90-150km above the ground. One of several layers in the ionosphere. Also called the The Kennelly-Heaviside layer.
                            </xsd:documentation>
                         </xsd:annotation>
                      </xsd:enumeration>
-                     <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.IonosphereEarthEarth.NearSurfaceEarthEarth.NearSurface.Ionosphere.FRegion">
+                     <xsd:enumeration value="Earth.NearSurface.Ionosphere.FRegion">
                         <xsd:annotation>
                            <xsd:documentation xml:lang="en">
                            A layer that contains ionized gases at a height of around 150-800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers. One of several layers in the ionosphere. Also known as the Appleton layer.
                            </xsd:documentation>
                         </xsd:annotation>
                      </xsd:enumeration>
-                     <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.IonosphereEarthEarth.NearSurfaceEarthEarth.NearSurface.Ionosphere.Topside">
+                     <xsd:enumeration value="Earth.NearSurface.Ionosphere.Topside">
                         <xsd:annotation>
                            <xsd:documentation xml:lang="en">
                            The region at the upper most areas of the ionosphere.
                            </xsd:documentation>
                         </xsd:annotation>
                      </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Mesosphere">
+                  <xsd:enumeration value="Earth.NearSurface.Mesosphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The layer of the atmosphere that extends from the Stratosphere to a range of 80 km to 85 km, temperature decreasing with height.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Plasmasphere">
+                  <xsd:enumeration value="Earth.NearSurface.Plasmasphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         A region of the magnetosphere consisting of low energy (cool) plasma. It is located above the ionosphere. The outer boundary of the plasmasphere is known as the plasmapause, which is defined by an order of magnitude drop in plasma density.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.PolarCap">
+                  <xsd:enumeration value="Earth.NearSurface.PolarCap">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The areas of the globe surrounding the poles and consisting of the region north of 60 degrees north latitude an the region south of 60 degrees south latitude.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.SouthAtlanticAnomalyRegion">
+                  <xsd:enumeration value="Earth.NearSurface.SouthAtlanticAnomalyRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region where the Earth&#39;s inner van Allen radiation belt makes its closest approach to the planet&#39;s surface. The result is that, for a given altitude, the radiation intensity is higher over this region than elsewhere.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Stratosphere">
+                  <xsd:enumeration value="Earth.NearSurface.Stratosphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The layer of the atmosphere that extends from the troposphere to about 30 km, temperature increases with height. The stratosphere contains the ozone layer.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Thermosphere">
+                  <xsd:enumeration value="Earth.NearSurface.Thermosphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The layer of the atmosphere that extends from the Mesosphere to 640+ km, temperature increasing with height.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="EarthEarth.NearSurfaceEarthEarth.NearSurface.Troposphere">
+                  <xsd:enumeration value="Earth.NearSurface.Troposphere">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The lowest layer of the atmosphere which begins at the surface and extends to between 7 km (4.4 mi) at the poles and 17 km (10.6 mi) at the equator, with some variation due to weather factors.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="EarthEarth.Surface">
+               <xsd:enumeration value="Earth.Surface">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The outermost area of a solid object.
@@ -5066,35 +5066,35 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="HeliosphereHeliosphere.Heliosheath">
+               <xsd:enumeration value="Heliosphere.Heliosheath">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region extending radially outward from the heliospheric termination shock and in which the decelerated solar wind plasma is still significant.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HeliosphereHeliosphere.Inner">
+               <xsd:enumeration value="Heliosphere.Inner">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the heliosphere extending radially outward from the solar coronal base to just inside 1 AU.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HeliosphereHeliosphere.NearEarth">
+               <xsd:enumeration value="Heliosphere.NearEarth">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The heliospheric region near the Earth which extends to and includes the area near the L1 and L2 Lagrange point.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HeliosphereHeliosphere.Outer">
+               <xsd:enumeration value="Heliosphere.Outer">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the heliosphere extending radially outward from just outside 1 AU to the heliospheric termination shock.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="HeliosphereHeliosphere.Remote1AU">
+               <xsd:enumeration value="Heliosphere.Remote1AU">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A roughly toroidal region that includes the Earth&#39;s orbit, but exclusive of the region near the Earth.
@@ -5115,63 +5115,63 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="JupiterJupiter.Callisto">
+               <xsd:enumeration value="Jupiter.Callisto">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A second largest moon of Jupiter and the third-largest moon in the solar system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="JupiterJupiter.Europa">
+               <xsd:enumeration value="Jupiter.Europa">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The sixth-closest round moon of Jupiter.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="JupiterJupiter.Ganymede">
+               <xsd:enumeration value="Jupiter.Ganymede">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The biggest moon of Jupiter and in the solar system.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="JupiterJupiter.Io">
+               <xsd:enumeration value="Jupiter.Io">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The innermost of the four round moons of the planet Jupiter.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="JupiterJupiter.Magnetosphere">
+               <xsd:enumeration value="Jupiter.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="JupiterJupiter.MagnetosphereJupiterJupiter.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="JupiterJupiter.MagnetosphereJupiterJupiter.Magnetosphere.Main">
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="JupiterJupiter.MagnetosphereJupiterJupiter.Magnetosphere.Polar">
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="JupiterJupiter.MagnetosphereJupiterJupiter.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Jupiter.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -5185,49 +5185,49 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MarsMars.Deimos">
+               <xsd:enumeration value="Mars.Deimos">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The smaller and outer most moon of Mars.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MarsMars.Magnetosphere">
+               <xsd:enumeration value="Mars.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="MarsMars.MagnetosphereMarsMars.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Mars.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MarsMars.MagnetosphereMarsMars.Magnetosphere.Main">
+                  <xsd:enumeration value="Mars.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MarsMars.MagnetosphereMarsMars.Magnetosphere.Polar">
+                  <xsd:enumeration value="Mars.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MarsMars.MagnetosphereMarsMars.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Mars.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="MarsMars.Phobos">
+               <xsd:enumeration value="Mars.Phobos">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The larger and inner most moon of Mars.
@@ -5241,35 +5241,35 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MercuryMercury.Magnetosphere">
+               <xsd:enumeration value="Mercury.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="MercuryMercury.MagnetosphereMercuryMercury.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Mercury.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MercuryMercury.MagnetosphereMercuryMercury.Magnetosphere.Main">
+                  <xsd:enumeration value="Mercury.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MercuryMercury.MagnetosphereMercuryMercury.Magnetosphere.Polar">
+                  <xsd:enumeration value="Mercury.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="MercuryMercury.MagnetosphereMercuryMercury.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Mercury.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -5283,49 +5283,49 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="NeptuneNeptune.Magnetosphere">
+               <xsd:enumeration value="Neptune.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="NeptuneNeptune.MagnetosphereNeptuneNeptune.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Neptune.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NeptuneNeptune.MagnetosphereNeptuneNeptune.Magnetosphere.Main">
+                  <xsd:enumeration value="Neptune.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NeptuneNeptune.MagnetosphereNeptuneNeptune.Magnetosphere.Polar">
+                  <xsd:enumeration value="Neptune.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="NeptuneNeptune.MagnetosphereNeptuneNeptune.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Neptune.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="NeptuneNeptune.Proteus">
+               <xsd:enumeration value="Neptune.Proteus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The second largest moon of Neptune. 
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="NeptuneNeptune.Triton">
+               <xsd:enumeration value="Neptune.Triton">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The largest moon of Neptune.
@@ -5346,84 +5346,84 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Dione">
+               <xsd:enumeration value="Saturn.Dione">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The forth-largest moon of Saturn.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Enceladus">
+               <xsd:enumeration value="Saturn.Enceladus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The sixth-largest moon of Saturn. It is currently endogenously active. The smallest known body in the Solar System that is geologically active today.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Iapetus">
+               <xsd:enumeration value="Saturn.Iapetus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The third-largest moon of Saturn and the eleventh-largest in the Solar System.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Magnetosphere">
+               <xsd:enumeration value="Saturn.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="SaturnSaturn.MagnetosphereSaturnSaturn.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Saturn.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="SaturnSaturn.MagnetosphereSaturnSaturn.Magnetosphere.Main">
+                  <xsd:enumeration value="Saturn.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="SaturnSaturn.MagnetosphereSaturnSaturn.Magnetosphere.Polar">
+                  <xsd:enumeration value="Saturn.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="SaturnSaturn.MagnetosphereSaturnSaturn.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Saturn.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Mimas">
+               <xsd:enumeration value="Saturn.Mimas">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The smallest and least massive of the round moons of Saturn.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Rhea">
+               <xsd:enumeration value="Saturn.Rhea">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The second-largest moon of Saturn and the ninth-largest moon in the Solar System.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Tethys">
+               <xsd:enumeration value="Saturn.Tethys">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The third largest moon of Saturn.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SaturnSaturn.Titan">
+               <xsd:enumeration value="Saturn.Titan">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The largest moon of Saturn and the second-largest moon in the Solar System,
@@ -5437,35 +5437,35 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="SunSun.Chromosphere">
+               <xsd:enumeration value="Sun.Chromosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the Sun&#39;s (or a star&#39;s) atmosphere above the temperature minimum and below the Transition Region. The solar chromosphere is approximately 400 km to 2100 km above the photosphere, and characterized by temperatures from 4500 - 28000 K.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SunSun.Corona">
+               <xsd:enumeration value="Sun.Corona">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The outermost atmospheric region of the Sun or a star, characterized by ionization temperatures above 10^5 K. The solar corona starts at about 2100 km above the photosphere; there is no generally defined upper limit.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SunSun.Interior">
+               <xsd:enumeration value="Sun.Interior">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region inside the body which is not visible from outside the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SunSun.Photosphere">
+               <xsd:enumeration value="Sun.Photosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The atmospheric layer of the Sun or a star from which continuum radiation, especially optical, is emitted to space. For the Sun, the photosphere is about 500 km thick.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="SunSun.TransitionRegion">
+               <xsd:enumeration value="Sun.TransitionRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      A very narrow (&lt;100 km) layer between the chromosphere and the corona where the temperature rises abruptly from about 8000 to about 500,000 K.
@@ -5479,77 +5479,77 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Ariel">
+               <xsd:enumeration value="Uranus.Ariel">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The fourth-largest moon of Uranus.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Magnetosphere">
+               <xsd:enumeration value="Uranus.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="UranusUranus.MagnetosphereUranusUranus.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Uranus.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="UranusUranus.MagnetosphereUranusUranus.Magnetosphere.Main">
+                  <xsd:enumeration value="Uranus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="UranusUranus.MagnetosphereUranusUranus.Magnetosphere.Polar">
+                  <xsd:enumeration value="Uranus.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="UranusUranus.MagnetosphereUranusUranus.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Uranus.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Miranda">
+               <xsd:enumeration value="Uranus.Miranda">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The smallest and innermost round moon of Uranus.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Oberon">
+               <xsd:enumeration value="Uranus.Oberon">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The second-largest and second most massive mon of Uranus, and the ninth most massive moon in the Solar System.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Puck">
+               <xsd:enumeration value="Uranus.Puck">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The largest inner spherical moon of Uranus.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Titania">
+               <xsd:enumeration value="Uranus.Titania">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The largest moon of Uranus and the eighth largest moon in the Solar System.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="UranusUranus.Umbriel">
+               <xsd:enumeration value="Uranus.Umbriel">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The third largest and fourth most massive moon of Uranus.
@@ -5563,35 +5563,35 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="VenusVenus.Magnetosphere">
+               <xsd:enumeration value="Venus.Magnetosphere">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-                  <xsd:enumeration value="VenusVenus.MagnetosphereVenusVenus.Magnetosphere.Magnetotail">
+                  <xsd:enumeration value="Venus.Magnetosphere.Magnetotail">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="VenusVenus.MagnetosphereVenusVenus.Magnetosphere.Main">
+                  <xsd:enumeration value="Venus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="VenusVenus.MagnetosphereVenusVenus.Magnetosphere.Polar">
+                  <xsd:enumeration value="Venus.Magnetosphere.Polar">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
-                  <xsd:enumeration value="VenusVenus.MagnetosphereVenusVenus.Magnetosphere.RadiationBelt">
+                  <xsd:enumeration value="Venus.Magnetosphere.RadiationBelt">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -5794,28 +5794,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
@@ -6228,28 +6228,28 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Magnetotail">
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Main">
+               <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.Polar">
+               <xsd:enumeration value="Magnetosphere.Polar">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
-               <xsd:enumeration value="MagnetosphereMagnetosphere.RadiationBelt">
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.

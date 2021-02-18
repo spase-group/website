@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-02-04",
+   "released": "2021-02-18",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "https://spase-group.org/data/schema",
@@ -2438,6 +2438,14 @@
          "changedBy": "T.King",
          "description": "Add Software resource and related elements to the information model.",
          "note": "Discussed during prior telecons."
+      },
+      {
+         "id": "305",
+         "version": "2.4.0",
+         "updated": "2021-02-04",
+         "changedBy": "T.King",
+         "description": "Change Version to SoftwareVersion in Software resource; add elements to InputProperty and OutputPorperty.",
+         "note": "Discussed in email exchanges."
       }
    ],
    "type": {
