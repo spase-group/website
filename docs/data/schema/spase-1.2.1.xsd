@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 1.2.1 -->
-<!-- Generated: 2021-02-18 -->
+<!-- Generated: 2021-03-17 -->
 <xsd:schema
-	      targetNamespace="https://spase-group.org/data/schema"
+	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	      xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-	      xmlns:spase="https://spase-group.org/data/schema"
+	      xmlns:spase="http://www.spase-group.org/data/schema"
 	      elementFormDefault="qualified"
 	      attributeFormDefault="unqualified"
 	      vc:minVersion="1.1"
@@ -1518,7 +1518,7 @@
                   <xsd:enumeration value="NearSurface.Ionosphere.FRegion">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
-                        A layer that contains ionized gases at a height of around 150800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
+                        A layer that contains ionized gases at a height of around 150,800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -1616,7 +1616,7 @@
             <xsd:enumeration value="Base64">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (AZ, az), the numerals (09), and the + and / symbols, with the = symbol as a special suffix (padding) code.
+                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the + and / symbols, with the = symbol as a special suffix (padding) code.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -2743,7 +2743,7 @@
                <xsd:enumeration value="Ionosphere.FRegion">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
-                     A layer that contains ionized gases at a height of around 150800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
+                     A layer that contains ionized gases at a height of around 150,800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -3698,7 +3698,7 @@
                      <xsd:enumeration value="Earth.NearSurface.Ionosphere.FRegion">
                         <xsd:annotation>
                            <xsd:documentation xml:lang="en">
-                           A layer that contains ionized gases at a height of around 150800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
+                           A layer that contains ionized gases at a height of around 150,800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.
                            </xsd:documentation>
                         </xsd:annotation>
                      </xsd:enumeration>
