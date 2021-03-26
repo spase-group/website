@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2021-03-17 -->
+<!-- Generated: 2021-03-25 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
