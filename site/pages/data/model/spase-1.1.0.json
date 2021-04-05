@@ -833,7 +833,7 @@
          "version": "1.1.0",
          "since": "1.0.0",
          "term": "Access URL",
-         "type": "Text",
+         "type": "Container",
          "list": "",
          "element": "",
          "attributes": "",
@@ -1109,7 +1109,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A\u0016Z, a\u0016z), the numerals (0\u00169), and the + and / symbols, with the = symbol as a special suffix (padding) code.",
+         "definition": "A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the + and / symbols, with the = symbol as a special suffix (padding) code.",
          "usedBy": [],
          "allowedValues": []
       },

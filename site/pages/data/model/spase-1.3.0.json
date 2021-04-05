@@ -2012,7 +2012,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A\u0016Z, a\u0016z), the numerals (0\u00169), and the + and / symbols, with the = symbol as a special suffix (padding) code.",
+         "definition": "A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the + and / symbols, with the = symbol as a special suffix (padding) code.",
          "usedBy": [],
          "allowedValues": []
       },
@@ -2873,7 +2873,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A wave in the corona of the Sun which produce shock waves on the Sun\u0012s chromosphere (Moreton Waves). EIT Waves are produced by large solar flare and expand outward at about 1,000 km/s. It usually appears as a slowly moving diffuse arc of brightening in H-alpha, and may travel for several hundred thousand km.",
+         "definition": "A wave in the corona of the Sun which produce shock waves on the Sun's chromosphere (Moreton Waves). EIT Waves are produced by large solar flare and expand outward at about 1,000 km/s. It usually appears as a slowly moving diffuse arc of brightening in H-alpha, and may travel for several hundred thousand km.",
          "usedBy": [],
          "allowedValues": []
       },
@@ -3487,7 +3487,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A layer that contains ionized gases at a height of around 150\u0016800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.",
+         "definition": "A layer that contains ionized gases at a height of around 150-800 km above sea level, placing it in the thermosphere. the F region has the highest concentration of free electrons and ions anywhere in the atmosphere. It may be thought of as comprising two layers, the F1-and F2-layers.  One of several layers in the ionosphere. Also known as the Appleton layer.",
          "usedBy": [],
          "allowedValues": []
       },

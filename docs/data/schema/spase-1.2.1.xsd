@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 1.2.1 -->
-<!-- Generated: 2021-03-25 -->
+<!-- Generated: 2021-04-04 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -39,6 +39,7 @@
             <xsd:element name="Extension" type="spase:Extension" />
          </xsd:choice>
       </xsd:sequence>
+         <xsd:attribute name="lang" type="xsd:string" default="en"/>
    </xsd:complexType>
    <xsd:complexType name="Catalog">
       <xsd:annotation>
@@ -530,8 +531,9 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax" namespace="##other" />
+         <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
       </xsd:sequence>
+         <xsd:attribute name="lang" type="xsd:string" default="en"/>
    </xsd:complexType>
 <!-- ================================
       Groups

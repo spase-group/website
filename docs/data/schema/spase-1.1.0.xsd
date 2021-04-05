@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 1.1.0 -->
-<!-- Generated: 2021-03-25 -->
+<!-- Generated: 2021-04-04 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -36,6 +36,7 @@
          <xsd:element name="Repository" type="spase:Repository" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Service" type="spase:Service" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
+         <xsd:attribute name="lang" type="xsd:string" default="en"/>
    </xsd:complexType>
    <xsd:complexType name="Catalog">
       <xsd:annotation>
@@ -471,22 +472,12 @@
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
-
-   <xsd:complexType name="Extension">
 <!-- ================================
       Groups
      ================================ -->
 <!-- ================================
       Dictionary Terms
      ================================ -->
-   <xsd:simpleType name="AccessURL">
-      <xsd:annotation>
-         <xsd:documentation xml:lang="en">
-         Attributes of the method of acquiring a resource including a URL, name and description.
-         </xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="xsd:string" />
-   </xsd:simpleType>
    <xsd:simpleType name="Acknowledgement">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -1265,7 +1256,7 @@
             <xsd:enumeration value="Base64">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (AZ, az), the numerals (09), and the + and / symbols, with the = symbol as a special suffix (padding) code.
+                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the + and / symbols, with the = symbol as a special suffix (padding) code.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
