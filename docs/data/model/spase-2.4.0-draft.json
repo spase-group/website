@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-04-04",
+   "released": "2021-04-29",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "http://www.spase-group.org/data/schema",
@@ -2446,6 +2446,30 @@
          "changedBy": "T.King",
          "description": "Change Version to SoftwareVersion in Software resource; add elements to InputProperty and OutputPorperty.",
          "note": "Discussed in email exchanges."
+      },
+      {
+         "id": "306",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Add Policy and Convention to dictionary and to DocumentType enumeration",
+         "note": "Decided during prior telecon."
+      },
+      {
+         "id": "307",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Change Format in AccessInformation one or more occurrence.",
+         "note": "Decided during telecon on 2021-04-29."
+      },
+      {
+         "id": "308",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Add MachineLearning, Training, Validation and Test to the dictionary; Add MachineLearning as a enumeration with Training, Validation and Test as values; Add MachineLearning to ProcessLevel.",
+         "note": "Suggested during telecon 2021-04-22."
       }
    ],
    "type": {
@@ -2566,7 +2590,8 @@
          "attributes": "",
          "definition": "Permissions granted or denied by the host of a product to allow other users to access and use the resource.\r",
          "usedBy": [
-            "AccessInformation"
+            "AccessInformation",
+            "Installer"
          ],
          "allowedValues": [
             "Open",
@@ -2622,6 +2647,7 @@
          "definition": "The individual, group or organization which should be acknowledged when the data is used in or contributes to a presentation or publication.\r",
          "usedBy": [
             "AccessInformation",
+            "Installer",
             "ResourceHeader"
          ],
          "allowedValues": []
@@ -2802,6 +2828,18 @@
          "usedBy": [
             "ResourceHeader"
          ],
+         "allowedValues": []
+      },
+      "AnalysisReady ": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "AnalysisReady ",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Calibrated data that has been mapped on uniform space-time grid scales with gaps, flags and out-of-range values replaced with appropriate values. (Similar to NASA Level 3)\r",
+         "usedBy": [],
          "allowedValues": []
       },
       "Ancillary": {
@@ -3186,7 +3224,8 @@
          "attributes": "",
          "definition": "An indication of the method or service which may be used to access the resource.\r",
          "usedBy": [
-            "AccessInformation"
+            "AccessInformation",
+            "Installer"
          ],
          "allowedValues": [
             "Offline",
@@ -3913,6 +3952,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Convention": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Convention",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A set of agreed, stipulated, or generally accepted approaches or methods of adopting a standard or implementing a approach. \r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "CoordinateRepresentation": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -4516,7 +4567,9 @@
             "Document"
          ],
          "allowedValues": [
+            "Convention",
             "Other",
+            "Policy",
             "Poster",
             "Presentation",
             "Report",
@@ -6576,13 +6629,19 @@
          "version": "2.4.0",
          "since": "2.4.0",
          "term": "Installer",
-         "type": "Item",
+         "type": "Container",
          "list": "",
          "element": "",
          "attributes": "",
          "definition": "A piece of software that installs a program or package on a system.\r",
          "usedBy": [
             "Platform"
+         ],
+         "subElements": [
+            "Availability",
+            "AccessRights",
+            "Acknowledgement",
+            "URL"
          ],
          "allowedValues": []
       },
@@ -7359,6 +7418,22 @@
          "definition": "Geomagnetic - geocentric. Z axis is parallel to the geomagnetic dipole axis, positive north. X is in the plane defined by the Z axis and the Earth's rotation axis. If N is a unit vector from the Earth's center to the north geographic pole, the signs of the X and Y axes are given by Y = N x Z, X = Y x Z.. See Russell, 1971, and <http://cdpp.cnes.fr/00428.pdf>\r",
          "usedBy": [],
          "allowedValues": []
+      },
+      "MachineLearning": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "MachineLearning",
+         "type": "Enumeration",
+         "list": "MachineLearning",
+         "element": "",
+         "attributes": "",
+         "definition": "The study of computer algorithms that improve automatically through experience and by the use of data.\r",
+         "usedBy": [],
+         "allowedValues": [
+            "Training",
+            "Validation",
+            "Test"
+         ]
       },
       "Magnetic": {
          "version": "2.4.0",
@@ -9710,6 +9785,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Policy": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Policy",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A deliberate system of principles to guide decisions and achieve rational outcomes. A policy is a statement of intent, and is implemented as a procedure or protocol.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "Polarization": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -9911,6 +9998,10 @@
          "allowedValues": [
             "Calibrated",
             "Raw",
+            "MachineLearning",
+            "MachineLearning.Training",
+            "MachineLearning.Validation",
+            "MachineLearning.Test",
             "Uncalibrated"
          ]
       },
@@ -12104,6 +12195,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Test": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Test",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information that is only used to test the final output of the model in order to confirm the accuracy of model results. This type of information (i.e. data) is used to detect if the model was unintentionally made to peek on the validation data and resulted in overfitting.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "Tethys": {
          "version": "2.4.0",
          "since": "2.2.5",
@@ -12318,6 +12421,18 @@
          "element": "",
          "attributes": "",
          "definition": "The sum of the elements on the main diagonal (the diagonal from the upper left to the lower right) of a square matrix.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
+      "Training": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Training",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information which is used to train a model. For example, a dataset which is used to determine the weights in a model.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -12557,6 +12672,7 @@
          "usedBy": [
             "AccessURL",
             "InformationURL",
+            "Installer",
             "Source"
          ],
          "allowedValues": []
@@ -12570,6 +12686,18 @@
          "element": "",
          "attributes": "",
          "definition": "An individual who utilizes a resource or service.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
+      "Validation": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Validation",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information which is used to determine the fit of a model, often used to reduce overfitting.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -14018,11 +14146,23 @@
          }
       },
       "DocumentType": {
+         "Convention": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "DocumentType",
+            "item": "Convention"
+         },
          "Other": {
             "version": "2.4.0",
             "since": "1.3.0",
             "list": "DocumentType",
             "item": "Other"
+         },
+         "Policy": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "DocumentType",
+            "item": "Policy"
          },
          "Poster": {
             "version": "2.4.0",
@@ -14893,6 +15033,26 @@
             "item": "Magnetosphere"
          }
       },
+      "MachineLearning": {
+         "Training": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Training"
+         },
+         "Validation": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Validation"
+         },
+         "Test": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Test"
+         }
+      },
       "Magnetosphere": {
          "Magnetotail": {
             "version": "2.4.0",
@@ -15657,6 +15817,12 @@
             "since": "1.1.0",
             "list": "ProcessingLevel",
             "item": "Raw"
+         },
+         "MachineLearning": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ProcessingLevel",
+            "item": "MachineLearning"
          },
          "Uncalibrated": {
             "version": "2.4.0",
@@ -16974,7 +17140,7 @@
             "object": "AccessInformation",
             "element": "Format",
             "reference": 5,
-            "occurrence": "1",
+            "occurrence": "+",
             "group": "",
             "type": "\r"
          },
@@ -18255,6 +18421,48 @@
             "element": "ValidMax",
             "reference": 7,
             "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
+      "Installer": {
+         "Availability": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "Availability",
+            "reference": 1,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "AccessRights": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "AccessRights",
+            "reference": 2,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Acknowledgement": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "Acknowledgement",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "URL": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "URL",
+            "reference": 4,
+            "occurrence": "1",
             "group": "",
             "type": "\r"
          }

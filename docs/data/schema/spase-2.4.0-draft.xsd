@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2021-04-04 -->
+<!-- Generated: 2021-04-29 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -184,7 +184,7 @@
          <xsd:element name="Availability" type="spase:Availability" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessRights" type="spase:AccessRights" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Format" type="spase:Format" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Format" type="spase:Format" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Encoding" type="spase:Encoding" minOccurs="0" maxOccurs="1" />
          <xsd:element name="DataExtent" type="spase:DataExtent" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Acknowledgement" type="spase:Acknowledgement" minOccurs="0" maxOccurs="1" />
@@ -614,6 +614,19 @@
          <xsd:element name="Cores" type="spase:Cores" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Storage" type="spase:Storage" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Memory" type="spase:Memory" minOccurs="0" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Installer">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A piece of software that installs a program or package on a system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="Availability" type="spase:Availability" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="AccessRights" type="spase:AccessRights" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Acknowledgement" type="spase:Acknowledgement" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="URL" type="spase:URL" minOccurs="1" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="InputProperty">
@@ -2476,10 +2489,24 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Convention">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A set of agreed, stipulated, or generally accepted approaches or methods of adopting a standard or implementing a approach. 
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Other">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   Not classified with more specific terms. The context of its usage may be described in related text.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Policy">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A deliberate system of principles to guide decisions and achieve rational outcomes. A policy is a statement of intent, and is implemented as a procedure or protocol.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5094,6 +5121,34 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="MachineLearning">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The study of computer algorithms that improve automatically through experience and by the use of data.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+               <xsd:enumeration value="MachineLearning.Training">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     Information which is used to train a model. For example, a dataset which is used to determine the weights in a model.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="MachineLearning.Validation">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     Information which is used to determine the fit of a model, often used to reduce overfitting.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="MachineLearning.Test">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     Information that is only used to test the final output of the model in order to confirm the accuracy of model results. This type of information (i.e. data) is used to detect if the model was unintentionally made to peek on the validation data and resulted in overfitting.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
             <xsd:enumeration value="Uncalibrated">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
