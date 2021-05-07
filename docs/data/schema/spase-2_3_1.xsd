@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.3.1 -->
-<!-- Generated: 2021-04-04 -->
+<!-- Generated: 2021-05-07 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -874,7 +874,7 @@
    <xsd:simpleType name="Authors">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A list of individuals or organizations who prepared a work for publication. Separate multiple names with &quot;;&quot;. When an author is a persons use &quot;last,first[,middle]&quot; format. Including a middle name is optional.
+         A list of individuals or organizations who prepared a work for publication. Separate multiple names with &quot;;&quot;. When an author is a persons use &quot;last,first[ middle]&quot; format. Including a middle name is optional.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />

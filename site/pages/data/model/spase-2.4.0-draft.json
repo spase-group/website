@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-04-29",
+   "released": "2021-05-07",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "http://www.spase-group.org/data/schema",
@@ -2444,7 +2444,7 @@
          "version": "2.4.0",
          "updated": "2021-02-04",
          "changedBy": "T.King",
-         "description": "Change Version to SoftwareVersion in Software resource; add elements to InputProperty and OutputPorperty.",
+         "description": "Change Version to SoftwareVersion in Software resource; Add elements to InputProperty and OutputProperty.",
          "note": "Discussed in email exchanges."
       },
       {
@@ -2460,7 +2460,7 @@
          "version": "2.4.0",
          "updated": "2021-04-29",
          "changedBy": "T.King",
-         "description": "Change Format in AccessInformation one or more occurrence.",
+         "description": "Change Format in AccessInformation to have one or more occurrence.",
          "note": "Decided during telecon on 2021-04-29."
       },
       {
@@ -2468,7 +2468,7 @@
          "version": "2.4.0",
          "updated": "2021-04-29",
          "changedBy": "T.King",
-         "description": "Add MachineLearning, Training, Validation and Test to the dictionary; Add MachineLearning as a enumeration with Training, Validation and Test as values; Add MachineLearning to ProcessLevel.",
+         "description": "Add MachineLearning, Training, Validation and Test to the dictionary; Add MachineLearning as an enumeration with Training, Validation and Test as values; Add MachineLearning to ProcessLevel.",
          "note": "Suggested during telecon 2021-04-22."
       }
    ],
@@ -3184,7 +3184,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[,middle]\"\" format. Including a middle name is optional.\r",
+         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[ middle]\"\" format. Including a middle name is optional.\r",
          "usedBy": [
             "PublicationInfo"
          ],

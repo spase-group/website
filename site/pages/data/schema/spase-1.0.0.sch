@@ -18,24 +18,5 @@
       </assert>
     </rule>
   </pattern>
-
-  <!-- Check that Parameter exists - must have at least one -->
-  <pattern id="parameter" name="Check Parameter is present">
-    <rule context="NumericalData">
-      <assert test="Parameter">
-         One or more Parameter descriptions are needed.
-      </assert>
-    </rule>
-    <rule context="DisplayData">
-      <assert test="Parameter">
-         One or more Parameter descriptions are needed.
-      </assert>
-    </rule>
-    <rule context="Catalog">
-      <assert test="Parameter">
-         One or more Parameter descriptions are needed.
-      </assert>
-    </rule>
-  </pattern>
   
 </schema>

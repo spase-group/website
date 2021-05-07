@@ -3100,7 +3100,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[,middle]\"\" format. Including a middle name is optional.\r",
+         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[ middle]\"\" format. Including a middle name is optional.\r",
          "usedBy": [
             "PublicationInfo"
          ],
