@@ -13,8 +13,8 @@
   <!-- Check that StartDate is less than StopDate (if StopDate is present) -->
   <pattern id="time" name="Check time values">
     <rule context="StopDate">
-      <assert test="../StartDate &lt; ../StopDate">
-         Both StartDate and StopDate are present.\nStartDate must be less than StopDate.
+      <assert test="../StartDate le ../StopDate">
+         Both StartDate and StopDate are present.\nStartDate must be less than or equal to StopDate.
       </assert>
     </rule>
   </pattern>
