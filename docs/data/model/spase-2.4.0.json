@@ -1,10 +1,10 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-01-21",
+   "released": "2021-06-10",
    "description": "SPASE Base Model",
    "namespace": "spase",
-   "schemaurl": "https://spase-group.org/data/schema",
+   "schemaurl": "http://www.spase-group.org/data/schema",
    "extend": "",
    "history": [
       {
@@ -2438,6 +2438,46 @@
          "changedBy": "T.King",
          "description": "Add Software resource and related elements to the information model.",
          "note": "Discussed during prior telecons."
+      },
+      {
+         "id": "305",
+         "version": "2.4.0",
+         "updated": "2021-02-04",
+         "changedBy": "T.King",
+         "description": "Change Version to SoftwareVersion in Software resource; Add elements to InputProperty and OutputProperty.",
+         "note": "Discussed in email exchanges."
+      },
+      {
+         "id": "306",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Add Policy and Convention to dictionary and to DocumentType enumeration",
+         "note": "Decided during prior telecon."
+      },
+      {
+         "id": "307",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Change Format in AccessInformation to have one or more occurrence.",
+         "note": "Decided during telecon on 2021-04-29."
+      },
+      {
+         "id": "308",
+         "version": "2.4.0",
+         "updated": "2021-04-29",
+         "changedBy": "T.King",
+         "description": "Add MachineLearning, Training, Validation and Test to the dictionary; Add MachineLearning as an enumeration with Training, Validation and Test as values; Add MachineLearning to ProcessLevel.",
+         "note": "Suggested during telecon 2021-04-22."
+      },
+      {
+         "id": "309",
+         "version": "2.4.0",
+         "updated": "2021-06-10",
+         "changedBy": "T.King",
+         "description": "Released.",
+         "note": "Decided during the telecon on 2021-06-10."
       }
    ],
    "type": {
@@ -2558,7 +2598,8 @@
          "attributes": "",
          "definition": "Permissions granted or denied by the host of a product to allow other users to access and use the resource.\r",
          "usedBy": [
-            "AccessInformation"
+            "AccessInformation",
+            "Installer"
          ],
          "allowedValues": [
             "Open",
@@ -2614,6 +2655,7 @@
          "definition": "The individual, group or organization which should be acknowledged when the data is used in or contributes to a presentation or publication.\r",
          "usedBy": [
             "AccessInformation",
+            "Installer",
             "ResourceHeader"
          ],
          "allowedValues": []
@@ -2794,6 +2836,18 @@
          "usedBy": [
             "ResourceHeader"
          ],
+         "allowedValues": []
+      },
+      "AnalysisReady ": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "AnalysisReady ",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Calibrated data that has been mapped on uniform space-time grid scales with gaps, flags and out-of-range values replaced with appropriate values. (Similar to NASA Level 3)\r",
+         "usedBy": [],
          "allowedValues": []
       },
       "Ancillary": {
@@ -3138,7 +3192,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[,middle]\"\" format. Including a middle name is optional.\r",
+         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \"\";\"\". When an author is a persons use \"\"last,first[ middle]\"\" format. Including a middle name is optional.\r",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -3178,7 +3232,8 @@
          "attributes": "",
          "definition": "An indication of the method or service which may be used to access the resource.\r",
          "usedBy": [
-            "AccessInformation"
+            "AccessInformation",
+            "Installer"
          ],
          "allowedValues": [
             "Offline",
@@ -3549,11 +3604,12 @@
          "attributes": "",
          "definition": "Information which may be important in the avoidance of the misuse of the resource, for instance instrument maladies, corruption or contamination.\r",
          "usedBy": [
-            "Property",
             "Catalog",
             "DisplayData",
+            "InputProperty",
             "Instrument",
             "NumericalData",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -3901,6 +3957,18 @@
          "element": "",
          "attributes": "",
          "definition": "An entity responsible for making contributions to the content of the resource.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
+      "Convention": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Convention",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A set of agreed, stipulated, or generally accepted approaches or methods of adopting a standard or implementing a approach. \r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -4275,9 +4343,10 @@
          "attributes": "",
          "definition": "A narrative explanation with detail appropriate for the item it describes. For example a description of data resource should include discussions of the main quantities in the resource, possible uses and search terms. A description should also include whether any corrections (i.e, geometry, inertial) have been applied to the resource.\r",
          "usedBy": [
-            "Property",
             "AccessURL",
             "InformationURL",
+            "InputProperty",
+            "OutputProperty",
             "Parameter",
             "ResourceHeader",
             "Structure"
@@ -4506,7 +4575,9 @@
             "Document"
          ],
          "allowedValues": [
+            "Convention",
             "Other",
+            "Policy",
             "Poster",
             "Presentation",
             "Report",
@@ -6523,6 +6594,14 @@
          "usedBy": [
             "Software"
          ],
+         "subElements": [
+            "Name",
+            "Description",
+            "Caveats",
+            "Units",
+            "ValidMin",
+            "ValidMax"
+         ],
          "allowedValues": []
       },
       "InputResourceID": {
@@ -6558,13 +6637,19 @@
          "version": "2.4.0",
          "since": "2.4.0",
          "term": "Installer",
-         "type": "Item",
+         "type": "Container",
          "list": "",
          "element": "",
          "attributes": "",
          "definition": "A piece of software that installs a program or package on a system.\r",
          "usedBy": [
             "Platform"
+         ],
+         "subElements": [
+            "Availability",
+            "AccessRights",
+            "Acknowledgement",
+            "URL"
          ],
          "allowedValues": []
       },
@@ -7342,6 +7427,22 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "MachineLearning": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "MachineLearning",
+         "type": "Enumeration",
+         "list": "MachineLearning",
+         "element": "",
+         "attributes": "",
+         "definition": "The study of computer algorithms that improve automatically through experience and by the use of data.\r",
+         "usedBy": [],
+         "allowedValues": [
+            "Training",
+            "Validation",
+            "Test"
+         ]
+      },
       "Magnetic": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -8110,10 +8211,11 @@
          "attributes": "",
          "definition": "A language unit by which a person or thing is known.\r",
          "usedBy": [
-            "Property",
             "AccessURL",
             "Element",
             "InformationURL",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -8895,6 +8997,14 @@
          "definition": "A container of attributes regarding an output property of an application.\r",
          "usedBy": [
             "Software"
+         ],
+         "subElements": [
+            "Name",
+            "Description",
+            "Caveats",
+            "Units",
+            "ValidMin",
+            "ValidMax"
          ],
          "allowedValues": []
       },
@@ -9683,6 +9793,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Policy": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Policy",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A deliberate system of principles to guide decisions and achieve rational outcomes. A policy is a statement of intent, and is implemented as a procedure or protocol.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "Polarization": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -9884,6 +10006,10 @@
          "allowedValues": [
             "Calibrated",
             "Raw",
+            "MachineLearning",
+            "MachineLearning.Training",
+            "MachineLearning.Validation",
+            "MachineLearning.Test",
             "Uncalibrated"
          ]
       },
@@ -9895,7 +10021,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The key (identifier) of the resource within a Repository. This is a local identifier which can be used to retrieve or locate the resource.\r",
+         "definition": "A string of characters used to uniquely identify a particular product within a Repository. The style or format of the identifier is determined by the Repository. The kinds of resources which can be acessed include, but are not limited to, numerical data, display data, documents and event lists. The method to access the product is determined by the attributes of an access service.\r",
          "usedBy": [
             "AccessURL"
          ],
@@ -10012,6 +10138,18 @@
          "element": "",
          "attributes": "",
          "definition": "Time difference between transmission and reception of a wave in an active wave experiment.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
+      "Property": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Property",
+         "type": "Container",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A container of attributes regarding the property of an application.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -11141,13 +11279,27 @@
          "subElements": [
             "ResourceID",
             "ResourceHeader",
-            "Version",
+            "SoftwareVersion",
             "ApplicationInterface",
             "CodeLanguage",
             "Prerequisites",
             "Platform",
             "InputProperty",
             "OutputProperty"
+         ],
+         "allowedValues": []
+      },
+      "SoftwareVersion": {
+         "version": "2.4.0",
+         "since": "1.0.0",
+         "term": "SoftwareVersion",
+         "type": "Text",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Describes the edition of the software release. The formation rule for the version may vary between software packages. It is intended to aid in queries to the software provider regarding the software.\r",
+         "usedBy": [
+            "Software"
          ],
          "allowedValues": []
       },
@@ -12051,6 +12203,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Test": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Test",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information that is only used to test the final output of the model in order to confirm the accuracy of model results. This type of information (i.e. data) is used to detect if the model was unintentionally made to peek on the validation data and resulted in overfitting.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "Tethys": {
          "version": "2.4.0",
          "since": "2.2.5",
@@ -12268,6 +12432,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Training": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Training",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information which is used to train a model. For example, a dataset which is used to determine the weights in a model.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "TransitionRegion": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -12400,13 +12576,14 @@
          "attributes": "",
          "definition": "A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see <http://www.bipm.fr/> ) when appropriate or use tokens like \"\"Re\"\" to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units can be found at: <http://www.bipm.fr/en/si/si_brochure/chapter2/2-1/#symbols> and those for common derived units can be found at: <http://www.bipm.fr/en/si/derived_units/2-2-2.html>\r",
          "usedBy": [
-            "Property",
             "AzimuthalAngleRange",
             "DataExtent",
             "Element",
             "EnergyRange",
             "FrequencyRange",
+            "InputProperty",
             "MassRange",
+            "OutputProperty",
             "Parameter",
             "PitchAngleRange",
             "PolarAngleRange",
@@ -12503,6 +12680,7 @@
          "usedBy": [
             "AccessURL",
             "InformationURL",
+            "Installer",
             "Source"
          ],
          "allowedValues": []
@@ -12519,6 +12697,18 @@
          "usedBy": [],
          "allowedValues": []
       },
+      "Validation": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "Validation",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Information which is used to determine the fit of a model, often used to reduce overfitting.\r",
+         "usedBy": [],
+         "allowedValues": []
+      },
       "ValidMax": {
          "version": "2.4.0",
          "since": "1.2.0",
@@ -12529,8 +12719,9 @@
          "attributes": "",
          "definition": "The largest legitimate value.\r",
          "usedBy": [
-            "Property",
             "Element",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -12545,8 +12736,9 @@
          "attributes": "",
          "definition": "The smallest legitimate value.\r",
          "usedBy": [
-            "Property",
             "Element",
+            "InputProperty",
+            "OutputProperty",
             "Parameter"
          ],
          "allowedValues": []
@@ -12643,7 +12835,6 @@
          "attributes": "",
          "definition": "Indicates the release identifier. When used to indicate the release of the SPASE data model, it is a in the form Major.Minor.Fix where Major: A significant change in the architecture of the model or rewrite of the implementation. This includes major changes in design or implementation language. This number starts at 0 (zero). Minor: An addition of terms or features that require changes in documentation/external API. This number starts at 0 (zero). Fix: Any change that doesn't require documentation/external API changes. This number starts at 0 (zero).\r",
          "usedBy": [
-            "Software",
             "Spase"
          ],
          "allowedValues": []
@@ -13963,11 +14154,23 @@
          }
       },
       "DocumentType": {
+         "Convention": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "DocumentType",
+            "item": "Convention"
+         },
          "Other": {
             "version": "2.4.0",
             "since": "1.3.0",
             "list": "DocumentType",
             "item": "Other"
+         },
+         "Policy": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "DocumentType",
+            "item": "Policy"
          },
          "Poster": {
             "version": "2.4.0",
@@ -14838,6 +15041,26 @@
             "item": "Magnetosphere"
          }
       },
+      "MachineLearning": {
+         "Training": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Training"
+         },
+         "Validation": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Validation"
+         },
+         "Test": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "MachineLearning",
+            "item": "Test"
+         }
+      },
       "Magnetosphere": {
          "Magnetotail": {
             "version": "2.4.0",
@@ -15602,6 +15825,12 @@
             "since": "1.1.0",
             "list": "ProcessingLevel",
             "item": "Raw"
+         },
+         "MachineLearning": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ProcessingLevel",
+            "item": "MachineLearning"
          },
          "Uncalibrated": {
             "version": "2.4.0",
@@ -16872,130 +17101,6 @@
       }
    },
    "ontology": {
-      "Platform": {
-         "OperatingSystem": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "OperatingSystem",
-            "reference": 1,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Installer": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Installer",
-            "reference": 2,
-            "occurrence": "1",
-            "group": "",
-            "type": "\r"
-         },
-         "Cores": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Cores",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Storage": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Storage",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Memory": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Platform",
-            "element": "Memory",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         }
-      },
-      "Property": {
-         "Name": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Name",
-            "reference": 1,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Description": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Description",
-            "reference": 2,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Caveats": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Caveats",
-            "reference": 3,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Type": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Type",
-            "reference": 4,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "Units": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "Units",
-            "reference": 5,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMin": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMin",
-            "reference": 6,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         },
-         "ValidMax": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "object": "Property",
-            "element": "ValidMax",
-            "reference": 7,
-            "occurrence": "0",
-            "group": "",
-            "type": "\r"
-         }
-      },
       "AccessInformation": {
          "RepositoryID": {
             "version": "2.4.0",
@@ -17043,7 +17148,7 @@
             "object": "AccessInformation",
             "element": "Format",
             "reference": 5,
-            "occurrence": "1",
+            "occurrence": "+",
             "group": "",
             "type": "\r"
          },
@@ -18266,6 +18371,110 @@
             "type": "\r"
          }
       },
+      "InputProperty": {
+         "Name": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Name",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Description": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Description",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Caveats": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Caveats",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Units": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "Units",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMin": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "ValidMin",
+            "reference": 6,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMax": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "InputProperty",
+            "element": "ValidMax",
+            "reference": 7,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
+      "Installer": {
+         "Availability": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "Availability",
+            "reference": 1,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "AccessRights": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "AccessRights",
+            "reference": 2,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Acknowledgement": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "Acknowledgement",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "URL": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Installer",
+            "element": "URL",
+            "reference": 4,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         }
+      },
       "Instrument": {
          "ResourceID": {
             "version": "2.4.0",
@@ -18802,6 +19011,68 @@
             "type": "\r"
          }
       },
+      "OutputProperty": {
+         "Name": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Name",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Description": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Description",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Caveats": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Caveats",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Units": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "Units",
+            "reference": 5,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMin": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "ValidMin",
+            "reference": 6,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "ValidMax": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "OutputProperty",
+            "element": "ValidMax",
+            "reference": 7,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         }
+      },
       "Parameter": {
          "Name": {
             "version": "2.4.0",
@@ -19266,6 +19537,58 @@
             "element": "Bin",
             "reference": 4,
             "occurrence": "*",
+            "group": "",
+            "type": "\r"
+         }
+      },
+      "Platform": {
+         "OperatingSystem": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "OperatingSystem",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Installer": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Installer",
+            "reference": 2,
+            "occurrence": "1",
+            "group": "",
+            "type": "\r"
+         },
+         "Cores": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Cores",
+            "reference": 3,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Storage": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Storage",
+            "reference": 4,
+            "occurrence": "0",
+            "group": "",
+            "type": "\r"
+         },
+         "Memory": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "object": "Platform",
+            "element": "Memory",
+            "reference": 5,
+            "occurrence": "0",
             "group": "",
             "type": "\r"
          }
@@ -19749,11 +20072,11 @@
             "group": "",
             "type": "\r"
          },
-         "Version": {
+         "SoftwareVersion": {
             "version": "2.4.0",
             "since": "2.4.0",
             "object": "Software",
-            "element": "Version",
+            "element": "SoftwareVersion",
             "reference": 3,
             "occurrence": "0",
             "group": "",
