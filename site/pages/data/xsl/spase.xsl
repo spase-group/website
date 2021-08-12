@@ -448,7 +448,7 @@ Wrap text in {{#markdown}}{{/markdown}} for processing with Handlebars.
 Also remove leading and trailing spaces to get desired formatting.
 -->
 <xsl:template match="sp:Description">
-	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
+	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition markdown">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
 </xsl:template>
 
 <xsl:template match="sp:Keyword">

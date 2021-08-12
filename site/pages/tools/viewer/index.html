@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SPASE Viewer</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="markdown.js"></script>
+  <style>
+  // body and h1 should match embedded style in XML stylesheet (spase.xsl)
+  * {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent;
+  }
+  
+  body {
+    background: #f0f0f0;
+    color: black;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  }
+  
+  h1 {
+    font-size: 140%;
+    fontweight: bold;
+  	margin-top: 10px;
+	  margin-bottom: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+  
+  .upload-area {
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-top: 0px;
+    text-align: center;
+    overflow: auto;
+    background: white;
+  }
+  
+  .upload-area:hover{
+    cursor: pointer;
+  }
+  
+  #file { display: none; }
+  </style>
+</head>
+<body>
+<div class="container" >
+    <input type="file" name="file" id="file">
+    
+    <!-- Drag and Drop container-->
+    <div class="title">
+      <h1>SPASE Description Viewer</h1>
+    </div>
+
+    <div class="upload-area"  id="uploadfile">
+      <h1>Drag and Drop file here<br/>Or<br/>Click to select file</h1>
+    </div>
+</div>
+<div id="view"></div>
+  <script>  
+    /* Configure drag and drop */
+    // preventing page from redirecting
+    $("html").on("dragover", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    } );
+    
+    $("html").on("drop", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      fileView(e.originalEvent.dataTransfer);
+    } );
+
+    // $(".upload-area").on("drop", function(e) { e.preventDefault(); e.stopPropagation(); } );   
+/*    
+    $(".upload-area").on("drop", function(e) { 
+      e.preventDefault(); 
+      e.stopPropagation(); 
+      fileView(e.originalEvent.dataTransfer);
+    } );    
+*/
+    // Open file selector on div click
+    $("#uploadfile").click(function(){
+        $("#file").click();
+    });
+ 
+    /* When file selection changes - display selected file */
+    $("#file").change(function () {
+      // alert("File changed...");
+      fileView(this);
+    });
+
+    /* Preload XML Stylesheet */
+    xsl = "";
+    $.ajax({
+       type: "GET",
+       url: "spase.xsl",
+       dataType: "xml",
+       success: function(xml) { xsl = xml; }
+    });
+
+    /* Load a document from a URL */
+    function loadXMLDoc(filename) {
+      xhttp = new XMLHttpRequest();
+      xhttp.open("GET", filename, false);
+      xhttp.send("");
+      return xhttp.responseXML;
+    }
+
+    /* Read input file, apply transform and display in view area */
+    function fileView(input) {
+      if (input.files && input.files.length > 1) {
+        alert("You are attempting to view multiple files.\nOnly the first file in the list will be displayed.");
+      }
+      if (input.files && input.files[0]) {
+        if(['text/xml', 'image/jpg', 'image/png', 'image/gif'].indexOf(input.files[0].type) == -1) {
+          alert('Error : Only XML files are allowed.');
+          return;
+        }
+        fileName = input.files[0].name;
+        // alert("file: " + input.files[0].name);
+        console.log(input.files[0]);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            // console.log(e.target.result);
+            xml = $.parseXML(e.target.result);
+            xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xsl);
+            resultDocument = xsltProcessor.transformToFragment(xml, document);
+            $resultDocument = $(resultDocument);  // jQuery parse of resultDocument
+            // console.log("Elements: " + $(resultDocument).find(".markdown").length);
+            $(resultDocument).find(".markdown").html(function(index, currentContent) { content = currentContent.replace("{{#markdown}}", "").replace("{{/markdown}}", ""); return Markdown.format(content) } );
+            /*
+            $(resultDocument).find(".markdown").text(function(index, text) { 
+              console.log(text); 
+              return(text);
+              } );
+           */
+            $('#view').html(resultDocument);
+            $('.header > .middle').text(fileName);  // Set title
+         };
+        reader.readAsText(input.files[0]);
+      }
+    }
+    
+  </script>
+</body>
+</html>
