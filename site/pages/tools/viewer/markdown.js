@@ -1,3 +1,7 @@
+/*
+A really crude, but functional Markdown formatting tool which will format Markdown text as HTML.
+Author: Todd King, 2021-08-12
+*/
 const Markdown = {
   format ( text ){
     var newval;
@@ -5,7 +9,6 @@ const Markdown = {
 
     var inCode = false;
     var inBlockquote = false;
-    // alert( "In Markdown.format" );
     
     for( var i=0; i < text.length; i++ ) {
 
@@ -140,7 +143,6 @@ const Markdown = {
     for(var i=0; i < text.length; i++) {
       
       var prev, next;
-      // console.log( typeof(text[i-1]) )
       if( typeof(text[i]) !== 'undefined' ) {
         if(text[i].match('<code>')) inCode = true;
         if(text[i].match('</code>')) inCode = false;
@@ -160,16 +162,9 @@ const Markdown = {
       if( ! text[i].match('<') && ( ! prev || ! next) && ( ! inCode ) ) {
         text[i] = text[i] + '<br>';
       }
-      /*
-      if(inCode) {  // Add back new lines
-        // alert("code: " + text[i]);
-        text[i] = text[i] + "\n";        
-      }
-      */
     }
     
     // Generate the full snippette
-    console.log(text.join('\n'));
     return text.join('\n');
   }
 }
