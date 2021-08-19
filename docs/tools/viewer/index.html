@@ -87,7 +87,6 @@
       fileView(e.originalEvent.dataTransfer);
     } );
 
-    // $(".upload-area").on("drop", function(e) { e.preventDefault(); e.stopPropagation(); } );   
 /*    
     $(".upload-area").on("drop", function(e) { 
       e.preventDefault(); 
@@ -134,24 +133,14 @@
           return;
         }
         fileName = input.files[0].name;
-        // alert("file: " + input.files[0].name);
-        console.log(input.files[0]);
         var reader = new FileReader();
         reader.onload = function (e) {
-            // console.log(e.target.result);
             xml = $.parseXML(e.target.result);
             xsltProcessor = new XSLTProcessor();
             xsltProcessor.importStylesheet(xsl);
             resultDocument = xsltProcessor.transformToFragment(xml, document);
             $resultDocument = $(resultDocument);  // jQuery parse of resultDocument
-            // console.log("Elements: " + $(resultDocument).find(".markdown").length);
             $(resultDocument).find(".markdown").html(function(index, currentContent) { content = currentContent.replace("{{#markdown}}", "").replace("{{/markdown}}", ""); return Markdown.format(content) } );
-            /*
-            $(resultDocument).find(".markdown").text(function(index, text) { 
-              console.log(text); 
-              return(text);
-              } );
-           */
             $('#view').html(resultDocument);
             $('.header > .middle').text(fileName);  // Set title
          };
