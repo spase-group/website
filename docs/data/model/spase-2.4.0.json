@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-06-10",
+   "released": "2021-09-02",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "http://www.spase-group.org/data/schema",
@@ -2468,8 +2468,8 @@
          "version": "2.4.0",
          "updated": "2021-04-29",
          "changedBy": "T.King",
-         "description": "Add MachineLearning, Training, Validation and Test to the dictionary; Add MachineLearning as an enumeration with Training, Validation and Test as values; Add MachineLearning to ProcessLevel.",
-         "note": "Suggested during telecon 2021-04-22."
+         "description": "Add ValueAdded to the dictionary; Add ValueAdded to ProcessLevel.",
+         "note": "Suggested during  subsequent telecons."
       },
       {
          "id": "309",
@@ -2836,18 +2836,6 @@
          "usedBy": [
             "ResourceHeader"
          ],
-         "allowedValues": []
-      },
-      "AnalysisReady ": {
-         "version": "2.4.0",
-         "since": "2.4.0",
-         "term": "AnalysisReady ",
-         "type": "Item",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "Calibrated data that has been mapped on uniform space-time grid scales with gaps, flags and out-of-range values replaced with appropriate values. (Similar to NASA Level 3)\r",
-         "usedBy": [],
          "allowedValues": []
       },
       "Ancillary": {
@@ -3524,7 +3512,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Data wherein sensor outputs have been convolved with instrument response function, often irreversibly, to yield data in physical units.\r",
+         "definition": "Data wherein sensor outputs have been convolved with instrument response function, often irreversibly, to yield data in physical units. Similar to NASA Level 2.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -7427,22 +7415,6 @@
          "usedBy": [],
          "allowedValues": []
       },
-      "MachineLearning": {
-         "version": "2.4.0",
-         "since": "2.4.0",
-         "term": "MachineLearning",
-         "type": "Enumeration",
-         "list": "MachineLearning",
-         "element": "",
-         "attributes": "",
-         "definition": "The study of computer algorithms that improve automatically through experience and by the use of data.\r",
-         "usedBy": [],
-         "allowedValues": [
-            "Training",
-            "Validation",
-            "Test"
-         ]
-      },
       "Magnetic": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -10006,11 +9978,8 @@
          "allowedValues": [
             "Calibrated",
             "Raw",
-            "MachineLearning",
-            "MachineLearning.Training",
-            "MachineLearning.Validation",
-            "MachineLearning.Test",
-            "Uncalibrated"
+            "Uncalibrated",
+            "ValueAdded"
          ]
       },
       "ProductKey": {
@@ -10213,7 +10182,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The provider specific classification of the processing performed on the product.\r",
+         "definition": "The provider specific information on the processing performed on the product. This should include the provider processing level designation and information about the intended use of the product. For example, if it is to be used for machine learning or other high level applications.\r",
          "usedBy": [
             "DisplayData",
             "NumericalData"
@@ -10556,7 +10525,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Data in its original state with no processing to account for calibration!!!\r",
+         "definition": "Data in its original state with no processing to account for calibration. Similar to NASA Level 0.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -12203,18 +12172,6 @@
          "usedBy": [],
          "allowedValues": []
       },
-      "Test": {
-         "version": "2.4.0",
-         "since": "2.4.0",
-         "term": "Test",
-         "type": "Item",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "Information that is only used to test the final output of the model in order to confirm the accuracy of model results. This type of information (i.e. data) is used to detect if the model was unintentionally made to peek on the validation data and resulted in overfitting.\r",
-         "usedBy": [],
-         "allowedValues": []
-      },
       "Tethys": {
          "version": "2.4.0",
          "since": "2.2.5",
@@ -12432,18 +12389,6 @@
          "usedBy": [],
          "allowedValues": []
       },
-      "Training": {
-         "version": "2.4.0",
-         "since": "2.4.0",
-         "term": "Training",
-         "type": "Item",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "Information which is used to train a model. For example, a dataset which is used to determine the weights in a model.\r",
-         "usedBy": [],
-         "allowedValues": []
-      },
       "TransitionRegion": {
          "version": "2.4.0",
          "since": "1.0.0",
@@ -12538,7 +12483,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Duplicate data are removed from the data stream and data are time ordered. Values are not adjusted for any potential biases or external factors.\r",
+         "definition": "Duplicate data are removed from the data stream and data are time ordered. Values are not adjusted for any potential biases or external factors. Similar to NASA Level 1.\r",
          "usedBy": [],
          "allowedValues": []
       },
@@ -12697,18 +12642,6 @@
          "usedBy": [],
          "allowedValues": []
       },
-      "Validation": {
-         "version": "2.4.0",
-         "since": "2.4.0",
-         "term": "Validation",
-         "type": "Item",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "Information which is used to determine the fit of a model, often used to reduce overfitting.\r",
-         "usedBy": [],
-         "allowedValues": []
-      },
       "ValidMax": {
          "version": "2.4.0",
          "since": "1.2.0",
@@ -12741,6 +12674,18 @@
             "OutputProperty",
             "Parameter"
          ],
+         "allowedValues": []
+      },
+      "ValueAdded": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "ValueAdded",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Calibrated data that has been mapped on uniform space-time grid scales with gaps, flags and out-of-range values replaced with appropriate values. Similar to NASA Level 3.\r",
+         "usedBy": [],
          "allowedValues": []
       },
       "ValueFormat": {
@@ -15041,26 +14986,6 @@
             "item": "Magnetosphere"
          }
       },
-      "MachineLearning": {
-         "Training": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "MachineLearning",
-            "item": "Training"
-         },
-         "Validation": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "MachineLearning",
-            "item": "Validation"
-         },
-         "Test": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "MachineLearning",
-            "item": "Test"
-         }
-      },
       "Magnetosphere": {
          "Magnetotail": {
             "version": "2.4.0",
@@ -15826,17 +15751,17 @@
             "list": "ProcessingLevel",
             "item": "Raw"
          },
-         "MachineLearning": {
-            "version": "2.4.0",
-            "since": "2.4.0",
-            "list": "ProcessingLevel",
-            "item": "MachineLearning"
-         },
          "Uncalibrated": {
             "version": "2.4.0",
             "since": "1.1.0",
             "list": "ProcessingLevel",
             "item": "Uncalibrated"
+         },
+         "ValueAdded": {
+            "version": "2.4.0",
+            "since": "2.4.0",
+            "list": "ProcessingLevel",
+            "item": "ValueAdded"
          }
       },
       "Projection": {

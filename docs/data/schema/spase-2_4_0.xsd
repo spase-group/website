@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2021-06-10 -->
+<!-- Generated: 2021-09-02 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -1392,7 +1392,7 @@
    <xsd:simpleType name="ProviderProcessingLevel">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The provider specific classification of the processing performed on the product.
+         The provider specific information on the processing performed on the product. This should include the provider processing level designation and information about the intended use of the product. For example, if it is to be used for machine learning or other high level applications.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -5110,49 +5110,28 @@
             <xsd:enumeration value="Calibrated">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Data wherein sensor outputs have been convolved with instrument response function, often irreversibly, to yield data in physical units.
+                  Data wherein sensor outputs have been convolved with instrument response function, often irreversibly, to yield data in physical units. Similar to NASA Level 2.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="Raw">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Data in its original state with no processing to account for calibration!!!
+                  Data in its original state with no processing to account for calibration. Similar to NASA Level 0.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
-            <xsd:enumeration value="MachineLearning">
-               <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                  The study of computer algorithms that improve automatically through experience and by the use of data.
-                  </xsd:documentation>
-               </xsd:annotation>
-            </xsd:enumeration>
-               <xsd:enumeration value="MachineLearning.Training">
-                  <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
-                     Information which is used to train a model. For example, a dataset which is used to determine the weights in a model.
-                     </xsd:documentation>
-                  </xsd:annotation>
-               </xsd:enumeration>
-               <xsd:enumeration value="MachineLearning.Validation">
-                  <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
-                     Information which is used to determine the fit of a model, often used to reduce overfitting.
-                     </xsd:documentation>
-                  </xsd:annotation>
-               </xsd:enumeration>
-               <xsd:enumeration value="MachineLearning.Test">
-                  <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
-                     Information that is only used to test the final output of the model in order to confirm the accuracy of model results. This type of information (i.e. data) is used to detect if the model was unintentionally made to peek on the validation data and resulted in overfitting.
-                     </xsd:documentation>
-                  </xsd:annotation>
-               </xsd:enumeration>
             <xsd:enumeration value="Uncalibrated">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Duplicate data are removed from the data stream and data are time ordered. Values are not adjusted for any potential biases or external factors.
+                  Duplicate data are removed from the data stream and data are time ordered. Values are not adjusted for any potential biases or external factors. Similar to NASA Level 1.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ValueAdded">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Calibrated data that has been mapped on uniform space-time grid scales with gaps, flags and out-of-range values replaced with appropriate values. Similar to NASA Level 3.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
