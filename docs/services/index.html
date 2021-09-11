@@ -158,40 +158,59 @@ Space Physics Archive Search and Extract
 <h1 class='page_title'>Services</h1>
 <div class='gradient_line_half'></div>
 
-<p>SPASE Resource IDs are assigned by naming authorities. In a global system naming authorities must be unique. SPASE maintains the list of naming authorities used in our community. SPASE also administraters the metadata registry containing descriptions common entities.This are available on Github and through the SPASE SMWG registry. SPASE also maintains a registry for the Heliophysics Data Environment (HPDE).</header>
+<p>SPASE Resource IDs are assigned by naming authorities. In a global system naming authorities must be unique. SPASE maintains the list of 
+naming authorities used in our community. SPASE also administraters the metadata registry containing descriptions common entities.
+This are available on Github and through the SPASE SMWG registry. SPASE also maintains a registry for the Heliophysics Data Environment (HPDE).
+</p>
+</header>
+
 </p>
 <section id='page_body'>
 <article class='page_body_article'>
 <section class='article_body'>
 <div class='wysiwyg_content'>
 <h2>Naming Authorities</h2>
-<p>SPASE maintains a list of naming authorities who use the "spase" scheme in resource IDs. 
+  <p>
+  SPASE maintains a list of naming authorities who use the "spase" scheme in resource IDs. 
 	A SPASE Resource ID is a URI and has the general form of
+  </p>
 	<pre class="code">spase://authority/path</pre>
-	To ensure global uniqueness of SPASE Resource IDs a naming authority must resource a unique 
+  </p>
+  <p>
+	To ensure global uniqueness of SPASE Resource IDs a naming authority must register a unique 
 	name with the SPASE group. 
+  </p>
+  <p>
 	To become a naming authority and register your naming authority name with SPASE contact Todd King (<a href=mailto:tking@igpp.ucla.edu>tking@igpp.ucla.edu</a>)
-</p>
-<p>
+  </p>
+  <p>
 	<a href="naming-authority.html">Current list of naming authorities</a>
-</p>
-<h2>SMWG Registry</h2>
+  </p>
+
+<h2>Metadata Repositories</h2>
 	<p>
-	The SPASE Metadata Working Group (SMWG) administrators the metadata registry containing
-	descriptions common entities. This includes descriptions of observatories, instruments, persons,
-	registries and services. These descriptions are typically referenced by descriptions of digital resources
-	such as numerical data, display data and catalogs. The SPASE descriptions are maintained in the metadata 
-	repository managed as a Github project at: <a href="https://github.com/hpde/spase-SMWG">https://github.com/hpde/spase-SMWG</a>
-   </p>
+  Each naming authority has a repository (currently on <a href="https://github.com/hpde">GitHub</a>) where SPASE descriptions are collected.
+  The repositories are maintained under the Heliophysics Data Environment (HPDE) organization which is located at:
+  </p>
+  <p>
+  <a href="https://github.com/hpde">https://github.com/hpde</a>
+  </p>
+  <p>
+	All naming authority repositories in the HPDE GitHub undergo quality assurance checks which includes nformation model conformance (validation) and 
+  referential checks (links and SPASE ResourceI ID references) using the <a href="https://spase-group.org/tools/resource/index.html">SPASE resource toolkit</a>
+  </p>
+   
+<h2>Landing Pages</h2>
 	<p>
-	SMWG Registry <a href="https://hpde.io/SMWG">https://hpde.io/SMWG</a>
-</p>
-<h2>HPDE Registry</h2>
-	<p>
-	SPASE hosts a registry service to provided access to descriptions of the resources in the Heliophysics Data Environment (HPDE). The SPASE descriptions included in the HPDE registry are from all the naming authority repositories maintain on Github at <a href="https://github.com/hpde">https://github.com/hpde</a>
-   </p>
-	<p>
-	HPDE Registry <a href="https://hpde.io/">http://hpde.io/</a>
+	SPASE generates formatted web pages for every SPASE description in the naming authority repositories. 
+  These can serve as <a href="https://hpde.io">landing pages</a> for a DOI assigned to the data or document. The landing pages are at:
+  </p>
+  <p>
+	<a href="https://hpde.io/">https://hpde.io/</a>
+  </p>
+  <p>
+  The landing page web site allow you to navigate to a particular landing page by clicking on a set of menus. You can also get directly to 
+  a landing page for a SPASE description by replacing the "spase://" in the resource ID with "https://hpde.io/".
 </p>
 
 </div>
