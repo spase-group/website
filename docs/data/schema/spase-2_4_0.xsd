@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2021-09-02 -->
+<!-- Generated: 2021-09-25 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -46,7 +46,7 @@
    <xsd:complexType name="Catalog">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A tabular listing of events or observational notes, especially those that have utility in aiding a user in locating data. Catalogs include lists of events, files in a product, and data availability. A Catalog resource is a type of &quot;&quot;data product&quot;&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of a collection of granules of successive time spans, but may be a single high-level entity.
+         A tabular listing of events or observational notes, especially those that have utility in aiding a user in locating data. Catalogs include lists of events, files in a product, and data availability. A Catalog resource is a type of &quot;data product&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of a collection of granules of successive time spans, but may be a single high-level entity.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -92,7 +92,7 @@
    <xsd:complexType name="RevisionHistory">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A history of changes that improve or upgrade. 
+         A history of changes that improve or upgrade.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -102,7 +102,7 @@
    <xsd:complexType name="RevisionEvent">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A specific change that improves or upgrades. 
+         A specific change that improves or upgrades.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -383,7 +383,7 @@
    <xsd:complexType name="EnergyRange">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The minimum and maximum energy values of the particles represented by a given &quot;&quot;physical parameter&quot;&quot; description.
+         The minimum and maximum energy values of the particles represented by a given &quot;physical parameter&quot; description.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -477,7 +477,7 @@
    <xsd:complexType name="Mixed">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A parameter derived from more than one of the type of parameter. For example, plasma beta, the ratio of plasma particle energy density to the energy density of the magnetic field permeating the plasma, is &quot;&quot;mixed.&quot;&quot;
+         A parameter derived from more than one of the type of parameter. For example, plasma beta, the ratio of plasma particle energy density to the energy density of the magnetic field permeating the plasma, is &quot;mixed.&quot;
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -500,7 +500,7 @@
    <xsd:complexType name="DisplayData">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A graphical representation of data wherein the underlying numeric values are not (readily) accessible for analysis.. Examples are line plots and spectrograms. A Display Data resource is a type of &quot;&quot;data product&quot;&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of a collection of granules of successive time spans, but may be a single high-level entity.
+         A graphical representation of data wherein the underlying numeric values are not (readily) accessible for analysis.. Examples are line plots and spectrograms. A Display Data resource is a type of &quot;data product&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of a collection of granules of successive time spans, but may be a single high-level entity.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -544,7 +544,7 @@
    <xsd:complexType name="NumericalData">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Data stored as numerical values in one or more specified formats. A Numerical Data resource is a type of &quot;&quot;data product&quot;&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of Parameters stored in a collection of granules of successive time spans or a single data granule.
+         Data stored as numerical values in one or more specified formats. A Numerical Data resource is a type of &quot;data product&quot; which is a set of data that is uniformly processed and formatted, from one or more instruments, typically spanning the full duration of the observations of the relevant instrument(s). A data product may consist of Parameters stored in a collection of granules of successive time spans or a single data granule.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -597,15 +597,15 @@
          <xsd:element name="ApplicationInterface" type="spase:ApplicationInterface" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="CodeLanguage" type="spase:CodeLanguage" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Prerequisites" type="spase:Prerequisites" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Platform" type="spase:Platform" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="ExecutionEnvironment" type="spase:ExecutionEnvironment" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="InputProperty" type="spase:InputProperty" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="OutputProperty" type="spase:OutputProperty" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="Platform">
+   <xsd:complexType name="ExecutionEnvironment">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A compulsory or necessary condition.
+         An execution platform for software which includes an operating system and necessary hardware.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -952,7 +952,7 @@
    <xsd:simpleType name="Authors">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A list of individuals or organizations who prepared a work for publication. Separate multiple names with &quot;&quot;;&quot;&quot;. When an author is a persons use &quot;&quot;last,first[ middle]&quot;&quot; format. Including a middle name is optional.
+         A list of individuals or organizations who prepared a work for publication. Separate multiple names with &quot;;&quot;. When an author is a persons use &quot;last,first[ middle]&quot; format. Including a middle name is optional.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1056,7 +1056,7 @@
    <xsd:simpleType name="Elevation">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The distance in meters above (positive) or below (negative) the &quot;&quot;zero elevation&quot;&quot; defined by the World Geodetic System reference frame (WGS84).
+         The distance in meters above (positive) or below (negative) the &quot;zero elevation&quot; defined by the World Geodetic System reference frame (WGS84).
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:double" />
@@ -1064,7 +1064,7 @@
    <xsd:simpleType name="Email">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The electronic address at which the individual may be contacted expressed in the form &quot;&quot;local-part@domain&quot;&quot;.
+         The electronic address at which the individual may be contacted expressed in the form &quot;local-part@domain&quot;.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1144,7 +1144,7 @@
    <xsd:simpleType name="Index">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The location of an item in an array or vector. An index can be multivalued to represent the location in a multidimensional object. The index of the first item is &quot;&quot;1&quot;&quot;. A value of &quot;&quot;0&quot;&quot; is a wild card for all elements at the location in an array. A value of &quot;&quot;-1&quot;&quot; is a reference to the dimension at the location in the array. A &quot;&quot;-1&quot;&quot; is used when describing the attributes of the dimension, where as &quot;&quot;0&quot;&quot; or a positive integer is used to describe attributes of individual elements.
+         The location of an item in an array or vector. An index can be multivalued to represent the location in a multidimensional object. The index of the first item is &quot;1&quot;. A value of &quot;0&quot; is a wild card for all elements at the location in an array. A value of &quot;-1&quot; is a reference to the dimension at the location in the array. A &quot;-1&quot; is used when describing the attributes of the dimension, where as &quot;0&quot; or a positive integer is used to describe attributes of individual elements.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="spase:typeSequence" />
@@ -1176,7 +1176,7 @@
    <xsd:simpleType name="InvestigationName">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The name given to the contract or engagement which enabled the data to be produced. Each investigation is associated with a Principal Investigator or Guest Investigator who was responsible for the original proposal. For single PI missions each major subsystem having its own identified Team Leader may also be classed as an &quot;&quot;Investigation&quot;&quot; for the purposes of data archiving.
+         The name given to the contract or engagement which enabled the data to be produced. Each investigation is associated with a Principal Investigator or Guest Investigator who was responsible for the original proposal. For single PI missions each major subsystem having its own identified Team Leader may also be classed as an &quot;Investigation&quot; for the purposes of data archiving.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1304,7 +1304,7 @@
    <xsd:simpleType name="ParameterKey">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The name or identifier which can be used to access the parameter in the resource. The associated value is dependent on the service used to access the resource. For columnar ASCII data, use &quot;&quot;Column_X&quot;&quot; for a single-element parameter and &quot;&quot;Column_X-Column_Y&quot;&quot; for a multi-element parameter, where X and Y are the relevant column index. The first column index is 1.
+         The name or identifier which can be used to access the parameter in the resource. The associated value is dependent on the service used to access the resource. For columnar ASCII data, use &quot;Column_X&quot; for a single-element parameter and &quot;Column_X-Column_Y&quot; for a multi-element parameter, where X and Y are the relevant column index. The first column index is 1.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1384,7 +1384,7 @@
    <xsd:simpleType name="ProviderName">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The source, or original provider, of the data (for example, PDS PPI)
+         The source, or original provider, of the data (for example, PDS PPI).
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1464,7 +1464,7 @@
    <xsd:simpleType name="ResourceID">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A Resource ID is a URI that has the form &quot;&quot;scheme://authority/path&quot;&quot; where &quot;&quot;scheme&quot;&quot; is &quot;&quot;spase&quot;&quot; for those resources administered through the SPASE framework, &quot;&quot;authority&quot;&quot; is the unique identifier for the resource provider registered within the SPASE framework and &quot;&quot;path&quot;&quot; is the unique identifier of the resource within the context of the &quot;&quot;authority&quot;&quot;. The resource ID must be unique within the SPASE framework.
+         A Resource ID is a URI that has the form &quot;scheme://authority/path&quot; where &quot;scheme&quot; is &quot;spase&quot; for those resources administered through the SPASE framework, &quot;authority&quot; is the unique identifier for the resource provider registered within the SPASE framework and &quot;path&quot; is the unique identifier of the resource within the context of the &quot;authority&quot;. The resource ID must be unique within the SPASE framework.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1560,7 +1560,7 @@
    <xsd:simpleType name="Storage">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The component of your computer that allows you to store and access data on a long-term basis. Indicate units with standard byte scales such as KB, MB, GB, TB and PB. 
+         The component of your computer that allows you to store and access data on a long-term basis. Indicate units with standard byte scales such as KB, MB, GB, TB and PB.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1576,7 +1576,7 @@
    <xsd:simpleType name="Units">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see &lt;http://www.bipm.fr/&gt; ) when appropriate or use tokens like &quot;&quot;Re&quot;&quot; to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units can be found at: &lt;http://www.bipm.fr/en/si/si_brochure/chapter2/2-1/#symbols&gt; and those for common derived units can be found at: &lt;http://www.bipm.fr/en/si/derived_units/2-2-2.html&gt;
+         A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see &lt;http://www.bipm.fr/&gt; ) when appropriate or use tokens like &quot;Re&quot; to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units can be found at: &lt;http://www.bipm.fr/en/si/si_brochure/chapter2/2-1/#symbols&gt; and those for common derived units can be found at: &lt;http://www.bipm.fr/en/si/derived_units/2-2-2.html&gt;
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -1584,7 +1584,7 @@
    <xsd:simpleType name="UnitsConversion">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The multiplicative factor for converting a unit into International System of Units (SI) units. The factor is expressed in the form &quot;&quot;number &gt; x&quot;&quot;, where &quot;&quot;number&quot;&quot; is a numerical value and &quot;&quot;x&quot;&quot; is the appropriate SI units. The basic SI units are Enumerated: m (meter), N (newton), kg (kilogram), Pa (pascal), s (second), Hz (hertz), A (ampere), V (volt), K (kelvin), W (watt), rad (radian), J (joule), sr (steradian), C (coulomb), T (tesla), ohm (ohm), mho (mho or seimens), H (henry), and F (farad). Two useful units which are not SI units are: degree (angle), and unitless (no units). An example is: &quot;&quot;1.0E-9&gt;T&quot;&quot; which converts the units, presumable nT, to Tesla. Another example is: &quot;&quot;1.0e+3&gt;m/s&quot;&quot; which converts a velocity expressed in kilometers per second to meters per second.
+         The multiplicative factor for converting a unit into International System of Units (SI) units. The factor is expressed in the form &quot;number &gt; x&quot;, where &quot;number&quot; is a numerical value and &quot;x&quot; is the appropriate SI units. The basic SI units are Enumerated: m (meter), N (newton), kg (kilogram), Pa (pascal), s (second), Hz (hertz), A (ampere), V (volt), K (kelvin), W (watt), rad (radian), J (joule), sr (steradian), C (coulomb), T (tesla), ohm (ohm), mho (mho or seimens), H (henry), and F (farad). Two useful units which are not SI units are: degree (angle), and unitless (no units). An example is: &quot;1.0E-9&gt;T&quot; which converts the units, presumable nT, to Tesla. Another example is: &quot;1.0e+3&gt;m/s&quot; which converts a velocity expressed in kilometers per second to meters per second.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -2023,7 +2023,7 @@
             <xsd:enumeration value="Carrington">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A coordinate system which is centered at the Sun and is &quot;&quot;fixed&quot;&quot; with respect to the synodic rotation rate; the mean synodic value is about 27.2753 days. The Astronomical Almanac gives a value for Carrington longitude of 349.03 degrees at 0000 UT on 1 January 1995.
+                  A coordinate system which is centered at the Sun and is &quot;fixed&quot; with respect to the synodic rotation rate; the mean synodic value is about 27.2753 days. The Astronomical Almanac gives a value for Carrington longitude of 349.03 degrees at 0000 UT on 1 January 1995.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -2366,7 +2366,7 @@
             <xsd:enumeration value="AzimuthAngle">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The angle between the projection into the i-j plane of a position or measured vector and the i-axis of the coordinate system. Mathematically defined as arctan(j/i). This term could be also applied to angles measured in different planes, for example the IMF clock angle defined as arctan(|By|/Bz). 
+                  The angle between the projection into the i-j plane of a position or measured vector and the i-axis of the coordinate system. Mathematically defined as arctan(j/i). This term could be also applied to angles measured in different planes, for example the IMF clock angle defined as arctan(|By|/Bz).
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -2786,7 +2786,7 @@
             <xsd:enumeration value="Base64">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in Internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the &quot;&quot;+&quot;&quot; and &quot;&quot;/&quot;&quot; symbols, with the &quot;&quot;=&quot;&quot; symbol as a special suffix (padding) code.
+                  A data encoding scheme whereby binary-encoded data is converted to printable ASCII characters. It is defined as a MIME content transfer encoding for use in Internet e-mail. The only characters used are the upper- and lower-case Roman alphabet characters (A-Z, a-z), the numerals (0-9), and the &quot;+&quot; and &quot;/&quot; symbols, with the &quot;=&quot; symbol as a special suffix (padding) code.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -2898,7 +2898,7 @@
             <xsd:enumeration value="Potential">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The work required per unit charge to move a charge from a reference point to a point at infinity (electric potential is defined to be zero). The electric potential of a spacecraft is often referred to as the &quot;&quot;spacecraft potential&quot;&quot;. The spacecraft potential is the electric potential of the spacecraft relative to the potential of the nearby plasma. The spacecraft potential is non-zero because the spacecraft charges to the level that the emitted photoelectron flux going to infinity is balanced by the plasma electron flux to the spacecraft. 
+                  The work required per unit charge to move a charge from a reference point to a point at infinity (electric potential is defined to be zero). The electric potential of a spacecraft is often referred to as the &quot;spacecraft potential&quot;. The spacecraft potential is the electric potential of the spacecraft relative to the potential of the nearby plasma. The spacecraft potential is non-zero because the spacecraft charges to the level that the emitted photoelectron flux going to infinity is balanced by the plasma electron flux to the spacecraft. 
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -3003,7 +3003,7 @@
                <xsd:enumeration value="Hardcopy.Film">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
-                     An image recording medium on which usually a &quot;&quot;negative&quot;&quot; analog image is registered. A &quot;&quot;positive&quot;&quot; image can be recovered or reproduced from film, which is usually made of flexible materials for ease of storage and transportation.
+                     An image recording medium on which usually a &quot;negative&quot; analog image is registered. A &quot;positive&quot; image can be recovered or reproduced from film, which is usually made of flexible materials for ease of storage and transportation.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -3129,7 +3129,7 @@
             <xsd:enumeration value="NCAR">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The National Center for Atmospheric Research (NCAR) format. A complete description of that standard is given in appendix C of the &quot;&quot;Report on Establishment &amp; Operation of the Incoherent- Scatter Data Base&quot;&quot;, dated August 23, 1984, obtainable from NCAR, P.O. Box 3000 Boulder, Colorado 80307-3000.
+                  The National Center for Atmospheric Research (NCAR) format. A complete description of that standard is given in appendix C of the &quot;Report on Establishment &amp; Operation of the Incoherent- Scatter Data Base&quot;, dated August 23, 1984, obtainable from NCAR, P.O. Box 3000 Boulder, Colorado 80307-3000.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -3248,7 +3248,7 @@
             <xsd:enumeration value="Film">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  An image recording medium on which usually a &quot;&quot;negative&quot;&quot; analog image is registered. A &quot;&quot;positive&quot;&quot; image can be recovered or reproduced from film, which is usually made of flexible materials for ease of storage and transportation.
+                  An image recording medium on which usually a &quot;negative&quot; analog image is registered. A &quot;positive&quot; image can be recovered or reproduced from film, which is usually made of flexible materials for ease of storage and transportation.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -3619,7 +3619,7 @@
             <xsd:enumeration value="Platform">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A compulsory or necessary condition.
+                  A collection of components which can be positioned and oriented as a single unit. A platform may contain other platforms. For example, a spacecraft is a platform which may have components that can be articulated and are also considered platforms.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -3689,7 +3689,7 @@
             <xsd:enumeration value="SolidStateDetector">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A detector of the charge carriers (electrons and holes) generated in semiconductors by energy deposited by gamma ray photons. Also known as a &quot;&quot;semiconductor detector&quot;&quot;.
+                  A detector of the charge carriers (electrons and holes) generated in semiconductors by energy deposited by gamma ray photons. Also known as a &quot;semiconductor detector&quot;.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4123,7 +4123,7 @@
             <xsd:enumeration value="Irradiance">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Irradiance - A radiometric term for the power of electromagnetic radiation at a surface, per unit area. &quot;&quot;Irradiance&quot;&quot; is used when the electromagnetic radiation is incident on the surface.  Irradiance data may be reported in any units (i.e. counts/s) due to, for example, being at a particular wavelength, or to being a not-fully-calibrated relative measurement.
+                  Irradiance - A radiometric term for the power of electromagnetic radiation at a surface, per unit area. &quot;Irradiance&quot; is used when the electromagnetic radiation is incident on the surface.  Irradiance data may be reported in any units (i.e. counts/s) due to, for example, being at a particular wavelength, or to being a not-fully-calibrated relative measurement.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4137,7 +4137,7 @@
             <xsd:enumeration value="Magnetogram">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Measurements of the vector or line-of-sight magnetic field determined from remote sensing measurements of the detailed structure of spectral lines, including their splitting and polarization. (&quot;&quot;Magnetogram.&quot;&quot;)
+                  Measurements of the vector or line-of-sight magnetic field determined from remote sensing measurements of the detailed structure of spectral lines, including their splitting and polarization. (&quot;Magnetogram.&quot;)
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4564,7 +4564,7 @@
             <xsd:enumeration value="Proteus">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The second largest moon of Neptune. 
+                  The second largest moon of Neptune.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4725,7 +4725,7 @@
             <xsd:enumeration value="Fluence">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The time integral of a flux. A fluence does not have any &quot;&quot;per unit time&quot;&quot; in its units.
+                  The time integral of a flux. A fluence does not have any &quot;per unit time&quot; in its units.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4865,7 +4865,7 @@
             <xsd:enumeration value="Velocity">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;&quot;bulk velocity&quot;&quot;.
+                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;bulk velocity&quot;.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -4991,7 +4991,7 @@
             <xsd:enumeration value="CoronalHole">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  An extended region of the corona, exceptionally low in density and associated with unipolar photospheric regions. A coronal hole can be an &quot;&quot;open&quot;&quot; magnetic field in the corona and (perhaps) inner heliosphere which has a faster than average outflow (wind); A region of lower than &quot;&quot;quiet&quot;&quot; ion and electron density in the corona; or a region of lower peak electron temperature in the corona than in the &quot;&quot;quiet&quot;&quot; corona.
+                  An extended region of the corona, exceptionally low in density and associated with unipolar photospheric regions. A coronal hole can be an &quot;open&quot; magnetic field in the corona and (perhaps) inner heliosphere which has a faster than average outflow (wind); A region of lower than &quot;quiet&quot; ion and electron density in the corona; or a region of lower peak electron temperature in the corona than in the &quot;quiet&quot; corona.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5054,7 +5054,7 @@
             <xsd:enumeration value="RadioBurst">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Emissions of the sun in radio wavelengths from centimeters to dekameters, under both quiet and disturbed conditions. Radio Bursts can be &quot;&quot;Type I&quot;&quot; consisting of many short, narrow-band bursts in the metric range (300 - 50 MHz).; &quot;&quot;Type II&quot;&quot; consisting of narrow-band emission that begins in the meter range (300 MHz) and sweeps slowly (tens of minutes) toward dekameter wavelengths (10 MHz).; &quot;&quot;Type III&quot;&quot; consisting of narrow-band bursts that sweep rapidly (seconds) from decimeter to dekameter wavelengths (500 - 0.5 MHz); and &quot;&quot;Type IV&quot;&quot; consisting of a smooth continuum of broad-band bursts primarily in the meter range (300 - 30 MHz).
+                  Emissions of the sun in radio wavelengths from centimeters to dekameters, under both quiet and disturbed conditions. Radio Bursts can be &quot;Type I&quot; consisting of many short, narrow-band bursts in the metric range (300 - 50 MHz).; &quot;Type II&quot; consisting of narrow-band emission that begins in the meter range (300 MHz) and sweeps slowly (tens of minutes) toward dekameter wavelengths (10 MHz).; &quot;Type III&quot; consisting of narrow-band bursts that sweep rapidly (seconds) from decimeter to dekameter wavelengths (500 - 0.5 MHz); and &quot;Type IV&quot; consisting of a smooth continuum of broad-band bursts primarily in the meter range (300 - 30 MHz).
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5167,6 +5167,111 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A measure of the length of a position or measured vector projected into the j-k (typically Y-Z) plane of the coordinate system.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+      </xsd:restriction>
+   </xsd:simpleType>
+<!-- ==========================
+     List: Uranus
+
+     Identifiers for the regions surrounding the planet Uranus.
+     ========================== -->
+   <xsd:simpleType name="Uranus">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Identifiers for the regions surrounding the planet Uranus.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Ariel">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The fourth-largest moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Magnetosphere">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Main">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasphere">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A region of the magnetosphere consisting of low energy (cool) plasma. It is located above the ionosphere. The outer boundary of the plasmasphere is known as the plasmapause, which is defined by an order of magnitude drop in plasma density.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Polar">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.RingCurrent">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     One of the major current systems confined within planetary magnetospheres. The ring current circles in the magnetic equatorial plane of magnetospheres. It is generated by the longitudinal drift of energetic charged particles trapped on inner, dipole-like magnetospheric field lines. At the Earth, the ring current is carried by 10 to 200 keV charged particles typically located at L-shells between 3 and 6. The ring current is also the primary driver of the Sym H and Dst Indices of magnetic storm activity at the Earth.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+            <xsd:enumeration value="Miranda">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The smallest and innermost round moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Oberon">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The second-largest and second most massive mon of Uranus, and the ninth most massive moon in the Solar System.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Puck">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The largest inner spherical moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Titania">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The largest moon of Uranus and the eighth largest moon in the Solar System.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Umbriel">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The third largest and fourth most massive moon of Uranus.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5390,7 +5495,7 @@
                <xsd:enumeration value="DirectionAngle.AzimuthAngle">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
-                     The angle between the projection into the i-j plane of a position or measured vector and the i-axis of the coordinate system. Mathematically defined as arctan(j/i). This term could be also applied to angles measured in different planes, for example the IMF clock angle defined as arctan(|By|/Bz). 
+                     The angle between the projection into the i-j plane of a position or measured vector and the i-axis of the coordinate system. Mathematically defined as arctan(j/i). This term could be also applied to angles measured in different planes, for example the IMF clock angle defined as arctan(|By|/Bz).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -5467,7 +5572,7 @@
             <xsd:enumeration value="Halo">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The part of an object or distribution surrounding some central body or distribution.  For example, the particles above the core energies that show enhancements above the thermal population.  Typically, a &quot;&quot;power law tail&quot;&quot; shows a break from the core Maxwellian at a particular energy.
+                  The part of an object or distribution surrounding some central body or distribution.  For example, the particles above the core energies that show enhancements above the thermal population.  Typically, a &quot;power law tail&quot; shows a break from the core Maxwellian at a particular energy.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5684,7 +5789,7 @@
             <xsd:enumeration value="Strahl">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A distribution of particles concentrated in a narrow energy band. The band may be may be aligned with a secondary feature. For example, it may occur in a narrow cone aligned with the mean magnetic field direction. 
+                  A distribution of particles concentrated in a narrow energy band. The band may be may be aligned with a secondary feature. For example, it may occur in a narrow cone aligned with the mean magnetic field direction.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5705,7 +5810,7 @@
             <xsd:enumeration value="Tensor">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A generalized linear &quot;&quot;quantity&quot;&quot; or &quot;&quot;geometrical entity&quot;&quot; that can be expressed as a multi-dimensional array relative to a choice of basis of the particular space on which it is defined.
+                  A generalized linear &quot;quantity&quot; or &quot;geometrical entity&quot; that can be expressed as a multi-dimensional array relative to a choice of basis of the particular space on which it is defined.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -6293,7 +6398,7 @@
                <xsd:enumeration value="Neptune.Proteus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
-                     The second largest moon of Neptune. 
+                     The second largest moon of Neptune.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -6412,7 +6517,7 @@
                <xsd:enumeration value="Saturn.Titan">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
-                     The largest moon of Saturn and the second-largest moon in the Solar System,
+                     The largest moon of Saturn and the second-largest moon in the Solar System.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -6776,7 +6881,7 @@
             <xsd:enumeration value="ProgramScientist">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A program scientist is someone who performs a range of scientific program planning duties, takes responsibility for the science content of flight mission programs or projects. A program scientist develops, reviews, and provides recommendations for proposed program requirements, expected results, budgetary estimates and also establishes methods and procedures to reduce program costs, provides expert advice to management on strategic planning and program development, develops and manages research program, and presents issues and proposes solutions to senior management. 
+                  A program scientist is someone who performs a range of scientific program planning duties, takes responsibility for the science content of flight mission programs or projects. A program scientist develops, reviews, and provides recommendations for proposed program requirements, expected results, budgetary estimates and also establishes methods and procedures to reduce program costs, provides expert advice to management on strategic planning and program development, develops and manages research program, and presents issues and proposes solutions to senior management.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -6951,7 +7056,7 @@
             <xsd:enumeration value="Titan">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  The largest moon of Saturn and the second-largest moon in the Solar System,
+                  The largest moon of Saturn and the second-largest moon in the Solar System.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -7154,7 +7259,7 @@
             <xsd:enumeration value="RadioFrequency">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Photons with a wavelength range: 100,000 to 1.00x10^11 nm
+                  Photons with a wavelength range: 100,000 to 1.00x10^11 nm.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -7182,7 +7287,7 @@
             <xsd:enumeration value="XRays">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Photons with a wavelength range: 0.001 &lt;= x &lt; 10 nm
+                  Photons with a wavelength range: 0.001 &lt;= x &lt; 10 nm.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -7399,7 +7504,7 @@
             <xsd:enumeration value="Velocity">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;&quot;bulk velocity&quot;&quot;.
+                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;bulk velocity&quot;.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -7595,7 +7700,7 @@
             <xsd:enumeration value="Velocity">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;&quot;bulk velocity&quot;&quot;.
+                  Rate of change of position. Also used for the average velocity of a collection of particles, also referred to as &quot;bulk velocity&quot;.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
