@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.0 -->
-<!-- Generated: 2021-09-02 -->
+<!-- Generated: 2021-09-25 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -597,15 +597,15 @@
          <xsd:element name="ApplicationInterface" type="spase:ApplicationInterface" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="CodeLanguage" type="spase:CodeLanguage" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Prerequisites" type="spase:Prerequisites" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Platform" type="spase:Platform" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="ExecutionEnvironment" type="spase:ExecutionEnvironment" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="InputProperty" type="spase:InputProperty" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="OutputProperty" type="spase:OutputProperty" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="Platform">
+   <xsd:complexType name="ExecutionEnvironment">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         A compulsory or necessary condition.
+         An execution platform for software which includes an operating system and necessary hardware.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -3619,7 +3619,7 @@
             <xsd:enumeration value="Platform">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                  A compulsory or necessary condition.
+                  A collection of components which can be positioned and oriented as a single unit. A platform may contain other platforms. For example, a spacecraft is a platform which may have components that can be articulated and are also considered platforms.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5167,6 +5167,111 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A measure of the length of a position or measured vector projected into the j-k (typically Y-Z) plane of the coordinate system.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+      </xsd:restriction>
+   </xsd:simpleType>
+<!-- ==========================
+     List: Uranus
+
+     Identifiers for the regions surrounding the planet Uranus.
+     ========================== -->
+   <xsd:simpleType name="Uranus">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Identifiers for the regions surrounding the planet Uranus.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Ariel">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The fourth-largest moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Magnetosphere">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of the planet&#39;s magnetic field.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetotail">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region on the night side of the body where the magnetic filed is stretched backwards by the force of the solar wind. For Earth, the magnetotail begins at a night-side radial distance of 10 Re (X &gt; -10Re).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Main">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasphere">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A region of the magnetosphere consisting of low energy (cool) plasma. It is located above the ionosphere. The outer boundary of the plasmasphere is known as the plasmapause, which is defined by an order of magnitude drop in plasma density.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Polar">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region near the pole of a body. For a magnetosphere the polar region is the area where magnetic field lines are open and includes the auroral zone.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.RadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The region within a magnetosphere where high-energy particles could potentially be trapped in a magnetic field.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.RingCurrent">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     One of the major current systems confined within planetary magnetospheres. The ring current circles in the magnetic equatorial plane of magnetospheres. It is generated by the longitudinal drift of energetic charged particles trapped on inner, dipole-like magnetospheric field lines. At the Earth, the ring current is carried by 10 to 200 keV charged particles typically located at L-shells between 3 and 6. The ring current is also the primary driver of the Sym H and Dst Indices of magnetic storm activity at the Earth.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+            <xsd:enumeration value="Miranda">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The smallest and innermost round moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Oberon">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The second-largest and second most massive mon of Uranus, and the ninth most massive moon in the Solar System.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Puck">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The largest inner spherical moon of Uranus.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Titania">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The largest moon of Uranus and the eighth largest moon in the Solar System.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Umbriel">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The third largest and fourth most massive moon of Uranus.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>

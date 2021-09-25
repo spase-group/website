@@ -1,7 +1,7 @@
 {
    "name": "SPASE Base Model",
    "version": "2.4.0",
-   "released": "2021-09-02",
+   "released": "2021-09-25",
    "description": "SPASE Base Model",
    "namespace": "spase",
    "schemaurl": "http://www.spase-group.org/data/schema",
@@ -4093,7 +4093,7 @@
          "attributes": "",
          "definition": "An application processor that is part of a CPU. \r",
          "usedBy": [
-            "Platform"
+            "ExecutionEnvironment"
          ],
          "allowedValues": []
       },
@@ -6631,7 +6631,7 @@
          "attributes": "",
          "definition": "A piece of software that installs a program or package on a system.\r",
          "usedBy": [
-            "Platform"
+            "ExecutionEnvironment"
          ],
          "subElements": [
             "Availability",
@@ -7812,7 +7812,7 @@
          "attributes": "",
          "definition": "The component of your computer that allows you to store and access data on a short-term basis, typically the amount of RAM. Indicate units with standard byte scales such as KB, MB, GB, TB and PB. \r",
          "usedBy": [
-            "Platform"
+            "ExecutionEnvironment"
          ],
          "allowedValues": []
       },
@@ -8878,7 +8878,7 @@
          "attributes": "",
          "definition": "The software that supports a computer's basic functions, such as scheduling tasks, executing applications, and controlling peripherals.\r",
          "usedBy": [
-            "Platform"
+            "ExecutionEnvironment"
          ],
          "allowedValues": []
       },
@@ -9666,23 +9666,14 @@
       },
       "Platform": {
          "version": "2.4.0",
-         "since": "2.4.0",
+         "since": "1.3.1",
          "term": "Platform",
-         "type": "Container",
+         "type": "Item",
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A compulsory or necessary condition.\r",
-         "usedBy": [
-            "Software"
-         ],
-         "subElements": [
-            "OperatingSystem",
-            "Installer",
-            "Cores",
-            "Storage",
-            "Memory"
-         ],
+         "definition": "A collection of components which can be positioned and oriented as a single unit. A platform may contain other platforms. For example, a spacecraft is a platform which may have components that can be articulated and are also considered platforms.\r",
+         "usedBy": [],
          "allowedValues": []
       },
       "Pluto": {
@@ -9932,6 +9923,27 @@
          "definition": "A thing that is required to be installed on your computer in order to run or compile the software.\r",
          "usedBy": [
             "Software"
+         ],
+         "allowedValues": []
+      },
+      "ExecutionEnvironment": {
+         "version": "2.4.0",
+         "since": "2.4.0",
+         "term": "ExecutionEnvironment",
+         "type": "Container",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "An execution platform for software which includes an operating system and necessary hardware.\r",
+         "usedBy": [
+            "Software"
+         ],
+         "subElements": [
+            "OperatingSystem",
+            "Installer",
+            "Cores",
+            "Storage",
+            "Memory"
          ],
          "allowedValues": []
       },
@@ -11252,7 +11264,7 @@
             "ApplicationInterface",
             "CodeLanguage",
             "Prerequisites",
-            "Platform",
+            "ExecutionEnvironment",
             "InputProperty",
             "OutputProperty"
          ],
@@ -11811,7 +11823,7 @@
          "attributes": "",
          "definition": "The component of your computer that allows you to store and access data on a long-term basis. Indicate units with standard byte scales such as KB, MB, GB, TB and PB. \r",
          "usedBy": [
-            "Platform"
+            "ExecutionEnvironment"
          ],
          "allowedValues": []
       },
@@ -13085,7 +13097,7 @@
    },
    "list": {
       "AccessRights": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "AccessRights",
          "type": "Closed",
@@ -13093,7 +13105,7 @@
          "definition": "Identifiers for permissions granted or denied by the host of a product to allow other users to access and use the resource."
       },
       "AdiabaticInvariant": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.3.1",
          "name": "AdiabaticInvariant",
          "type": "Closed",
@@ -13101,7 +13113,7 @@
          "definition": "Identifiers for properties of a physical system related to periodic phenomena that remains constant under slowly varying conditions."
       },
       "AnnotationType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "AnnotationType",
          "type": "Closed",
@@ -13117,7 +13129,7 @@
          "definition": "Identifiers for the type of interface for the application."
       },
       "AssociationType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.3",
          "name": "AssociationType",
          "type": "Closed",
@@ -13125,7 +13137,7 @@
          "definition": "Identifiers for resource associations."
       },
       "Availability": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Availability",
          "type": "Closed",
@@ -13133,7 +13145,7 @@
          "definition": "Identifiers for indicating the method or service which may be used to access the resource."
       },
       "ClassificationMethod": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.6",
          "name": "ClassificationMethod",
          "type": "Closed",
@@ -13141,7 +13153,7 @@
          "definition": "Identifiers for the technique used to determine the characteristics of an object."
       },
       "Component": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.2.0",
          "name": "Component",
          "type": "Closed",
@@ -13149,7 +13161,7 @@
          "definition": "Identifiers for the axis of coordinate systems."
       },
       "ConfidenceRating": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "ConfidenceRating",
          "type": "Closed",
@@ -13157,7 +13169,7 @@
          "definition": "Identifiers for the classification of the certainty of an assertion."
       },
       "CoordinateRepresentation": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "CoordinateRepresentation",
          "type": "Closed",
@@ -13165,7 +13177,7 @@
          "definition": "Identifiers of the method or form for specifying a given point or vector in a given coordinate system."
       },
       "CoordinateSystemName": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "CoordinateSystemName",
          "type": "Closed",
@@ -13173,7 +13185,7 @@
          "definition": "Identifiers of the origin and orientation of a set of typically orthogonal axes."
       },
       "DirectionAngle": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "DirectionAngle",
          "type": "Closed",
@@ -13181,7 +13193,7 @@
          "definition": "Identifiers for the angle between a vector and a base axis."
       },
       "DirectionCosine": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.3.1",
          "name": "DirectionCosine",
          "type": "Closed",
@@ -13189,7 +13201,7 @@
          "definition": "Identifiers for the cosine of the angle between two vectors in a three dimensional Euclidean space."
       },
       "DisplayType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.1",
          "name": "DisplayType",
          "type": "Closed",
@@ -13197,7 +13209,7 @@
          "definition": "Identifiers for types or classes of rendered data."
       },
       "DocumentType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.0",
          "name": "DocumentType",
          "type": "Closed",
@@ -13205,7 +13217,7 @@
          "definition": "Identifiers for the characterization of the content or purpose of a document."
       },
       "Earth": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.1.0",
          "name": "Earth",
          "type": "Closed",
@@ -13213,7 +13225,7 @@
          "definition": "Identifiers for the regions surrounding the Earth."
       },
       "Encoding": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Encoding",
          "type": "Closed",
@@ -13221,7 +13233,7 @@
          "definition": "Identifiers for unambiguous rules that establishes the representation of information within a file."
       },
       "FieldQuantity": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "FieldQuantity",
          "type": "Closed",
@@ -13229,7 +13241,7 @@
          "definition": "Identifiers for the physical attribute of the field."
       },
       "Format": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Format",
          "type": "Closed",
@@ -13237,7 +13249,7 @@
          "definition": "Identifiers for data organized according to preset specifications."
       },
       "Hardcopy": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.0",
          "name": "Hardcopy",
          "type": "Closed",
@@ -13245,7 +13257,7 @@
          "definition": "Identifiers for permanent reproductions, or copy in the form of a physical object, of any media suitable for direct use by a person."
       },
       "HashFunction": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.2.0",
          "name": "HashFunction",
          "type": "Closed",
@@ -13253,7 +13265,7 @@
          "definition": "Identifiers for functions or algorithms that convert a digital data object into a hash value."
       },
       "Heliosphere": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Heliosphere",
          "type": "Closed",
@@ -13261,7 +13273,7 @@
          "definition": "Identifiers for regions of the solar atmosphere which extends roughly from the inner corona to the edge of the solar plasma at the heliopause separating primarily solar plasma from interstellar plasma."
       },
       "InstrumentType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "InstrumentType",
          "type": "Closed",
@@ -13269,7 +13281,7 @@
          "definition": "Identifiers for the type of experiment the instrument performs. This is the technique of observation."
       },
       "Integral": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.6",
          "name": "Integral",
          "type": "Closed",
@@ -13277,7 +13289,7 @@
          "definition": "Identifiers for values above a given threshold and over area or solid-angle range."
       },
       "Ionosphere": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.0",
          "name": "Ionosphere",
          "type": "Closed",
@@ -13285,7 +13297,7 @@
          "definition": "Identifiers for ionospheric regions."
       },
       "Jupiter": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Jupiter",
          "type": "Closed",
@@ -13293,7 +13305,7 @@
          "definition": "Identifiers for the regions surrounding the planet Jupiter."
       },
       "Magnetosphere": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Magnetosphere",
          "type": "Closed",
@@ -13301,7 +13313,7 @@
          "definition": "Identifiers for the region of space above the atmosphere or surface of the planet, and bounded by the magnetopause, that is under the direct influence of planet's magnetic field."
       },
       "Mars": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Mars",
          "type": "Closed",
@@ -13309,7 +13321,7 @@
          "definition": "Identifiers for the regions surrounding the planet Mars."
       },
       "MeasurementType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "MeasurementType",
          "type": "Closed",
@@ -13317,7 +13329,7 @@
          "definition": "Identifiers for the method of making an estimated value of a quantity that forms the basis of an observation."
       },
       "Mercury": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Mercury",
          "type": "Closed",
@@ -13325,7 +13337,7 @@
          "definition": "Identifiers for the regions surrounding the planet Mercury."
       },
       "MixedQuantity": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.5",
          "name": "MixedQuantity",
          "type": "Closed",
@@ -13333,7 +13345,7 @@
          "definition": "Identifiers for the combined attributes of a mixed parameter quantity."
       },
       "NearSurface": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "NearSurface",
          "type": "Closed",
@@ -13341,7 +13353,7 @@
          "definition": "Identifiers for regions of the gaseous and possibly ionized environment of a body extending from the surface to some specified altitude."
       },
       "Neptune": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Neptune",
          "type": "Closed",
@@ -13349,7 +13361,7 @@
          "definition": "Identifiers for the regions surrounding the planet Neptune."
       },
       "ParticleQuantity": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.1.0",
          "name": "ParticleQuantity",
          "type": "Closed",
@@ -13357,7 +13369,7 @@
          "definition": "Identifiers for the characterization of the physical properties of the particle."
       },
       "ParticleType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "ParticleType",
          "type": "Closed",
@@ -13365,7 +13377,7 @@
          "definition": "Identifiers for the characterization of the kind of particle observed by the measurement."
       },
       "PhenomenonType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "PhenomenonType",
          "type": "Closed",
@@ -13373,7 +13385,7 @@
          "definition": "Identifiers for the characteristics or categorization of an observation. Note: Joe King to provide."
       },
       "ProcessingLevel": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "ProcessingLevel",
          "type": "Closed",
@@ -13381,15 +13393,23 @@
          "definition": "Identifiers to characterize the amount and type of manipulation which has been applied to the sampled data."
       },
       "Projection": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "Projection",
          "type": "Closed",
          "reference": "",
          "definition": "Identifiers to projections into a coordinate system."
       },
+      "Uranus": {
+         "version": "2.4.0",
+         "since": "2.2.5",
+         "name": "Uranus",
+         "type": "Closed",
+         "reference": "",
+         "definition": "Identifiers for the regions surrounding the planet Uranus."
+      },
       "Venus": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Venus",
          "type": "Closed",
@@ -13397,7 +13417,7 @@
          "definition": "Identifiers for the regions surrounding the planet Venus."
       },
       "Qualifier": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.1",
          "name": "Qualifier",
          "type": "Closed",
@@ -13405,7 +13425,7 @@
          "definition": "Identifiers for terms which refine the type or attribute of a quantity."
       },
       "Region": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Region",
          "type": "Closed",
@@ -13413,7 +13433,7 @@
          "definition": "Identifiers for areas of the physical world which may be occupied or observed."
       },
       "RenderingAxis": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.0",
          "name": "RenderingAxis",
          "type": "Closed",
@@ -13421,7 +13441,7 @@
          "definition": "Identifiers for the reference component of a plot or rendering of data."
       },
       "Role": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Role",
          "type": "Closed",
@@ -13429,7 +13449,7 @@
          "definition": "Identifiers for the assigned or assumed function or position of an individual."
       },
       "Saturn": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.2.5",
          "name": "Saturn",
          "type": "Closed",
@@ -13437,7 +13457,7 @@
          "definition": "Identifiers for the regions surrounding the planet Saturn."
       },
       "ScaleType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.1",
          "name": "ScaleType",
          "type": "Closed",
@@ -13445,7 +13465,7 @@
          "definition": "Identifiers for scaling applied to a set of numbers."
       },
       "SourceType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.1",
          "name": "SourceType",
          "type": "Closed",
@@ -13453,7 +13473,7 @@
          "definition": "Identifiers for the characterization of the function or purpose of a source."
       },
       "SpectralRange": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "SpectralRange",
          "type": "Closed",
@@ -13461,7 +13481,7 @@
          "definition": "Identifiers for names associated with wavelengths. Based on the ISO 21348 Solar Irradiance Standard. Additions have been made to extend the frequency ranges to include those used in space physics. Those additions are indicated in blue text. The \"Total Solar Irradiance\" category has not been included since it is a type of measurement and not a specific spectral range. See Appendix A - Comparison of Spectrum Domains for a comparison of the spectral ranges with other systems."
       },
       "Style": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "2.3.0",
          "name": "Style",
          "type": "Closed",
@@ -13469,7 +13489,7 @@
          "definition": "Identifiers for the manner in which a response from a URL is presented."
       },
       "Sun": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "Sun",
          "type": "Closed",
@@ -13477,7 +13497,7 @@
          "definition": "Identifiers for regions of the star upon which our solar system is centered."
       },
       "SupportQuantity": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.0.0",
          "name": "SupportQuantity",
          "type": "Closed",
@@ -13485,7 +13505,7 @@
          "definition": "Identifiers for the information useful in understanding the context of an observation, typically observed or measured coincidentally with a physical observation."
       },
       "Text": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "Text",
          "type": "Closed",
@@ -13493,7 +13513,7 @@
          "definition": "Identifiers for the encoding of sequences of characters."
       },
       "WaveQuantity": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.1.0",
          "name": "WaveQuantity",
          "type": "Closed",
@@ -13501,7 +13521,7 @@
          "definition": "Identifiers for the characterization of the physical properties of a wave."
       },
       "WaveType": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "WaveType",
          "type": "Closed",
@@ -13509,7 +13529,7 @@
          "definition": "Identifiers for the carrier or phenomenum of wave information observed by the measurement."
       },
       "Waves": {
-         "version": "2.3.3",
+         "version": "2.4.0",
          "since": "1.3.4",
          "name": "Waves",
          "type": "Closed",
@@ -19466,11 +19486,11 @@
             "type": "\r"
          }
       },
-      "Platform": {
+      "ExecutionEnvironment": {
          "OperatingSystem": {
             "version": "2.4.0",
             "since": "2.4.0",
-            "object": "Platform",
+            "object": "ExecutionEnvironment",
             "element": "OperatingSystem",
             "reference": 1,
             "occurrence": "1",
@@ -19480,7 +19500,7 @@
          "Installer": {
             "version": "2.4.0",
             "since": "2.4.0",
-            "object": "Platform",
+            "object": "ExecutionEnvironment",
             "element": "Installer",
             "reference": 2,
             "occurrence": "1",
@@ -19490,7 +19510,7 @@
          "Cores": {
             "version": "2.4.0",
             "since": "2.4.0",
-            "object": "Platform",
+            "object": "ExecutionEnvironment",
             "element": "Cores",
             "reference": 3,
             "occurrence": "0",
@@ -19500,7 +19520,7 @@
          "Storage": {
             "version": "2.4.0",
             "since": "2.4.0",
-            "object": "Platform",
+            "object": "ExecutionEnvironment",
             "element": "Storage",
             "reference": 4,
             "occurrence": "0",
@@ -19510,7 +19530,7 @@
          "Memory": {
             "version": "2.4.0",
             "since": "2.4.0",
-            "object": "Platform",
+            "object": "ExecutionEnvironment",
             "element": "Memory",
             "reference": 5,
             "occurrence": "0",
@@ -20037,11 +20057,11 @@
             "group": "",
             "type": "\r"
          },
-         "Platform": {
+         "ExecutionEnvironment": {
             "version": "2.4.0",
             "since": "2.4.0",
             "object": "Software",
-            "element": "Platform",
+            "element": "ExecutionEnvironment",
             "reference": 7,
             "occurrence": "+",
             "group": "",
