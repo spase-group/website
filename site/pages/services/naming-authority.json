@@ -1,0 +1,104 @@
+[
+ {
+   "Authority": "ASWS",
+   "Name": "Australian Space Weather Services (ASWS)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/ASWS"
+ },
+ {
+   "Authority": "CCMC",
+   "Name": "Community Coordinated Modeling Center (CCMC)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/CCMC"
+ },
+ {
+   "Authority": "CNES",
+   "Name": "Centre National d'Etudes Spatiales",
+   "Method": "git",
+   "URL": "https://github.com/hpde/CNES"
+ },
+ {
+   "Authority": "CSSDP",
+   "Name": "Canadian Space Science Data Portal (CSSDP)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/CSSDP"
+ },
+ {
+   "Authority": "DLR",
+   "Name": "Deutsches Zentrum für Luft- und Raumfahrt (DLR)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/DLR"
+ },
+ {
+   "Authority": "ESA",
+   "Name": "European Space Agency (ESA)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/ESA"
+ },
+ {
+   "Authority": "FMI",
+   "Name": "Finnish Meteorlogical Institute (FMI)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/FMI"
+ },
+ {
+   "Authority": "INAF",
+   "Name": "Istituto Nazionale Di Astrofisica (National Institue for Astrophysics)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/INAF"
+ },
+ {
+   "Authority": "INSU",
+   "Name": "Institut national des sciences de l'Univers (INSU)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/ISU"
+ },
+ {
+   "Authority": "ISWI",
+   "Name": "International Space Weather Initiative (ISWI)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/ISWI"
+ },
+ {
+   "Authority": "KASI",
+   "Name": "Korean Astronomy and Space Science Institute (KASI)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/KASI"
+ },
+ {
+   "Authority": "GBO",
+   "Name": "Ground Based Observatories (GBO)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/GBO"
+ },
+ {
+   "Authority": "JAXA",
+   "Name": "Japan Aerospace Exploration Agency (JAXA)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/JAXA"
+ },
+ {
+   "Authority": "NASA",
+   "Name": "National Aeronautics and Space Administration (NASA)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/NASA"
+ },
+ {
+   "Authority": "NOAA",
+   "Name": "National Oceanic and Atmospheric Administration (NOAA)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/NOAA"
+ },
+ {
+   "Authority": "NSF",
+   "Name": "National Science Foundation (NSF)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/NSF"
+ },
+ {
+   "Authority": "SMWG",
+   "Name": "SPASE Metadata Working Group (SMWG)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/spase-SMWG"
+ }
+]

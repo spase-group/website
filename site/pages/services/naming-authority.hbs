@@ -14,13 +14,34 @@ title: SPASE Naming Authority
 <section class='article_body'>
 <div class='wysiwyg_content'>
 <p>
-	Current list of naming authorities:
+A naming authority assigns SPASE Resource IDs and DOIs to resources they maintain within their domain. 
+A naming authority also creates and maintains the SPASE resource descriptions for their domain.
+</p>
+<p>
+SPASE resource descriptions are to be made publically available either through a repository or service. 
+The preferred method is a publically accessible <a href="https://git-scm.com/">git</a> repository.
+Convienent git hosting services include <a href="https://github.com/">GitHub</a> and (for self-hosting) <a href="https://about.gitlab.com/">GitLab</a>. 
+</p>
+<p>
+Each naming authority repository is excepted to contain a "Repository" resource that describes itself. 
+The SPASE ID for this resource must be "spase://{NA}/Repository/metadata" where {NA} is replaced with the
+naming authority name. For example, the NASA repository will have a Repository resource description with the SPASE Resource ID of:
+</p>
+<p><dt>spase://NASA/Repository/metadata</dt></p>
+</div>
+</section>
+<hr/>
+<section class='article_body'>
+<div class='wysiwyg_content'>
+<p>
+	Current list of naming authorities [ <a href="naming-authority.csv">CSV</a> ] [ <a href="naming-authority.json">JSON</a> ]:
 		<dd>
 			<table>
 				<tr><th>Authority</th><th>Description</th></tr>
 				<tr><td valign="top">ASWS</td><td>Australian Space Weather Services (ASWS)<br>
 				Assigns resource IDs for data registered in the Australian Space Weather Services (ASWS).<br>
 				Website: <a class="ext" href=" http://www.sws.bom.gov.au/World_Data_Centre"> http://www.sws.bom.gov.au/World_Data_Centre</a>
+				Metadata Repository: <a class="ext" href="https://github.com/hpde/ASWS">https://github.com/hpde/ASWS</a>
 				</td></tr>
 					
 				<tr><td  valign="top">CCMC</td><td>Community Coordinated Modeling Center (CCMC)<br>
@@ -65,13 +86,19 @@ title: SPASE Naming Authority
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/INAF">https://github.com/hpde/INAF</a>
 				</td></tr>
 					
+				<tr><td  valign="top">INSU</td><td>Institut national des sciences de l'Univers (INSU)<br>
+				Assigns resource IDs for data available from the Institut national des sciences de l'Univers (INSU).<br>
+				Website: <a class="ext" href="https://www.insu.cnrs.fr/">https://www.insu.cnrs.fr/</a><br>
+				Metadata Repository: <a class="ext" href="https://github.com/hpde/ISU">https://github.com/hpde/INSU</a>
+				</td></tr>
+					
 				<tr><td  valign="top">ISWI</td><td>International Space Weather Initiative (ISWI)<br>
 				Assigns resource IDs for data available from the International Space Weather Initiative (ISWI).<br>
 				Website: <a class="ext" href="http://www.iswi-secretariat.org/">http://www.iswi-secretariat.org/</a><br>
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/ISWI">https://github.com/hpde/ISWI</a>
 				</td></tr>
 					
-				<tr><td  valign="top">KASI</td><td>Korean Astronomy and Space Science Institute (KASI).<br>
+				<tr><td  valign="top">KASI</td><td>Korean Astronomy and Space Science Institute (KASI)<br>
 				Assigns resource IDs for data available from the Korean Astronomy and Space Science Institute (KASI).<br>
 				Website: <a class="ext" href="https://www.kasi.re.kr/eng/index">https://www.kasi.re.kr/eng/index</a><br>
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/KASI">https://github.com/hpde/KASI</a>
@@ -110,7 +137,7 @@ title: SPASE Naming Authority
 				<tr><td  valign="top">SMWG</td><td>SPASE Metadata Working Group (SMWG)<br>
 				The community location for entities such as persons, observatories, instruments, repositories, registries and services.<br>
 				Website: <a class="ext" href="http://www.spase-group.org/registry">http://www.spase-group.org/registry</a><br>
-				Metadata Repository: <a class="ext" href="https://github.com/hpde/spase-SMWG">https://github.com/hpde/spase-SMWG</a>
+				Metadata Repository: <a class="ext" href="https://github.com/hpde/SMWG">https://github.com/hpde/SMWG</a>
 				</td></tr>
 		</table>			
 	</dd>
