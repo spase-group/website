@@ -162,22 +162,40 @@ Space Physics Archive Search and Extract
 <article class='page_body_article'>
 <section class='article_body'>
 <div class='wysiwyg_content'>
-<p>
 A naming authority assigns SPASE Resource IDs and DOIs to resources they maintain within their domain. 
 A naming authority also creates and maintains the SPASE resource descriptions for their domain.
-</p>
-<p>
+
 SPASE resource descriptions are to be made publically available either through a repository or service. 
 The preferred method is a publically accessible <a href="https://git-scm.com/">git</a> repository.
 Convienent git hosting services include <a href="https://github.com/">GitHub</a> and (for self-hosting) <a href="https://about.gitlab.com/">GitLab</a>. 
-</p>
-<p>
+
 Each naming authority repository is excepted to contain a "Repository" resource that describes itself. 
 The SPASE ID for this resource must be "spase://{NA}/Repository/metadata" where {NA} is replaced with the
 naming authority name. For example, the NASA repository will have a Repository resource description with the SPASE Resource ID of:
-</p>
+
 <p><dt>spase://NASA/Repository/metadata</dt></p>
-</div>
+
+<h2>Rules for Creating a Naming Authority</h2>
+A naming authority should be at the most general level that is appropriate. For example, it could be at the agency level like it is for the "NASA" naming authority. 
+Or it could be at a project level like it is for "IUGONET". 
+
+The rules for deciding on which naming authority to use or when a new Naming Authority is needed are:
+
+<h3>For space-based resources</h3>
+  <ol>
+    <li>Major oversight/funding agency (CNES, ESA, JAXA, NASA,…) for resources from missions that fall well within an agency management;</li>
+    <li>Inclusive project level. Some projects are designated as the library for resources created by projects in a particular domain or area of stude</l>
+    <li>Instrument PI institution or it’s logical oversight agency for resources from joint space mission projects, e.g., SOHO, Cluster, etc.</li>
+  </ol>
+
+<h3>For ground-based resources</h3>
+  <ol>
+    <li> Major oversight/funding agency (e.g., NSF, EU, ASWS,…) for resources from observatories or instruments (e.g., DKIST) that fall well within agency management;</li>
+    <li> Project name as NA for major community-based data resources, such as GONG, ISWI, IUGONET, Madrigal, SuperDARN, SuperMAG,…etc.</li>
+    <li> Project name for multiagency-funded projects (e.g., Nançay)</li>
+    <li> Instrument PI institution if none of the above applies.</li>
+  </ol>
+
 </section>
 <hr/>
 <section class='article_body'>
@@ -246,6 +264,13 @@ naming authority name. For example, the NASA repository will have a Repository r
 				Website: <a class="ext" href="http://www.iswi-secretariat.org/">http://www.iswi-secretariat.org/</a><br>
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/ISWI">https://github.com/hpde/ISWI</a>
 				</td></tr>
+
+				<tr><td  valign="top">IUGONET</td><td>Inter-university Upper atmosphere Global Observation NETwork (IUGONET)<br>
+				Assigns resource IDs for data available from the Inter-university Upper atmosphere Global Observation NETwork (IUGONET).<br>
+				Website: <a class="ext" href="http://www.iugonet.org/">http://www.iugonet.org/</a><br>
+				Metadata Repository: <a class="ext" href="http://search.iugonet.org/list.jsp">http://search.iugonet.org/list.jsp</a>
+				</td></tr>
+					
 					
 				<tr><td  valign="top">KASI</td><td>Korean Astronomy and Space Science Institute (KASI)<br>
 				Assigns resource IDs for data available from the Korean Astronomy and Space Science Institute (KASI).<br>

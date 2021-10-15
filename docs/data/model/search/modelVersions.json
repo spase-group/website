@@ -22,5 +22,5 @@
 	  {"version": "2.4.0", "released": "2021-06-10" }
 	],
 	"current": {"version": "2.4.0", "released": "2021-06-10" },
-	"draft": null
+	"draft": { "version": "2.4.1", "released": "2021-06-10" }
 }
