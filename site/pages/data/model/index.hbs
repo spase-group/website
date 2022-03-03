@@ -20,10 +20,11 @@ title: SPASE Base Model
 
 {{#with baseModelVersions }}
 	<p><b>Current Release</b> is
-	<a target="_blank" href="./spase-{{current.version}}/index.html">{{current.version}}</a> 
+	{{current.version}}
 	(<a target="_blank" href="./spase-{{current.version}}/index.html">HTML</a>
 	<a target="_blank" href="./spase-{{current.version}}.pdf">PDF</a>
-	<a target="_blank" href="../schema/spase-{{current.version}}.xsd">XSD</a>),
+	<a target="_blank" href="../schema/spase-{{current.version}}.xsd">XSD</a>
+	<a target="_blank" href="./spase-{{current.version}}.json">JSON</a>),
 	released: {{current.released}},
 	<a href="history.html">History of changes</a>
 	</p>
@@ -34,11 +35,12 @@ title: SPASE Base Model
 		<p><b>Draft version:</b><br>There is a draft version of the data model which
 			includes definitions under consideration for the next production release.
 		</p>
-		<p>The <a target="_blank" href="./spase-{{draft.version}}-draft/index.html">current draft</a> 
+		<p>The current draft is {{draft.version}}
 		(<a target="_blank" href="./spase-{{draft.version}}-draft/index.html">HTML</a>
 		<a target="_blank" href="./spase-{{draft.version}}-draft.pdf">PDF</a>
-		<a target="_blank" href="../schema/spase-{{draft.version}}-draft.xsd">XSD</a>),
-		version is {{draft.version}}, generated on: {{draft.released}}
+		<a target="_blank" href="../schema/spase-{{draft.version}}-draft.xsd">XSD</a>
+		<a target="_blank" href="./spase-{{draft.version}}-draft.json">JSON</a>),
+		generated on: {{draft.released}}
 		</p>
 	{{else}}
 		<p><b>Draft version:</b><br>There is no draft version of this model.</p>
@@ -59,6 +61,7 @@ title: SPASE Base Model
 					 <a target="_blank" href="./spase-{{this.version}}/index.html">HTML</a> 
 					 <a target="_blank" href="./spase-{{this.version}}.pdf">PDF</a>
 					 <a target="_blank" href="../schema/spase-{{this.version}}.xsd">XSD</a>
+					 <a target="_blank" href="./spase-{{this.version}}.json">JSON</a>
 				   </td>
 				   <td nowrap>&nbsp;&nbsp;<a target="_blank" href="https://spase-group.org/data/model/spase-{{this.version}}/index.html">https://spase-group.org/data/model/spase-{{this.version}}/index.html</a></a></td>
 				</tr>
