@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.1-draft -->
-<!-- Generated: 2021-10-14 -->
+<!-- Generated: 2022-02-24 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -518,6 +518,7 @@
          <xsd:element name="SpectralRange" type="spase:SpectralRange" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="DisplayCadence" type="spase:DisplayCadence" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ObservedRegion" type="spase:Region" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="SpatialCoverage" type="spase:SpatialCoverage" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />
@@ -541,6 +542,28 @@
          <xsd:element name="ExposureMax" type="spase:ExposureMax" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
+   <xsd:complexType name="SpatialCoverage">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A region of space defined by the latitude, longitude and altitude in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NorthernmostLatitude" type="spase:NorthernmostLatitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="SouthernmostLatitude" type="spase:SouthernmostLatitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="EasternmostLongitude" type="spase:EasternmostLongitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="WesternmostLongitude" type="spase:WesternmostLongitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="CenterLatitude" type="spase:CenterLatitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="CenterLongitude" type="spase:CenterLongitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="MinimumAltitude" type="spase:MinimumAltitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="MaximumAltitude" type="spase:MaximumAltitude" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Acknowledgement" type="spase:Acknowledgement" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Description" type="spase:Description" minOccurs="1" maxOccurs="unbounded" />
+      </xsd:sequence>
+   </xsd:complexType>
    <xsd:complexType name="NumericalData">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -561,6 +584,7 @@
          <xsd:element name="TemporalDescription" type="spase:TemporalDescription" minOccurs="0" maxOccurs="1" />
          <xsd:element name="SpectralRange" type="spase:SpectralRange" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="ObservedRegion" type="spase:Region" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="SpatialCoverage" type="spase:SpatialCoverage" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="InputResourceID" type="spase:InputResourceID" minOccurs="0" maxOccurs="unbounded" />
@@ -673,6 +697,7 @@
          <xsd:element name="PriorID" type="spase:PriorID" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="StartDate" type="spase:StartDate" minOccurs="1" maxOccurs="1" />
          <xsd:element name="StopDate" type="spase:StopDate" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="SpatialCoverage" type="spase:SpatialCoverage" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Source" type="spase:Source" minOccurs="1" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -741,7 +766,7 @@
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ObservatoryGroupID" type="spase:ObservatoryGroupID" minOccurs="0" maxOccurs="unbounded" />
-         <xsd:element name="Location" type="spase:Location" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Location" type="spase:Location" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="OperatingSpan" type="spase:OperatingSpan" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
@@ -830,7 +855,7 @@
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ImageURL" type="spase:ImageURL" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AnnotationType" type="spase:AnnotationType" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="PhenomenonType" type="spase:PhenomenonType" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="PhenomenonType" type="spase:PhenomenonType" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="ClassificationMethod" type="spase:ClassificationMethod" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ConfidenceRating" type="spase:ConfidenceRating" minOccurs="0" maxOccurs="1" />
          <xsd:element name="TimeSpan" type="spase:TimeSpan" minOccurs="0" maxOccurs="unbounded" />
@@ -1521,6 +1546,70 @@
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          Describes the edition of the software release. The formation rule for the version may vary between software packages. It is intended to aid in queries to the software provider regarding the software.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="NorthernmostLatitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The latitude furthest to the north in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="SouthernmostLatitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The latitude furthest to the south in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="EasternmostLongitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The longitude furthest to the east in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="WesternmostLongitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The longitude furthest to the west in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="CenterLatitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The latitude in the center of a region in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="CenterLongitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The longitude in the center of a region in a geographic coordinate system.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="MinimumAltitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The lowest vertical elevation of region above a surface (such as sea level or land) of a planet or natural satellite.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="MaximumAltitude">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The highest vertical elevation of region above a surface (such as sea level or land) of a planet or natural satellite.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
