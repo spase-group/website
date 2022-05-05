@@ -2486,22 +2486,6 @@
          "changedBy": "T.King",
          "description": "Add Git, TAP, EPNTAP to dictionary and to Style enumeration; add TFCat, RINEX2 and RINEX3 to dictionary and Format enumeration; Add Author to dictionary and to Role enumeration.",
          "note": "Decided during the IHDEA meeting 2021-10-01."
-      },
-      {
-         "id": "311",
-         "version": "2.4.1",
-         "updated": "2022-01-21",
-         "changedBy": "T.King",
-         "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude",
-         "note": "Text,"
-      },
-      {
-         "id": "312",
-         "version": "2.4.2",
-         "updated": "2022-02-24",
-         "changedBy": "T.King",
-         "description": "Make Annotation.PhenomenomType zero or more occurrences (*); Make Observatory.Location one or more occurrences (+)",
-         "note": "Decided during the SMWT telecon on 2022-02-24."
       }
    ],
    "type": {
@@ -2680,8 +2664,7 @@
          "usedBy": [
             "AccessInformation",
             "Installer",
-            "ResourceHeader",
-            "SpatialCoverage"
+            "ResourceHeader"
          ],
          "allowedValues": []
       },
@@ -3217,7 +3200,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \";\". When an author is a persons use \"last,first[ middle]\" format. Including a middle name is optional.",
+         "definition": "A list of individuals or organizations who prepared the work (document, data, images or other types of resources). Separate multiple names with a semicolon. When an author is a persons use \"last,first[,middle]\" format. Including a middle name is optional.",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -4025,8 +4008,7 @@
          "attributes": "",
          "definition": "The specification of the orientation of a set of (typically) orthogonal base axes.",
          "usedBy": [
-            "Parameter",
-            "SpatialCoverage"
+            "Parameter"
          ],
          "subElements": [
             "CoordinateRepresentation",
@@ -4375,7 +4357,6 @@
             "OutputProperty",
             "Parameter",
             "ResourceHeader",
-            "SpatialCoverage",
             "Structure"
          ],
          "allowedValues": []
@@ -4525,7 +4506,6 @@
             "SpectralRange",
             "DisplayCadence",
             "ObservedRegion",
-            "SpatialCoverage",
             "Caveats",
             "Keyword",
             "InputResourceID",
@@ -5881,7 +5861,6 @@
             "PriorID",
             "StartDate",
             "StopDate",
-            "SpatialCoverage",
             "Source"
          ],
          "allowedValues": []
@@ -7827,7 +7806,7 @@
          "list": "MeasurementType",
          "element": "",
          "attributes": "",
-         "definition": "A characterization of the quantitative assessment of a phenomenon.",
+         "definition": "The enumeration of the specific measurement target (e.g., energetic particles, ion composition, etc.), method of measurement (e.g., Interferometry), or the particular compilation of measurements (e.g., a composite dataset consisting of measurements from multiple instruments or platforms, such as Dopplergram, keogram, ElectronColumnDensity (TEC), etc.) that reflect a richer context (e.g., structure and dynamics) of the observational target.",
          "usedBy": [
             "DisplayData",
             "NumericalData"
@@ -8501,7 +8480,6 @@
             "TemporalDescription",
             "SpectralRange",
             "ObservedRegion",
-            "SpatialCoverage",
             "Caveats",
             "Keyword",
             "InputResourceID",
@@ -10321,7 +10299,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The date that the work was first published.",
+         "definition": "The date that the work (document, data, images or other resource) was first published.",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -10335,7 +10313,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Information related to the issuing of a book, journal, piece of music, or other work.",
+         "definition": "Information related to the issuing of the digital resource (e.g., data product).",
          "usedBy": [
             "ResourceHeader"
          ],
@@ -11590,149 +11568,6 @@
          ],
          "allowedValues": []
       },
-      "SpatialCoverage": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "SpatialCoverage",
-         "type": "Container",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "A region of space defined by the latitude, longitude and altitude in a geographic coordinate system.",
-         "usedBy": [
-            "DisplayData",
-            "Granule",
-            "NumericalData"
-         ],
-         "subElements": [
-            "CoordinateSystem",
-            "NorthernmostLatitude",
-            "SouthernmostLatitude",
-            "EasternmostLongitude",
-            "WesternmostLongitude",
-            "CenterLatitude",
-            "CenterLongitude",
-            "Units",
-            "UnitsConversion",
-            "MinimumAltitude",
-            "MaximumAltitude",
-            "Acknowledgement",
-            "Description"
-         ],
-         "allowedValues": []
-      },
-      "NorthernmostLatitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "NorthernmostLatitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The latitude furthest to the north in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "SouthernmostLatitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "SouthernmostLatitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The latitude furthest to the south in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "EasternmostLongitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "EasternmostLongitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The longitude furthest to the east in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "WesternmostLongitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "WesternmostLongitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The longitude furthest to the west in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "CenterLatitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "CenterLatitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The latitude in the center of a region in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "CenterLongitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "CenterLongitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The longitude in the center of a region in a geographic coordinate system.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "MinimumAltitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "MinimumAltitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The lowest vertical elevation of region above a surface (such as sea level or land) of a planet or natural satellite.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "MaximumAltitude": {
-         "version": "2.4.1",
-         "since": "2.4.1",
-         "term": "MaximumAltitude",
-         "type": "Text",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "The highest vertical elevation of region above a surface (such as sea level or land) of a planet or natural satellite.",
-         "usedBy": [
-            "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
       "Specification": {
          "version": "2.4.1",
          "since": "2.2.2",
@@ -12807,7 +12642,6 @@
             "Parameter",
             "PitchAngleRange",
             "PolarAngleRange",
-            "SpatialCoverage",
             "WavelengthRange"
          ],
          "allowedValues": []
@@ -12823,8 +12657,7 @@
          "definition": "The multiplicative factor for converting a unit into International System of Units (SI) units. The factor is expressed in the form \"number > x\", where \"number\" is a numerical value and \"x\" is the appropriate SI units. The basic SI units are Enumerated: m (meter), N (newton), kg (kilogram), Pa (pascal), s (second), Hz (hertz), A (ampere), V (volt), K (kelvin), W (watt), rad (radian), J (joule), sr (steradian), C (coulomb), T (tesla), ohm (ohm), mho (mho or seimens), H (henry), and F (farad). Two useful units which are not SI units are: degree (angle), and unitless (no units). An example is: \"1.0E-9>T\" which converts the units, presumable nT, to Tesla. Another example is: \"1.0e+3>m/s\" which converts a velocity expressed in kilometers per second to meters per second.",
          "usedBy": [
             "Element",
-            "Parameter",
-            "SpatialCoverage"
+            "Parameter"
          ],
          "allowedValues": []
       },
@@ -17538,7 +17371,7 @@
             "object": "Annotation",
             "element": "PhenomenonType",
             "reference": 5,
-            "occurrence": "*",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -18110,22 +17943,12 @@
             "group": "",
             "type": ""
          },
-         "SpatialCoverage": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "DisplayData",
-            "element": "SpatialCoverage",
-            "reference": 15,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
          "Caveats": {
             "version": "2.4.1",
             "since": "1.1.0",
             "object": "DisplayData",
             "element": "Caveats",
-            "reference": 16,
+            "reference": 15,
             "occurrence": "0",
             "group": "",
             "type": ""
@@ -18135,7 +17958,7 @@
             "since": "1.1.0",
             "object": "DisplayData",
             "element": "Keyword",
-            "reference": 17,
+            "reference": 16,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -18145,7 +17968,7 @@
             "since": "1.1.0",
             "object": "DisplayData",
             "element": "InputResourceID",
-            "reference": 18,
+            "reference": 17,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -18155,7 +17978,7 @@
             "since": "1.3.0",
             "object": "DisplayData",
             "element": "Parameter",
-            "reference": 19,
+            "reference": 18,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -18165,7 +17988,7 @@
             "since": "1.3.0",
             "object": "DisplayData",
             "element": "Extension",
-            "reference": 20,
+            "reference": 19,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -18574,22 +18397,12 @@
             "group": "",
             "type": ""
          },
-         "SpatialCoverage": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "Granule",
-            "element": "SpatialCoverage",
-            "reference": 8,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
          "Source": {
             "version": "2.4.1",
             "since": "1.3.1",
             "object": "Granule",
             "element": "Source",
-            "reference": 9,
+            "reference": 8,
             "occurrence": "+",
             "group": "",
             "type": ""
@@ -19090,22 +18903,12 @@
             "group": "",
             "type": ""
          },
-         "SpatialCoverage": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "NumericalData",
-            "element": "SpatialCoverage",
-            "reference": 14,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
          "Caveats": {
             "version": "2.4.1",
             "since": "1.1.0",
             "object": "NumericalData",
             "element": "Caveats",
-            "reference": 15,
+            "reference": 14,
             "occurrence": "0",
             "group": "",
             "type": ""
@@ -19115,7 +18918,7 @@
             "since": "1.1.0",
             "object": "NumericalData",
             "element": "Keyword",
-            "reference": 16,
+            "reference": 15,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -19125,7 +18928,7 @@
             "since": "1.1.0",
             "object": "NumericalData",
             "element": "InputResourceID",
-            "reference": 17,
+            "reference": 16,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -19135,7 +18938,7 @@
             "since": "1.1.0",
             "object": "NumericalData",
             "element": "Parameter",
-            "reference": 18,
+            "reference": 17,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -19145,7 +18948,7 @@
             "since": "1.3.0",
             "object": "NumericalData",
             "element": "Extension",
-            "reference": 19,
+            "reference": 18,
             "occurrence": "*",
             "group": "",
             "type": ""
@@ -19230,7 +19033,7 @@
             "object": "Observatory",
             "element": "Location",
             "reference": 4,
-            "occurrence": "+",
+            "occurrence": "1",
             "group": "",
             "type": ""
          },
@@ -20280,138 +20083,6 @@
             "object": "RevisionHistory",
             "element": "RevisionEvent",
             "reference": 1,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         }
-      },
-      "SpatialCoverage": {
-         "CoordinateSystem": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "CoordinateSystem",
-            "reference": 1,
-            "occurrence": "1",
-            "group": "",
-            "type": ""
-         },
-         "NorthernmostLatitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "NorthernmostLatitude",
-            "reference": 2,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "SouthernmostLatitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "SouthernmostLatitude",
-            "reference": 3,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "EasternmostLongitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "EasternmostLongitude",
-            "reference": 4,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "WesternmostLongitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "WesternmostLongitude",
-            "reference": 5,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "CenterLatitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "CenterLatitude",
-            "reference": 6,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "CenterLongitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "CenterLongitude",
-            "reference": 7,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "Units": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "Units",
-            "reference": 8,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "UnitsConversion": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "UnitsConversion",
-            "reference": 9,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "MinimumAltitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "MinimumAltitude",
-            "reference": 10,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "MaximumAltitude": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "MaximumAltitude",
-            "reference": 11,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "Acknowledgement": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "Acknowledgement",
-            "reference": 12,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         },
-         "Description": {
-            "version": "2.4.1",
-            "since": "2.4.1",
-            "object": "SpatialCoverage",
-            "element": "Description",
-            "reference": 13,
             "occurrence": "+",
             "group": "",
             "type": ""

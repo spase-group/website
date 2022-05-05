@@ -3241,7 +3241,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A list of individuals or organizations who prepared a work for publication. Separate multiple names with \";\". When an author is a persons use \"last,first[ middle]\" format. Including a middle name is optional.",
+         "definition": "A list of individuals or organizations who prepared the work (document, data, images or other types of resources). Separate multiple names with a semicolon. When an author is a persons use \"last,first[,middle]\" format. Including a middle name is optional.",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -3901,14 +3901,14 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "An aggregation of resources, which may encompass collections of one or more resource ty. A collection describes the group with the members described separately. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of diplay images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.",
+         "definition": "An aggregation of resources, which may include one or more resource types. A collection describes the group with the members described separately and referenced by an identifier. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of display images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.",
          "usedBy": [
             "Spase"
          ],
          "subElements": [
             "ResourceID",
             "ResourceHeader",
-            "Members",
+            "Member",
             "Extension"
          ],
          "allowedValues": []
@@ -6841,7 +6841,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "A scientist associated with a science instrument team with special familiarity and expertise on some aspects or all of the design and operations of the instrument and the responsibility of ensuring the instrument's measurement capability.",
+         "definition": "A scientist associated with a science instrument team with special familiarity and expertise on specific aspects of the design and operations of the instrument and the responsibility of ensuring the instrument's measurement capability.",
          "usedBy": [],
          "allowedValues": []
       },
@@ -7885,7 +7885,7 @@
          "list": "MeasurementType",
          "element": "",
          "attributes": "",
-         "definition": "A characterization of the quantitative assessment of a phenomenon.",
+         "definition": "The enumeration of the specific measurement target (e.g., energetic particles, ion composition, etc.), method of measurement (e.g., Interferometry), or the particular compilation of measurements (e.g., a composite dataset consisting of measurements from multiple instruments or platforms, such as Dopplergram, keogram, ElectronColumnDensity (TEC), etc.) that reflect a richer context (e.g., structure and dynamics) of the observational target.",
          "usedBy": [
             "DisplayData",
             "NumericalData"
@@ -7951,7 +7951,7 @@
          "attributes": "",
          "definition": "A constituent part of a collection. A Member is of a one one of the supported resouorce types and in referenced by an identifier. Details about the member are part of its repective resource description.",
          "usedBy": [
-            "Members"
+            "Collection"
          ],
          "subElements": [
             "ResourceName",
@@ -7960,23 +7960,6 @@
             "StartDate",
             "StopDate",
             "SpatialCoverage"
-         ],
-         "allowedValues": []
-      },
-      "Members": {
-         "version": "2.5.0",
-         "since": "2.5.0",
-         "term": "Members",
-         "type": "Container",
-         "list": "",
-         "element": "",
-         "attributes": "",
-         "definition": "A set of one or more members.",
-         "usedBy": [
-            "Collection"
-         ],
-         "subElements": [
-            "Member"
          ],
          "allowedValues": []
       },
@@ -10432,7 +10415,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The date that the work was first published.",
+         "definition": "The date that the work (document, data, images or other types of resources) was first issued.",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -10446,7 +10429,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Information related to the issuing of a book, journal, piece of music, or other work.",
+         "definition": "Additional information, not located elsewhere in the resource description, that is related to the issuing of a work (document, data, images or other types of resources) and is also required to mint a DOI.",
          "usedBy": [
             "ResourceHeader"
          ],
@@ -10465,7 +10448,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "The name or the company, organization or individual that published the work.",
+         "definition": "The name or the company, organization or individual that issues the work (document, data, images or other types of resources).",
          "usedBy": [
             "PublicationInfo"
          ],
@@ -18065,13 +18048,13 @@
             "group": "",
             "type": ""
          },
-         "Members": {
+         "Member": {
             "version": "2.5.0",
             "since": "2.5.0",
             "object": "Collection",
-            "element": "Members",
+            "element": "Member",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "+",
             "group": "",
             "type": ""
          },
@@ -19150,18 +19133,6 @@
             "type": ""
          }
       },
-      "Members": {
-         "Member": {
-            "version": "2.5.0",
-            "since": "2.5.0",
-            "object": "Members",
-            "element": "Member",
-            "reference": 1,
-            "occurrence": "+",
-            "group": "",
-            "type": ""
-         }
-      },
       "Member": {
          "ResourceName": {
             "version": "2.5.0",
@@ -19393,7 +19364,7 @@
             "object": "NumericalData",
             "element": "SpatialCoverage",
             "reference": 14,
-            "occurrence": "+",
+            "occurrence": "*",
             "group": "",
             "type": ""
          },
@@ -20599,7 +20570,7 @@
             "object": "SpatialCoverage",
             "element": "CenterLatitude",
             "reference": 2,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20609,7 +20580,7 @@
             "object": "SpatialCoverage",
             "element": "NorthernmostLatitude",
             "reference": 3,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20619,7 +20590,7 @@
             "object": "SpatialCoverage",
             "element": "SouthernmostLatitude",
             "reference": 4,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20629,7 +20600,7 @@
             "object": "SpatialCoverage",
             "element": "CenterLongitude",
             "reference": 5,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20639,7 +20610,7 @@
             "object": "SpatialCoverage",
             "element": "EasternmostLongitude",
             "reference": 6,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20649,7 +20620,7 @@
             "object": "SpatialCoverage",
             "element": "WesternmostLongitude",
             "reference": 7,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20659,7 +20630,7 @@
             "object": "SpatialCoverage",
             "element": "CenterElevation",
             "reference": 8,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20669,7 +20640,7 @@
             "object": "SpatialCoverage",
             "element": "MinimumElevation",
             "reference": 9,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20679,7 +20650,7 @@
             "object": "SpatialCoverage",
             "element": "MaximumElevation",
             "reference": 10,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20689,7 +20660,7 @@
             "object": "SpatialCoverage",
             "element": "Acknowledgement",
             "reference": 11,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -20699,7 +20670,7 @@
             "object": "SpatialCoverage",
             "element": "Description",
             "reference": 12,
-            "occurrence": "+",
+            "occurrence": "0",
             "group": "",
             "type": ""
          }
