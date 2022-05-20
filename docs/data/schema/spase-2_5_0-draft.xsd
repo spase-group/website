@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.4.1-draft -->
-<!-- Generated: 2022-05-05 -->
+<!-- Generated: 2022-05-19 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -47,7 +47,7 @@
    <xsd:complexType name="Collection">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         An aggregation of resources, which may include one or more resource types. A collection describes the group with the members described separately and referenced by an identifier. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of display images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.
+         An aggregation of resources that is comprised or two or more member resource which may be any combination of resource types. A collection describes the group with the members described separately and referenced by an identifier. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of display images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
@@ -104,13 +104,15 @@
    <xsd:complexType name="PublicationInfo">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Additional information, not located elsewhere in the resource description, that is related to the issuing of a work (document, data, images or other types of resources) and is also required to mint a DOI.
+         Information required to mint a DOI for the resource being described in SPASE.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
+         <xsd:element name="Title" type="spase:Title" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Authors" type="spase:Authors" minOccurs="1" maxOccurs="1" />
          <xsd:element name="PublicationDate" type="spase:PublicationDate" minOccurs="1" maxOccurs="1" />
          <xsd:element name="PublishedBy" type="spase:PublishedBy" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="LandingPageURL" type="spase:LandingPageURL" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="Funding">
@@ -1243,6 +1245,14 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
    </xsd:simpleType>
+   <xsd:simpleType name="LandingPageURL">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A Uniform Resource Locator (URL) to a page that provides a way to access the resource. A landing page should contain a full bibliographic citation so that a human can tell they have arrived at the correct resource, and additional information about the resouorce that might not be easily retrievable from the resource itself.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:anyURI" />
+   </xsd:simpleType>
    <xsd:simpleType name="Language">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -1695,6 +1705,14 @@
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          The component of your computer that allows you to store and access data on a long-term basis. Indicate units with standard byte scales such as KB, MB, GB, TB and PB.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="Title">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The name of a published composition, set or data,  images or other work.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -3351,6 +3369,13 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+            <xsd:enumeration value="TFCat">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                   Time-Frequency Catalogue (TFCat) is a catalogue model &amp; transfer format for spectro-temporal features. https://gitlab.obspm.fr/maser/catalogues/catalogue-format
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="TIFF">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">

@@ -2468,7 +2468,7 @@
          "version": "2.4.0",
          "updated": "2021-04-29",
          "changedBy": "T.King",
-         "description": "Add ValueAdded to the dictionary; Add ValueAdded to ProcessLevel.",
+         "description": "Add ValueAdded to the dictionary; Add ValueAdded to ProcessingLevel.",
          "note": "Suggested during  subsequent telecons."
       },
       {
@@ -2481,7 +2481,7 @@
       },
       {
          "id": "310",
-         "version": "2.5.0",
+         "version": "2.4.1",
          "updated": "2021-10-14",
          "changedBy": "T.King",
          "description": "Add Git, TAP, EPNTAP to dictionary and to Style enumeration; add TFCat, RINEX2 and RINEX3 to dictionary and Format enumeration; Add Author to dictionary and to Role enumeration.",
@@ -2489,43 +2489,59 @@
       },
       {
          "id": "311",
-         "version": "2.5.0",
-         "updated": "2022-01-21",
-         "changedBy": "T.King",
-         "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude",
-         "note": "Text,"
-      },
-      {
-         "id": "312",
-         "version": "2.5.0",
+         "version": "2.4.1",
          "updated": "2022-02-24",
          "changedBy": "T.King",
          "description": "Make Annotation.PhenomenomType zero or more occurrences (*); Make Observatory.Location one or more occurrences (+)",
          "note": "Decided during the SMWT telecon on 2022-02-24."
       },
       {
-         "id": "313",
-         "version": "2.5.0",
+         "id": "312",
+         "version": "2.4.1",
          "updated": "2022-04-20",
          "changedBy": "T.King",
          "description": "Add InstrumentScientist to dictionary and to Role enumeration; fix definition of Longitude.",
          "note": "Per S. Fung email."
       },
       {
-         "id": "314",
-         "version": "2.5.0",
-         "updated": "2022-04-28",
-         "changedBy": "T.King",
-         "description": "Add Collection, Members, Member, and MemberID to dictionary; Add Collection resouorce to model; Revise SpatialCoverage container.",
-         "note": "Per L. Bargatze, A. Roberts and T. King emails, and discussion during telecon on 2022-04-28."
-      },
-      {
-         "id": "315",
-         "version": "2.5.0",
+         "id": "313",
+         "version": "2.4.1",
          "updated": "2022-04-28",
          "changedBy": "T.King",
          "description": "Add Remark and WebResource to dictionary; Add Remark, WebResource, WebService to SupportQuantity enumeration.",
          "note": "Per L. Bargatze led discussion during telecon on 2022-04-28."
+      },
+      {
+         "id": "314",
+         "version": "2.4.1",
+         "updated": "2022-05-19",
+         "changedBy": "T.King",
+         "description": "Released.",
+         "note": "Decided during the telecon on 2022-05-19."
+      },
+      {
+         "id": "315",
+         "version": "2.5.0",
+         "updated": "2022-01-21",
+         "changedBy": "T.King",
+         "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude,",
+         "note": "EasternmostLongitude,"
+      },
+      {
+         "id": "316",
+         "version": "2.5.0",
+         "updated": "2022-04-28",
+         "changedBy": "T.King",
+         "description": "Add Collection, Member, and MemberID to dictionary; Add Collection resouorce to model; Revise SpatialCoverage container.",
+         "note": "Per L. Bargatze, A. Roberts and T. King emails, and discussion during telecon on 2022-04-28."
+      },
+      {
+         "id": "317",
+         "version": "2.5.0",
+         "updated": "2022-05-19",
+         "changedBy": "T.King",
+         "description": "Add Title and LandingPageURL to dictionary; Add Title and LandingPageURL to PublicationInfo.",
+         "note": "Decided during telecon on 2022-05-19."
       }
    ],
    "type": {
@@ -3901,7 +3917,7 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "An aggregation of resources, which may include one or more resource types. A collection describes the group with the members described separately and referenced by an identifier. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of display images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.",
+         "definition": "An aggregation of resources that is comprised or two or more member resource which may be any combination of resource types. A collection describes the group with the members described separately and referenced by an identifier. An example is an experiment which uses the data from multiple instruments (or sensors). Another example is a research effort that uses a set of display images of the Sun and Energetic particle data from the corresponding times for the images, and FITS files of AIA images, etc. All the resources that are part of the research effort can be described as a Collection. Yet another example is a coordinated set of time series used for determining an index.",
          "usedBy": [
             "Spase"
          ],
@@ -5199,7 +5215,7 @@
       },
       "EPNTAP": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "EPNTAP",
          "type": "Item",
          "list": "",
@@ -5668,6 +5684,7 @@
             "Text",
             "Text.ASCII",
             "Text.Unicode",
+            "TFCat",
             "TIFF",
             "UDF",
             "VOTable",
@@ -5885,7 +5902,7 @@
       },
       "Git": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "Git",
          "type": "Item",
          "list": "",
@@ -6835,7 +6852,7 @@
       },
       "InstrumentScientist": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "InstrumentScientist",
          "type": "Item",
          "list": "",
@@ -7285,6 +7302,20 @@
          "attributes": "",
          "definition": "Kronian Solar Orbital - A coordinate system related to Saturn where X is anti-sunward, Y along the orbital velocity direction.",
          "usedBy": [],
+         "allowedValues": []
+      },
+      "LandingPageURL": {
+         "version": "2.5.0",
+         "since": "2.5.0",
+         "term": "LandingPageURL",
+         "type": "URL",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "A Uniform Resource Locator (URL) to a page that provides a way to access the resource. A landing page should contain a full bibliographic citation so that a human can tell they have arrived at the correct resource, and additional information about the resouorce that might not be easily retrievable from the resource itself.",
+         "usedBy": [
+            "PublicationInfo"
+         ],
          "allowedValues": []
       },
       "LangmuirProbe": {
@@ -10429,14 +10460,16 @@
          "list": "",
          "element": "",
          "attributes": "",
-         "definition": "Additional information, not located elsewhere in the resource description, that is related to the issuing of a work (document, data, images or other types of resources) and is also required to mint a DOI.",
+         "definition": "Information required to mint a DOI for the resource being described in SPASE.",
          "usedBy": [
             "ResourceHeader"
          ],
          "subElements": [
+            "Title",
             "Authors",
             "PublicationDate",
-            "PublishedBy"
+            "PublishedBy",
+            "LandingPageURL"
          ],
          "allowedValues": []
       },
@@ -10768,7 +10801,7 @@
       },
       "Remark": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "Remark",
          "type": "Item",
          "list": "",
@@ -11071,7 +11104,7 @@
       },
       "RINEX2": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "RINEX2",
          "type": "Item",
          "list": "",
@@ -11083,7 +11116,7 @@
       },
       "RINEX3": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "RINEX3",
          "type": "Item",
          "list": "",
@@ -12411,7 +12444,7 @@
       },
       "TAP": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "TAP",
          "type": "Item",
          "list": "",
@@ -12594,7 +12627,7 @@
       },
       "TFCat": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "TFCat",
          "type": "Item",
          "list": "",
@@ -12744,6 +12777,20 @@
          "attributes": "",
          "definition": "The largest moon of Uranus and the eighth largest moon in the Solar System.",
          "usedBy": [],
+         "allowedValues": []
+      },
+      "Title": {
+         "version": "2.5.0",
+         "since": "2.5.0",
+         "term": "Title",
+         "type": "Text",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "The name of a published composition, set or data,  images or other work.",
+         "usedBy": [
+            "PublicationInfo"
+         ],
          "allowedValues": []
       },
       "Topside": {
@@ -13405,7 +13452,7 @@
       },
       "WebResource": {
          "version": "2.5.0",
-         "since": "2.5.0",
+         "since": "2.4.1",
          "term": "WebResource",
          "type": "Item",
          "list": "",
@@ -14906,13 +14953,13 @@
          },
          "RINEX2": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Format",
             "item": "RINEX2"
          },
          "RINEX3": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Format",
             "item": "RINEX3"
          },
@@ -14921,6 +14968,12 @@
             "since": "1.1.0",
             "list": "Format",
             "item": "Text"
+         },
+         "TFCat": {
+            "version": "2.5.0",
+            "since": "2.4.1",
+            "list": "Format",
+            "item": "TFCat"
          },
          "TIFF": {
             "version": "2.5.0",
@@ -16668,7 +16721,7 @@
       "Role": {
          "Author": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Role",
             "item": "Author"
          },
@@ -16740,7 +16793,7 @@
          },
          "InstrumentScientist": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Role",
             "item": "InstrumentScientist"
          },
@@ -17056,7 +17109,7 @@
       "Style": {
          "EPNTAP": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Style",
             "item": "EPNTAP"
          },
@@ -17068,7 +17121,7 @@
          },
          "Git": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Style",
             "item": "Git"
          },
@@ -17092,7 +17145,7 @@
          },
          "TAP": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "Style",
             "item": "TAP"
          },
@@ -17186,7 +17239,7 @@
          },
          "Remark": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "SupportQuantity",
             "item": "Remark"
          },
@@ -17234,13 +17287,13 @@
          },
          "WebResource": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "SupportQuantity",
             "item": "WebResource"
          },
          "WebService": {
             "version": "2.5.0",
-            "since": "2.5.0",
+            "since": "2.4.1",
             "list": "SupportQuantity",
             "item": "WebService"
          }
@@ -20180,12 +20233,22 @@
          }
       },
       "PublicationInfo": {
+         "Title": {
+            "version": "2.5.0",
+            "since": "2.5.0",
+            "object": "PublicationInfo",
+            "element": "Title",
+            "reference": 1,
+            "occurrence": "1",
+            "group": "",
+            "type": ""
+         },
          "Authors": {
             "version": "2.5.0",
             "since": "2.3.0",
             "object": "PublicationInfo",
             "element": "Authors",
-            "reference": 1,
+            "reference": 2,
             "occurrence": "1",
             "group": "",
             "type": ""
@@ -20195,7 +20258,7 @@
             "since": "2.3.0",
             "object": "PublicationInfo",
             "element": "PublicationDate",
-            "reference": 2,
+            "reference": 3,
             "occurrence": "1",
             "group": "",
             "type": ""
@@ -20205,8 +20268,18 @@
             "since": "2.3.0",
             "object": "PublicationInfo",
             "element": "PublishedBy",
-            "reference": 3,
+            "reference": 4,
             "occurrence": "1",
+            "group": "",
+            "type": ""
+         },
+         "LandingPageURL": {
+            "version": "2.5.0",
+            "since": "2.5.0",
+            "object": "PublicationInfo",
+            "element": "LandingPageURL",
+            "reference": 5,
+            "occurrence": "0",
             "group": "",
             "type": ""
          }

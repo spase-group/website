@@ -19,8 +19,9 @@
 		{"version": "2.3.0", "released": "2018-05-31" },
 		{"version": "2.3.1", "released": "2019-11-14" },
 		{"version": "2.3.2", "released": "2020-10-15" },
-	  {"version": "2.4.0", "released": "2021-06-10" }
+		{"version": "2.4.0", "released": "2021-06-10" },
+		{"version": "2.4.1", "released": "2022-05-19" }
 	],
-	"current": {"version": "2.4.0", "released": "2021-06-10" },
-	"draft": { "version": "2.5.0", "released": "2022-04-28" }
+	"current": {"version": "2.4.1", "released": "2022-05-19" },
+	"draft": { "version": "2.5.0", "released": "2022-05-19" }
 }
