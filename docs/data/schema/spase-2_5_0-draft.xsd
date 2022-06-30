@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
-<!-- Version: 2.4.1-draft -->
-<!-- Generated: 2022-05-19 -->
+<!-- Version: 2.5.0-draft -->
+<!-- Generated: 2022-05-20 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -11,7 +11,7 @@
 	      elementFormDefault="qualified"
 	      attributeFormDefault="unqualified"
 	      vc:minVersion="1.1"
-	      version="2.4.1-draft"
+	      version="2.5.0-draft"
 >
 
    <!-- Document root element -->
@@ -1786,7 +1786,7 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
-         <xsd:enumeration value="2.4.1-draft" />
+         <xsd:enumeration value="2.5.0-draft" />
       </xsd:restriction>
       </xsd:simpleType>
 <!-- ==========================
