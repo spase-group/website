@@ -18,6 +18,12 @@
    "URL": "https://github.com/hpde/CNES"
  },
  {
+   "Authority": "CSA",
+   "Name": "Canadian Space Agency (CSA)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/CSA"
+ },
+ {
    "Authority": "CSSDP",
    "Name": "Canadian Space Science Data Portal (CSSDP)",
    "Method": "git",
@@ -60,6 +66,12 @@
    "URL": "https://github.com/hpde/ISWI"
  },
  {
+   "Authority": "IUGONET",
+   "Name": "Inter-university Upper atmosphere Global Observation NETwork (IUGONET)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/IUGONET"
+ },
+ {
    "Authority": "KASI",
    "Name": "Korean Astronomy and Space Science Institute (KASI)",
    "Method": "git",
@@ -100,5 +112,11 @@
    "Name": "SPASE Metadata Working Group (SMWG)",
    "Method": "git",
    "URL": "https://github.com/hpde/spase-SMWG"
+ },
+ {
+   "Authority": "UOLOU",
+   "Name": "University of Oulu (UOLOU)",
+   "Method": "git",
+   "URL": "https://github.com/hpde/UOLOU"
  }
 ]

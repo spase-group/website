@@ -6,6 +6,9 @@ const fs = require('fs');
 // Variable used by isBreak()
 var breakVar = true;
 
+// Variable used by inTable()
+var inTableVar = false;
+
 // Determine class for released versions
 // Use "triple-stash" like this {{{expression}}} if you don't want to escape a value.
 module.exports.color = function (str)  {  
@@ -27,6 +30,17 @@ module.exports.isBreak = function ()  {
 // set the value of the break variable
 module.exports.setBreak = function (state)  {  
 	breakVar = state;
+};
+
+// Get the value of the break variables, if true switch to false.
+module.exports.isInTable = function ()  {  
+	if(inTableVar) { inTableVar = false; return true;}
+	return false;
+};
+
+// set the value of the break variable
+module.exports.setInTable = function (state)  {  
+	inTableVar = state;
 };
 
 // Sort an array of objects based on the value of a field.

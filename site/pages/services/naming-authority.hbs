@@ -13,46 +13,48 @@ title: SPASE Naming Authority
 <article class='page_body_article'>
 <section class='article_body'>
 <div class='wysiwyg_content'>
-A naming authority assigns SPASE Resource IDs and DOIs to resources they maintain within their domain. 
-A naming authority also creates and maintains the SPASE resource descriptions for their domain.
+<p>
+The naming authority of a resource is generally the entity, agency, or organization that commissioned the
+creation of the resource. Very often, though not always, the entity that sponsored the creation of the
+resource, i.e., its funding agency, serves also as the naming authority of the resource. A naming authority
+is therefore the entity to which a resource described by a SPASE document (having a SPASE Resource ID and
+a DOI reference) is attributed. For this reason, naming authorities can be used conveniently to organize
+SPASE metadata. 
+</p>
+<p>
+In support of resource sharing, SPASE resource descriptions should be made publicly available and shared
+from a registry through either a repository or a service. The preferred method is a publicly accessible
+<a href="https://git-scm.com/">git</a> repository. Convenient git hosting services 
+include <a href="https://github.com/">GitHub</a> and (for self-hosting) <a href="https://gitlab.com/">GitLab</a>. 
+Each naming authority should correspond to a "Repository" of resources. The SPASE ID for this Repository must
+be "spase://{NA}/Repository/metadata" where {NA} is replaced with the naming authority name. For example,
+the NASA repository will have a Repository resource description with the SPASE Resource ID of:
+</p>
+<p>
+<dd>
+spase://NASA/Repository/metadata
+</dd>
+</p>
 
-SPASE resource descriptions are to be made publically available either through a repository or service. 
-The preferred method is a publically accessible <a href="https://git-scm.com/">git</a> repository.
-Convienent git hosting services include <a href="https://github.com/">GitHub</a> and (for self-hosting) <a href="https://about.gitlab.com/">GitLab</a>. 
-
-Each naming authority repository is expected to contain a "Repository" resource that describes itself. 
-The SPASE ID for this resource must be "spase://{NA}/Repository/metadata" where {NA} is replaced with the
-naming authority name. For example, the NASA repository will have a Repository resource description with the SPASE Resource ID of:
-
-<p><dt>spase://NASA/Repository/metadata</dt></p>
-
-<h2>Rules for Creating a Naming Authority</h2>
-A naming authority should be at the most general level that is appropriate. For example, it could be at the agency level like it is for the "NASA" naming authority. 
-Or it could be at a project level like it is for "IUGONET". 
-
-The rules for deciding on which naming authority to use or when a new Naming Authority is needed are:
-
-<h3>For space-based resources</h3>
-  <ol>
-    <li>Major oversight/funding agency (CNES, ESA, JAXA, NASA,…) for resources from missions that fall well within an agency management;</li>
-    <li>Inclusive project level. Some projects are designated as the library for resources created by projects in a particular domain or area of stude</l>
-    <li>Instrument PI institution or it’s logical oversight agency for resources from joint space mission projects, e.g., SOHO, Cluster, etc.</li>
-  </ol>
-
-<h3>For ground-based resources</h3>
-  <ol>
-    <li> Major oversight/funding agency (e.g., NSF, EU, ASWS,…) for resources from observatories or instruments (e.g., DKIST) that fall well within agency management;</li>
-    <li> Project name as NA for major community-based data resources, such as GONG, ISWI, IUGONET, Madrigal, SuperDARN, SuperMAG,…etc.</li>
-    <li> Project name for multiagency-funded projects (e.g., Nançay)</li>
-    <li> Instrument PI institution if none of the above applies.</li>
-  </ol>
+<h2>Rules for Assigning a Naming Authority</h2>
+<p>
+The naming authority of a resource should be assigned at the highest, most appropriate level of entity to
+which the commissioning or origination of the resource can be attributed. For example, it could be at the
+national agency level like it is for the "NASA" naming authority. Or in the case of a conglomerate entity,
+it could be at the highest project level like it is for "IUGONET". The SPASE Group has devised an order of
+priority when assigning a naming authority, as follows:
+</p>
+<ol>
+<li>Major oversight/funding agency (CNES, ESA, JAXA, NASA, NOAA, NSF,…etc.) for resources from missions, observatories, instruments or investigations that fall well within an agency management;</li>
+<li>Overall long-term project name (e.g., ISWI, GONG, IUGONET, Nançay,…etc.) when an infrastructure-like project receives multiple sponsorships or has multiple partners that are separately funded. </li>
+<li>Instrument PI institution if none of the above applies.</li>
 
 </section>
 <hr/>
 <section class='article_body'>
 <div class='wysiwyg_content'>
+<h2>List of naming authorities</h2> [ <a href="naming-authority.csv">CSV</a> ] [ <a href="naming-authority.json">JSON</a> ]
 <p>
-	Current list of naming authorities [ <a href="naming-authority.csv">CSV</a> ] [ <a href="naming-authority.json">JSON</a> ]:
 		<dd>
 			<table>
 				<tr><th>Authority</th><th>Description</th></tr>
@@ -72,6 +74,12 @@ The rules for deciding on which naming authority to use or when a new Naming Aut
 				Assigns resource IDs for data available from the Centre National d'Etudes Spatiales (CNES).<br>
 				Website: <a class="ext" href="https://cnes.fr/en">https://cnes.fr/en</a><br>
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/CNES">https://github.com/hpde/CNES</a>
+				</td></tr>
+					
+				<tr><td  valign="top">CSA</td><td>Canadian Space Agency (CSA)<br>
+				Assigns resource IDs for data registered in the Canadian Space Agency (CSA).<br>
+				Website: <a class="ext" href="https://www.asc-csa.gc.ca/">https://www.asc-csa.gc.ca/</a><br>
+				Metadata Repository: <a class="ext" href="https://github.com/hpde/CSA">https://github.com/hpde/CSA</a>
 				</td></tr>
 					
 				<tr><td  valign="top">CSSDP</td><td>Canadian Space Science Data Portal (CSSDP)<br>
@@ -163,6 +171,12 @@ The rules for deciding on which naming authority to use or when a new Naming Aut
 				The community location for entities such as persons, observatories, instruments, repositories, registries and services.<br>
 				Website: <a class="ext" href="http://www.spase-group.org/registry">http://www.spase-group.org/registry</a><br>
 				Metadata Repository: <a class="ext" href="https://github.com/hpde/SMWG">https://github.com/hpde/SMWG</a>
+				</td></tr>
+					
+				<tr><td  valign="top">UOLOU</td><td>University of Oulu (UOLOU)<br>
+				Assigns resource IDs for data available from the University of Oulu (UOLOU)<br>
+				Website: <a class="ext" href="http://www.spase-group.org/registry">http://www.spase-group.org/registry</a><br>
+				Metadata Repository: <a class="ext" href="https://github.com/hpde/UOLOU">https://github.com/hpde/UOLOU</a>
 				</td></tr>
 		</table>			
 	</dd>
