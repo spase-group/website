@@ -346,8 +346,7 @@ hr {
 @media screen and (min-width: 1024px) {
     #parent_header {
         width: 100%;
-        display: none; /*block;*/:w
-        
+        display: none; /*block;*/        
         margin-left: 0;
         margin-right: auto;
         margin-bottom: 10px;
