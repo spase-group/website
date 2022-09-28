@@ -346,7 +346,8 @@ hr {
 @media screen and (min-width: 1024px) {
     #parent_header {
         width: 100%;
-        display: block;
+        display: none; /*block;*/:w
+        
         margin-left: 0;
         margin-right: auto;
         margin-bottom: 10px;
@@ -362,19 +363,21 @@ hr {
     float: left;
     width: 53px;
     margin-right: 6px;
-    display: block;
+    display: none;/*block;*/
 }
 @media screen and (min-width: 1024px) {
     #parent_header #parent_brand {
         position: relative;
         float: left;
         width: 100%;
+        display: none; /* new 2022/09/28 */
     }
 }
 #site_header {
     width: 100%;
     position: relative;
     height: 70px;
+    padding-top: 60px;
 }
 @media screen and (min-width: 600px) {
     #site_header {
