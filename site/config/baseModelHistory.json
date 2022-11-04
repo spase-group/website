@@ -1,5 +1,61 @@
 [
    {
+      "id": "322",
+      "version": "2.5.0",
+      "updated": "2022-08-29",
+      "changedBy": "T.King",
+      "description": "Released.",
+      "note": "Decided during the telecon on 2022-08-29."
+   },
+   {
+      "id": "321",
+      "version": "2.5.0",
+      "updated": "2022-08-29",
+      "changedBy": "T.King",
+      "description": "Add AccessInformation to Collection;",
+      "note": "Per Seiji and discussion during telecon on 2022-08-29."
+   },
+   {
+      "id": "320",
+      "version": "2.5.0",
+      "updated": "2022-07-21",
+      "changedBy": "T.King",
+      "description": "Add Collection, Member, and MemberID to dictionary; Add Collection resouorce to model;",
+      "note": "Per L. Bargatze, A. Roberts and T. King emails, and discussion during telecon on 2022-04-28."
+   },
+   {
+      "id": "319",
+      "version": "2.4.2",
+      "updated": "2022-07-21",
+      "changedBy": "T.King",
+      "description": "Released.",
+      "note": "Decided during the telecon on 2022-07-21."
+   },
+   {
+      "id": "318",
+      "version": "2.4.2",
+      "updated": "2022-07-07",
+      "changedBy": "T.King",
+      "description": "Revise SpatialCoverage container.",
+      "note": "Per L. Bargatze, and discussion during telecon on 2022-07-07."
+   },
+   {
+      "id": "317",
+      "version": "2.4.2",
+      "updated": "2022-05-19",
+      "changedBy": "T.King",
+      "description": "Add Title and LandingPageURL to dictionary; Add Title and LandingPageURL to PublicationInfo.",
+      "note": "Decided during telecon on 2022-05-19."
+   },
+   {
+      "id": "316",
+      "version": "2.4.2",
+      "updated": "2022-01-21",
+      "changedBy": "T.King",
+      "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude,",
+      "note": "EasternmostLongitude,"
+   },
+   {
       "id": "315",
       "version": "2.4.1",
       "updated": "2022-05-19",
