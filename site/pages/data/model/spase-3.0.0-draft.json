@@ -28101,7 +28101,7 @@
             "object": "SpatialDescription",
             "element": "CutsDescription",
             "reference": 6,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "CutCubeEntity",
             "type": ""
          },
@@ -28111,7 +28111,7 @@
             "object": "SpatialDescription",
             "element": "CubesDescription",
             "reference": 7,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "CutCubeEntity",
             "type": ""
          },
