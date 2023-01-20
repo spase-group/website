@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 3.0.0 -->
-<!-- Generated: 2023-01-11 -->
+<!-- Generated: 2023-01-12 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -976,7 +976,7 @@
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
          <xsd:element name="CoordinatesLabel" type="spase:CoordinatesLabel" minOccurs="0" maxOccurs="1" />
-         <xsd:choice minOccurs="1" maxOccurs="1">
+         <xsd:choice minOccurs="0" maxOccurs="1">
             <xsd:element name="CutsDescription" type="spase:CutsDescription" />
             <xsd:element name="CubesDescription" type="spase:CubesDescription" />
          </xsd:choice>
@@ -1412,8 +1412,8 @@
    </xsd:group>
    <xsd:group name="CutCubeEntity">
       <xsd:sequence>
-         <xsd:element name="CutsDescription" type="spase:CutsDescription" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="CubesDescription" type="spase:CubesDescription" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="CutsDescription" type="spase:CutsDescription" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="CubesDescription" type="spase:CubesDescription" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:group>
    <xsd:group name="StopDateEntity">
