@@ -17,24 +17,51 @@
 		"@context": "https://schema.org/",
 		"@type" :"Dataset",
 		"name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />",
-     <xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:DOI">
-		"doi": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:DOI" />",
-		"publication": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />, <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />", <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublishedBy" /> (<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />)",
-		"publisher  ":{
-		   "@type": "Organization",
+    <xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:AlternateName"><xsl:for-each select="./sp:Spase/*/sp:ResourceHeader/sp:AlternateName"><xsl:choose><xsl:when test="position() = 1">"alternateName": "<xsl:value-of select="." />",</xsl:when></xsl:choose></xsl:for-each></xsl:if>
+		"dateModified": "<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:ReleaseDate, 1, 10)" />",
+<xsl:choose>
+<xsl:when test="./sp:Spase/*/sp:ResourceHeader/sp:DOI">
+    "identifier": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:DOI" />",
+    "publication": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />, <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />", <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublishedBy" /> (<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />)",
+    "datePublished": "<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 10)" />",
+    "creator":{
+       "@type": "Person",
+           "name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />"
+    },
+    "publisher":{
+       "@type": "Organization",
            "name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />"
-		},
-	</xsl:if>
+    },
+</xsl:when>
+<xsl:otherwise>
+    "creator":{
+       "@type": "Organization",
+           "name": "IHDEA"
+    },
+    "identifier": "<xsl:value-of select="./sp:Spase/*/sp:ResourceID" />",
+</xsl:otherwise>
+</xsl:choose>
+    "creditText": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Acknowledgement" />",
  		"description": "<xsl:call-template name="normalize-json"><xsl:with-param name="replace" select="'&#10;'" /><xsl:with-param name="with" select="'\n'" /><xsl:with-param name="text" select="./sp:Spase/*/sp:ResourceHeader/sp:Description"/></xsl:call-template>",
 		"abstract": "<xsl:call-template name="normalize-json"><xsl:with-param name="replace" select="'&#10;'" /><xsl:with-param name="with" select="'\n'" /><xsl:with-param name="text" select="./sp:Spase/*/sp:ResourceHeader/sp:Description"/></xsl:call-template>",
-		"temporalCoverage": "1990.10.06  2009.30.06",
+<xsl:if test="./sp:Spase/*/sp:OperatingSpan"><!-- Observatory, Instrument -->
+		"temporalCoverage": "<xsl:value-of select="./sp:Spase/*/sp:OperatingSpan/sp:StartDate" />/<xsl:choose><xsl:when test="./sp:Spase/*/sp:OperatingSpan/sp:StopDate"><xsl:value-of select="./sp:Spase/*/sp:OperatingSpan/sp:StopDate" /></xsl:when><xsl:otherwise>...</xsl:otherwise></xsl:choose>",
+</xsl:if>
+<xsl:if test="./sp:Spase/*/sp:TemporalDescription"><!-- Data resources -->
+		"temporalCoverage": "<xsl:value-of select="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StartDate" />/<xsl:choose><xsl:when test="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StopDate"><xsl:value-of select="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StopDate" /></xsl:when><xsl:otherwise>...</xsl:otherwise></xsl:choose>",
+</xsl:if>
+    "genre": "<xsl:value-of select="./sp:Spase/*/sp:MeasurementType" />",
 		"keywords": [ <xsl:for-each select="./sp:Spase/*/sp:Keyword"> "<xsl:value-of select="." />"<xsl:if test="position() != last()"><xsl:text>,</xsl:text></xsl:if></xsl:for-each> ],
 		"license": "https://cdla.io/permissive-1-0/",
-        "audience":{
-            "@type": "Audience",
-            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
-        }
-	  }
+<xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Agency">
+    "funder": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Agency" />",
+    "mentions": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Project" />",
+</xsl:if>
+    "audience":{
+        "@type": "Audience",
+        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+    }
+}
 	  </script>
 	  <!-- CSS -->
 	  <style>
@@ -328,7 +355,34 @@ a.xml-logo:hover {
 		<div class="citation {$inset}">
 			<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a></h1>
 			<xsl:if test="./*/sp:ResourceHeader/sp:PublicationInfo">
-			<p class="author"><script>var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+			<p class="author"><script>
+			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
+//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
+//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
+//			  document.write(almost.replace(/;[ ]*/g, ", "));
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+			  document.write(fmt_names.join(', '));
+
+			 </script>
 			(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 			<xsl:call-template name="ref-type">
@@ -431,10 +485,24 @@ a.xml-logo:hover {
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 		<xsl:text disable-output-escaping="yes">&lt;dd&gt;</xsl:text>
 		<xsl:text disable-output-escaping="yes">&lt;table class="nested" cellspacing="0"&gt;</xsl:text>
-		<tr><th></th><th class="center">Role</th><th class="center">Person</th></tr>
+		<tr><th></th><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr>
 		<xsl:text disable-output-escaping="yes">&lt;tbody&gt;</xsl:text>
 	</xsl:if>
-	<tr><td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td><td><xsl:value-of select="sp:Role"/></td><td><a target="_blank" href="https://hpde.io/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td></tr>
+	<tr>
+	 <td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td>
+	 <td>
+	  <xsl:for-each select="sp:Role">
+	   <xsl:value-of select="."/>
+	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0">
+	    <br/>
+	   </xsl:if>
+	  </xsl:for-each>
+	 </td>
+	 <td><a target="_blank" href="https://hpde.io/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
+	 <td><xsl:value-of select="sp:StartDate"/></td>
+	 <td><xsl:value-of select="sp:StopDate"/></td>
+	 <td><xsl:value-of select="sp:Note"/></td>
+	</tr>
 	<xsl:if test="count(following-sibling::*[name() = name(current())]) = 0">
 		<!-- Finalize table -->
 		<xsl:text disable-output-escaping="yes">&lt;/tbody&gt;</xsl:text>
@@ -448,7 +516,7 @@ Wrap text in {{#markdown}}{{/markdown}} for processing with Handlebars.
 Also remove leading and trailing spaces to get desired formatting.
 -->
 <xsl:template match="sp:Description">
-	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition markdown">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
+	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
 </xsl:template>
 
 <xsl:template match="sp:Keyword">
