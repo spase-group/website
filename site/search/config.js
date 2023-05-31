@@ -1,5 +1,5 @@
 var config = {
-	modelVersion: "2.3.1",
+	modelVersion: "2.5.0",
     modelName: "Base Model",
     modelVersionFile: "baseModelVersions.json",
     modelFolder: "..",
