@@ -34,7 +34,7 @@
             "@type": "Audience",
             "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
         }
-	  }
+	  };
 	  </script>
 	  <!-- CSS -->
 	  <style>
@@ -328,15 +328,62 @@ a.xml-logo:hover {
 		<div class="citation {$inset}">
 			<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a></h1>
 			<xsl:if test="./*/sp:ResourceHeader/sp:PublicationInfo">
-			<p class="author"><script>var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); document.write(almost.replace(/;[ ]*/g, ", "));</script>
+			<p class="author" id="author">
+			<script>
+			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
+/*
+        var names = authors.split(';');
+        var fmt_names = [];		
+        var n = 0;	 
+			  names.forEach (function (name) {
+console.log (name);
+			    var this_name = '';
+			    if (n == names.length - 1) {
+			      this_name += 'and ';
+			    }
+			    // alter the current name
+			    var name_parts = name.split(',');
+			    this_name += name_parts.shift() + ', ';
+			    
+			    name_parts.forEach(function (npart) {
+            var c = npart.trim().slice(0, 1);
+			      this_name += c + '.';
+			    });
+			    
+          fmt_names.push(this_name);
+          n++;
+			  });
+        var tnode = document.createTextNode(fmt_names.join(', '));
+*/
+        var elt = document.createElement("div");
+        var tnode = document.createTextNode(authors);
+        elt.appendChild(tnode);
+        var cur_div = document.getElementById('author');
+        cur_div.appendChild(elt);			  
+			</script>
 			(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 			<xsl:call-template name="ref-type">
 				<xsl:with-param name="input" select="./*/sp:ResourceID"/>
 			</xsl:call-template>
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
-			<xsl:if test="./*/sp:ResourceHeader/sp:DOI"><a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>.</xsl:if>
-			Accessed on <script>var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); var today = new Date(); document.write(today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()); </script>.
+			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
+			  <a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>.
+			</xsl:if>
+
+			
+			<script>
+			  var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+			  var today = new Date(); 
+//			  document.write(today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()); 
+        var this_date = today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate();
+        var elt = document.createElement("div");
+        var tnode = document.createTextNode('Accessed on ' + this_date);
+        elt.appendChild(tnode);
+        var cur_div = document.getElementById('author');
+        cur_div.appendChild(elt);			  
+			</script>.
+
 			</p>
 			</xsl:if>
 			<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
