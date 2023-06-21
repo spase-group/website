@@ -11,3 +11,4 @@ for(i = 0; i < items.length; i++) {
 	
 	items[i].addEventListener('change', changeVersion);
 }
+
