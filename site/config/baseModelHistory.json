@@ -1,10 +1,35 @@
 [
    {
+      "id": "326",
+      "version": "2.6.0",
+      "updated": "2023-06-15",
+      "changedBy": "L.Bargatze",
+      "description": "Add AccessInformtion to the Software SPASE resource type",
+      "note": "Per Shing F. Fung"
+   },
+   {
+      "id": "325",
+      "version": "2.6.0",
+      "updated": "2023-06-15",
+      "changedBy": "L.Bargatze",
+      "description": "Add the Comet Enumeration List including three members",
+      "note": "Per Daniele Boucon via Shing F. Fung"
+   },
+   {
+      "id": "324",
+      "version": "2.6.0",
+      "updated": "2023-06-15",
+      "changedBy": "L.Bargatze",
+      "description": "Update the Destription of Current under FieldQuantity and add Current under ParticleQuantity. Add CurrentDensiity under both FieldQuantity and ParticleQuantity.",
+      "note": "Per Shing F. Fung and Vincent Genot"
+   },
+   {
       "id": "323",
       "version": "2.6.0",
-      "updated": "2023-06-21",
-      "changedBy": "L. Bartgatze",
-      "description": "Merge simulation extensions with base model."
+      "updated": "2023-06-15",
+      "changedBy": "L.Bargatze",
+      "description": "Merge the Simulation 1.0.0 SPASE Model Extensions with the SPASE 2.5.0 Base Model. Four simulation related SPASE resource types added: SimulationModel, SimulationRun, DisplayOutput, and NumericalOutput. Merged Bas annd Simulation definitions for Property.",
+      "note": "Concensus to add the Simulation Extensions to the SPASE Base Model"
    },
    {
       "id": "322",
@@ -59,8 +84,8 @@
       "version": "2.4.2",
       "updated": "2022-01-21",
       "changedBy": "T.King",
-      "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude,",
-      "note": "EasternmostLongitude,"
+      "description": "Add SpatialCoverage, NorthernmostLatitude, SouthernmostLatitude, EasternmostLongitude, WesternmostLongitude, CenterLatitude, CenterLongitude, MinimumAltitude, MaximumAltitude to the dictionary; Create SpatialContainer container; Add SpatialCoverage to DisplayData, Granule and NumericalData. Decided during the telecon on 2022-01-20, but moved to from 2.4.1 to 2.5.0.",
+      "note": "Decided during the telecon on 2022-01-20, but moved to from 2.4.1 to 2.5.0."
    },
    {
       "id": "315",
@@ -203,7 +228,7 @@
       "version": "2.3.1",
       "updated": "2019-10-31",
       "changedBy": "T.King",
-      "description": "Add CoPI, MidLatitudeRegion, SubAuroralRegion, ProjectEngineer, and ProjectManager to dictionary; Add CoPI, ProjectEngineer, ProjectManager to Role enumeration; Add Plasmasphere, RingCurrent, and MidLatitudeRegion to Magnetosphere enumeration.; Add MidLatitudeRegion, and ProjectManager to NearSurface enumeration.; Fix typo with Role values with dashes.   ",
+      "description": "Add CoPI, MidLatitudeRegion, SubAuroralRegion, ProjectEngineer, and ProjectManager to dictionary; Add CoPI, ProjectEngineer, ProjectManager to Role enumeration; Add Plasmasphere, RingCurrent, and MidLatitudeRegion to Magnetosphere enumeration.; Add MidLatitudeRegion, and ProjectManager to NearSurface enumeration.; Fix typo with Role values with dashes.",
       "note": "Decided during telecon on 2019-10-31."
    },
    {
@@ -227,7 +252,7 @@
       "version": "2.3.1",
       "updated": "2019-06-13",
       "changedBy": "T.King",
-      "description": "Add StartDate, StopDate and Note to Contact.  ",
+      "description": "Add StartDate, StopDate and Note to Contact.",
       "note": "Decided (partially) during telecon on 2019-05-30."
    },
    {
@@ -235,7 +260,7 @@
       "version": "2.3.1",
       "updated": "2019-02-25",
       "changedBy": "T.King",
-      "description": "Add Developer, HostContact and User to dictionary and Role list. ",
+      "description": "Add Developer, HostContact and User to dictionary and Role list.",
       "note": "Decided by email 2019-02-20."
    },
    {
@@ -243,7 +268,7 @@
       "version": "2.3.1",
       "updated": "2018-11-01",
       "changedBy": "T.King",
-      "description": "Add Positron to dictionary and ParticleType list. ",
+      "description": "Add Positron to dictionary and ParticleType list.",
       "note": "Decided at telecon on 2018-11-01."
    },
    {
@@ -251,7 +276,7 @@
       "version": "2.3.1",
       "updated": "2018-06-18",
       "changedBy": "T.King",
-      "description": "Add Eccentric Dipole (ECD) to dictionary and CoordinateSystem list. ",
+      "description": "Add Eccentric Dipole (ECD) to dictionary and CoordinateSystem list.",
       "note": "Decided by email on 2018-05-18."
    },
    {
@@ -299,7 +324,7 @@
       "version": "2.2.9",
       "updated": "2017-09-07",
       "changedBy": "T.King",
-      "description": "Add HGRTN, HERTN to dictionary and to CoordinateSystemName. Add Entropy to dictionary and ParticleQuantity. ",
+      "description": "Add HGRTN, HERTN to dictionary and to CoordinateSystemName. Add Entropy to dictionary and ParticleQuantity.",
       "note": "Decided during the telecon on 2017-09-14."
    },
    {
@@ -507,7 +532,7 @@
       "version": "2.2.0",
       "updated": "2010-08-20",
       "changedBy": "T.King",
-      "description": "Updated definitions of \"Outer\", \"Inner\", \"Heliosheath\" and \"Remote 1AU\" ",
+      "description": "Updated definitions of \"Outer\", \"Inner\", \"Heliosheath\" and \"Remote 1AU\"",
       "note": "Decided during the telecon on 2010-07-08 and refined through subsequent e-mail."
    },
    {
@@ -515,7 +540,7 @@
       "version": "2.2.0",
       "updated": "2010-08-17",
       "changedBy": "T.King",
-      "description": "Added \"S3_BUCKET\" to dictionary and \"Encoding\"; Add \"Directional\" to dictionary and to \"Qualifier\"; updated definition for \"Energy Flux\" and \"Differential\" ",
+      "description": "Added \"S3_BUCKET\" to dictionary and \"Encoding\"; Add \"Directional\" to dictionary and to \"Qualifier\"; updated definition for \"Energy Flux\" and \"Differential\"",
       "note": "Decided durinng the telecon on 2010-07-08."
    },
    {
@@ -555,7 +580,7 @@
       "version": "2.0.3",
       "updated": "2010-03-19",
       "changedBy": "T.King",
-      "description": "Updated definitions for \"Number Flux\", \"Energy Flux\", \"Differential\", and \"Integral\"; Added \"Dust\" to \"Measurement Type\" enumeration; ",
+      "description": "Updated definitions for \"Number Flux\", \"Energy Flux\", \"Differential\", and \"Integral\"; Added \"Dust\" to \"Measurement Type\" enumeration",
       "note": "Decided durinng the telecon on 2010-03-18"
    },
    {
