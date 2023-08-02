@@ -486,7 +486,9 @@ console.log (name);
 	 <td>
 	  <xsl:for-each select="sp:Role">
 	   <xsl:value-of select="."/>
-	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0"> <br/></xsl:if>
+	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0"> 
+	     <br/>
+	   </xsl:if>
 	  </xsl:for-each>
 	 </td>
 	 <td><a target="_blank" href="https://hpde.io/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
