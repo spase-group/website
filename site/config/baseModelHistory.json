@@ -1,6 +1,14 @@
 [
    {
-      "id": "326",
+      "id": "8",
+      "version": "2.6.0",
+      "updated": "2023-08-03",
+      "changedBy": "C.Dolan",
+      "description": "SPASE version 2.6.0 Released.",
+      "note": "Decided during the telecon on 2023-08-03."
+   },
+   {
+      "id": "327",
       "version": "2.6.0",
       "updated": "2023-07-16",
       "changedBy": "L.F.Bargatze",
