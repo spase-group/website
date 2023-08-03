@@ -486,8 +486,8 @@ console.log (name);
 	 <td>
 	  <xsl:for-each select="sp:Role">
 	   <xsl:value-of select="."/>
-	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0">
-	    <br />
+	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0"> 
+	     <br/>
 	   </xsl:if>
 	  </xsl:for-each>
 	 </td>
