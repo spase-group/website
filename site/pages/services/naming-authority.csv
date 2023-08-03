@@ -2,18 +2,20 @@ Authority,Name,Method,URL
 ASWS,Australian Space Weather Services (ASWS),git,https://github.com/hpde/ASWS
 CCMC,Community Coordinated Modeling Center (CCMC),git,https://github.com/hpde/CCMC
 CNES,Centre National d'Etudes Spatiales,git,https://github.com/hpde/CNES
+CSA,Canadian Space Agency (CSA),git,https://github.com/hpde/CSA
 CSSDP,Canadian Space Science Data Portal (CSSDP),git,https://github.com/hpde/CSSDP
 DLR,Deutsches Zentrum für Luft- und Raumfahrt (DLR),git,https://github.com/hpde/DLR
 ESA,European Space Agency (ESA),git,https://github.com/hpde/ESA
 FMI,Finnish Meteorlogical Institute (FMI),git,https://github.com/hpde/FMI
-INAF,Istituto Nazionale Di Astrofisica (National Institue for Astrophysics),git,https://github.com/hpde/INAF
-INSU,Institut national des sciences de l'Univers (INSU),git,https://github.com/hpde/ISU
-ISWI,International Space Weather Initiative (ISWI),git,https://github.com/hpde/ISWI
-KASI,Korean Astronomy and Space Science Institute (KASI),git,https://github.com/hpde/KASI
 GBO,Ground Based Observatories (GBO),git,https://github.com/hpde/GBO
+INAF,Istituto Nazionale Di Astrofisica (National Institue for Astrophysics),git,https://github.com/hpde/INAF
+INSU,Institut national des sciences de l'Univers (INSU),git,https://github.com/hpde/INSU
+ISWI,International Space Weather Initiative (ISWI),git,https://github.com/hpde/ISWI
+IUGONET,Inter-university Upper atmosphere Global Observation NETwork (IUGONET),git,http://search.iugonet.org/list.jsp
 JAXA,Japan Aerospace Exploration Agency (JAXA),git,https://github.com/hpde/JAXA
-NASA,National Aeronautics and Space Administration (NASA),git,https://github.com/hpde/NASA
+KASI,Korean Astronomy and Space Science Institute (KASI),git,https://github.com/hpde/KASI
+NASA,National Aeronautics and Space Administration (NASA),git, https://github.com/hpde/NASA
 NOAA,National Oceanic and Atmospheric Administration (NOAA),git,https://github.com/hpde/NOAA
 NSF,National Science Foundation (NSF),git,https://github.com/hpde/NSF
-SMWG,SPASE Metadata Working Group (SMWG),git,https://github.com/hpde/spase-SMWG
-
+SMWG,SPASE Metadata Working Group (SMWG),git,https://github.com/hpde/SMWG
+UOULU,University of Oulu (UOULU),git,https://github.com/hpde/UOULU
