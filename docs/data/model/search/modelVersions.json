@@ -25,6 +25,5 @@
 		{"version": "2.5.0", "released": "2022-09-29" },
 		{"version": "2.6.0", "released": "2023-08-03" }
 	],
-	"current": {"version": "2.6.0", "released": "2023-08-03" },
-	"draft": {"version": "2.6.0", "released": "2023-07-16" }
+	"current": {"version": "2.6.0", "released": "2023-08-03" }
 }
