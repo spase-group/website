@@ -363,7 +363,7 @@ a.xml-logo:hover {
 				
 				<a target="_blank" href="{$fileName}.xml">View XML</a> 
 				| <a target="_blank" href="{$fileName}.json">View JSON</a> 
-				| <a target="_blank" href="http://xmleditor.spase-group.org/?edit={$resourceURL}.xml">Edit</a>
+				| <a target="_blank" href="http://xmleditor.spase-utilities.org/?edit={$resourceURL}.xml">Edit</a>
 			</p>
 			<h1 class="detail">Details</h1>
 		</div>
