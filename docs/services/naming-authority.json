@@ -1,13 +1,13 @@
 [
     {
         "Authority": "ASWS",
-        "Name": "Australian Space Weather Services (ASWS)",
+        "Name": "Australian Space Weather Services",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/ASWS"
     },
     {
         "Authority": "CCMC",
-        "Name": "Community Coordinated Modeling Center (CCMC)",
+        "Name": "Community Coordinated Modeling Center",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/CCMC"
     },
@@ -19,103 +19,121 @@
     },
     {
         "Authority": "CSA",
-        "Name": "Canadian Space Agency (CSA)",
+        "Name": "Canadian Space Agency",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/CSA"
     },
     {
         "Authority": "CSSDP",
-        "Name": "Canadian Space Science Data Portal (CSSDP)",
+        "Name": "Canadian Space Science Data Portal",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/CSSDP"
     },
     {
         "Authority": "DLR",
-        "Name": "Deutsches Zentrum f\u00fcr Luft- und Raumfahrt (DLR)",
+        "Name": "Deutsches Zentrum f\u00fcr Luft- und Raumfahrt",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/DLR"
     },
     {
         "Authority": "ESA",
-        "Name": "European Space Agency (ESA)",
+        "Name": "European Space Agency",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/ESA"
     },
     {
         "Authority": "FMI",
-        "Name": "Finnish Meteorlogical Institute (FMI)",
+        "Name": "Finnish Meteorlogical Institute",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/FMI"
     },
     {
         "Authority": "GBO",
-        "Name": "Ground Based Observatories (GBO)",
+        "Name": "Ground Based Observatories",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/GBO"
     },
     {
+        "Authority": "GMU",
+        "Name": "George Mason University",
+        "Method": "git",
+        "URL": "https:\/\/github.com\/hpde\/GMU"
+    },
+    {
+        "Authority": "GONG",
+        "Name": "Global Oscillation Network Group",
+        "Method": "git",
+        "URL": "https:\/\/github.com\/hpde\/GONG"
+    },
+    {
         "Authority": "INAF",
-        "Name": "Istituto Nazionale Di Astrofisica (National Institue for Astrophysics)",
+        "Name": "Istituto Nazionale Di Astrofisica",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/INAF"
     },
     {
         "Authority": "INSU",
-        "Name": "Institut national des sciences de l'Univers (INSU)",
+        "Name": "Institut national des sciences de l'Univers",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/INSU"
     },
     {
         "Authority": "ISWI",
-        "Name": "International Space Weather Initiative (ISWI)",
+        "Name": "International Space Weather Initiative",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/ISWI"
     },
     {
         "Authority": "IUGONET",
-        "Name": "Inter-university Upper atmosphere Global Observation NETwork (IUGONET)",
+        "Name": "Inter-university Upper atmosphere Global Observation NETwork",
         "Method": "git",
         "URL": "http:\/\/search.iugonet.org\/list.jsp"
     },
     {
         "Authority": "JAXA",
-        "Name": "Japan Aerospace Exploration Agency (JAXA)",
+        "Name": "Japan Aerospace Exploration Agency",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/JAXA"
     },
     {
         "Authority": "KASI",
-        "Name": "Korean Astronomy and Space Science Institute (KASI)",
+        "Name": "Korean Astronomy and Space Science Institute",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/KASI"
     },
     {
+        "Authority": "KSB-ROB",
+        "Name": "Royal Observatory of Belgium",
+        "Method": "git",
+        "URL": "https:\/\/github.com\/hpde\/KSB-ROB"
+    },
+    {
         "Authority": "NASA",
-        "Name": "National Aeronautics and Space Administration (NASA)",
+        "Name": "National Aeronautics and Space Administration",
         "Method": "git",
         "URL": " https:\/\/github.com\/hpde\/NASA"
     },
     {
         "Authority": "NOAA",
-        "Name": "National Oceanic and Atmospheric Administration (NOAA)",
+        "Name": "National Oceanic and Atmospheric Administration",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/NOAA"
     },
     {
         "Authority": "NSF",
-        "Name": "National Science Foundation (NSF)",
+        "Name": "National Science Foundation",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/NSF"
     },
     {
         "Authority": "SMWG",
-        "Name": "SPASE Metadata Working Group (SMWG)",
+        "Name": "SPASE Metadata Working Group",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/SMWG"
     },
     {
         "Authority": "UOULU",
-        "Name": "University of Oulu (UOULU)",
+        "Name": "University of Oulu",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/UOULU"
     }
