@@ -87,7 +87,7 @@
         "Authority": "IUGONET",
         "Name": "Inter-university Upper atmosphere Global Observation NETwork",
         "Method": "git",
-        "URL": "http:\/\/search.iugonet.org\/list.jsp"
+        "URL": "https:\/\/github.com\/hpde\/IUGONET"
     },
     {
         "Authority": "JAXA",
