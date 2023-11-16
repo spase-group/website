@@ -126,6 +126,12 @@
         "URL": "https:\/\/github.com\/hpde\/NSF"
     },
     {
+        "Authority": "NagoyaU",
+        "Name": "Nagoya University",
+        "Method": "git",
+        "URL": "https:\/\/github.com\/hpde\/NagoyaU"
+    },
+    {
         "Authority": "SMWG",
         "Name": "SPASE Metadata Working Group",
         "Method": "git",

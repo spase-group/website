@@ -87,7 +87,7 @@
         "Authority": "IUGONET",
         "Name": "Inter-university Upper atmosphere Global Observation NETwork",
         "Method": "git",
-        "URL": "http:\/\/search.iugonet.org\/list.jsp"
+        "URL": "https:\/\/github.com\/hpde\/IUGONET"
     },
     {
         "Authority": "JAXA",
@@ -124,6 +124,12 @@
         "Name": "National Science Foundation",
         "Method": "git",
         "URL": "https:\/\/github.com\/hpde\/NSF"
+    },
+    {
+        "Authority": "NagoyaU",
+        "Name": "Nagoya University",
+        "Method": "git",
+        "URL": "https:\/\/github.com\/hpde\/NagoyaU"
     },
     {
         "Authority": "SMWG",
