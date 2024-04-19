@@ -1,10 +1,12 @@
 Authority,Name,Method,URL
 ASWS,Australian Space Weather Services,git,https://github.com/hpde/ASWS
 CCMC,Community Coordinated Modeling Center,git,https://github.com/hpde/CCMC
+CFA,The Center for Astrophysics of Harvard & Smithsonian,git,https://github.com/hpde/CFA
 CNES,Centre National d'Etudes Spatiales,git,https://github.com/hpde/CNES
 CSA,Canadian Space Agency,git,https://github.com/hpde/CSA
 CSSDP,Canadian Space Science Data Portal,git,https://github.com/hpde/CSSDP
 DLR,Deutsches Zentrum für Luft- und Raumfahrt,git,https://github.com/hpde/DLR
+DOD,Department of Defense,git,https://github.com/hpde/DOD
 ESA,European Space Agency,git,https://github.com/hpde/ESA
 FMI,Finnish Meteorlogical Institute,git,https://github.com/hpde/FMI
 GBO,Ground Based Observatories,git,https://github.com/hpde/GBO
@@ -12,6 +14,7 @@ GMU,George Mason University,git,https://github.com/hpde/GMU
 GONG,Global Oscillation Network Group,git,https://github.com/hpde/GONG
 INAF,Istituto Nazionale Di Astrofisica,git,https://github.com/hpde/INAF
 INSU,Institut national des sciences de l'Univers,git,https://github.com/hpde/INSU
+IRF,Swedish institute for space physics,git,https://github.com/hpde/IRF
 ISWI,International Space Weather Initiative,git,https://github.com/hpde/ISWI
 IUGONET,Inter-university Upper atmosphere Global Observation NETwork,git,https://github.com/hpde/IUGONET
 JAXA,Japan Aerospace Exploration Agency,git,https://github.com/hpde/JAXA

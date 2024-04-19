@@ -68,13 +68,12 @@ const Markdown = {
         newval = line;
         if( ! text[i-1].match(/<li>\*/) ) { // Start of list
           text[i] = '<ul><li>' + newval + '</li>';
-        } else if( (text.length == i+1) || ! text[i+1].match(/^\s*\*\s/) ) {  // No more items
+        } else if( ! text[i+1].match(/^\s*\*\s/) ) {  // No more items
           text[i] = '<li>' + newval + '</li></ul>';
         } else {  // item
           text[i] = '<li>' + newval + '</li>';
         }
       }
-
 
       // Ordered lists
       if( line.match(/^\s*\d+\.\s/) ) {  // list item

@@ -355,28 +355,18 @@ console.log (name);
 			  });
         var tnode = document.createTextNode(fmt_names.join(', '));
 */
-//        document.write(authors);
-
         var elt = document.createElement("div");
         var tnode = document.createTextNode(authors);
         elt.appendChild(tnode);
         var cur_div = document.getElementById('author');
-//console.log ('cur_div', cur_div, authors);
-        var cur_in = cur_div.innerHTML;
-        cur_div.innerHTML = elt.innerHTML + cur_in;		
-
-/*
-      var tnode = document.createTextNode(authors);
-      var cur_div = document.getElementById('author');
-      cur_div.innerHTML = tnode.innerHTML;
-*/
+        cur_div.appendChild(elt);			  
 			</script>
 			(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 			<xsl:call-template name="ref-type">
 				<xsl:with-param name="input" select="./*/sp:ResourceID"/>
 			</xsl:call-template>
-			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />
+			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
 			  <a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>.
 			</xsl:if>
