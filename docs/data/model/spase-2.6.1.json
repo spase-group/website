@@ -7945,6 +7945,7 @@
             "IonDrift",
             "IonGauge",
             "LangmuirProbe",
+            "Lidar",
             "LongWire",
             "Magnetograph",
             "Magnetometer",
@@ -8596,6 +8597,18 @@
          "usedBy": [
             "Location"
          ],
+         "allowedValues": []
+      },
+      "Lidar": {
+         "version": "2.6.0",
+         "since": "2.6.0",
+         "term": "Lidar",
+         "type": "Item",
+         "list": "",
+         "element": "",
+         "attributes": "",
+         "definition": "Lidar (Light Detection and Ranging) is a class of instruments that uses laser light to study atmospheric properties from the ground up to the top of the atmosphere. Such instruments have been used to study atmospheric gases, aerosols, clouds, and temperature.",
+         "usedBy": [],
          "allowedValues": []
       },
       "LongWire": {
