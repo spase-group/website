@@ -58,7 +58,7 @@ const Markdown = {
         newval = line;
         if( ! text[i-1].match(/<li>-/) ) {  // Start of list
           text[i] = '<ul><li>' + newval + '</li>';
-        } else if( ! text[i+1].match(/^\s*-\s/) ) { // No more items
+        } else if(i >= (text.length - 1) || ! text[i+1].match(/^\s*-\s/) ) { // No more items
           text[i] = '<li>' + newval + '</li></ul>';
         } else {  // item
           text[i] = '<li>' + newval + '</li>';
@@ -68,7 +68,7 @@ const Markdown = {
         newval = line;
         if( ! text[i-1].match(/<li>\*/) ) { // Start of list
           text[i] = '<ul><li>' + newval + '</li>';
-        } else if( ! text[i+1].match(/^\s*\*\s/) ) {  // No more items
+        } else if(i >= (text.length - 1) || ! text[i+1].match(/^\s*\*\s/) ) {  // No more items
           text[i] = '<li>' + newval + '</li></ul>';
         } else {  // item
           text[i] = '<li>' + newval + '</li>';
@@ -80,7 +80,7 @@ const Markdown = {
         newval = line;
         if( ! text[i-1].match(/<li>\d+\./) ) {  // Start of list
           text[i] = '<ol><li>' + newval + '</li>';
-        } else if( ! text[i+1].match(/^\s*\d+\.\s/) ) { // No more items
+        } else if(i >= (text.length - 1) || ! text[i+1].match(/^\s*\d+\.\s/) ) { // No more items
           text[i] = '<li>' + newval + '</li></ol>';
         } else { // item
           text[i] = '<li>' + newval + '</li>';
