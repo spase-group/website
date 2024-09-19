@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.6.1 -->
-<!-- Generated: 2024-06-24 -->
+<!-- Generated: 2024-09-19 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -391,6 +391,7 @@
          <xsd:element name="ChemicalFormula" type="spase:ChemicalFormula" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Population" type="spase:Population" minOccurs="0" maxOccurs="1" />
          <xsd:element name="PopulationMassNumber" type="spase:PopulationMassNumber" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="PopulationChargeState" type="spase:PopulationChargeState" minOccurs="0" maxOccurs="1" />
          <xsd:element name="SourceRegion" type="spase:SourceRegion" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="SourceRegionExtent" type="spase:SourceRegionExtent" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
@@ -6669,6 +6670,13 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="Muon">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  An elementary particle similar to the electron, with an electric charge equal to -1 elementary charge, -e, and spin -1/2 h-bar with a much mass -206.7682827(46) times that of the electron rest mass, m sub e.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="NaD">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -7667,6 +7675,13 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A group of atoms so united and combined by chemical affinity that they form a complete, integrated whole, being the smallest portion of any particular compound that can exist in a free state.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Muon">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  An elementary particle similar to the electron, with an electric charge equal to -1 elementary charge, -e, and spin -1/2 h-bar with a much mass -206.7682827(46) times that of the electron rest mass, m sub e.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
