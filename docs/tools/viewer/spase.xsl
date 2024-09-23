@@ -331,6 +331,7 @@ a.xml-logo:hover {
 			<p class="author" id="author">
 			<script>
 			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
+console.log ('authors', authors);
         var elt = document.createElement("div");
         var tnode = document.createTextNode(authors);
         elt.appendChild(tnode);
@@ -596,8 +597,14 @@ Call with the following:
 		<xsl:when test="contains($input, 'Catalog')">
 			[Data set].
 		</xsl:when>
+		<xsl:when test="contains($input, 'Document')">
+			[Document].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Service')">
+			[Service].
+		</xsl:when>
 		<xsl:otherwise>
-			.
+.
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
