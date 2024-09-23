@@ -331,30 +331,6 @@ a.xml-logo:hover {
 			<p class="author" id="author">
 			<script>
 			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
-/*
-        var names = authors.split(';');
-        var fmt_names = [];		
-        var n = 0;	 
-			  names.forEach (function (name) {
-console.log (name);
-			    var this_name = '';
-			    if (n == names.length - 1) {
-			      this_name += 'and ';
-			    }
-			    // alter the current name
-			    var name_parts = name.split(',');
-			    this_name += name_parts.shift() + ', ';
-			    
-			    name_parts.forEach(function (npart) {
-            var c = npart.trim().slice(0, 1);
-			      this_name += c + '.';
-			    });
-			    
-          fmt_names.push(this_name);
-          n++;
-			  });
-        var tnode = document.createTextNode(fmt_names.join(', '));
-*/
         var elt = document.createElement("div");
         var tnode = document.createTextNode(authors);
         elt.appendChild(tnode);
@@ -368,22 +344,23 @@ console.log (name);
 			</xsl:call-template>
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-			  <a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>.
+			  <a href="{./*/sp:ResourceHeader/sp:DOI}" id='doi_link'><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a> <span id='access_date'></span> <br/><a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">CiteAs link</a> <div id='blurb'></div>
 			</xsl:if>
+			  <script>
+			    var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+			    var today = new Date(); 
+			    var cur_div = document.getElementById('access_date');
+			    var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+console.log (cur_div);
+console.log (d_str);
+			    cur_div.innerText = d_str; 
+			    
+			    cur_div = document.getElementById('blurb');
+			    d_str = 'Dataset citations should append the date that you retrieved the data in the form: "Accessed on ' + d_str + '"';
+			    cur_div.innerText = d_str; 
+			</script>
 
 			
-			<script>
-			  var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
-			  var today = new Date(); 
-//			  document.write(today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()); 
-        var this_date = today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate();
-        var elt = document.createElement("div");
-        var tnode = document.createTextNode('Accessed on ' + this_date);
-        elt.appendChild(tnode);
-        var cur_div = document.getElementById('author');
-        cur_div.appendChild(elt);			  
-			</script>.
-
 			</p>
 			</xsl:if>
 			<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>

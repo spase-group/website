@@ -101,9 +101,7 @@ const Markdown = {
       }
       
       // Table formatting
-console.log ('looking for table formatting');
       if( line.match(/\+--*-\+/) ) { 
-console.log ('okay');
         if( text[i+1].match(/\|/) ) {
           text[i] = "<table>"; // text[i] = line + "(table)";
         } else {
