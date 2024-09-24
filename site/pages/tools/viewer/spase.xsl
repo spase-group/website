@@ -331,7 +331,7 @@ a.xml-logo:hover {
 			<p class="author" id="author">
 			<script>
 			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
-console.log ('authors', authors);
+			  authors = authors.replace(/\n/g, "");  // downstream javascript complaints if there are line breaks
         var elt = document.createElement("div");
         var tnode = document.createTextNode(authors);
         elt.appendChild(tnode);
@@ -343,17 +343,15 @@ console.log ('authors', authors);
 			<xsl:call-template name="ref-type">
 				<xsl:with-param name="input" select="./*/sp:ResourceID"/>
 			</xsl:call-template>
-			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
+			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy"/>. 
 			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-			  <a href="{./*/sp:ResourceHeader/sp:DOI}" id='doi_link'><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a> <span id='access_date'></span> <br/><a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">CiteAs link</a> <div id='blurb'></div>
+			  <a href="{./*/sp:ResourceHeader/sp:DOI}" id='doi_link'><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a> <span id='access_date'></span><br/><a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">CiteAs link</a> <div id='blurb'></div>
 			</xsl:if>
 			  <script>
 			    var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 			    var today = new Date(); 
 			    var cur_div = document.getElementById('access_date');
 			    var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
-console.log (cur_div);
-console.log (d_str);
 			    cur_div.innerText = d_str; 
 			    
 			    cur_div = document.getElementById('blurb');
