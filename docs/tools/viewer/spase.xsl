@@ -355,7 +355,7 @@ a.xml-logo:hover {
 			    cur_div.innerText = d_str; 
 			    
 			    cur_div = document.getElementById('blurb');
-			    d_str = 'Proper citations should include the “Accessed on date” as shown at the end of the reference above.';
+			    d_str = 'Proper citations should include the "Accessed on date" as shown at the end of the reference above.';
 			    cur_div.innerText = d_str; 
 			</script>
 
