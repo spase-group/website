@@ -136,6 +136,8 @@
         var reader = new FileReader();
         reader.onload = function (e) {
             xml = $.parseXML(e.target.result);
+ 
+ console.log ('xml', xml);
             xsltProcessor = new XSLTProcessor();
             xsltProcessor.importStylesheet(xsl);
             resultDocument = xsltProcessor.transformToFragment(xml, document);

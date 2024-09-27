@@ -332,11 +332,11 @@ a.xml-logo:hover {
 			<script>
 			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
 			  authors = authors.replace(/\n/g, "");  // downstream javascript complaints if there are line breaks
-        var elt = document.createElement("div");
+        var elt = document.createElement("span");
         var tnode = document.createTextNode(authors);
         elt.appendChild(tnode);
         var cur_div = document.getElementById('author');
-        cur_div.appendChild(elt);			  
+        cur_div.prepend(elt);			  
 			</script>
 			(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
@@ -355,7 +355,7 @@ a.xml-logo:hover {
 			    cur_div.innerText = d_str; 
 			    
 			    cur_div = document.getElementById('blurb');
-			    d_str = 'Dataset citations should append the date that you retrieved the data in the form: "Accessed on ' + d_str + '"';
+			    d_str = 'Proper citations should include the “Accessed on date” as shown at the end of the reference above.';
 			    cur_div.innerText = d_str; 
 			</script>
 
