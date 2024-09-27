@@ -355,8 +355,9 @@ a.xml-logo:hover {
 			    cur_div.innerText = d_str; 
 			    
 			    cur_div = document.getElementById('blurb');
-			    d_str = 'Proper citations should include the "Accessed on date" as shown at the end of the reference above.';
-			    cur_div.innerText = d_str; 
+			    var cite = '<xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" />';
+			    d_str = 'Proper citations (including those on <a href="https://citeas.org/cite/' + cite + '">CiteAs link</a>) should include the "Accessed on date" as shown at the end of the reference above.';
+			    cur_div.innerHTML = d_str; 
 			</script>
 
 			
