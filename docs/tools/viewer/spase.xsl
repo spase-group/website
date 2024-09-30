@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sp="http://www.spase-group.org/data/schema" xmlns:vot="http://www.ivoa.net/xml/VOTable/VOTable/v1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  version="1.0" exclude-result-prefixes="sp vot">
   <xsl:param name="spase.resolver" select="'http://spase-group.org/registry/resolver'"/>
   <xsl:param name="spase.render" select="'http://spase-group.org/registry/render'"/>
@@ -10,7 +10,7 @@
   <xsl:template match="/">
    <html>
    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta charset="utf-8" />
       <title>SPASE Resource Description</title>
 	  <!-- Data discovery metadata -->
       <script type="application/ld+json">{
@@ -345,7 +345,7 @@ a.xml-logo:hover {
 			</xsl:call-template>
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy"/>. 
 			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-			  <a href="{./*/sp:ResourceHeader/sp:DOI}" id='doi_link'><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a> <span id='access_date'></span><br/><a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">CiteAs link</a> <div id='blurb'></div>
+			  <span id='access_date'></span><br/><div id='blurb'></div>
 			</xsl:if>
 			  <script>
 			    var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
@@ -355,13 +355,30 @@ a.xml-logo:hover {
 			    cur_div.innerText = d_str; 
 			    
 			    cur_div = document.getElementById('blurb');
+			    var br = document.createElement("br");
+			    cur_div.append(br);
+
+			    cur_div.append('Proper citations should include the "Accessed on date" as shown at the end of the reference above.');
+                br = document.createElement("br");
+			    cur_div.append(br);
+                br = document.createElement("br");
+			    cur_div.append(br);
+
 			    var cite = '<xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" />';
-			    d_str = 'Proper citations (including those on <a href="https://citeas.org/cite/' + cite + '">CiteAs link</a>) should include the "Accessed on date" as shown at the end of the reference above.';
-			    cur_div.innerHTML = d_str; 
-			</script>
+                var link = document.createElement("a");
+                link.innerText = 'Citation in BibTex Format';
+                link.href = 'https://citation.crosscite.org/format?doi=' + cite + "&amp;style=bibtex&amp;lang=en-US";
+			    cur_div.append(link);
+                cur_div.append(' Citations should include the "Accessed on date" as shown above.');
+                br = document.createElement("br");
+			    cur_div.append(br);
+                br = document.createElement("br");
+			    cur_div.append(br);
+
+			  </script>
 
 			
-			</p>
+			  </p>
 			</xsl:if>
 			<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
 			<p><xsl:apply-templates select="./*/sp:ResourceHeader/sp:Description"></xsl:apply-templates></p>
