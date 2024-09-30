@@ -369,7 +369,7 @@ a.xml-logo:hover {
                 link.innerText = 'Citation in BibTex Format';
                 link.href = 'https://citation.crosscite.org/format?doi=' + cite + "&amp;style=bibtex&amp;lang=en-US";
 			    cur_div.append(link);
-                cur_div.append(' Citations should include the "Accessed on date" as shown above.');
+                cur_div.append('. Citations should include the "Accessed on date" as shown above.');
                 br = document.createElement("br");
 			    cur_div.append(br);
                 br = document.createElement("br");
