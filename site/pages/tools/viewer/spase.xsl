@@ -345,7 +345,7 @@ a.xml-logo:hover {
 			</xsl:call-template>
 			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy"/>. 
 			<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-			  <span id='access_date'></span><br/><div id='blurb'></div>
+			  <a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span><br/><div id='blurb'></div>
 			</xsl:if>
 			  <script>
 			    var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
