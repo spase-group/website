@@ -358,18 +358,20 @@ a.xml-logo:hover {
 			    var br = document.createElement("br");
 			    cur_div.append(br);
 
-			    cur_div.append('Proper citations should include the "Accessed on date" as shown at the end of the reference above.');
-                br = document.createElement("br");
-			    cur_div.append(br);
-                br = document.createElement("br");
-			    cur_div.append(br);
+//			    cur_div.append('Proper citations should include the "Accessed on date" as shown at the end of the reference above.');
+			    cur_div.append('Note: Proper references, including those in ');
 
 			    var cite = '<xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" />';
                 var link = document.createElement("a");
-                link.innerText = 'Citation in BibTex Format';
+                link.innerText = 'BibTex';
                 link.href = 'https://citation.crosscite.org/format?doi=' + cite + "&amp;style=bibtex&amp;lang=en-US";
 			    cur_div.append(link);
-                cur_div.append('. Citations should include the "Accessed on date" as shown above.');
+			    cur_div.append(' or ');
+			    link = document.createElement("a");
+                link.innerText = 'other formats';
+                link.href = 'https://citeas.org/cite/' + cite;
+			    cur_div.append(link);
+                cur_div.append(' should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.');
                 br = document.createElement("br");
 			    cur_div.append(br);
                 br = document.createElement("br");
