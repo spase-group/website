@@ -371,7 +371,7 @@ a.xml-logo:hover {
                 link.innerText = 'other formats';
                 link.href = 'https://citeas.org/cite/' + cite;
 			    cur_div.append(link);
-                cur_div.append(' should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.');
+                cur_div.append(', should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.');
                 br = document.createElement("br");
 			    cur_div.append(br);
                 br = document.createElement("br");
