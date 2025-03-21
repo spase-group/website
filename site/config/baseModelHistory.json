@@ -1,5 +1,13 @@
 [
    {
+      "id": "333",
+      "version": "2.7.0",
+      "updated": "2025-03-16",
+      "changedBy": "L.F.Bargatze",
+      "description": "Fixed typos in the DataCite rights and rightList Metadata Conventions section of the SPASE 2.7.0 Base Model PDF. Added OperationsManager to the Role enumeration list.",
+      "note": ""
+   },
+   {
       "id": "332",
       "version": "2.7.0",
       "updated": "2024-12-04",

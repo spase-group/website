@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.7.0 -->
-<!-- Generated: 2025-01-15 -->
+<!-- Generated: 2025-03-21 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -210,6 +210,7 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="rights" type="spase:rights" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Note" type="spase:Note" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="AccessURL">
@@ -2484,14 +2485,6 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
    </xsd:simpleType>
-   <xsd:simpleType name="re3data">
-      <xsd:annotation>
-         <xsd:documentation xml:lang="en">
-         The DOI registered with re3data for a given data repository. For re3data.org Schema 4.0 see DOI: http://doi.org/10.48440/re3.014
-         </xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="xsd:string" />
-   </xsd:simpleType>
    <xsd:simpleType name="RegionBegin">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -2544,6 +2537,14 @@
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          A short textual resource description that is sufficient for identifying the resource. It should have a one-to-one correspondence to the ResourceID of the resource.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="re3data">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The DOI registered with re3data for a given data repository. For re3data.org Schema 4.0 see DOI: http://doi.org/10.48440/re3.014
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -10909,6 +10910,13 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   An individual who is the administrative and scientific lead for a mission.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OperationsManager">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The person who manages the instrument operation plans.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
