@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.7.0 -->
+<<<<<<< HEAD
 <!-- Generated: 2025-03-21 -->
+=======
+<!-- Generated: 2025-02-03 -->
+>>>>>>> 3ad9d5b3fb2c9950b3c3699cd043580080a2dc12
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -12856,5 +12860,57 @@
       <xsd:restriction base="xsd:string">
          <xsd:pattern value="[^:]+://[^/]+/.+"/>
       </xsd:restriction>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeBoundary">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               Parameters that define a region in space.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeValue">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see http://www.bipm.fr/ ) when appropriate or use tokens like &quot;Re&quot; to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units and for commonly derived units can be found by accessing links listed in the Bibliography below for the International System of Units (SI) hosted by the Bureau des Poids et Mesures (BIPM).
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeStringSequence">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A list of strings where the order of the values is fixed. A space separates each value. For example, &quot;one two three&quot;.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeFloatSequence">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A list of floating point numbers where the order of the values is fixed. A space separates each value. For example, &quot;1.2 3.4 5.6&quot;.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:float"/>
    </xsd:simpleType>
 </xsd:schema>
