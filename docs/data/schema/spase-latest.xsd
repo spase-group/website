@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
 <!-- Version: 2.7.0 -->
-<<<<<<< HEAD
-<!-- Generated: 2025-03-21 -->
-=======
-<!-- Generated: 2025-02-03 -->
->>>>>>> 3ad9d5b3fb2c9950b3c3699cd043580080a2dc12
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
