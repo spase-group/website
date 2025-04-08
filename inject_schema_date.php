@@ -41,9 +41,9 @@ $htm_text = file_get_contents ($fmtxsd);
 
 // Inject date into html file
 $count = 0;
-$out_htm = preg_replace ('/xsd<\/span><\/div>/', "xsd (generated $date)</span></div>", $htm_text, -1, $count);
+$out_htm = preg_replace ('/xsd<\/span><\/div>/', "xsd</span> (generated $date)</div>", $htm_text, -1, $count);
 if ($count < 1) {
-  die ("Unable to inject '$htm_text' into $fmtxsd\n");
+  die ("Unable to inject '$date' into $fmtxsd\n");
 }
 
 if (file_put_contents ($fmtxsd, $out_htm) === false) {
