@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
+<!-- Automatically created based on the specification available at https://spase-group.org/data/model/index.html -->
 <!-- Version: 2.7.0 -->
-<!-- Generated: 2025-03-21 -->
+<!-- Generated: 2025-03-20 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -47,6 +47,7 @@
          </xsd:choice>
       </xsd:sequence>
          <xsd:attribute name="lang" type="xsd:string" default="en"/>
+      <xsd:attribute name="rights" type="xsd:string" default="en"/>
    </xsd:complexType>
    <xsd:complexType name="Catalog">
       <xsd:annotation>
@@ -56,8 +57,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="ProviderName" type="spase:ProviderName" minOccurs="0" maxOccurs="1" />
@@ -192,7 +193,7 @@
          <xsd:element name="RepositoryID" type="spase:RepositoryID" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Availability" type="spase:Availability" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessRights" type="spase:AccessRights" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="rightsList" type="spase:rightsList" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="RightsList" type="spase:RightsList" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Format" type="spase:Format" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Encoding" type="spase:Encoding" minOccurs="0" maxOccurs="1" />
@@ -202,14 +203,14 @@
          <xsd:element name="Acknowledgement" type="spase:Acknowledgement" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="rightsList">
+   <xsd:complexType name="RightsList">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          Wrapper element to allow multiple rights. Thus, rights properties may be listed as needed to record complex rights characteristics.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:element name="rights" type="spase:rights" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="Rights" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Note" type="spase:Note" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
@@ -558,8 +559,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />
@@ -605,8 +606,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />
@@ -635,8 +636,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ReleaseDate" type="spase:ReleaseDate" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ExpirationDate" type="spase:ExpirationDate" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ParentID" type="spase:ParentID" minOccurs="1" maxOccurs="1" />
@@ -690,8 +691,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="InstrumentType" type="spase:InstrumentType" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="InstrumentGroupID" type="spase:InstrumentGroupID" minOccurs="0" maxOccurs="1" />
@@ -723,8 +724,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ObservatoryGroupID" type="spase:ObservatoryGroupID" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Location" type="spase:Location" minOccurs="1" maxOccurs="unbounded" />
@@ -755,8 +756,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ReleaseDate" type="spase:ReleaseDate" minOccurs="0" maxOccurs="1" />
          <xsd:element name="PersonName" type="spase:PersonName" minOccurs="0" maxOccurs="1" />
          <xsd:element name="OrganizationName" type="spase:OrganizationName" minOccurs="1" maxOccurs="1" />
@@ -778,8 +779,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="1" />
          <xsd:element name="RORIdentifier" type="spase:RORIdentifier" minOccurs="0" maxOccurs="unbounded" />
@@ -794,8 +795,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="1" />
          <xsd:element name="RORIdentifier" type="spase:RORIdentifier" minOccurs="0" maxOccurs="unbounded" />
@@ -811,8 +812,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />
@@ -826,8 +827,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ImageURL" type="spase:ImageURL" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AnnotationType" type="spase:AnnotationType" minOccurs="1" maxOccurs="1" />
@@ -860,8 +861,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />
@@ -878,8 +879,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="SoftwareVersion" type="spase:SoftwareVersion" minOccurs="0" maxOccurs="1" />
@@ -958,8 +959,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Member" type="spase:Member" minOccurs="1" maxOccurs="unbounded" />
@@ -989,8 +990,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformationOptional" type="spase:AccessInformationOptional" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Versions" type="spase:Versions" minOccurs="0" maxOccurs="1" />
@@ -1124,8 +1125,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="ProviderResourceName" type="spase:ProviderResourceName" minOccurs="0" maxOccurs="1" />
@@ -1346,8 +1347,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />
@@ -1380,8 +1381,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="ResourceID" type="spase:ResourceID" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="1" maxOccurs="1" />
-         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="NamingAuthority" type="spase:NamingAuthority" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="ResourceType" type="spase:ResourceType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="AccessInformation" type="spase:AccessInformation" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="ProcessingLevel" type="spase:ProcessingLevel" minOccurs="0" maxOccurs="1" />
@@ -2549,14 +2550,14 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
    </xsd:simpleType>
-   <xsd:simpleType name="rights">
+   <xsd:complexType name="Rights">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          Any rights information for this resource. The property may be repeated to record complex rights characteristics. Allowed values, examples, other constraints: Free text. Provide a rights management statement for the resource or reference a service providing such information. Include embargo information if applicable. Use the complete title of a license and include version information if applicable. May be used for software licenses.
          </xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string" />
-   </xsd:simpleType>
+      <xsd:attribute name="lang" type="xsd:string" default="en"/>
+   </xsd:complexType>
    <xsd:simpleType name="RORIdentifier">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -2834,9 +2835,34 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="1.0.0" />
+         <xsd:enumeration value="1.1.0" />
+         <xsd:enumeration value="1.2.0" />
+         <xsd:enumeration value="1.2.1" />
+         <xsd:enumeration value="1.2.2" />
+         <xsd:enumeration value="1.3.0" />
+         <xsd:enumeration value="2.0.0" />
+         <xsd:enumeration value="2.1.0" />
+         <xsd:enumeration value="2.2.0" />
+         <xsd:enumeration value="2.2.1" />
+         <xsd:enumeration value="2.2.2" />
+         <xsd:enumeration value="2.2.3" />
+         <xsd:enumeration value="2.2.4" />
+         <xsd:enumeration value="2.2.6" />
+         <xsd:enumeration value="2.2.8" />
+         <xsd:enumeration value="2.2.9" />
+         <xsd:enumeration value="2.3.0" />
+         <xsd:enumeration value="2.3.1" />
+         <xsd:enumeration value="2.3.2" />
+         <xsd:enumeration value="2.4.0" />
+         <xsd:enumeration value="2.4.1" />
+         <xsd:enumeration value="2.4.2" />
+         <xsd:enumeration value="2.5.0" />
+         <xsd:enumeration value="2.6.0" />
+         <xsd:enumeration value="2.6.1" />
          <xsd:enumeration value="2.7.0" />
       </xsd:restriction>
-      </xsd:simpleType>
+   </xsd:simpleType>
 <!-- ==========================
      List: AccessRights
 
@@ -12856,5 +12882,57 @@
       <xsd:restriction base="xsd:string">
          <xsd:pattern value="[^:]+://[^/]+/.+"/>
       </xsd:restriction>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeBoundary">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               Parameters that define a region in space.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeValue">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A description of the standardized measurement increments in which a value is specified. The description is represented as a mathematical phrase. Units should be represented by widely accepted representation. For example, units should conform to the International System of Units (SI) which is maintained by BIPM (Bureau International des Poids et Mesures (see http://www.bipm.fr/ ) when appropriate or use tokens like &quot;Re&quot; to represent units of the Radius of the Earth. Within a phrase the circumflex (^) is used to indicate a power, a star (*) is used to indicate multiplication and a slash (/) division. When symbols are not separated by a mathematical operator, multiplication is assumed. Symbols for base units and for commonly derived units can be found by accessing links listed in the Bibliography below for the International System of Units (SI) hosted by the Bureau des Poids et Mesures (BIPM).
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeStringSequence">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A list of strings where the order of the values is fixed. A space separates each value. For example, &quot;one two three&quot;.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:string"/>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="typeFloatSequence">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+            <xsd:annotation>
+               <xsd:documentation xml:lang="en">
+               A list of floating point numbers where the order of the values is fixed. A space separates each value. For example, &quot;1.2 3.4 5.6&quot;.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:list itemType="xsd:float"/>
    </xsd:simpleType>
 </xsd:schema>
