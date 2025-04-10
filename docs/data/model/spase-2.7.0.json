@@ -28221,7 +28221,7 @@
             "object": "Person",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -28231,7 +28231,7 @@
             "object": "Person",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
