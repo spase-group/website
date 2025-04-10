@@ -23739,7 +23739,7 @@
             "object": "Annotation",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -23749,7 +23749,7 @@
             "object": "Annotation",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -23989,7 +23989,7 @@
             "object": "Catalog",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -23999,7 +23999,7 @@
             "object": "Catalog",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24173,7 +24173,7 @@
             "object": "Collection",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24183,7 +24183,7 @@
             "object": "Collection",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24383,7 +24383,7 @@
             "object": "DisplayData",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24393,7 +24393,7 @@
             "object": "DisplayData",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24605,7 +24605,7 @@
             "object": "DisplayOutput",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24615,7 +24615,7 @@
             "object": "DisplayOutput",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24837,7 +24837,7 @@
             "object": "Document",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -24847,7 +24847,7 @@
             "object": "Document",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -25293,7 +25293,7 @@
             "object": "Granule",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -25303,7 +25303,7 @@
             "object": "Granule",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26191,7 +26191,7 @@
             "object": "Instrument",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26201,7 +26201,7 @@
             "object": "Instrument",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26501,7 +26501,7 @@
             "object": "Model",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26511,7 +26511,7 @@
             "object": "Model",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26795,7 +26795,7 @@
             "object": "ModelRun",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -26805,7 +26805,7 @@
             "object": "ModelRun",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27163,7 +27163,7 @@
             "object": "NumericalData",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27173,7 +27173,7 @@
             "object": "NumericalData",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27375,7 +27375,7 @@
             "object": "NumericalOutput",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27385,7 +27385,7 @@
             "object": "NumericalOutput",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27639,7 +27639,7 @@
             "object": "Observatory",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -27649,7 +27649,7 @@
             "object": "Observatory",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -28733,7 +28733,7 @@
             "object": "Registry",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -28743,7 +28743,7 @@
             "object": "Registry",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -28887,7 +28887,7 @@
             "object": "Repository",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -28897,7 +28897,7 @@
             "object": "Repository",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -29167,7 +29167,7 @@
             "object": "Service",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -29177,7 +29177,7 @@
             "object": "Service",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -29229,7 +29229,7 @@
             "object": "Software",
             "element": "NamingAuthority",
             "reference": 2,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
@@ -29239,7 +29239,7 @@
             "object": "Software",
             "element": "ResourceType",
             "reference": 3,
-            "occurrence": "1",
+            "occurrence": "0",
             "group": "",
             "type": ""
          },
