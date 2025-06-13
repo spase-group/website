@@ -102,7 +102,7 @@ const Markdown = {
       
       // Table formatting
       if( line.match(/\+--*-\+/) ) { 
-        if( text[i+1].match(/\|/) ) {
+        if( (text.length > i+1 )&& text[i+1].match(/\|/) ) {
           text[i] = "<table>"; // text[i] = line + "(table)";
         } else {
           text[i] = "</table>"; // text[i] = line + "(/table)"
