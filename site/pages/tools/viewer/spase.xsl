@@ -399,7 +399,7 @@ a.xml-logo:hover {
 				<xsl:variable name="resourceURL">
 					<xsl:call-template name="string-replace-all">
 						<xsl:with-param name="replace" select="'spase://'" />
-						<xsl:with-param name="with" select="'https://hpde.io/'" />
+						<xsl:with-param name="with" select="'https://hpde1.net/'" />
 						<xsl:with-param name="text" select="./*/sp:ResourceID"/>
 					</xsl:call-template>  
 				</xsl:variable>	
@@ -448,7 +448,7 @@ a.xml-logo:hover {
 		   <xsl:choose>
 				<xsl:when test="'ID' = substring(local-name(), string-length(local-name()) - 1)"> <!-- Fix-up ID: Length of string is 1 more than than position count -->
 				<!-- <xsl:when test="ends-with(local-name(), 'ID')"> --> <!-- set anchor -->
-					<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition"><a href="https://hpde.io/{substring-after(., 'spase://')}.html"><xsl:value-of select="."/></a></div> 
+					<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition"><a href="https://hpde1.net/{substring-after(., 'spase://')}.html"><xsl:value-of select="."/></a></div> 
 				</xsl:when>
 				<xsl:when test="'Date' = substring(local-name(), string-length(local-name()) - 3)"> <!-- Fix-up date:  Length of string is 1 more than than position count -->
 				<!--- <xsl:when test="ends-with(local-name(), 'Date')"> --> <!-- Fix-up date -->
@@ -487,7 +487,7 @@ a.xml-logo:hover {
 	   </xsl:if>
 	  </xsl:for-each>
 	 </td>
-	 <td><a target="_blank" href="https://hpde.io/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
+	 <td><a target="_blank" href="https://hpde1.net/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
 	 <td><xsl:value-of select="sp:StartDate"/></td>
 	 <td><xsl:value-of select="sp:StopDate"/></td>
 	 <td><xsl:value-of select="sp:Note"/></td>
@@ -525,7 +525,7 @@ Also remove leading and trailing spaces to get desired formatting.
 	<xsl:if test="count(preceding-sibling::*[name() = name(current())]) = 0">
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 	</xsl:if>
-	<div class="definition"><a target="_blank" href="https://hpde.io/{substring-after(., 'spase://')}.html"><xsl:value-of select="."/></a></div>
+	<div class="definition"><a target="_blank" href="https://hpde1.net/{substring-after(., 'spase://')}.html"><xsl:value-of select="."/></a></div>
 </xsl:template>
 
 <xsl:template match="sp:PriorID">
