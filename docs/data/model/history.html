@@ -162,7 +162,7 @@ Space Physics Archive Search and Extract
 
    
    
-	<h4>Version: <b><a href="search/index.html?version=2.7.0">2.7.0</a></b></h4>
+	<h4>Version: <b><a href="search/index.html?version=2.7.1">2.7.1</a></b></h4>
 	<table class="history">
 		<tr>
 		<th width=100px>Updated</th>
@@ -172,7 +172,23 @@ Space Physics Archive Search and Extract
 		
    
 		<tr  >
-			<td nowrap>2025-03-16</td>
+			<td nowrap>2025-11-26</td>
+			<td><ul><li>Modified existing Rights object: renaming FullName to RightsName, adding Note, enclosing these properties within a Rights container to be used within both the RightsList and new MetadataRightsList. Added new moons to Jupiter and Saturn. Adding tombstone capability via the new Status element and additional AssociationTypes. Modifying the PriorID definition to more closely align with its current use.</li></ul></td>
+			<td></td>
+		</tr>
+
+   
+   
+		<tr  >
+			<td nowrap>2025-02-03</td>
+			<td><ul><li>Built out the Rights type</li><li>added SchemeURI, RightsIdentifier, RightsIdentifierScheme, RightsURI, FullName. Added FixedValue column to ontology.tab to hold schema-fixed values. Updated makexsd.js to format fixed values.</li></ul></td>
+			<td></td>
+		</tr>
+
+   
+   
+		<tr  >
+			<td nowrap>2025-02-03</td>
 			<td><ul><li>Fixed typos in the DataCite rights and rightList Metadata Conventions section of the SPASE 2.7.0 Base Model PDF. Added OperationsManager to the Role enumeration list.</li></ul></td>
 			<td></td>
 		</tr>

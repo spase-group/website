@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
-<!-- Version: 2.7.0 -->
-<!-- Generated: 2025-07-29 -->
+<!-- Version: 2.7.1 -->
+<!-- Generated: 2025-11-26 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	      xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-	      xmlns:rights="http://www.spase-group.org/data/schema"
 	      xmlns:spase="http://www.spase-group.org/data/schema"
 	      elementFormDefault="qualified"
 	      attributeFormDefault="unqualified"
 	      vc:minVersion="1.1"
-	      version="2.7.0"
+	      version="2.7.1"
 >
 
    <!-- Document root element -->
@@ -26,6 +25,8 @@
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Version" type="spase:Version" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="Status" type="spase:Status" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="MetadataRightsList" type="spase:MetadataRightsList" minOccurs="0" maxOccurs="1" />
          <xsd:choice minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="Catalog" type="spase:Catalog" />
             <xsd:element name="DisplayData" type="spase:DisplayData" />
@@ -48,6 +49,31 @@
          </xsd:choice>
       </xsd:sequence>
          <xsd:attribute name="lang" type="xsd:string" default="en"/>
+   </xsd:complexType>
+   <xsd:complexType name="MetadataRightsList">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Wrapper element to allow multiple rights for the metadata. Thus, rights properties may be listed as needed to record complex rights characteristics.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="Rights" type="spase:Rights" minOccurs="1" maxOccurs="unbounded" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Rights">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Any rights information for this item. This property may be repeated to record complex rights characteristics for the same item. May be used for both metadata and dataset licenses.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="SchemeURI" type="spase:SchemeURI" minOccurs="0" maxOccurs="1" fixed="https://spdx.org/licenses/"  />
+         <xsd:element name="RightsIdentifierScheme" type="spase:RightsIdentifierScheme" minOccurs="0" maxOccurs="1" fixed="SPDX"  />
+         <xsd:element name="RightsIdentifier" type="spase:RightsIdentifier" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="RightsURI" type="spase:RightsURI" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="RightsName" type="spase:RightsName" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Note" type="spase:Note" minOccurs="0" maxOccurs="1" />
+      </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="Catalog">
       <xsd:annotation>
@@ -193,7 +219,7 @@
          <xsd:element name="RepositoryID" type="spase:RepositoryID" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Availability" type="spase:Availability" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessRights" type="spase:AccessRights" minOccurs="0" maxOccurs="1" />
-         <xsd:element name="rightsList" type="spase:rightsList" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="RightsList" type="spase:RightsList" minOccurs="0" maxOccurs="1" />
          <xsd:element name="AccessURL" type="spase:AccessURL" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Format" type="spase:Format" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="Encoding" type="spase:Encoding" minOccurs="0" maxOccurs="1" />
@@ -203,15 +229,14 @@
          <xsd:element name="Acknowledgement" type="spase:Acknowledgement" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="rightsList">
+   <xsd:complexType name="RightsList">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
          Wrapper element to allow multiple rights. Thus, rights properties may be listed as needed to record complex rights characteristics.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:element name="rights" type="spase:rights" minOccurs="1" maxOccurs="unbounded" />
-         <xsd:element name="Note" type="spase:Note" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="Rights" type="spase:Rights" minOccurs="1" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="AccessURL">
@@ -2345,7 +2370,7 @@
    <xsd:simpleType name="PriorID">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The resource identifier for a resource that is superseded or replaced by a resource.
+         The old/replaced resource identifier for a resource that has been given a new resource identifier which otherwise has not been changed. For example, this can be used when a resource has been moved to a different naming authority.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="spase:typeID" />
@@ -2550,13 +2575,37 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
    </xsd:simpleType>
-   <xsd:simpleType name="rights">
+   <xsd:simpleType name="RightsIdentifier">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Any rights information for this resource. The property may be repeated to record complex rights characteristics. Allowed values, examples, other constraints: Free text. Provide a rights management statement for the resource or reference a service providing such information. Include embargo information if applicable. Use the complete title of a license and include version information if applicable. May be used for software licenses.
+         Text value should be the identifier/short name of the license.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="RightsIdentifierScheme">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Text value should be 'SPDX'
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="RightsName">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Text value should be the full name of the license.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="RightsURI">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Text value should be the SPDX URI of the license. Blueprint is typically (SchemeURI) + (RightsIdentifier) + '.html'.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:anyURI" />
    </xsd:simpleType>
    <xsd:simpleType name="RORIdentifier">
       <xsd:annotation>
@@ -2581,6 +2630,14 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:double" />
+   </xsd:simpleType>
+   <xsd:simpleType name="SchemeURI">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Rights URL namespace. Text value should be 'https://spdx.org/licenses/'.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:anyURI" />
    </xsd:simpleType>
    <xsd:simpleType name="Set">
       <xsd:annotation>
@@ -2835,7 +2892,7 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
-         <xsd:enumeration value="2.7.0" />
+         <xsd:enumeration value="2.7.1" />
       </xsd:restriction>
       </xsd:simpleType>
 <!-- ==========================
@@ -3029,6 +3086,20 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A modified version of a resource instance.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SupersededBy">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Used to indicate that the current resource description has been replaced by another. The ResourceID of the replacement resource should be listed as the AssociationID.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Supersedes">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Used to indicate that the current resource description replaces another. The ResourceID of the replaced resource should be listed as the AssociationID.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5132,6 +5203,13 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Amalthea">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The fifth largest moon of Jupiter.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Callisto">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -6014,6 +6092,13 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+               <xsd:enumeration value="Jupiter.Amalthea">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The fifth largest moon of Jupiter.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Jupiter.Callisto">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -6329,6 +6414,13 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Saturn.Hyperion">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The eighth-largest moon of Saturn.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Saturn.Iapetus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -6389,6 +6481,13 @@
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The smallest and least massive of the round moons of Saturn.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Saturn.Phoebe">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The ninth-largest moon of Saturn.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -10032,6 +10131,13 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+               <xsd:enumeration value="Jupiter.Amalthea">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The fifth largest moon of Jupiter.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Jupiter.Callisto">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -10333,6 +10439,13 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Saturn.Hyperion">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The eighth-largest moon of Saturn.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Saturn.Iapetus">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -10393,6 +10506,13 @@
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The smallest and least massive of the round moons of Saturn.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Saturn.Phoebe">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The ninth-largest moon of Saturn.
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -11033,6 +11153,13 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="Hyperion">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The eighth-largest moon of Saturn.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Iapetus">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -11093,6 +11220,13 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   The smallest and least massive of the round moons of Saturn.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Phoebe">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The ninth-largest moon of Saturn.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -12024,6 +12158,55 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   Photons with a wavelength range: 0.001 nm to 10 nm.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+      </xsd:restriction>
+   </xsd:simpleType>
+<!-- ==========================
+     List: Status
+
+     Indicates the status of the resource.
+     ========================== -->
+   <xsd:simpleType name="Status">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         Indicates the status of the resource.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Completed">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Static dataset (current version).
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Deprecated">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Superseded dataset.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Ongoing">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Dynamic (constantly updating) dataset.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Unavailable">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  No longer available dataset.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Withdrawn">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Officially removed dataset.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
