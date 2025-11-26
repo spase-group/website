@@ -1,0 +1,780 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for </title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                        //--></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'index.indexList.htm', 'index.indexListns.htm', 'index.indexListcomp.htm');">
+                     <option value="toc_group_by_namespace">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
+                     <option value="toc_group_by_component_type" selected="selected">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_component_type" style="display:block">
+            <div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Main_schema" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Main_schema');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Main Schema</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Main_schema" class="componentGroup" style="display:block">
+                                          <div><b><a href="spase-2_7_1_xsd.htm#spase-2.7.1.xsd" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase-2.7.1.xsd</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Element" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Element');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Elements</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Element" class="componentGroup" style="display:block">
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Spase" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Spase</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Complex_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Complex_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Complex Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Complex_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessInformation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessInformation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessInformationOptional" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessInformationOptional</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Annotation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Annotation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Association" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Association</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AzimuthalAngleRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AzimuthalAngleRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Bin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Bin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#BoundaryConditions" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:BoundaryConditions</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Catalog" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Catalog</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Checksum" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Checksum</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Collection" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Collection</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Contact" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Contact</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CoordinateSystem" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CoordinateSystem</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DataExtent" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DataExtent</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DiagnosisTimeStep" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DiagnosisTimeStep</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DisplayData" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DisplayData</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DisplayOutput" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DisplayOutput</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Document" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Document</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Element" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Element</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#EnergyRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:EnergyRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ExecutionEnvironment" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ExecutionEnvironment</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Extension" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Extension</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Field" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Field</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FrequencyRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FrequencyRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Funding" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Funding</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Granule" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Granule</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InformationURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InformationURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputField" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputField</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputParameter" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputParameter</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputPopulation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputPopulation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputProcess" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputProcess</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputProperties" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputProperties</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputProperty" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputProperty</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Installer" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Installer</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Instrument" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Instrument</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Location" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Location</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MassRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MassRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Member" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Member</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MetadataRightsList" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MetadataRightsList</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Mixed" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Mixed</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Model" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Model</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelDomain" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelDomain</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelRun" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelRun</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelSpecification" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelSpecification</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelTime" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelTime</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelVersion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelVersion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#NumericalData" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:NumericalData</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#NumericalOutput" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:NumericalOutput</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ObservationExtent" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ObservationExtent</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Observatory" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Observatory</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#OperatingSpan" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:OperatingSpan</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#OutputParameters" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:OutputParameters</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#OutputProperty" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:OutputProperty</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Parameter" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Parameter</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Particle" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Particle</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Person" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Person</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PitchAngleRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PitchAngleRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PolarAngleRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PolarAngleRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Property" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Property</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PublicationInfo" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PublicationInfo</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionParameter" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionParameter</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Registry" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Registry</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RenderingHints" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RenderingHints</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Repository" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Repository</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ResourceHeader" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ResourceHeader</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RevisionEvent" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RevisionEvent</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RevisionHistory" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RevisionHistory</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Rights" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Rights</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RightsList" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RightsList</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Service" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Service</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Software" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Software</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Source" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Source</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#http___www.spase-group.org_data_schema_Spase" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Spase</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpatialCoverage" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpatialCoverage</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpatialDescription" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpatialDescription</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Structure" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Structure</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Support" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Support</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TemporalDescription" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TemporalDescription</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TimeSpan" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TimeSpan</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Versions" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Versions</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Wave" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Wave</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#WavelengthRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:WavelengthRange</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Simple_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Simple_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Simple Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Simple_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessDirectoryTemplate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessDirectoryTemplate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessFilenameTemplate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessFilenameTemplate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AccessRights" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AccessRights</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Acknowledgement" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Acknowledgement</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Address" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Address</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AdiabaticInvariant" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AdiabaticInvariant</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Agency" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Agency</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AlternateName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AlternateName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AnnotationType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AnnotationType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ApplicationInterface" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ApplicationInterface</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AssociationID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AssociationID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AssociationType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AssociationType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AtomicNumber" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AtomicNumber</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Authors" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Authors</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Availability" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Availability</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AwardNumber" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AwardNumber</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#AxisLabel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:AxisLabel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#BackWall" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:BackWall</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#BandName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:BandName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Cadence" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Cadence</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CadenceMax" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CadenceMax</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CadenceMin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CadenceMin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Caveats" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Caveats</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CenterElevation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CenterElevation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CenterLatitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CenterLatitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CenterLongitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CenterLongitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ChemicalFormula" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ChemicalFormula</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ClassificationMethod" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ClassificationMethod</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CodeLanguage" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CodeLanguage</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Comet" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Comet</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Component" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Component</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ConfidenceRating" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ConfidenceRating</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CoordinateRepresentation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CoordinateRepresentation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CoordinateSystemName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CoordinateSystemName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CoordinatesLabel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CoordinatesLabel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Cores" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Cores</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CubesDescription" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CubesDescription</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CutsDescription" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CutsDescription</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DOI" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DOI</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DensityProfile" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DensityProfile</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Description" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Description</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Dimension" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Dimension</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DirectionAngle" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DirectionAngle</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DirectionCosine" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DirectionCosine</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DisplayCadence" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DisplayCadence</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DisplayType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DisplayType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Distribution" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Distribution</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#DocumentType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:DocumentType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Duration" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Duration</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Earth" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Earth</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#EasternmostLongitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:EasternmostLongitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Elevation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Elevation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Email" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Email</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Encoding" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Encoding</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ExpirationDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ExpirationDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Exposure" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Exposure</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ExposureMax" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ExposureMax</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ExposureMin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ExposureMin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FaxNumber" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FaxNumber</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FieldBoundary" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FieldBoundary</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FieldDimension" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FieldDimension</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FieldModel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FieldModel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FieldQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FieldQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FieldValue" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FieldValue</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FillValue" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FillValue</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Format" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Format</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#FrontWall" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:FrontWall</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#GridCellSize" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:GridCellSize</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#GridStructure" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:GridStructure</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Hardcopy" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Hardcopy</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#HashFunction" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:HashFunction</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#HashValue" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:HashValue</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Heliosphere" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Heliosphere</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#High" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:High</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ImageURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ImageURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Index" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Index</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputLabel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputLabel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputResourceID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputResourceID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputTableURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputTableURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InstrumentGroupID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InstrumentGroupID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InstrumentID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InstrumentID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InstrumentType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InstrumentType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Integral" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Integral</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InvestigationName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InvestigationName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Ionosphere" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Ionosphere</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Jupiter" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Jupiter</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Keyword" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Keyword</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#LandingPageURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:LandingPageURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Language" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Language</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Latitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Latitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Longitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Longitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Low" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Low</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MIMEType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MIMEType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Magnetosphere" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Magnetosphere</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Mars" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Mars</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MaximumElevation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MaximumElevation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MeasurementType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MeasurementType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MemberID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MemberID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Memory" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Memory</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Mercury" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Mercury</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MinimumElevation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MinimumElevation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MirrorURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MirrorURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#MixedQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:MixedQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelProduct" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelProduct</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModelURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModelURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModeledInstrumentID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModeledInstrumentID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ModeledRegion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ModeledRegion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Name" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Name</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#NamingAuthority" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:NamingAuthority</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#NearSurface" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:NearSurface</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Neptune" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Neptune</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#NorthernmostLatitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:NorthernmostLatitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Note" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Note</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ORCIdentifier" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ORCIdentifier</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ObjectMass" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ObjectMass</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ObservatoryGroupID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ObservatoryGroupID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ObservatoryID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ObservatoryID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Obstacle" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Obstacle</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#OperatingSystem" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:OperatingSystem</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#OrganizationName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:OrganizationName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParameterKey" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParameterKey</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParameterQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParameterQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParentID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParentID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParticleBoundary" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParticleBoundary</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParticleQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParticleQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParticleType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParticleType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Per" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Per</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Period" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Period</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PersonID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PersonID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PersonName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PersonName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PhenomenonType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PhenomenonType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PhoneNumber" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PhoneNumber</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PlaneNormalVector" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PlaneNormalVector</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PlanePoint" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PlanePoint</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Population" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Population</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PopulationChargeState" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PopulationChargeState</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PopulationDensity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PopulationDensity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PopulationFlowSpeed" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PopulationFlowSpeed</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PopulationMassNumber" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PopulationMassNumber</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PopulationTemperature" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PopulationTemperature</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Prerequisites" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Prerequisites</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PriorID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PriorID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProcessCoeffType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProcessCoeffType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProcessCoefficient" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProcessCoefficient</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProcessModel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProcessModel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProcessType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProcessType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProcessingLevel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProcessingLevel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProductKey" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProductKey</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProductionRate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProductionRate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Project" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Project</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Projection" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Projection</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PropertyLabel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PropertyLabel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PropertyModel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PropertyModel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PropertyTableURL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PropertyTableURL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PropertyValue" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PropertyValue</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProviderName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProviderName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProviderProcessingLevel" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProviderProcessingLevel</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProviderResourceName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProviderResourceName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ProviderVersion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ProviderVersion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PublicationDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PublicationDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PublishedBy" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PublishedBy</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Qualifier" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Qualifier</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Quantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Quantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RORIdentifier" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RORIdentifier</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Radius" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Radius</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Region" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Region</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionBegin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionBegin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionEnd" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionEnd</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RelativeStopDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RelativeStopDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ReleaseDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ReleaseDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RenderingAxis" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RenderingAxis</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RepositoryID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RepositoryID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ResourceID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ResourceID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ResourceName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ResourceName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ResourceType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ResourceType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RightsIdentifier" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RightsIdentifier</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RightsIdentifierScheme" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RightsIdentifierScheme</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RightsName" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RightsName</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RightsURI" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RightsURI</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Role" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Role</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Saturn" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Saturn</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SavedQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SavedQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ScaleMax" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ScaleMax</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ScaleMin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ScaleMin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ScaleType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ScaleType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SchemeURI" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SchemeURI</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Set" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Set</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SideWall" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SideWall</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Size" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Size</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SoftwareVersion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SoftwareVersion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SourceRegion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SourceRegion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SourceRegionExtent" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SourceRegionExtent</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SourceType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SourceType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SouthernmostLatitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SouthernmostLatitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpatialDimension" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpatialDimension</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpecificModeledRegion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpecificModeledRegion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpectralRange" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpectralRange</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StartDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StartDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StartLocation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StartLocation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Status" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Status</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Step" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Step</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StopDate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StopDate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StopLocation" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StopLocation</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Storage" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Storage</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Style" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Style</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SubLongitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SubLongitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Sun" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Sun</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SupportQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SupportQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Symmetry" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Symmetry</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Text" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Text</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TimeStart" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TimeStart</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TimeStep" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TimeStep</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TimeStop" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TimeStop</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Title" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Title</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#TotalProductionRate" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:TotalProductionRate</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#UCD" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:UCD</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#URL" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:URL</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Units" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Units</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#UnitsConversion" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:UnitsConversion</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Uranus" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Uranus</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ValidMax" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ValidMax</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ValidMin" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ValidMin</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ValueFormat" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ValueFormat</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#VelocityDimension" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:VelocityDimension</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Venus" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Venus</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Version" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Version</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#VersionTag" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:VersionTag</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#WaveQuantity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:WaveQuantity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#WaveType" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:WaveType</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#Waves" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:Waves</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#WesternmostLongitude" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:WesternmostLongitude</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#YN" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:YN</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#re3data" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:re3data</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#typeID" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:typeID</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#typeSequence" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:typeSequence</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Element_Group" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Element_Group');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Element Groups</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Element_Group" class="componentGroup" style="display:block">
+                                          <div><b><a href="spase-2_7_1_xsd.htm#CubesCutsEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:CubesCutsEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#InputEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:InputEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ParameterEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ParameterEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PlaneNormalVectorPointEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PlaneNormalVectorPointEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#PropertyEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:PropertyEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionBeginEndEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionBeginEndEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionStartEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionStartEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#RegionStopEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:RegionStopEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#ResourceEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:ResourceEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpacialTemporalEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpacialTemporalEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#SpatialTemporalEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:SpatialTemporalEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StartEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StartEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StopDateEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StopDateEntity</a></b></div>
+                                          <div><b><a href="spase-2_7_1_xsd.htm#StopEntity" target="mainFrame" title="http://www.spase-group.org/data/schema" onclick="updatePageTitle('Schema documentation for spase-2.7.1.xsd')">spase:StopEntity</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div style="clear:left"></div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.</div>
+      </div>
+   </body>
+</html>
