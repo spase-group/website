@@ -359,7 +359,7 @@ a.xml-logo:hover {
 														<xsl:with-param name="text" select="sp:AssociationID"/>
 													</xsl:call-template> 
 												</xsl:variable>
-												The dataset with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
+												The record with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
 												<br/>
 											</xsl:for-each>
 										</p>
