@@ -223,6 +223,14 @@ p.right {
   text-align: right;
 }
 
+p.status {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
 .box-title {
 	font-size: 120%;
 	font-weight:bold;
@@ -346,7 +354,6 @@ a.xml-logo:hover {
 											<xsl:for-each select="./*/sp:ResourceHeader/sp:Association[sp:AssociationType='SupersededBy']">
 												<xsl:variable name="replacementURL"><xsl:value-of select="sp:AssociationID"/></xsl:variable>
 												The dataset with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
-												<br/>
 												<br/>
 											</xsl:for-each>
 										</p>
