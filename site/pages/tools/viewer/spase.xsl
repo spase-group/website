@@ -352,7 +352,13 @@ a.xml-logo:hover {
 									<xsl:if test="./*/sp:ResourceHeader/sp:Association">
 										<p class="unavailability">
 											<xsl:for-each select="./*/sp:ResourceHeader/sp:Association[sp:AssociationType='SupersededBy']">
-												<xsl:variable name="replacementURL"><xsl:value-of select="sp:AssociationID"/></xsl:variable>
+												<xsl:variable name="replacementURL">
+													<xsl:call-template name="string-replace-all">
+														<xsl:with-param name="replace" select="'spase://'" />
+														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
+														<xsl:with-param name="text" select="sp:AssociationID"/>
+													</xsl:call-template> 
+												</xsl:variable>
 												The dataset with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
 												<br/>
 											</xsl:for-each>
@@ -401,7 +407,13 @@ a.xml-logo:hover {
 									<xsl:if test="./*/sp:ResourceHeader/sp:Association">
 										<p class="unavailability">
 											<xsl:for-each select="./*/sp:ResourceHeader/sp:Association[sp:AssociationType='SupersededBy']">
-												<xsl:variable name="replacementURL"><xsl:value-of select="sp:AssociationID"/></xsl:variable>
+												<xsl:variable name="replacementURL">
+													<xsl:call-template name="string-replace-all">
+														<xsl:with-param name="replace" select="'spase://'" />
+														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
+														<xsl:with-param name="text" select="sp:AssociationID"/>
+													</xsl:call-template> 
+												</xsl:variable>
 												The record with the identifier <xsl:value-of select="$resourceURL"/> was substituted by <a href="{$replacementURL}">another version</a>.
 											</xsl:for-each>
 										</p>
