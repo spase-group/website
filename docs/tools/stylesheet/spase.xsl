@@ -17,51 +17,24 @@
 		"@context": "https://schema.org/",
 		"@type" :"Dataset",
 		"name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />",
-    <xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:AlternateName"><xsl:for-each select="./sp:Spase/*/sp:ResourceHeader/sp:AlternateName"><xsl:choose><xsl:when test="position() = 1">"alternateName": "<xsl:value-of select="." />",</xsl:when></xsl:choose></xsl:for-each></xsl:if>
-		"dateModified": "<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:ReleaseDate, 1, 10)" />",
-<xsl:choose>
-<xsl:when test="./sp:Spase/*/sp:ResourceHeader/sp:DOI">
-    "identifier": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:DOI" />",
-    "publication": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />, <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />", <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublishedBy" /> (<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />)",
-    "datePublished": "<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 10)" />",
-    "creator":{
-       "@type": "Person",
-           "name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />"
-    },
-    "publisher":{
-       "@type": "Organization",
+     <xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:DOI">
+		"doi": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:DOI" />",
+		"publication": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />, <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:ResourceName" />", <xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublishedBy" /> (<xsl:value-of select="substring(./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />)",
+		"publisher  ":{
+		   "@type": "Organization",
            "name": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />"
-    },
-</xsl:when>
-<xsl:otherwise>
-    "creator":{
-       "@type": "Organization",
-           "name": "IHDEA"
-    },
-    "identifier": "<xsl:value-of select="./sp:Spase/*/sp:ResourceID" />",
-</xsl:otherwise>
-</xsl:choose>
-    "creditText": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Acknowledgement" />",
+		},
+	</xsl:if>
  		"description": "<xsl:call-template name="normalize-json"><xsl:with-param name="replace" select="'&#10;'" /><xsl:with-param name="with" select="'\n'" /><xsl:with-param name="text" select="./sp:Spase/*/sp:ResourceHeader/sp:Description"/></xsl:call-template>",
 		"abstract": "<xsl:call-template name="normalize-json"><xsl:with-param name="replace" select="'&#10;'" /><xsl:with-param name="with" select="'\n'" /><xsl:with-param name="text" select="./sp:Spase/*/sp:ResourceHeader/sp:Description"/></xsl:call-template>",
-<xsl:if test="./sp:Spase/*/sp:OperatingSpan"><!-- Observatory, Instrument -->
-		"temporalCoverage": "<xsl:value-of select="./sp:Spase/*/sp:OperatingSpan/sp:StartDate" />/<xsl:choose><xsl:when test="./sp:Spase/*/sp:OperatingSpan/sp:StopDate"><xsl:value-of select="./sp:Spase/*/sp:OperatingSpan/sp:StopDate" /></xsl:when><xsl:otherwise>...</xsl:otherwise></xsl:choose>",
-</xsl:if>
-<xsl:if test="./sp:Spase/*/sp:TemporalDescription"><!-- Data resources -->
-		"temporalCoverage": "<xsl:value-of select="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StartDate" />/<xsl:choose><xsl:when test="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StopDate"><xsl:value-of select="./sp:Spase/*/sp:TemporalDescription/sp:TimeSpan/sp:StopDate" /></xsl:when><xsl:otherwise>...</xsl:otherwise></xsl:choose>",
-</xsl:if>
-    "genre": "<xsl:value-of select="./sp:Spase/*/sp:MeasurementType" />",
+		"temporalCoverage": "1990.10.06  2009.30.06",
 		"keywords": [ <xsl:for-each select="./sp:Spase/*/sp:Keyword"> "<xsl:value-of select="." />"<xsl:if test="position() != last()"><xsl:text>,</xsl:text></xsl:if></xsl:for-each> ],
 		"license": "https://cdla.io/permissive-1-0/",
-<xsl:if test="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Agency">
-    "funder": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Agency" />",
-    "mentions": "<xsl:value-of select="./sp:Spase/*/sp:ResourceHeader/sp:Funding/sp:Project" />",
-</xsl:if>
-    "audience":{
-        "@type": "Audience",
-        "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
-    }
-}
+        "audience":{
+            "@type": "Audience",
+            "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
+        }
+	  }
 	  </script>
 	  <!-- CSS -->
 	  <style>
@@ -169,6 +142,10 @@ h1.detail {
 	outline: 0 !important;
 }
 
+.highlight {
+            color: #FF0000; /* Red color */
+		}
+
 .inset {
 	margin-left: 22%;
 }
@@ -246,6 +223,14 @@ p.right {
   text-align: right;
 }
 
+p.status {
+  float: right;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  font-size: x-small;
+}
+
 .box-title {
 	font-size: 120%;
 	font-weight:bold;
@@ -268,6 +253,10 @@ li.list {
 }
 
 p.author {
+	font-size: 120%;
+}
+
+p.unavailability {
 	font-size: 120%;
 }
 
@@ -353,48 +342,164 @@ a.xml-logo:hover {
 			</div>
 		</xsl:if>
 		<div class="citation {$inset}">
-			<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a></h1>
-			<xsl:if test="./*/sp:ResourceHeader/sp:PublicationInfo">
-			<p class="author"><script>
-			  var authors='<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />'; 
-//			  var namefixed = authors.replace(/, (.)[^,; ]*/g, ", $1."); 
-//			  var almost = namefixed.replace(/;([^;]*)$/, ' and $1'); 
-//			  document.write(almost.replace(/;[ ]*/g, ", "));
-        var names = authors.split(';');
-        var fmt_names = [];		
-        var n = 0;	 
-			  names.forEach (function (name) {
-			    var this_name = '';
-			    if (n == names.length - 1) {
-			      this_name += 'and ';
-			    }
-			    // alter the current name
-			    var name_parts = name.split(',');
-			    this_name += name_parts.shift() + ', ';
-			    
-			    name_parts.forEach(function (npart) {
-            var c = npart.trim().slice(0, 1);
-			      this_name += c + '.';
-			    });
-			    
-          fmt_names.push(this_name);
-          n++;
-			  });
-			  document.write(fmt_names.join(', '));
-
-			 </script>
-			(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
-			<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
-			<xsl:call-template name="ref-type">
-				<xsl:with-param name="input" select="./*/sp:ResourceID"/>
-			</xsl:call-template>
-			<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
-			<xsl:if test="./*/sp:ResourceHeader/sp:DOI"><a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>.</xsl:if>
-			Accessed on <script>var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); var today = new Date(); document.write(today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()); </script>.
-			</p>
-			</xsl:if>
-			<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
-			<p><xsl:apply-templates select="./*/sp:ResourceHeader/sp:Description"></xsl:apply-templates></p>
+			<xsl:choose>
+				<xsl:when test="./sp:Status">
+					<xsl:choose>
+						<xsl:when test="./sp:Status = 'Deprecated'">
+							<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a><span class="highlight"> has been deprecated.</span></h1>
+							<xsl:choose>
+								<xsl:when test="./*/sp:ResourceHeader/sp:PublicationInfo">
+									<xsl:if test="./*/sp:ResourceHeader/sp:Association">
+										<p class="unavailability">
+											<xsl:for-each select="./*/sp:ResourceHeader/sp:Association[sp:AssociationType='SupersededBy']">
+												<xsl:variable name="replacementURL">
+													<xsl:call-template name="string-replace-all">
+														<xsl:with-param name="replace" select="'spase://'" />
+														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
+														<xsl:with-param name="text" select="sp:AssociationID"/>
+													</xsl:call-template> 
+												</xsl:variable>
+												The record with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
+												<br/>
+											</xsl:for-each>
+										</p>
+									</xsl:if>
+									<p class="author">
+										<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" />
+										(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
+										<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
+										<xsl:call-template name="ref-type">
+											<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+										</xsl:call-template>
+										<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
+										<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
+											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+											<script>
+												var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+												var today = new Date(); 
+												var cur_div = document.getElementById('access_date');
+												var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+												cur_div.innerText = d_str;
+											</script>
+											<br/>
+											<br/>
+											<xsl:variable name="bibtexLink">
+												<xsl:call-template name="string-replace-all">
+													<xsl:with-param name="replace" select="'https://doi.org/'" />
+													<xsl:with-param name="with" select="''" />
+													<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
+												</xsl:call-template>  
+											</xsl:variable>	
+											Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
+										</xsl:if>
+									
+									</p>
+								</xsl:when>
+								<xsl:otherwise>
+									<!--no citation needed, use landing page URL instead of DOI-->
+									<xsl:variable name="resourceURL">
+										<xsl:call-template name="string-replace-all">
+											<xsl:with-param name="replace" select="'spase://'" />
+											<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
+											<xsl:with-param name="text" select="./*/sp:ResourceID"/>
+										</xsl:call-template>  
+									</xsl:variable>
+									<xsl:if test="./*/sp:ResourceHeader/sp:Association">
+										<p class="unavailability">
+											<xsl:for-each select="./*/sp:ResourceHeader/sp:Association[sp:AssociationType='SupersededBy']">
+												<xsl:variable name="replacementURL">
+													<xsl:call-template name="string-replace-all">
+														<xsl:with-param name="replace" select="'spase://'" />
+														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
+														<xsl:with-param name="text" select="sp:AssociationID"/>
+													</xsl:call-template> 
+												</xsl:variable>
+												The record with the identifier <xsl:value-of select="$resourceURL"/> was substituted by <a href="{$replacementURL}">another version</a>.
+											</xsl:for-each>
+										</p>
+									</xsl:if>
+								</xsl:otherwise>
+							</xsl:choose>
+							<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
+							<p><xsl:apply-templates select="./*/sp:ResourceHeader/sp:Description"></xsl:apply-templates></p>
+						</xsl:when>
+						<xsl:otherwise>
+							<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a></h1>
+							<xsl:if test="./*/sp:ResourceHeader/sp:PublicationInfo">
+								<p class="author">
+									<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" /> 
+									(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
+									<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
+									<xsl:call-template name="ref-type">
+										<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+									</xsl:call-template>
+									<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
+									<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
+										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+										<script>
+											var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+											var today = new Date(); 
+											var cur_div = document.getElementById('access_date');
+											var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+											cur_div.innerText = d_str;
+										</script>
+										<br/>
+										<br/>
+										<xsl:variable name="bibtexLink">
+											<xsl:call-template name="string-replace-all">
+												<xsl:with-param name="replace" select="'https://doi.org/'" />
+												<xsl:with-param name="with" select="''" />
+												<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
+											</xsl:call-template>  
+										</xsl:variable>	
+										Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
+									</xsl:if>
+								
+								</p>
+							</xsl:if>
+							<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
+							<p><xsl:apply-templates select="./*/sp:ResourceHeader/sp:Description"></xsl:apply-templates></p>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<h1><a name="{./*/sp:ResourceID}"><xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" /></a></h1>
+					<xsl:if test="./*/sp:ResourceHeader/sp:PublicationInfo">
+						<p class="author">
+							<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:Authors" /> 
+							(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
+							<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
+							<xsl:call-template name="ref-type">
+								<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+							</xsl:call-template>
+							<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
+							<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
+								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+								<script>
+									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
+									var today = new Date(); 
+									var cur_div = document.getElementById('access_date');
+									var d_str = ' Accessed on '+today.getFullYear()+'-'+monthName[today.getMonth()]+'-'+today.getDate()+'.';
+									cur_div.innerText = d_str;
+								</script>
+								<br/>
+								<br/>
+								<xsl:variable name="bibtexLink">
+									<xsl:call-template name="string-replace-all">
+										<xsl:with-param name="replace" select="'https://doi.org/'" />
+										<xsl:with-param name="with" select="''" />
+										<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
+									</xsl:call-template>  
+								</xsl:variable>	
+								Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
+							</xsl:if>
+						
+						</p>
+					</xsl:if>
+					<p><div class="term">ResourceID</div><div class="definition"><xsl:value-of select="./*/sp:ResourceID" /></div></p>
+					<p><xsl:apply-templates select="./*/sp:ResourceHeader/sp:Description"></xsl:apply-templates></p>
+				</xsl:otherwise>
+			</xsl:choose>
 		
 		</div>
 		</div>
@@ -415,9 +520,10 @@ a.xml-logo:hover {
 					</xsl:call-template>  
 				</xsl:variable>	
 				
-				<a target="_blank" href="{$fileName}.xml">View XML</a> 
-				| <a target="_blank" href="{$fileName}.json">View JSON</a> 
-				| <a target="_blank" href="https://spase-editor.heliocloud.org/?edit={$resourceURL}.xml">Edit</a>
+				<a target="_blank" href="{$fileName}.xml">View XML</a>
+				| <a target="_blank" href="{$fileName}.json">View JSON</a>
+                | <a target="_blank" href="https://spase-editor.heliocloud.org/?edit={$resourceURL}.xml">Edit</a>
+				<!--<a target="_blank" href="http://xmleditor.spase-group.org/?edit={$resourceURL}.xml">Edit</a>-->
 			</p>
 			<h1 class="detail">Details</h1>
 		</div>
@@ -427,9 +533,14 @@ a.xml-logo:hover {
 	   <xsl:choose>
 			<xsl:when test="local-name() = 'Version'"> <!-- We skip this -->
 			</xsl:when>
+			<xsl:when test="local-name() = 'Status'"> <!-- We skip this -->
+			</xsl:when>
 			<xsl:otherwise> <!-- All others -->
 				<div class="product">
 					<p class="version">Version:<xsl:value-of select="../sp:Version"/></p>
+					<xsl:if test="../sp:Status">
+						<p class="status">Status:<xsl:value-of select="../sp:Status"/></p>
+					</xsl:if>
 					<h1><xsl:value-of select="local-name()"/></h1>
 					<xsl:apply-templates select="*"></xsl:apply-templates>
 				</div>
@@ -485,24 +596,10 @@ a.xml-logo:hover {
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 		<xsl:text disable-output-escaping="yes">&lt;dd&gt;</xsl:text>
 		<xsl:text disable-output-escaping="yes">&lt;table class="nested" cellspacing="0"&gt;</xsl:text>
-		<tr><th></th><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr>
+		<tr><th></th><th class="center">Role</th><th class="center">Person</th></tr>
 		<xsl:text disable-output-escaping="yes">&lt;tbody&gt;</xsl:text>
 	</xsl:if>
-	<tr>
-	 <td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td>
-	 <td>
-	  <xsl:for-each select="sp:Role">
-	   <xsl:value-of select="."/>
-	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0">
-	    <br/>
-	   </xsl:if>
-	  </xsl:for-each>
-	 </td>
-	 <td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
-	 <td><xsl:value-of select="sp:StartDate"/></td>
-	 <td><xsl:value-of select="sp:StopDate"/></td>
-	 <td><xsl:value-of select="sp:Note"/></td>
-	</tr>
+	<tr><td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td><td><xsl:value-of select="sp:Role"/></td><td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td></tr>
 	<xsl:if test="count(following-sibling::*[name() = name(current())]) = 0">
 		<!-- Finalize table -->
 		<xsl:text disable-output-escaping="yes">&lt;/tbody&gt;</xsl:text>
@@ -516,7 +613,7 @@ Wrap text in {{#markdown}}{{/markdown}} for processing with Handlebars.
 Also remove leading and trailing spaces to get desired formatting.
 -->
 <xsl:template match="sp:Description">
-	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
+	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition markdown">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
 </xsl:template>
 
 <xsl:template match="sp:Keyword">
