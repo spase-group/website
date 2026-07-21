@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Automatically created based on the specification available at http://www.spase-group.org/model -->
-<!-- Version: 2.7.1 -->
-<!-- Generated: 2025-11-26 -->
+<!-- Version: 2.7.2 -->
+<!-- Generated: 2026-07-21 -->
 <xsd:schema
 	      targetNamespace="http://www.spase-group.org/data/schema"
 	      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -11,7 +11,7 @@
 	      elementFormDefault="qualified"
 	      attributeFormDefault="unqualified"
 	      vc:minVersion="1.1"
-	      version="2.7.1"
+	      version="2.7.2"
 >
 
    <!-- Document root element -->
@@ -67,8 +67,8 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:element name="SchemeURI" type="spase:SchemeURI" minOccurs="0" maxOccurs="1" fixed="https://spdx.org/licenses/"  />
-         <xsd:element name="RightsIdentifierScheme" type="spase:RightsIdentifierScheme" minOccurs="0" maxOccurs="1" fixed="SPDX"  />
+         <xsd:element name="SchemeURI" type="spase:SchemeURI" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="RightsIdentifierScheme" type="spase:RightsIdentifierScheme" minOccurs="0" maxOccurs="1" />
          <xsd:element name="RightsIdentifier" type="spase:RightsIdentifier" minOccurs="0" maxOccurs="1" />
          <xsd:element name="RightsURI" type="spase:RightsURI" minOccurs="1" maxOccurs="1" />
          <xsd:element name="RightsName" type="spase:RightsName" minOccurs="0" maxOccurs="1" />
@@ -263,7 +263,22 @@
       <xsd:sequence>
          <xsd:element name="Quantity" type="spase:Quantity" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Per" type="spase:Per" minOccurs="0" maxOccurs="1" />
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="StandardUnits">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A container describing a unit of measurement using a standard syntax, including the syntax standard definition. VOUnits (https://ui.adsabs.harvard.edu/link_gateway/2023ivoa.spec.1215G/doi:10.5479/ADS/bib/2023ivoa.spec.1215G) is the recommended syntax standard.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="UnitsString" type="spase:UnitsString" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="UnitsScheme" type="spase:UnitsScheme" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="SchemeURI" type="spase:SchemeURI" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="UnitsSchemeVersion" type="spase:UnitsSchemeVersion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="UnitsURI" type="spase:UnitsURI" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="TimeSpan">
@@ -299,6 +314,7 @@
          <xsd:element name="CadenceMax" type="spase:CadenceMax" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="0" maxOccurs="1" />
          <xsd:element name="RenderingHints" type="spase:RenderingHints" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Structure" type="spase:Structure" minOccurs="0" maxOccurs="1" />
@@ -368,6 +384,7 @@
          <xsd:element name="ParameterKey" type="spase:ParameterKey" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />
          <xsd:element name="FillValue" type="spase:FillValue" minOccurs="0" maxOccurs="1" />
@@ -397,6 +414,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -446,6 +464,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -459,6 +478,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -472,6 +492,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -485,6 +506,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -498,6 +520,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -529,6 +552,7 @@
          <xsd:element name="Low" type="spase:Low" minOccurs="1" maxOccurs="1" />
          <xsd:element name="High" type="spase:High" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Bin" type="spase:Bin" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -724,8 +748,11 @@
          <xsd:element name="InvestigationName" type="spase:InvestigationName" minOccurs="1" maxOccurs="unbounded" />
          <xsd:element name="OperatingSpan" type="spase:OperatingSpan" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="ObservatoryID" type="spase:ObservatoryID" minOccurs="1" maxOccurs="1" />
+         <xsd:element name="ObservedRegion" type="spase:Region" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="MeasurementType" type="spase:MeasurementType" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />
          <xsd:element name="RORIdentifier" type="spase:RORIdentifier" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -754,8 +781,10 @@
          <xsd:element name="ResourceHeader" type="spase:ResourceHeader" minOccurs="1" maxOccurs="1" />
          <xsd:element name="ObservatoryGroupID" type="spase:ObservatoryGroupID" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Location" type="spase:Location" minOccurs="1" maxOccurs="unbounded" />
+         <xsd:element name="LaunchDate" type="spase:LaunchDate" minOccurs="0" maxOccurs="1" />
          <xsd:element name="OperatingSpan" type="spase:OperatingSpan" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="RORIdentifier" type="spase:RORIdentifier" minOccurs="0" maxOccurs="unbounded" />
+         <xsd:element name="Keyword" type="spase:Keyword" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Extension" type="spase:Extension" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
    </xsd:complexType>
@@ -957,6 +986,7 @@
          <xsd:element name="Description" type="spase:Description" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
@@ -972,6 +1002,7 @@
          <xsd:element name="Description" type="spase:Description" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Caveats" type="spase:Caveats" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />
       </xsd:sequence>
@@ -1083,6 +1114,7 @@
          <xsd:element name="CoordinateSystem" type="spase:CoordinateSystem" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="CoordinatesLabel" type="spase:CoordinatesLabel" minOccurs="0" maxOccurs="1" />
          <xsd:choice minOccurs="1" maxOccurs="1">
             <xsd:element name="CutsDescription" type="spase:CutsDescription" />
@@ -1123,6 +1155,7 @@
          <xsd:element name="Qualifier" type="spase:Qualifier" minOccurs="0" maxOccurs="unbounded" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="PropertyLabel" type="spase:PropertyLabel" minOccurs="0" maxOccurs="1" />
          <xsd:element name="PropertyValue" type="spase:PropertyValue" minOccurs="0" maxOccurs="1" />
          <xsd:element name="PropertyTableURL" type="spase:PropertyTableURL" minOccurs="0" maxOccurs="1" />
@@ -1230,6 +1263,7 @@
          <xsd:element name="FieldDimension" type="spase:FieldDimension" minOccurs="0" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="1" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="CoordinatesLabel" type="spase:CoordinatesLabel" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMin" type="spase:ValidMin" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ValidMax" type="spase:ValidMax" minOccurs="0" maxOccurs="1" />
@@ -1333,6 +1367,7 @@
          <xsd:element name="FieldQuantity" type="spase:FieldQuantity" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="InputLabel" type="spase:InputLabel" minOccurs="0" maxOccurs="1" />
          <xsd:element name="FieldValue" type="spase:FieldValue" minOccurs="0" maxOccurs="1" />
          <xsd:element name="InputTableURL" type="spase:InputTableURL" minOccurs="0" maxOccurs="1" />
@@ -1358,6 +1393,7 @@
          <xsd:element name="ProcessType" type="spase:ProcessType" minOccurs="1" maxOccurs="1" />
          <xsd:element name="Units" type="spase:Units" minOccurs="0" maxOccurs="1" />
          <xsd:element name="UnitsConversion" type="spase:UnitsConversion" minOccurs="0" maxOccurs="1" />
+         <xsd:element name="StandardUnits" type="spase:StandardUnits" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ProcessCoefficient" type="spase:ProcessCoefficient" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ProcessCoeffType" type="spase:ProcessCoeffType" minOccurs="0" maxOccurs="1" />
          <xsd:element name="ProcessModel" type="spase:ProcessModel" minOccurs="0" maxOccurs="1" />
@@ -2055,6 +2091,14 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:double" />
    </xsd:simpleType>
+   <xsd:simpleType name="LaunchDate">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The date and time when the resource was launched. This could be different from the StartDate of the OperatingSpan.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:dateTime" />
+   </xsd:simpleType>
    <xsd:simpleType name="Longitude">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -2490,7 +2534,7 @@
    <xsd:simpleType name="PublishedBy">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         The name or the company, organization or individual that issues the work (document, data, images or other types of resources).
+         The name of the company, organization or individual that issues the work (document, data, images or other types of resources). Separate multiple names with a semicolon.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -2586,7 +2630,7 @@
    <xsd:simpleType name="RightsIdentifierScheme">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Text value should be 'SPDX'
+         Text value should be &#39;SPDX&#39;
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
@@ -2602,7 +2646,7 @@
    <xsd:simpleType name="RightsURI">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Text value should be the SPDX URI of the license. Blueprint is typically (SchemeURI) + (RightsIdentifier) + '.html'.
+         Text value should be the SPDX URI of the license. Blueprint is typically (SchemeURI) + (RightsIdentifier) + &#39;.html&#39;.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:anyURI" />
@@ -2634,7 +2678,7 @@
    <xsd:simpleType name="SchemeURI">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
-         Rights URL namespace. Text value should be 'https://spdx.org/licenses/'.
+         The Uniform Resource Identifier (URI) of the scheme. For licenses, the best practice is to use &#39;https://spdx.org/licenses/&#39;, although any permanent scheme URI is acceptable.
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:anyURI" />
@@ -2823,6 +2867,38 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:string" />
    </xsd:simpleType>
+   <xsd:simpleType name="UnitsScheme">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The units scheme name (e.g., VOUnits).
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="UnitsSchemeVersion">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The units scheme version (e.g., 1.1).
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="UnitsString">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         A string compliant with the syntax defined by UnitsScheme.
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
+   <xsd:simpleType name="UnitsURI">
+      <xsd:annotation>
+         <xsd:documentation xml:lang="en">
+         The unit URI (e.g., from QUDT or SI Digital Framework unit vocabularies).
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string" />
+   </xsd:simpleType>
    <xsd:simpleType name="URL">
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
@@ -2892,9 +2968,27 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="2.2.1" />
+         <xsd:enumeration value="2.2.2" />
+         <xsd:enumeration value="2.2.3" />
+         <xsd:enumeration value="2.2.4" />
+         <xsd:enumeration value="2.2.6" />
+         <xsd:enumeration value="2.2.8" />
+         <xsd:enumeration value="2.2.9" />
+         <xsd:enumeration value="2.3.0" />
+         <xsd:enumeration value="2.3.1" />
+         <xsd:enumeration value="2.3.2" />
+         <xsd:enumeration value="2.4.0" />
+         <xsd:enumeration value="2.4.1" />
+         <xsd:enumeration value="2.4.2" />
+         <xsd:enumeration value="2.5.0" />
+         <xsd:enumeration value="2.6.0" />
+         <xsd:enumeration value="2.6.1" />
+         <xsd:enumeration value="2.7.0" />
          <xsd:enumeration value="2.7.1" />
+         <xsd:enumeration value="2.7.2" />
       </xsd:restriction>
-      </xsd:simpleType>
+   </xsd:simpleType>
 <!-- ==========================
      List: AccessRights
 
@@ -3901,6 +3995,20 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Cusp">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  An area in the Earth&#39;s magnetosphere, where the magnetosheath plasma has direct access to the ionosphere. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-JH5TRZH2-1).
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InnerRadiationBelt">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The inner Van Allen Belt extends typically from an altitude of 0.2 to 2 Earth radii (L values of 1 to 3) or 1,000 km (620 mi) to 12,000 km (7,500 mi) above the Earth. In certain cases, when solar activity is stronger or in geographical areas such as the South Atlantic Anomaly, the inner boundary may decline to roughly 200 km above the Earth&#39;s surface. The inner belt contains high concentrations of electrons in the range of hundreds of keV and energetic protons with energies exceeding 100 MeV -- trapped by the relatively strong magnetic fields in the region (as compared to the outer belt). It is believed that proton energies exceeding 50 MeV in the lower belts at lower altitudes are the result of the beta decay of neutrons created by cosmic ray collisions with nuclei of the upper atmosphere. The source of lower energy protons is believed to be proton diffusion, due to changes in the magnetic field during geomagnetic storms (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZT7HNM44-G).
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Magnetosheath">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -3922,10 +4030,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -4090,6 +4212,13 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+            <xsd:enumeration value="OuterRadiationBelt">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  The outer belt consists mainly of high-energy (0.1-10 MeV) electrons trapped by the Earth&#39;s magnetosphere. It is more variable than the inner belt, as it is more easily influenced by solar activity. It is almost toroidal in shape, beginning at an altitude of 3 Earth radii and extending to 10 Earth radii (RE)-13,000 to 60,000 kilometres (8,100 to 37,300 mi) above the Earth&#39;s surface. Its greatest intensity is usually around 4 to 5 Re (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LF7SZTGX-X).
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Surface">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -5252,10 +5381,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -5308,10 +5451,24 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="Magnetopause">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Main">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Plasmasheet">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -5378,10 +5535,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -5532,6 +5703,13 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="NotProvided">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Used when a value for this enumeration was not provided.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="Profile">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -5616,10 +5794,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -5805,6 +5997,20 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+               <xsd:enumeration value="Earth.Cusp">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     An area in the Earth&#39;s magnetosphere, where the magnetosheath plasma has direct access to the ionosphere. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-JH5TRZH2-1).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Earth.InnerRadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The inner Van Allen Belt extends typically from an altitude of 0.2 to 2 Earth radii (L values of 1 to 3) or 1,000 km (620 mi) to 12,000 km (7,500 mi) above the Earth. In certain cases, when solar activity is stronger or in geographical areas such as the South Atlantic Anomaly, the inner boundary may decline to roughly 200 km above the Earth&#39;s surface. The inner belt contains high concentrations of electrons in the range of hundreds of keV and energetic protons with energies exceeding 100 MeV -- trapped by the relatively strong magnetic fields in the region (as compared to the outer belt). It is believed that proton energies exceeding 50 MeV in the lower belts at lower altitudes are the result of the beta decay of neutrons created by cosmic ray collisions with nuclei of the upper atmosphere. The source of lower energy protons is believed to be proton diffusion, due to changes in the magnetic field during geomagnetic storms (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZT7HNM44-G).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Earth.Magnetosheath">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -5826,10 +6032,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Earth.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Earth.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Earth.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -5994,6 +6214,13 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+               <xsd:enumeration value="Earth.OuterRadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The outer belt consists mainly of high-energy (0.1-10 MeV) electrons trapped by the Earth&#39;s magnetosphere. It is more variable than the inner belt, as it is more easily influenced by solar activity. It is almost toroidal in shape, beginning at an altitude of 3 Earth radii and extending to 10 Earth radii (RE)-13,000 to 60,000 kilometres (8,100 to 37,300 mi) above the Earth&#39;s surface. Its greatest intensity is usually around 4 to 5 Re (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LF7SZTGX-X).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Earth.Surface">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -6141,10 +6368,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Jupiter.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6204,10 +6445,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Mars.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Mars.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Mars.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6267,10 +6522,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Mercury.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Mercury.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Mercury.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6323,10 +6592,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Neptune.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Neptune.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Neptune.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6442,10 +6725,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Saturn.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Saturn.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Saturn.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6596,10 +6893,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Uranus.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Uranus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Uranus.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -6687,10 +6998,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Venus.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Venus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Venus.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -7016,10 +7341,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -7993,6 +8332,13 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   A spectrum with a wavelength range centered at 676.8 nm. VSO nickname: Ni-6768 dopplergram with a range of 676.7 nm to 676.9 nm.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotProvided">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Used when a value for this enumeration was not provided.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -9095,10 +9441,24 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+            <xsd:enumeration value="SolarFilament">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A structure of cool, dense plasma that appears as a dark line when seen against the bright surface of the Sun. It is suspended above the surface by the magnetic field.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
             <xsd:enumeration value="SolarFlare">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   An explosive event in the solar atmosphere which produces electromagnetic radiation across the electromagnetic spectrum at multiple wavelengths from long-wave radio to the shortest wavelength gamma rays.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SolarProminence">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  A bright looping structure of cool, dense plasma suspended above the surface by the magnetic field.
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -9183,6 +9543,13 @@
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                   Data wherein sensor outputs have been convolved with instrument response function, often irreversibly, to yield data in physical units. Similar to NASA Level 2.
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Derived">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                  Physical quantity derived from calibrated data (e.g., electron density derived from wave passive measurements).
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
@@ -9879,6 +10246,20 @@
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:enumeration>
+               <xsd:enumeration value="Earth.Cusp">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     An area in the Earth&#39;s magnetosphere, where the magnetosheath plasma has direct access to the ionosphere. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-JH5TRZH2-1).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Earth.InnerRadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The inner Van Allen Belt extends typically from an altitude of 0.2 to 2 Earth radii (L values of 1 to 3) or 1,000 km (620 mi) to 12,000 km (7,500 mi) above the Earth. In certain cases, when solar activity is stronger or in geographical areas such as the South Atlantic Anomaly, the inner boundary may decline to roughly 200 km above the Earth&#39;s surface. The inner belt contains high concentrations of electrons in the range of hundreds of keV and energetic protons with energies exceeding 100 MeV -- trapped by the relatively strong magnetic fields in the region (as compared to the outer belt). It is believed that proton energies exceeding 50 MeV in the lower belts at lower altitudes are the result of the beta decay of neutrons created by cosmic ray collisions with nuclei of the upper atmosphere. The source of lower energy protons is believed to be proton diffusion, due to changes in the magnetic field during geomagnetic storms (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZT7HNM44-G).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Earth.Magnetosheath">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -9900,10 +10281,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Earth.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Earth.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Earth.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10068,6 +10463,13 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+               <xsd:enumeration value="Earth.OuterRadiationBelt">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     The outer belt consists mainly of high-energy (0.1-10 MeV) electrons trapped by the Earth&#39;s magnetosphere. It is more variable than the inner belt, as it is more easily influenced by solar activity. It is almost toroidal in shape, beginning at an altitude of 3 Earth radii and extending to 10 Earth radii (RE)-13,000 to 60,000 kilometres (8,100 to 37,300 mi) above the Earth&#39;s surface. Its greatest intensity is usually around 4 to 5 Re (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LF7SZTGX-X).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Earth.Surface">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
@@ -10180,10 +10582,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Jupiter.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Jupiter.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10243,10 +10659,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Mars.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Mars.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Mars.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10306,10 +10736,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Mercury.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Mercury.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Mercury.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10362,10 +10806,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Neptune.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Neptune.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Neptune.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10467,10 +10925,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Saturn.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Saturn.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Saturn.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10607,10 +11079,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Uranus.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Uranus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Uranus.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -10698,10 +11184,24 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
+                  <xsd:enumeration value="Venus.Magnetosphere.Magnetopause">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
                   <xsd:enumeration value="Venus.Magnetosphere.Main">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                         The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:enumeration>
+                  <xsd:enumeration value="Venus.Magnetosphere.Plasmasheet">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                        In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:enumeration>
@@ -11181,10 +11681,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -12574,10 +13088,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
@@ -12672,10 +13200,24 @@
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Magnetopause">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     A magnetopause is the boundary between a planet&#39;s magnetosphere and the magnetic field of the solar wind. It forms at a distance where the solar wind dynamic pressure equals the magnetic pressure of the planet&#39;s field. In the case of Earth, this is typically 8 to 11 Earth radii upwind, depending on solar wind conditions. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-ZB65HCCB-T).
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
                <xsd:enumeration value="Magnetosphere.Main">
                   <xsd:annotation>
                      <xsd:documentation xml:lang="en">
                      The region of the magnetosphere where the magnetic field lines are closed, but does not include the gaseous region gravitationally bound to the body.
+                     </xsd:documentation>
+                  </xsd:annotation>
+               </xsd:enumeration>
+               <xsd:enumeration value="Magnetosphere.Plasmasheet">
+                  <xsd:annotation>
+                     <xsd:documentation xml:lang="en">
+                     In the magnetosphere, the plasma sheet is a sheet-like region of dense, hot plasma and lower magnetic field near the equatorial plane, between the magnetosphere&#39;s north and south lobes. (reference: ontoportal-astro thesaurus https://ontoportal-astro.eu/ontologies/MDL/MDL-LSFB02GQ-C).
                      </xsd:documentation>
                   </xsd:annotation>
                </xsd:enumeration>

@@ -18,9 +18,9 @@ var spec = { dictionary: {}, ontology: {} };
 // Default - full list is fetched.
 var versions = {
 	release: [
-		{"version": "2.7.1", "released": "2025-11-26" }
+		{"version": "2.7.2", "released": "2026-07-21" }
 	],
-	current: {"version": "2.7.1", "released": "2025-11-26" }
+	current: {"version": "2.7.2", "released": "2026-07-21" }
 };
 
 var entryTemplate = Handlebars.compile("No dictionary loaded.");
