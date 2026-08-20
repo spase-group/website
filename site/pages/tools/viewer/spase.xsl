@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sp="http://www.spase-group.org/data/schema" xmlns:vot="http://www.ivoa.net/xml/VOTable/VOTable/v1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  version="1.0" exclude-result-prefixes="sp vot">
   <xsl:param name="spase.resolver" select="'http://spase-group.org/registry/resolver'"/>
   <xsl:param name="spase.render" select="'http://spase-group.org/registry/render'"/>
+  <xsl:output method="xml" omit-xml-declaration="yes" indent="no"/>
   <!--
   <xsl:output doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" doctype-public="-//W3C//DTD XHTML 1.1//EN" method="xhtml" indent="yes" omit-xml-declaration="yes"/>
   -->
@@ -612,7 +613,16 @@ a.xml-logo:hover {
 	 <td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
 	 <td><xsl:value-of select="sp:StartDate"/></td>
 	 <td><xsl:value-of select="sp:StopDate"/></td>
-	 <td><xsl:value-of select="sp:Note"/></td>
+	 <!--<td><xsl:value-of select="sp:Note"/></td>-->
+	 <!--<td><xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="concat(normalize-space(sp:Note), ' ')"/>
+      </xsl:call-template>
+	 </td>-->
+	 <td>
+		<xsl:call-template name="parse-newlines">
+			<xsl:with-param name="text" select="sp:Note"/>
+		</xsl:call-template>
+	 </td>
 	</tr>
 	<xsl:if test="count(following-sibling::*[name() = name(current())]) = 0">
 		<!-- Finalize table -->
@@ -626,8 +636,12 @@ a.xml-logo:hover {
 Wrap text in {{#markdown}}{{/markdown}} for processing with Handlebars.
 Also remove leading and trailing spaces to get desired formatting.
 -->
-<xsl:template match="sp:Description">
+<!--<xsl:template match="sp:Description">
 	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition markdown">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
+</xsl:template>-->
+<xsl:template match="sp:Description"> 
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <div class="definition markdown"><xsl:text>{{#markdown}}</xsl:text><xsl:call-template name="trim-and-parse"><xsl:with-param name="input" select="."/></xsl:call-template><xsl:text>{{/markdown}}</xsl:text></div> 
 </xsl:template>
 
 <xsl:template match="sp:Keyword">
@@ -777,7 +791,7 @@ Call with the following:
 			[ModelOutput].
 		</xsl:when>
 		<xsl:otherwise>
-.
+		.
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
@@ -802,6 +816,204 @@ Call with the following:
         <xsl:value-of select="$text" />
       </xsl:otherwise>
     </xsl:choose>
+</xsl:template>
+
+<!-- Looks for newlines (&#xa;), outputs the text leading up to it, appends a <br/>, and processes the rest of the string recursively.-->
+<xsl:template name="parse-newlines">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, '&#xa;')">
+      <!-- Process links in the text segment before the newline -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="substring-before($text, '&#xa;')"/>
+      </xsl:call-template>
+      <br/>
+      <!-- Loop through the remainder of the text -->
+      <xsl:call-template name="parse-newlines">
+        <xsl:with-param name="text" select="substring-after($text, '&#xa;')"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Process links in the final segment -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="$text"/>
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- Identify URLs and make them hyperlinks in HTML format -->
+<xsl:template name="parse-links">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, 'http://') or contains($text, 'https://')">
+      <xsl:variable name="protocol">
+        <xsl:choose>
+          <xsl:when test="contains($text, 'https://') and (not(contains($text, 'http://')) or string-length(substring-before($text, 'https://')) &lt; string-length(substring-before($text, 'http://')))">https://</xsl:when>
+          <xsl:otherwise>http://</xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:value-of select="substring-before($text, $protocol)"/>
+      <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
+      
+      <!-- Split by space to isolate the URL string -->
+      <xsl:variable name="raw-url-chunk" select="substring-before($after-protocol, ' ')"/>
+      
+      <!-- If the link is at the absolute end of the line segment (no space), use the full remainder -->
+      <xsl:variable name="url-chunk">
+        <xsl:choose>
+          <xsl:when test="contains($after-protocol, ' ')"><xsl:value-of select="$raw-url-chunk"/></xsl:when>
+          <xsl:otherwise><xsl:value-of select="$after-protocol"/></xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Clean punctuation (parentheses or trailing commas) from the raw URL chunk -->
+      <xsl:variable name="clean-url-chunk">
+        <xsl:choose>
+          <xsl:when test="contains($url-chunk, ',')">
+            <xsl:value-of select="substring-before($url-chunk, ',')"/>
+          </xsl:when>
+          <xsl:when test="contains($url-chunk, ')')">
+            <xsl:value-of select="substring-before($url-chunk, ')')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$url-chunk"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <xsl:variable name="url" select="concat($protocol, $clean-url-chunk)"/>
+      
+      <!-- Output the hyperlink -->
+      <a href="{$url}" target="_blank"><xsl:value-of select="$url"/></a>
+      
+      <!-- Determine what text remains after stripping the current clean URL -->
+      <xsl:variable name="remainder" select="substring-after($text, $url)"/>
+      
+      <!-- Recursively pass the remaining text to parse the next link -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="$remainder"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$text"/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template name="trim-and-parse"> 
+  <xsl:param name="input"/> 
+  <xsl:choose> 
+    <!-- 1. Handle spaces -->
+    <xsl:when test="starts-with($input,' ')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,' ')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 2. Handle standard unix linefeeds (\n) -->
+    <xsl:when test="starts-with($input,'&#xa;')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,'&#xa;')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 3. Handle carriage returns (\r) explicitly -->
+    <xsl:when test="starts-with($input,'&#xd;')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,'&#xd;')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 4. Handle trailing space -->
+    <xsl:when test="substring($input, string-length($input) ) = ' ' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 5. Handle trailing newlines -->
+    <xsl:when test="substring($input, string-length($input) ) = '&#xa;' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when>
+    
+    <!-- 6. Handle trailing carriage returns -->
+    <xsl:when test="substring($input, string-length($input) ) = '&#xd;' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when>
+    
+    <xsl:otherwise> 
+      <!-- Now that the text is completely sanitized of raw line breaks, parse links -->
+      <xsl:call-template name="parse-description-links">
+        <xsl:with-param name="text" select="$input"/>
+      </xsl:call-template>
+    </xsl:otherwise> 
+  </xsl:choose> 
+</xsl:template>
+
+<!-- Converts plain text URLs into Markdown links -->
+<!-- HELPER TEMPLATE: Used specifically for the description field -->
+<xsl:template name="parse-description-links">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, 'http://') or contains($text, 'https://')">
+      <xsl:variable name="protocol">
+        <xsl:choose>
+          <xsl:when test="contains($text, 'https://') and (not(contains($text, 'http://')) or string-length(substring-before($text, 'https://')) &lt; string-length(substring-before($text, 'http://')))">https://</xsl:when>
+          <xsl:otherwise>http://</xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Output everything before the URL -->
+      <xsl:value-of select="substring-before($text, $protocol)"/>
+      <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
+      
+      <!-- Isolate the URL chunk up to the next space character, or grab the remainder of the line -->
+      <xsl:variable name="raw-url-chunk">
+        <xsl:choose>
+          <xsl:when test="contains($after-protocol, ' ')">
+            <xsl:value-of select="substring-before($after-protocol, ' ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$after-protocol"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      
+      <!-- Look at the absolute last character of this chunk -->
+      <xsl:variable name="last-char" select="substring($raw-url-chunk, string-length($raw-url-chunk))"/>
+      
+      <!-- Strip trailing punctuation (periods, commas, or matching parentheses) from the hyperlinked anchor path -->
+      <xsl:variable name="clean-url-chunk">
+        <xsl:choose>
+          <xsl:when test="$last-char = '.' or $last-char = ',' or $last-char = ')'">
+            <xsl:value-of select="substring($raw-url-chunk, 1, string-length($raw-url-chunk) - 1)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$raw-url-chunk"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      
+      <xsl:variable name="clean-url" select="concat($protocol, $clean-url-chunk)"/>
+      <xsl:variable name="remaining-text" select="substring-after($text, $clean-url)"/>
+      
+      <!-- Output the clean hyperlink HTML element -->
+      <a href="{$clean-url}"><xsl:value-of select="$clean-url"/></a>
+      
+      <!-- Recursively parse whatever text remains -->
+      <xsl:call-template name="parse-description-links">
+        <xsl:with-param name="text" select="$remaining-text"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$text"/>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>
