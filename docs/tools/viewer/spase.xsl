@@ -613,11 +613,7 @@ a.xml-logo:hover {
 	 <td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
 	 <td><xsl:value-of select="sp:StartDate"/></td>
 	 <td><xsl:value-of select="sp:StopDate"/></td>
-	 <!--<td><xsl:value-of select="sp:Note"/></td>-->
-	 <!--<td><xsl:call-template name="parse-links">
-        <xsl:with-param name="text" select="concat(normalize-space(sp:Note), ' ')"/>
-      </xsl:call-template>
-	 </td>-->
+	 <!--when Note is within Contact, override normal template so that it doesn't add divs for each-->
 	 <td>
 		<xsl:call-template name="parse-newlines">
 			<xsl:with-param name="text" select="sp:Note"/>
@@ -669,6 +665,62 @@ Also remove leading and trailing spaces to get desired formatting.
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 	</xsl:if>
 	<div class="definition"><xsl:value-of select="."/></div>
+</xsl:template>
+
+<xsl:template match="sp:Note">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="with-newlines">
+    <xsl:call-template name="parse-newlines">
+      <xsl:with-param name="text" select="."/>
+    </xsl:call-template>
+  </xsl:variable>
+  <div class="definition">
+	<xsl:call-template name="parse-links">
+		<xsl:with-param name="text" select="concat($with-newlines, ' ')"/>
+	</xsl:call-template>
+  </div>
+</xsl:template>
+
+<!-- Global template for ORCID IDs -->
+<xsl:template match="sp:ORCIdentifier">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="clean-id" select="normalize-space(.)"/>
+  <xsl:if test="string-length($clean-id) &gt; 0">
+    <xsl:variable name="url">
+      <xsl:choose>
+        <xsl:when test="starts-with($clean-id, 'http://') or starts-with($clean-id, 'https://')">
+          <xsl:value-of select="$clean-id"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="concat('https://orcid.org/', $clean-id)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+	<div class="definition">
+    	<a href="{$url}" target="_blank"><xsl:value-of select="$clean-id"/></a>
+	</div>
+  </xsl:if>
+</xsl:template>
+
+<!-- Global template for ROR IDs -->
+<xsl:template match="sp:RORIdentifier">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="clean-id" select="normalize-space(.)"/>
+  <xsl:if test="string-length($clean-id) &gt; 0">
+    <xsl:variable name="url">
+      <xsl:choose>
+        <xsl:when test="starts-with($clean-id, 'http://') or starts-with($clean-id, 'https://')">
+          <xsl:value-of select="$clean-id"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="concat('https://ror.org/', $clean-id)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+	<div class="definition">
+    	<a href="{$url}" target="_blank"><xsl:value-of select="$clean-id"/></a>
+	</div>
+  </xsl:if>
 </xsl:template>
 
 <!-- Get the fileName portion of a path. 
@@ -875,6 +927,9 @@ Call with the following:
           </xsl:when>
           <xsl:when test="contains($url-chunk, ')')">
             <xsl:value-of select="substring-before($url-chunk, ')')"/>
+          </xsl:when>
+		  <xsl:when test="contains($url-chunk, ';')">
+            <xsl:value-of select="substring-before($url-chunk, ';')"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="$url-chunk"/>
