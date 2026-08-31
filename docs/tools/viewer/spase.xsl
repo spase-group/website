@@ -905,53 +905,86 @@ Call with the following:
           <xsl:otherwise>http://</xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      <xsl:value-of select="substring-before($text, $protocol)"/>
+
+      <!-- Output text up to the link protocol -->
+      <xsl:copy-of select="substring-before($text, $protocol)"/>
       <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
       
-      <!-- Split by space to isolate the URL string -->
-      <xsl:variable name="raw-url-chunk" select="substring-before($after-protocol, ' ')"/>
-      
-      <!-- If the link is at the absolute end of the line segment (no space), use the full remainder -->
-      <xsl:variable name="url-chunk">
+      <!-- FIXED: Safe isolation of the URL chunk even if it is the absolute end of the string -->
+      <xsl:variable name="raw-url-chunk">
         <xsl:choose>
-          <xsl:when test="contains($after-protocol, ' ')"><xsl:value-of select="$raw-url-chunk"/></xsl:when>
-          <xsl:otherwise><xsl:value-of select="$after-protocol"/></xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
-
-      <!-- Clean punctuation (parentheses or trailing commas) from the raw URL chunk -->
-      <xsl:variable name="clean-url-chunk">
-        <xsl:choose>
-          <xsl:when test="contains($url-chunk, ',')">
-            <xsl:value-of select="substring-before($url-chunk, ',')"/>
-          </xsl:when>
-          <xsl:when test="contains($url-chunk, ')')">
-            <xsl:value-of select="substring-before($url-chunk, ')')"/>
-          </xsl:when>
-		  <xsl:when test="contains($url-chunk, ';')">
-            <xsl:value-of select="substring-before($url-chunk, ';')"/>
+          <xsl:when test="contains($after-protocol, ' ')">
+            <xsl:value-of select="substring-before($after-protocol, ' ')"/>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$url-chunk"/>
+            <xsl:value-of select="$after-protocol"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      
+      <!-- Step 1: Clean trailing parenthesis ')' -->
+      <xsl:variable name="no-parenthesis">
+        <xsl:choose>
+          <xsl:when test="contains($raw-url-chunk, ')')">
+            <xsl:value-of select="substring-before($raw-url-chunk, ')')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$raw-url-chunk"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
 
-      <xsl:variable name="url" select="concat($protocol, $clean-url-chunk)"/>
+      <!-- Step 2: Clean trailing commas ',' -->
+      <xsl:variable name="no-comma">
+        <xsl:choose>
+          <xsl:when test="contains($no-parenthesis, ',')">
+            <xsl:value-of select="substring-before($no-parenthesis, ',')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-parenthesis"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 3: Clean trailing semicolons ';' -->
+      <xsl:variable name="no-semicolon">
+        <xsl:choose>
+          <xsl:when test="contains($no-comma, ';')">
+            <xsl:value-of select="substring-before($no-comma, ';')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-comma"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 4: Clean a trailing period '.' ONLY if it sits at the absolute end of the chunk -->
+      <xsl:variable name="clean-chunk">
+        <xsl:choose>
+          <xsl:when test="substring($no-semicolon, string-length($no-semicolon)) = '.'">
+            <xsl:value-of select="substring($no-semicolon, 1, string-length($no-semicolon) - 1)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-semicolon"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Combine protocol with the fully scrubbed path -->
+      <xsl:variable name="url" select="concat($protocol, $clean-chunk)"/>
       
-      <!-- Output the hyperlink -->
-      <a href="{$url}" target="_blank"><xsl:value-of select="$url"/></a>
+      <!-- Render the clickable anchor -->
+      <a href="{$url}" target="_blank">
+        <xsl:value-of select="$url"/>
+      </a>
       
-      <!-- Determine what text remains after stripping the current clean URL -->
-      <xsl:variable name="remainder" select="substring-after($text, $url)"/>
-      
-      <!-- Recursively pass the remaining text to parse the next link -->
+      <!-- Safe Loop Recursion using the remaining text right after our cleaned path segment -->
       <xsl:call-template name="parse-links">
-        <xsl:with-param name="text" select="$remainder"/>
+        <xsl:with-param name="text" select="substring-after($after-protocol, $clean-chunk)"/>
       </xsl:call-template>
     </xsl:when>
     <xsl:otherwise>
-      <xsl:value-of select="$text"/>
+      <xsl:copy-of select="$text"/>
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
@@ -1023,10 +1056,10 @@ Call with the following:
         </xsl:choose>
       </xsl:variable>
 
-      <!-- Output everything before the URL -->
+      <!-- Output everything before the URL using value-of for the markdown block -->
       <xsl:value-of select="substring-before($text, $protocol)"/>
       <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
-      
+
       <!-- Isolate the URL chunk up to the next space character, or grab the remainder of the line -->
       <xsl:variable name="raw-url-chunk">
         <xsl:choose>
@@ -1038,31 +1071,66 @@ Call with the following:
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      
-      <!-- Look at the absolute last character of this chunk -->
-      <xsl:variable name="last-char" select="substring($raw-url-chunk, string-length($raw-url-chunk))"/>
-      
-      <!-- Strip trailing punctuation (periods, commas, or matching parentheses) from the hyperlinked anchor path -->
-      <xsl:variable name="clean-url-chunk">
+
+      <!-- Step 1: Clean trailing parenthesis ')' -->
+      <xsl:variable name="no-parenthesis">
         <xsl:choose>
-          <xsl:when test="$last-char = '.' or $last-char = ',' or $last-char = ')'">
-            <xsl:value-of select="substring($raw-url-chunk, 1, string-length($raw-url-chunk) - 1)"/>
+          <xsl:when test="contains($raw-url-chunk, ')')">
+            <xsl:value-of select="substring-before($raw-url-chunk, ')')"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="$raw-url-chunk"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      
-      <xsl:variable name="clean-url" select="concat($protocol, $clean-url-chunk)"/>
-      <xsl:variable name="remaining-text" select="substring-after($text, $clean-url)"/>
-      
-      <!-- Output the clean hyperlink HTML element -->
-      <a href="{$clean-url}"><xsl:value-of select="$clean-url"/></a>
-      
-      <!-- Recursively parse whatever text remains -->
+
+      <!-- Step 2: Clean trailing commas ',' -->
+      <xsl:variable name="no-comma">
+        <xsl:choose>
+          <xsl:when test="contains($no-parenthesis, ',')">
+            <xsl:value-of select="substring-before($no-parenthesis, ',')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-parenthesis"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 3: Clean trailing semicolons ';' -->
+      <xsl:variable name="no-semicolon">
+        <xsl:choose>
+          <xsl:when test="contains($no-comma, ';')">
+            <xsl:value-of select="substring-before($no-comma, ';')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-comma"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 4: Clean a trailing period '.' ONLY if it sits at the absolute end of the chunk -->
+      <xsl:variable name="clean-chunk">
+        <xsl:choose>
+          <xsl:when test="substring($no-semicolon, string-length($no-semicolon)) = '.'">
+            <xsl:value-of select="substring($no-semicolon, 1, string-length($no-semicolon) - 1)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-semicolon"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Combine protocol with the fully scrubbed path -->
+      <xsl:variable name="clean-url" select="concat($protocol, $clean-chunk)"/>
+
+      <!-- Output the clean hyperlink HTML element (no target="_blank" for descriptions) -->
+      <a href="{$clean-url}">
+        <xsl:value-of select="$clean-url"/>
+      </a>
+
+      <!-- Recursively parse whatever text remains using explicit right-hand text offset -->
       <xsl:call-template name="parse-description-links">
-        <xsl:with-param name="text" select="$remaining-text"/>
+        <xsl:with-param name="text" select="substring-after($after-protocol, $clean-chunk)"/>
       </xsl:call-template>
     </xsl:when>
     <xsl:otherwise>
