@@ -374,7 +374,7 @@ a.xml-logo:hover {
 										</xsl:call-template>
 										<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 										<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 											<script>
 												var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 												var today = new Date(); 
@@ -436,7 +436,7 @@ a.xml-logo:hover {
 									</xsl:call-template>
 									<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 									<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 										<script>
 											var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 											var today = new Date(); 
@@ -475,7 +475,7 @@ a.xml-logo:hover {
 							</xsl:call-template>
 							<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 							<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 								<script>
 									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 									var today = new Date(); 
@@ -795,13 +795,13 @@ Call with the following:
     <xsl:param name="input" />
 	<xsl:choose>
 		<xsl:when test="contains($input, 'NumericalData')">
-			[Data set].
+			[Dataset].
 		</xsl:when>
 		<xsl:when test="contains($input, 'DisplayData')">
-			[Data set].
+			[Dataset].
 		</xsl:when>
 		<xsl:when test="contains($input, 'Catalog')">
-			[Data set].
+			[Dataset].
 		</xsl:when>
 		<xsl:when test="contains($input, 'Document')">
 			[Document].

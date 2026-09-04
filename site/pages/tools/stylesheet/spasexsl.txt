@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sp="http://www.spase-group.org/data/schema" xmlns:vot="http://www.ivoa.net/xml/VOTable/VOTable/v1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  version="1.0" exclude-result-prefixes="sp vot">
   <xsl:param name="spase.resolver" select="'http://spase-group.org/registry/resolver'"/>
   <xsl:param name="spase.render" select="'http://spase-group.org/registry/render'"/>
+  <xsl:output method="xml" omit-xml-declaration="yes" indent="no"/>
   <!--
   <xsl:output doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" doctype-public="-//W3C//DTD XHTML 1.1//EN" method="xhtml" indent="yes" omit-xml-declaration="yes"/>
   -->
@@ -10,7 +11,7 @@
   <xsl:template match="/">
    <html>
    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta charset="utf-8" />
       <title>SPASE Resource Description</title>
 	  <!-- Data discovery metadata -->
       <script type="application/ld+json">{
@@ -34,7 +35,7 @@
             "@type": "Audience",
             "audienceType": ["Space Physicist", "Space Community", "Data Scientists", "Machine Learning Users"]
         }
-	  }
+	  };
 	  </script>
 	  <!-- CSS -->
 	  <style>
@@ -373,7 +374,7 @@ a.xml-logo:hover {
 										</xsl:call-template>
 										<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 										<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 											<script>
 												var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 												var today = new Date(); 
@@ -435,7 +436,7 @@ a.xml-logo:hover {
 									</xsl:call-template>
 									<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 									<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 										<script>
 											var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 											var today = new Date(); 
@@ -474,7 +475,7 @@ a.xml-logo:hover {
 							</xsl:call-template>
 							<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 							<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
+								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
 								<script>
 									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 									var today = new Date(); 
@@ -596,10 +597,29 @@ a.xml-logo:hover {
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 		<xsl:text disable-output-escaping="yes">&lt;dd&gt;</xsl:text>
 		<xsl:text disable-output-escaping="yes">&lt;table class="nested" cellspacing="0"&gt;</xsl:text>
-		<tr><th></th><th class="center">Role</th><th class="center">Person</th></tr>
+		<tr><th></th><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr>
 		<xsl:text disable-output-escaping="yes">&lt;tbody&gt;</xsl:text>
 	</xsl:if>
-	<tr><td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td><td><xsl:value-of select="sp:Role"/></td><td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td></tr>
+	<tr>
+	 <td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td>
+	 <td>
+	  <xsl:for-each select="sp:Role">
+	   <xsl:value-of select="."/>
+	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0"> 
+	     <br/>
+	   </xsl:if>
+	  </xsl:for-each>
+	 </td>
+	 <td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
+	 <td><xsl:value-of select="sp:StartDate"/></td>
+	 <td><xsl:value-of select="sp:StopDate"/></td>
+	 <!--when Note is within Contact, override normal template so that it doesn't add divs for each-->
+	 <td>
+		<xsl:call-template name="parse-newlines">
+			<xsl:with-param name="text" select="sp:Note"/>
+		</xsl:call-template>
+	 </td>
+	</tr>
 	<xsl:if test="count(following-sibling::*[name() = name(current())]) = 0">
 		<!-- Finalize table -->
 		<xsl:text disable-output-escaping="yes">&lt;/tbody&gt;</xsl:text>
@@ -612,8 +632,12 @@ a.xml-logo:hover {
 Wrap text in {{#markdown}}{{/markdown}} for processing with Handlebars.
 Also remove leading and trailing spaces to get desired formatting.
 -->
-<xsl:template match="sp:Description">
+<!--<xsl:template match="sp:Description">
 	<div class="term"><xsl:value-of select="local-name()"/></div><div class="definition markdown">{{#markdown}}<xsl:call-template name="trim"><xsl:with-param name="input" select="."/></xsl:call-template>{{/markdown}}</div>
+</xsl:template>-->
+<xsl:template match="sp:Description"> 
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <div class="definition markdown"><xsl:text>{{#markdown}}</xsl:text><xsl:call-template name="trim-and-parse"><xsl:with-param name="input" select="."/></xsl:call-template><xsl:text>{{/markdown}}</xsl:text></div> 
 </xsl:template>
 
 <xsl:template match="sp:Keyword">
@@ -641,6 +665,62 @@ Also remove leading and trailing spaces to get desired formatting.
 		<div class="term"><xsl:value-of select="local-name()"/>s</div>
 	</xsl:if>
 	<div class="definition"><xsl:value-of select="."/></div>
+</xsl:template>
+
+<xsl:template match="sp:Note">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="with-newlines">
+    <xsl:call-template name="parse-newlines">
+      <xsl:with-param name="text" select="."/>
+    </xsl:call-template>
+  </xsl:variable>
+  <div class="definition">
+	<xsl:call-template name="parse-links">
+		<xsl:with-param name="text" select="concat($with-newlines, ' ')"/>
+	</xsl:call-template>
+  </div>
+</xsl:template>
+
+<!-- Global template for ORCID IDs -->
+<xsl:template match="sp:ORCIdentifier">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="clean-id" select="normalize-space(.)"/>
+  <xsl:if test="string-length($clean-id) &gt; 0">
+    <xsl:variable name="url">
+      <xsl:choose>
+        <xsl:when test="starts-with($clean-id, 'http://') or starts-with($clean-id, 'https://')">
+          <xsl:value-of select="$clean-id"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="concat('https://orcid.org/', $clean-id)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+	<div class="definition">
+    	<a href="{$url}" target="_blank"><xsl:value-of select="$clean-id"/></a>
+	</div>
+  </xsl:if>
+</xsl:template>
+
+<!-- Global template for ROR IDs -->
+<xsl:template match="sp:RORIdentifier">
+  <div class="term"><xsl:value-of select="local-name()"/></div>
+  <xsl:variable name="clean-id" select="normalize-space(.)"/>
+  <xsl:if test="string-length($clean-id) &gt; 0">
+    <xsl:variable name="url">
+      <xsl:choose>
+        <xsl:when test="starts-with($clean-id, 'http://') or starts-with($clean-id, 'https://')">
+          <xsl:value-of select="$clean-id"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="concat('https://ror.org/', $clean-id)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+	<div class="definition">
+    	<a href="{$url}" target="_blank"><xsl:value-of select="$clean-id"/></a>
+	</div>
+  </xsl:if>
 </xsl:template>
 
 <!-- Get the fileName portion of a path. 
@@ -715,16 +795,55 @@ Call with the following:
     <xsl:param name="input" />
 	<xsl:choose>
 		<xsl:when test="contains($input, 'NumericalData')">
-			[Data set].
+			[Dataset].
 		</xsl:when>
 		<xsl:when test="contains($input, 'DisplayData')">
-			[Data set].
+			[Dataset].
 		</xsl:when>
 		<xsl:when test="contains($input, 'Catalog')">
-			[Data set].
+			[Dataset].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Document')">
+			[Document].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Service')">
+			[Service].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Instrument')">
+			[Instrument].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Observatory')">
+			[Observatory].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Registry')">
+			[Registry].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Repository')">
+			[Repository].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Annotation')">
+			[Annotation].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Software')">
+			[Software].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Collection')">
+			[Collection].
+		</xsl:when>
+		<xsl:when test="contains($input, 'Model')">
+			[Model].
+		</xsl:when>
+		<xsl:when test="contains($input, 'ModelRun')">
+			[ModelRun].
+		</xsl:when>
+		<xsl:when test="contains($input, 'DisplayOutput')">
+			[ModelOutput].
+		</xsl:when>
+		<xsl:when test="contains($input, 'NumericalOutput')">
+			[ModelOutput].
 		</xsl:when>
 		<xsl:otherwise>
-			.
+		.
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
@@ -749,6 +868,275 @@ Call with the following:
         <xsl:value-of select="$text" />
       </xsl:otherwise>
     </xsl:choose>
+</xsl:template>
+
+<!-- Looks for newlines (&#xa;), outputs the text leading up to it, appends a <br/>, and processes the rest of the string recursively.-->
+<xsl:template name="parse-newlines">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, '&#xa;')">
+      <!-- Process links in the text segment before the newline -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="substring-before($text, '&#xa;')"/>
+      </xsl:call-template>
+      <br/>
+      <!-- Loop through the remainder of the text -->
+      <xsl:call-template name="parse-newlines">
+        <xsl:with-param name="text" select="substring-after($text, '&#xa;')"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <!-- Process links in the final segment -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="$text"/>
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- Identify URLs and make them hyperlinks in HTML format -->
+<xsl:template name="parse-links">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, 'http://') or contains($text, 'https://')">
+      <xsl:variable name="protocol">
+        <xsl:choose>
+          <xsl:when test="contains($text, 'https://') and (not(contains($text, 'http://')) or string-length(substring-before($text, 'https://')) &lt; string-length(substring-before($text, 'http://')))">https://</xsl:when>
+          <xsl:otherwise>http://</xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Output text up to the link protocol -->
+      <xsl:copy-of select="substring-before($text, $protocol)"/>
+      <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
+      
+      <!-- FIXED: Safe isolation of the URL chunk even if it is the absolute end of the string -->
+      <xsl:variable name="raw-url-chunk">
+        <xsl:choose>
+          <xsl:when test="contains($after-protocol, ' ')">
+            <xsl:value-of select="substring-before($after-protocol, ' ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$after-protocol"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      
+      <!-- Step 1: Clean trailing parenthesis ')' -->
+      <xsl:variable name="no-parenthesis">
+        <xsl:choose>
+          <xsl:when test="contains($raw-url-chunk, ')')">
+            <xsl:value-of select="substring-before($raw-url-chunk, ')')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$raw-url-chunk"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 2: Clean trailing commas ',' -->
+      <xsl:variable name="no-comma">
+        <xsl:choose>
+          <xsl:when test="contains($no-parenthesis, ',')">
+            <xsl:value-of select="substring-before($no-parenthesis, ',')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-parenthesis"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 3: Clean trailing semicolons ';' -->
+      <xsl:variable name="no-semicolon">
+        <xsl:choose>
+          <xsl:when test="contains($no-comma, ';')">
+            <xsl:value-of select="substring-before($no-comma, ';')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-comma"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 4: Clean a trailing period '.' ONLY if it sits at the absolute end of the chunk -->
+      <xsl:variable name="clean-chunk">
+        <xsl:choose>
+          <xsl:when test="substring($no-semicolon, string-length($no-semicolon)) = '.'">
+            <xsl:value-of select="substring($no-semicolon, 1, string-length($no-semicolon) - 1)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-semicolon"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Combine protocol with the fully scrubbed path -->
+      <xsl:variable name="url" select="concat($protocol, $clean-chunk)"/>
+      
+      <!-- Render the clickable anchor -->
+      <a href="{$url}" target="_blank">
+        <xsl:value-of select="$url"/>
+      </a>
+      
+      <!-- Safe Loop Recursion using the remaining text right after our cleaned path segment -->
+      <xsl:call-template name="parse-links">
+        <xsl:with-param name="text" select="substring-after($after-protocol, $clean-chunk)"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:copy-of select="$text"/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template name="trim-and-parse"> 
+  <xsl:param name="input"/> 
+  <xsl:choose> 
+    <!-- 1. Handle spaces -->
+    <xsl:when test="starts-with($input,' ')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,' ')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 2. Handle standard unix linefeeds (\n) -->
+    <xsl:when test="starts-with($input,'&#xa;')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,'&#xa;')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 3. Handle carriage returns (\r) explicitly -->
+    <xsl:when test="starts-with($input,'&#xd;')"> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring-after($input,'&#xd;')"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 4. Handle trailing space -->
+    <xsl:when test="substring($input, string-length($input) ) = ' ' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when> 
+    
+    <!-- 5. Handle trailing newlines -->
+    <xsl:when test="substring($input, string-length($input) ) = '&#xa;' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when>
+    
+    <!-- 6. Handle trailing carriage returns -->
+    <xsl:when test="substring($input, string-length($input) ) = '&#xd;' "> 
+      <xsl:call-template name="trim-and-parse"> 
+        <xsl:with-param name="input" select="substring($input, 1, string-length($input)-1)"/> 
+      </xsl:call-template> 
+    </xsl:when>
+    
+    <xsl:otherwise> 
+      <!-- Now that the text is completely sanitized of raw line breaks, parse links -->
+      <xsl:call-template name="parse-description-links">
+        <xsl:with-param name="text" select="$input"/>
+      </xsl:call-template>
+    </xsl:otherwise> 
+  </xsl:choose> 
+</xsl:template>
+
+<!-- Converts plain text URLs into Markdown links -->
+<!-- HELPER TEMPLATE: Used specifically for the description field -->
+<xsl:template name="parse-description-links">
+  <xsl:param name="text"/>
+  <xsl:choose>
+    <xsl:when test="contains($text, 'http://') or contains($text, 'https://')">
+      <xsl:variable name="protocol">
+        <xsl:choose>
+          <xsl:when test="contains($text, 'https://') and (not(contains($text, 'http://')) or string-length(substring-before($text, 'https://')) &lt; string-length(substring-before($text, 'http://')))">https://</xsl:when>
+          <xsl:otherwise>http://</xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Output everything before the URL using value-of for the markdown block -->
+      <xsl:value-of select="substring-before($text, $protocol)"/>
+      <xsl:variable name="after-protocol" select="substring-after($text, $protocol)"/>
+
+      <!-- Isolate the URL chunk up to the next space character, or grab the remainder of the line -->
+      <xsl:variable name="raw-url-chunk">
+        <xsl:choose>
+          <xsl:when test="contains($after-protocol, ' ')">
+            <xsl:value-of select="substring-before($after-protocol, ' ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$after-protocol"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 1: Clean trailing parenthesis ')' -->
+      <xsl:variable name="no-parenthesis">
+        <xsl:choose>
+          <xsl:when test="contains($raw-url-chunk, ')')">
+            <xsl:value-of select="substring-before($raw-url-chunk, ')')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$raw-url-chunk"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 2: Clean trailing commas ',' -->
+      <xsl:variable name="no-comma">
+        <xsl:choose>
+          <xsl:when test="contains($no-parenthesis, ',')">
+            <xsl:value-of select="substring-before($no-parenthesis, ',')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-parenthesis"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 3: Clean trailing semicolons ';' -->
+      <xsl:variable name="no-semicolon">
+        <xsl:choose>
+          <xsl:when test="contains($no-comma, ';')">
+            <xsl:value-of select="substring-before($no-comma, ';')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-comma"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Step 4: Clean a trailing period '.' ONLY if it sits at the absolute end of the chunk -->
+      <xsl:variable name="clean-chunk">
+        <xsl:choose>
+          <xsl:when test="substring($no-semicolon, string-length($no-semicolon)) = '.'">
+            <xsl:value-of select="substring($no-semicolon, 1, string-length($no-semicolon) - 1)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$no-semicolon"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <!-- Combine protocol with the fully scrubbed path -->
+      <xsl:variable name="clean-url" select="concat($protocol, $clean-chunk)"/>
+
+      <!-- Output the clean hyperlink HTML element (no target="_blank" for descriptions) -->
+      <a href="{$clean-url}">
+        <xsl:value-of select="$clean-url"/>
+      </a>
+
+      <!-- Recursively parse whatever text remains using explicit right-hand text offset -->
+      <xsl:call-template name="parse-description-links">
+        <xsl:with-param name="text" select="substring-after($after-protocol, $clean-chunk)"/>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$text"/>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>
