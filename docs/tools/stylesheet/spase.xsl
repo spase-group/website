@@ -357,7 +357,7 @@ a.xml-logo:hover {
 													<xsl:call-template name="string-replace-all">
 														<xsl:with-param name="replace" select="'spase://'" />
 														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
-														<xsl:with-param name="text" select="sp:AssociationID"/>
+														<xsl:with-param name="text" select="sp:AssociationID" />
 													</xsl:call-template> 
 												</xsl:variable>
 												The record with the identifier <xsl:value-of select="../sp:DOI" /> was substituted by <a href="{$replacementURL}">another version</a>.
@@ -370,11 +370,11 @@ a.xml-logo:hover {
 										(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 										<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 										<xsl:call-template name="ref-type">
-											<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+											<xsl:with-param name="input" select="./*/sp:ResourceID" />
 										</xsl:call-template>
 										<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 										<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
+											<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
 											<script>
 												var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 												var today = new Date(); 
@@ -385,12 +385,8 @@ a.xml-logo:hover {
 											<br/>
 											<br/>
 											<xsl:variable name="bibtexLink">
-												<xsl:call-template name="string-replace-all">
-													<xsl:with-param name="replace" select="'https://doi.org/'" />
-													<xsl:with-param name="with" select="''" />
-													<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
-												</xsl:call-template>  
-											</xsl:variable>	
+												<xsl:call-template name="string-replace-all"><xsl:with-param name="replace" select="'https://doi.org/'" /><xsl:with-param name="with" select="''" /><xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI" /></xsl:call-template>
+											</xsl:variable>
 											Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
 										</xsl:if>
 									
@@ -402,7 +398,7 @@ a.xml-logo:hover {
 										<xsl:call-template name="string-replace-all">
 											<xsl:with-param name="replace" select="'spase://'" />
 											<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
-											<xsl:with-param name="text" select="./*/sp:ResourceID"/>
+											<xsl:with-param name="text" select="./*/sp:ResourceID" />
 										</xsl:call-template>  
 									</xsl:variable>
 									<xsl:if test="./*/sp:ResourceHeader/sp:Association">
@@ -412,10 +408,10 @@ a.xml-logo:hover {
 													<xsl:call-template name="string-replace-all">
 														<xsl:with-param name="replace" select="'spase://'" />
 														<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
-														<xsl:with-param name="text" select="sp:AssociationID"/>
+														<xsl:with-param name="text" select="sp:AssociationID" />
 													</xsl:call-template> 
 												</xsl:variable>
-												The record with the identifier <xsl:value-of select="$resourceURL"/> was substituted by <a href="{$replacementURL}">another version</a>.
+												The record with the identifier <xsl:value-of select="$resourceURL" /> was substituted by <a href="{$replacementURL}">another version</a>.
 											</xsl:for-each>
 										</p>
 									</xsl:if>
@@ -432,11 +428,11 @@ a.xml-logo:hover {
 									(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 									<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 									<xsl:call-template name="ref-type">
-										<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+										<xsl:with-param name="input" select="./*/sp:ResourceID" />
 									</xsl:call-template>
 									<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 									<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
+										<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
 										<script>
 											var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 											var today = new Date(); 
@@ -447,12 +443,8 @@ a.xml-logo:hover {
 										<br/>
 										<br/>
 										<xsl:variable name="bibtexLink">
-											<xsl:call-template name="string-replace-all">
-												<xsl:with-param name="replace" select="'https://doi.org/'" />
-												<xsl:with-param name="with" select="''" />
-												<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
-											</xsl:call-template>  
-										</xsl:variable>	
+											<xsl:call-template name="string-replace-all"><xsl:with-param name="replace" select="'https://doi.org/'" /><xsl:with-param name="with" select="''" /><xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI" /></xsl:call-template>
+										</xsl:variable>
 										Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
 									</xsl:if>
 								
@@ -471,11 +463,11 @@ a.xml-logo:hover {
 							(<xsl:value-of select="substring(./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublicationDate, 1, 4)" />). 
 							<xsl:value-of select="./*/sp:ResourceHeader/sp:ResourceName" />
 							<xsl:call-template name="ref-type">
-								<xsl:with-param name="input" select="./*/sp:ResourceID"/>
+								<xsl:with-param name="input" select="./*/sp:ResourceID" />
 							</xsl:call-template>
 							<xsl:value-of select="./*/sp:ResourceHeader/sp:PublicationInfo/sp:PublishedBy" />. 
 							<xsl:if test="./*/sp:ResourceHeader/sp:DOI">
-								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI"/></a>. <span id='access_date'></span>
+								<a href="{./*/sp:ResourceHeader/sp:DOI}"><xsl:value-of select="./*/sp:ResourceHeader/sp:DOI" /></a>. <span id='access_date'></span>
 								<script>
 									var monthName=new Array("January","February","March","April","May","June","July","August","September","October","November","December"); 
 									var today = new Date(); 
@@ -486,12 +478,8 @@ a.xml-logo:hover {
 								<br/>
 								<br/>
 								<xsl:variable name="bibtexLink">
-									<xsl:call-template name="string-replace-all">
-										<xsl:with-param name="replace" select="'https://doi.org/'" />
-										<xsl:with-param name="with" select="''" />
-										<xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI"/>
-									</xsl:call-template>  
-								</xsl:variable>	
+									<xsl:call-template name="string-replace-all"><xsl:with-param name="replace" select="'https://doi.org/'" /><xsl:with-param name="with" select="''" /><xsl:with-param name="text" select="./*/sp:ResourceHeader/sp:DOI" /></xsl:call-template>
+								</xsl:variable>
 								Note: Proper references, including those in <a href="https://citation.crosscite.org/format?doi={$bibtexLink}&amp;style=bibtex&amp;lang=en-US">BibTex</a> or <a href="https://citeas.org/cite/{./*/sp:ResourceHeader/sp:DOI}">other formats</a>, should include the "Accessed on date" as shown above to identify the version of the resource being cited in a given publication.
 							</xsl:if>
 						
@@ -517,7 +505,7 @@ a.xml-logo:hover {
 					<xsl:call-template name="string-replace-all">
 						<xsl:with-param name="replace" select="'spase://'" />
 						<xsl:with-param name="with" select="'https://spase-metadata.org/'" />
-						<xsl:with-param name="text" select="./*/sp:ResourceID"/>
+						<xsl:with-param name="text" select="./*/sp:ResourceID" />
 					</xsl:call-template>  
 				</xsl:variable>	
 				
@@ -538,11 +526,11 @@ a.xml-logo:hover {
 			</xsl:when>
 			<xsl:otherwise> <!-- All others -->
 				<div class="product">
-					<p class="version">Version:<xsl:value-of select="../sp:Version"/></p>
+					<p class="version">Version:<xsl:value-of select="../sp:Version" /></p>
 					<xsl:if test="../sp:Status">
-						<p class="status">Status:<xsl:value-of select="../sp:Status"/></p>
+						<p class="status">Status:<xsl:value-of select="../sp:Status" /></p>
 					</xsl:if>
-					<h1><xsl:value-of select="local-name()"/></h1>
+					<h1><xsl:value-of select="local-name()" /></h1>
 					<xsl:apply-templates select="*"></xsl:apply-templates>
 				</div>
 			</xsl:otherwise>
