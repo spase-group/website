@@ -302,7 +302,7 @@ a.xml-logo:hover {
 	<body>
 		<div><a id="top"></a></div>
 		<div class="header">
-			<div class="middle">HPDE.io</div>
+			<div class="middle">spase-metadata.org</div>
 		</div> <!-- /header -->
 		<div class="page">
        <xsl:apply-templates select="Package"/>	<!-- create table of content if present -->
