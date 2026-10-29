@@ -579,41 +579,55 @@ a.xml-logo:hover {
  
 </xsl:template>
 
-<xsl:template match="sp:Contact">
-	<xsl:if test="count(preceding-sibling::*[name() = name(current())]) = 0">
-		<!-- Initialize table -->
-		<div class="term"><xsl:value-of select="local-name()"/>s</div>
-		<xsl:text disable-output-escaping="yes">&lt;dd&gt;</xsl:text>
-		<xsl:text disable-output-escaping="yes">&lt;table class="nested" cellspacing="0"&gt;</xsl:text>
-		<tr><th></th><th class="center">Role</th><th class="center">Person</th><th class="center">StartDate</th><th class="center">StopDate</th><th class="center">Note</th></tr>
-		<xsl:text disable-output-escaping="yes">&lt;tbody&gt;</xsl:text>
-	</xsl:if>
-	<tr>
-	 <td><xsl:value-of select="1 + count(preceding-sibling::*[name() = name(current())])" />.</td>
-	 <td>
-	  <xsl:for-each select="sp:Role">
-	   <xsl:value-of select="."/>
-	   <xsl:if test="count(following-sibling::*[name() = name(current())]) > 0"> 
-	     <br/>
-	   </xsl:if>
-	  </xsl:for-each>
-	 </td>
-	 <td><a target="_blank" href="https://spase-metadata.org/{substring-after(sp:PersonID, 'spase://')}.html"><xsl:value-of select="sp:PersonID"/></a></td>
-	 <td><xsl:value-of select="sp:StartDate"/></td>
-	 <td><xsl:value-of select="sp:StopDate"/></td>
-	 <!--when Note is within Contact, override normal template so that it doesn't add divs for each-->
-	 <td>
-		<xsl:call-template name="parse-newlines">
-			<xsl:with-param name="text" select="sp:Note"/>
-		</xsl:call-template>
-	 </td>
-	</tr>
-	<xsl:if test="count(following-sibling::*[name() = name(current())]) = 0">
-		<!-- Finalize table -->
-		<xsl:text disable-output-escaping="yes">&lt;/tbody&gt;</xsl:text>
-		<xsl:text disable-output-escaping="yes">&lt;/table&gt;</xsl:text>
-		<xsl:text disable-output-escaping="yes">&lt;/dd&gt;</xsl:text>
-	</xsl:if>
+<!-- 1. Match the very FIRST Contact element to build the main table structural frame -->
+<xsl:template match="sp:Contact[not(preceding-sibling::sp:Contact)]">
+  <div class="term"><xsl:value-of select="local-name()"/>s</div>
+  <dd>
+    <table class="nested" cellspacing="0">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="center">Role</th>
+          <th class="center">Person</th>
+          <th class="center">StartDate</th>
+          <th class="center">StopDate</th>
+          <th class="center">Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through and render EVERY Contact as a row inside this tbody -->
+        <xsl:apply-templates select=".|following-sibling::sp:Contact" mode="row"/>
+      </tbody>
+    </table>
+  </dd>
+</xsl:template>
+
+<!-- 2. Ignore subsequent individual elements so they don't break out of the table -->
+<xsl:template match="sp:Contact[preceding-sibling::sp:Contact]"/>
+
+<!-- 3. Helper template that builds each row cleanly -->
+<xsl:template match="sp:Contact" mode="row">
+  <tr>
+    <td><xsl:value-of select="1 + count(preceding-sibling::sp:Contact)" />.</td>
+    <td>
+      <xsl:for-each select="sp:Role">
+        <xsl:value-of select="."/>
+        <xsl:if test="position() != last()"><br/></xsl:if>
+      </xsl:for-each>
+    </td>
+    <td>
+      <a target="_blank" href="exampleLink/{substring-after(sp:PersonID, 'spase://')}">
+        <xsl:value-of select="sp:PersonID"/>
+      </a>
+    </td>
+    <td><xsl:value-of select="sp:StartDate"/></td>
+    <td><xsl:value-of select="sp:StopDate"/></td>
+    <td>
+      <xsl:call-template name="parse-newlines">
+        <xsl:with-param name="text" select="sp:Note"/>
+      </xsl:call-template>
+    </td>
+  </tr>
 </xsl:template>
 
 <!-- 

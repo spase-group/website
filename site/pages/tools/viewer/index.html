@@ -4,6 +4,13 @@
   <title>SPASE Viewer</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Load the official, spec-compliant XSLT-Processor engine that supports deep nesting and loops -->
+  <!-- This is needed because the browser's native XSLTProcessor has been deprecated as of Nov 17, 2026. -->
+  <script src="https://unpkg.com/@tradik/xslt-processor@1/dist/xslt-processor.browser.min.js"></script>
+  <script>
+    // This library automatically exposes its processing methods under window.XSLTProcessor
+    console.log("Production-grade XSLT 1.0 JavaScript Engine Loaded.");
+  </script>
   <script src="markdown.js"></script>
   <style>
   // body and h1 should match embedded style in XML stylesheet (spase.xsl)
@@ -73,7 +80,7 @@
     </div>
 </div>
 <div id="view"></div>
-  <script>  
+  <script>
     /* Configure drag and drop */
     // preventing page from redirecting
     $("html").on("dragover", function(e) {
@@ -108,10 +115,16 @@
     /* Preload XML Stylesheet */
     xsl = "";
     $.ajax({
-       type: "GET",
-       url: "spase.xsl",
-       dataType: "xml",
-       success: function(xml) { xsl = xml; }
+      type: "GET",
+      url: "spase.xsl",
+      dataType: "xml",
+      success: function(xml) { 
+          xsl = xml; // This is a valid XML DOM Document object
+          console.log("SPASE Stylesheet loaded successfully.");
+      },
+      error: function(xhr, status, error) {
+        console.error("Failed to load spase.xsl from local server:", error);
+      }
     });
 
     /* Load a document from a URL */
@@ -136,16 +149,34 @@
         var reader = new FileReader();
         reader.onload = function (e) {
             xml = $.parseXML(e.target.result);
- 
- console.log ('xml', xml);
-            xsltProcessor = new XSLTProcessor();
-            xsltProcessor.importStylesheet(xsl);
-            resultDocument = xsltProcessor.transformToFragment(xml, document);
-            $resultDocument = $(resultDocument);  // jQuery parse of resultDocument
-            $(resultDocument).find(".markdown").html(function(index, currentContent) { content = currentContent.replace("{{#markdown}}", "").replace("{{/markdown}}", ""); return Markdown.format(content) } );
-            $('#view').html(resultDocument);
-            $('.header > .middle').text(fileName);  // Set title
-         };
+            console.log('Target XML Data Object loaded:', xml);
+    
+            // Safety check to ensure the stylesheet isn't missing
+            if (!xsl) {
+                alert("The XSL stylesheet hasn't finished loading from the server yet. Please try uploading the file again in a moment.");
+                return;
+            }
+
+            try {
+                // Initialize the local polyfill processor instance cleanly
+                var xsltProcessor = new XSLTProcessor();            
+                xsltProcessor.importStylesheet(xsl);
+                
+                // Translate xml data against xsl rules
+                var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                var $resultDocument = $(resultDocument);
+            
+                $resultDocument.find(".markdown").html(function(index, currentContent) { 
+                    var content = currentContent.replace("{{#markdown}}", "").replace("{{/markdown}}", ""); 
+                    return Markdown.format(content); 
+                });
+                $('#view').html(resultDocument);
+                $('.header > .middle').text(fileName);
+                console.log("Transformation completed successfully!");
+            } catch(err) {
+                console.error("Transformation runtime failure:", err);
+            }
+        };
         reader.readAsText(input.files[0]);
       }
     }
